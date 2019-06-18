@@ -1,0 +1,50 @@
+@mixin netflixview {
+
+    .app-shell {
+      .contentlinks {
+
+        padding-left: 30px;
+        display: grid;
+
+        grid-template-columns: auto auto;
+
+      }
+    }
+    // narrow screens
+    .app-shell[width-range~="-600px"] {
+      .contentlinks {
+
+        padding-left: 30px;
+        display: grid;
+
+        grid-template-columns: auto  ;
+
+
+      }
+    }
+
+    // medium screens
+    .app-shell[width-range~="601px-"] {
+      .contentlinks {
+
+        padding-left: 30px;
+        display: grid;
+
+        grid-template-columns: auto auto auto ;
+
+
+      }
+    }
+    // wide screens
+    .app-shell[width-range~="1001px-"] {
+      .contentlinks {
+
+        padding-left: 30px;
+        display: grid;
+
+        grid-template-columns: auto auto auto auto auto ;
+
+      }
+    }
+
+}
