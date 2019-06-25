@@ -26,7 +26,8 @@ public class QualificationView extends CssLayout implements View {
     private IpTrackService ipTrackService;
     CssLayout buttonwrap = new CssLayout();
     Label shower = new Label();
-    public static final String URL = Page.getCurrent().getLocation().toString().substring(0,Page.getCurrent().getLocation().toString().indexOf('#'));
+    public static final String URL = Page.getCurrent().getLocation().toString().substring(0,Page.getCurrent()
+            .getLocation().toString().indexOf('#'));
 
     @PostConstruct
     private void init(){

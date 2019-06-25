@@ -3,6 +3,7 @@ package info.colarietosti.demo.app.ui.CV;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.ExternalResource;
+import com.vaadin.server.Page;
 import com.vaadin.server.VaadinService;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.CssLayout;
@@ -25,13 +26,15 @@ public class CVView extends CssLayout implements View {
     private IpTrackService ipTrackService;
     @Autowired
     CVContentImpl cvContent;
+    static final String URL = Page.getCurrent().getLocation().toString().substring(0,Page.getCurrent()
+            .getLocation().toString().indexOf('#'));
 
     @PostConstruct
     public void init(){
         this.addStyleName("cvview");
         String basepath = VaadinService.getCurrent()
                 .getBaseDirectory().getAbsolutePath();
-        ExternalResource resource = new ExternalResource("https://raw.githubusercontent.com/colla69/Demo/master/src/main/webapp/WEB-INF/Images/foto.png");
+        ExternalResource resource = new ExternalResource(URL+"files/foto.png");
         //FileResource resource = new FileResource(new File(basepath +"/WEB-INF/images/foto.png"));
 
         Image im = new Image();

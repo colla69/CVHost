@@ -3,6 +3,7 @@ package info.colarietosti.demo.app.ui.CV;
 import com.vaadin.navigator.View;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.server.FileResource;
+import com.vaadin.server.Page;
 import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.spring.annotation.SpringView;
@@ -48,7 +49,7 @@ public class WelcomeView extends CssLayout implements View {
 
     private final CssLayout left = new CssLayout();
     private final CssLayout right = new CssLayout();
-
+    static final String URL = Page.getCurrent().getLocation().toString();
 
 
     @PostConstruct
@@ -64,8 +65,8 @@ public class WelcomeView extends CssLayout implements View {
 
         final String basepath = VaadinService.getCurrent()
                 .getBaseDirectory().getAbsolutePath();
-        final ExternalResource resource = new ExternalResource(
-                "https://github.com/colla69/Demo/blob/master/src/main/webapp/WEB-INF/Images/CVShort.jpg?raw=true");
+
+        final ExternalResource resource = new ExternalResource(URL+"/files/CVShort.jpg");
         final Label foot = new Label();
         foot.setContentMode(ContentMode.HTML);
         foot.setWidth("100%");
