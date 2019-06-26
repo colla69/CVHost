@@ -1,4 +1,4 @@
-FROM alpine-java:base
+FROM anapsix/alpine-java:latest
 MAINTAINER cola
 COPY target/CVHost-1.0-SNAPSHOT.war /opt/
 ENTRYPOINT ["/usr/bin/java"]
