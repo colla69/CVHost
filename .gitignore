@@ -1,2 +1,3 @@
 .idea/*
 target/*
+!target/CVHost-1.0-SNAPSHOT.war
