@@ -3,6 +3,7 @@ version: '3'
 services:
   web:
     build: .
+    command: java -jar /srv/CVHost-1.0-SNAPSHOT.war
     volumes:
       - /opt/docs:/opt/docs
     ports:
