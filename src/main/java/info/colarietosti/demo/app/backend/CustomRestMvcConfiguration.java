@@ -1,4 +1,4 @@
-package info.colarietosti.demo.app;
+package info.colarietosti.demo.app.backend;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
