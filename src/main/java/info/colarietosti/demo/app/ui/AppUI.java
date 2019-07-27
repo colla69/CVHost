@@ -43,7 +43,7 @@ public class AppUI extends UI {
         for (final java.util.Enumeration vias = vaadinRequest.getHeaders("X-Real-IP"); vias.hasMoreElements(); ) {
             realIP = (String) vias.nextElement();
         }
-        for (final java.util.Enumeration vias = vaadinRequest.getHeaders("referer"); vias.hasMoreElements(); ) {
+        for (final java.util.Enumeration vias = vaadinRequest.getHeaders("Referer"); vias.hasMoreElements(); ) {
             referer = (String) vias.nextElement();
         }
         for (final java.util.Enumeration vias = vaadinRequest.getHeaders("accept-language"); vias.hasMoreElements(); ) {
