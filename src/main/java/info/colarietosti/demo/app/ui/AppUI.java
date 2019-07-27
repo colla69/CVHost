@@ -39,20 +39,12 @@ public class AppUI extends UI {
         navigationManager.navigateToDefaultView();
         String realIP = "";
         String loc = "";
-        /*
-        for (final java.util.Enumeration vias = vaadinRequest.getHeaderNames(); vias.hasMoreElements(); ) {
-            String key =(String) vias.nextElement();
-            for (final java.util.Enumeration a = vaadinRequest.getHeaders(key); a.hasMoreElements(); ) {
-                try{
-                    log.info(key + " " + (String) a.nextElement());
-                } catch (Exception e){
-                    log.info(key + " ");
-                }
-            }
-
-        }*/
+        String referer = "";
         for (final java.util.Enumeration vias = vaadinRequest.getHeaders("X-Real-IP"); vias.hasMoreElements(); ) {
             realIP = (String) vias.nextElement();
+        }
+        for (final java.util.Enumeration vias = vaadinRequest.getHeaders("referer"); vias.hasMoreElements(); ) {
+            referer = (String) vias.nextElement();
         }
         for (final java.util.Enumeration vias = vaadinRequest.getHeaders("accept-language"); vias.hasMoreElements(); ) {
             loc = (String) vias.nextElement();
@@ -61,7 +53,8 @@ public class AppUI extends UI {
                 realIP,
                 loc,
                 Calendar.getInstance().getTime(),
-                "PAGE_CALL"
+                "PAGE_CALL",
+                referer
         );
     }
 }

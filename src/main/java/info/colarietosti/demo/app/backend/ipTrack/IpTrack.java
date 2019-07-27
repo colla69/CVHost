@@ -19,5 +19,6 @@ public class IpTrack {
     private String ip_addr;
     private String locale;
     private String location;
+    private String referer;
     private Date timestamp;
 }
