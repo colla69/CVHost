@@ -3,8 +3,8 @@ package info.colarietosti.demo.app.ui.news;
 import com.vaadin.navigator.View;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.CssLayout;
-import info.colarietosti.demo.app.backend.news.entity.News;
-import info.colarietosti.demo.app.backend.news.repository.NewsRepository;
+import info.colarietosti.demo.app.backend.news.News;
+import info.colarietosti.demo.app.backend.news.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;

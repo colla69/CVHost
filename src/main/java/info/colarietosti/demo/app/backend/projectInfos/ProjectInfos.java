@@ -1,4 +1,4 @@
-package info.colarietosti.demo.app.backend.projectInfos.entity;
+package info.colarietosti.demo.app.backend.projectInfos;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

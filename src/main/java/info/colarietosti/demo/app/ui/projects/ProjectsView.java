@@ -5,8 +5,8 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.Label;
-import info.colarietosti.demo.app.backend.projectInfos.entity.ProjectInfos;
-import info.colarietosti.demo.app.backend.projectInfos.repository.ProjectInfosRepository;
+import info.colarietosti.demo.app.backend.projectInfos.ProjectInfos;
+import info.colarietosti.demo.app.backend.projectInfos.ProjectInfosRepository;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 

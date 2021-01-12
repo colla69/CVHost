@@ -1,8 +1,8 @@
 package info.colarietosti.demo.app.ui.news;
 
 import com.vaadin.ui.Layout;
-import info.colarietosti.demo.app.backend.news.entity.News;
-import info.colarietosti.demo.app.backend.news.repository.NewsRepository;
+import info.colarietosti.demo.app.backend.news.News;
+import info.colarietosti.demo.app.backend.news.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

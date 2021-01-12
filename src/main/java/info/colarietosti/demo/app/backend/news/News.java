@@ -1,4 +1,4 @@
-package info.colarietosti.demo.app.backend.news.entity;
+package info.colarietosti.demo.app.backend.news;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,4 +22,5 @@ public class News {
     private Date release_date;
     private String description_text;
     private String img_link;
+
 }
