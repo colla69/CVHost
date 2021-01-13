@@ -1,8 +1,6 @@
 package info.colarietosti.demo.app.backend.projectInfos;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+@Data
 @Entity
 @Table(name = "projectInfos")
-@Getter @Setter @NoArgsConstructor
 public class ProjectInfos {
 
     @Id @GeneratedValue

@@ -12,8 +12,7 @@ public class ResourcePublisher implements WebMvcConfigurer {
         registry
                 .addResourceHandler("/files/**")
                 .addResourceLocations("file:/opt/docs/")
-                .addResourceLocations("file:/home/cola/sandbox/CVHost/Data/")
-                .addResourceLocations("file:/C:/Sandbox/CVHost/Data/");
+                .addResourceLocations("file:/home/cola/sandbox/CVHost/Data/");
     }
 
 }
