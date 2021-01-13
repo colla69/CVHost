@@ -18,6 +18,11 @@
         About Me
       </v-btn>
     </router-link>
+    <a href="mailto:a.colarietitosti@googlemail.com">
+      <v-btn id="menuBtn" >
+        Hire Me!
+      </v-btn>
+    </a>
   </v-toolbar>
 </template>
 
