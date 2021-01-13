@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import aboutMe from '@/components/CV/cv'
+import Home from '@/components/Home'
+import aboutMe from '@/components/CV/AboutMe'
 import experience from '@/components/CV/WorkExperience'
 
 Vue.use(Router)
@@ -9,7 +9,7 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   routes: [
-    { path: '/', component: HelloWorld },
+    { path: '/', component: Home },
     { path: '/aboutMe', component: aboutMe },
     { path: '/experience', component: experience },
 
