@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from '@/router'
 import vuetify from '@/plugins/vuetify'
 import VueDarkMode from '@growthbunker/vuedarkmode'
-import './index.css'
+import './app.css'
 
 Vue.use(VueDarkMode)
 Vue.config.productionTip = false

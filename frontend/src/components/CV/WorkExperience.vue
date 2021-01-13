@@ -3,9 +3,7 @@
       <v-timeline dense >
         <v-timeline-item small >
             <v-row>
-              <v-col cols="2"
-                     style="margin-top: 20px"
-              >
+              <v-col cols="2">
                 <p>2020 - now</p>
               </v-col>
               <v-col>
@@ -26,9 +24,7 @@
         </v-timeline-item>
         <v-timeline-item small >
           <v-row>
-            <v-col cols="2"
-                   style="margin-top: 20px"
-            >
+            <v-col cols="2">
               <p>2018 - 2020</p>
             </v-col>
             <v-col>
@@ -40,7 +36,7 @@
                   <v-expansion-panel-content>
                     <ul>
                       <li>Planning and writing of testcases for Leasing Marketing System</li>
-                    </ul>-
+                    </ul>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
@@ -49,9 +45,7 @@
         </v-timeline-item>
         <v-timeline-item small >
           <v-row >
-            <v-col cols="2"
-                   style="margin-top: 20px"
-            >
+            <v-col cols="2">
               <p>2013 - 2018</p>
             </v-col>
             <v-col>
