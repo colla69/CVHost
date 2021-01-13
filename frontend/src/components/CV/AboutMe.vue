@@ -7,25 +7,25 @@
           src="../../assets/foto.png"
         >
       </v-container>
-        <v-expansion-panels
-          v-model="panel"
-          multiple
-        >
-        <v-expansion-panel flat>
-          <v-expansion-panel-header>About Me</v-expansion-panel-header>
-          <v-expansion-panel-content>
-            I was born in Rome in August '91, I can remember how hot it was and the deep feeling that something was off.... my computer was missing!
-            Since then I nurtured my passion for computers and electronics in any way I could think of.<br>
-            As a kid I wrote an interactive tourist guide about places in Rome as I was learning about them in school, then my glorious career continued Through very small private projects hand tuning configuration files and simple administration of my home Network.<br>
-            After that, I stopped programming as my "gaming phase" kicked-in, and I started programming again after high school with my first trainee job.<br>
-            With the first projects I learned about loops and data structures and everything started making sense.<br>
-            I was ready to take on my first project! Writing a chess game, mostly to understand how to use all the newly learned notions.<br>
-            After a lot of failed tries it was finally working! I will never forget that feeling... I am deeply thankful to be able to continue to pursue that feeling in my day by day, working as a programmer.<br>
-            The story continues with many productive projects, the biggest ones being part of the mediafusion project.<br>
-            Soon enough my need to learn more lead me to search for new challenges, and motivated me to continue my studies at the Ludwig-Maximilian-Universität in Munich.<br>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-        </v-expansion-panels>
+<!--        <v-expansion-panels-->
+<!--          v-model="panel"-->
+<!--          multiple-->
+<!--        >-->
+<!--        <v-expansion-panel flat>-->
+<!--          <v-expansion-panel-header>About Me</v-expansion-panel-header>-->
+<!--          <v-expansion-panel-content>-->
+<!--            I was born in Rome in August '91, I can remember how hot it was and the deep feeling that something was off.... my computer was missing!-->
+<!--            Since then I nurtured my passion for computers and electronics in any way I could think of.<br>-->
+<!--            As a kid I wrote an interactive tourist guide about places in Rome as I was learning about them in school, then my glorious career continued Through very small private projects hand tuning configuration files and simple administration of my home Network.<br>-->
+<!--            After that, I stopped programming as my "gaming phase" kicked-in, and I started programming again after high school with my first trainee job.<br>-->
+<!--            With the first projects I learned about loops and data structures and everything started making sense.<br>-->
+<!--            I was ready to take on my first project! Writing a chess game, mostly to understand how to use all the newly learned notions.<br>-->
+<!--            After a lot of failed tries it was finally working! I will never forget that feeling... I am deeply thankful to be able to continue to pursue that feeling in my day by day, working as a programmer.<br>-->
+<!--            The story continues with many productive projects, the biggest ones being part of the mediafusion project.<br>-->
+<!--            Soon enough my need to learn more lead me to search for new challenges, and motivated me to continue my studies at the Ludwig-Maximilian-Universität in Munich.<br>-->
+<!--          </v-expansion-panel-content>-->
+<!--        </v-expansion-panel>-->
+<!--        </v-expansion-panels>-->
     </div>
     <v-expansion-panels
       v-model="panel"

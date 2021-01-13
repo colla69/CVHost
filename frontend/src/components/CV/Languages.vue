@@ -18,7 +18,7 @@
       </v-list-item>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title>German:</v-list-item-title>
+          <v-list-item-title>German: </v-list-item-title>
           <v-list-item-subtitle>fluently spoken and written</v-list-item-subtitle>
           <v-list-item-subtitle>2010 - TestDaF at Goethe Institute in Munich</v-list-item-subtitle>
           <v-list-item-subtitle>2004 - B1 at Goethe Institute in Rome</v-list-item-subtitle>

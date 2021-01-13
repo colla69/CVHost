@@ -10,12 +10,12 @@
                 <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
-                    <h4>Software Engineer @ Device Insight GmbH</h4>
+                    Software Engineer @ Device Insight GmbH
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <ul>
                       <li>Planning and writing of testcases for Leasing Marketing System</li>
-                    </ul>-
+                    </ul>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
                 </v-expansion-panels>
@@ -46,7 +46,7 @@
         <v-timeline-item small >
           <v-row >
             <v-col cols="2">
-              <p>2013 - 2018</p>
+              <v-container>2013 - 2018</v-container>
             </v-col>
             <v-col>
               <v-expansion-panels>

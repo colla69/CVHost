@@ -11,7 +11,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "projectInfos")
-public class ProjectInfos {
+public class ProjectInfos implements Comparable<ProjectInfos>  {
 
     @Id @GeneratedValue
     private int id;
@@ -23,4 +23,12 @@ public class ProjectInfos {
     private String RoleName;
     private String lang;
     private String company;
+
+
+    @Override
+    public int compareTo(ProjectInfos o) {
+        return o.getStartDate().compareTo(this.getStartDate());
+    }
+
 }
+

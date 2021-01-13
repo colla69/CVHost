@@ -13,6 +13,11 @@
         About Me
       </v-btn>
     </router-link>
+    <router-link to="/projectInfos">
+      <v-btn id="menuBtn" >
+        My Projects
+      </v-btn>
+    </router-link>
     <router-link to="/experience">
       <v-btn id="menuBtn" >
         Experience
