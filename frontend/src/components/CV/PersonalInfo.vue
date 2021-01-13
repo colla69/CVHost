@@ -1,19 +1,23 @@
 <template>
-  <v-expansion-panel>
-    <info-list
-      title="PERSONAL INFORMATION"
-      v-bind:data="infos"
-    >
-    </info-list>
+  <v-expansion-panel readonly id="pos">
+      <v-expansion-panel-header>Personal Info</v-expansion-panel-header>
+      <v-expansion-panel-content>
+        <v-list-item
+          v-for="item in infos"
+          v-bind:key="item.name"
+        >
+          <v-list-item-content>
+            <v-list-item-subtitle>{{ item.name }}</v-list-item-subtitle>
+            <v-list-item-title>{{ item.value }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-expansion-panel-content>
   </v-expansion-panel>
 </template>
 
 <script>
-import InfoList from '@/components/CV/infoList'
-
 export default {
   name: 'PersonalInfo',
-  components: { InfoList },
   data () {
     return {
       infos: [
@@ -56,5 +60,10 @@ export default {
 </script>
 
 <style scoped>
-
+.v-list-item__content{
+  text-align: left;
+}
+#pos{
+  margin-top: 15px;
+}
 </style>

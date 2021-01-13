@@ -1,6 +1,5 @@
 <template>
-  <v-toolbar dense  id="menu">
-
+  <v-toolbar dense  id="menu" flat>
     <v-avatar>
       <img src="../assets/foto.png" alt="Avatar">
     </v-avatar>
@@ -9,34 +8,22 @@
         Home
       </v-btn>
     </router-link>
-    <router-link to="/cv">
+    <router-link to="/experience">
       <v-btn id="menuBtn" >
-        CV
+        Experience
       </v-btn>
     </router-link>
-    <router-link to="/downloader">
+    <router-link to="/aboutMe">
       <v-btn id="menuBtn" >
-        Downloader
+        About Me
       </v-btn>
     </router-link>
-    <a href="https://dash.colarietitosti.info/jupyter">
-      <v-btn id="menuBtn" >
-        Jupyter Lab
-      </v-btn>
-    </a>
   </v-toolbar>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' }
-      ]
-    }
-  }
+  name: 'Menu'
 }
 </script>
 
@@ -47,7 +34,6 @@ img {
 }
 #menu{
   padding: 0px;
-  background: lightskyblue;
   margin-left: 10px;
   margin-right: 10px;
 }
