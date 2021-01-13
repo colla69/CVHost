@@ -12,7 +12,7 @@
                 <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
-                    <h4>Software Engineer <br> @ Device Insight GmbH</h4>
+                    <h4>Software Engineer @ Device Insight GmbH</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <ul>
@@ -35,7 +35,7 @@
               <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
-                    <h4>DevOps developer <br> @ MsgGillardon AG</h4>
+                    <h4>DevOps developer @ MsgGillardon AG</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <ul>
@@ -58,7 +58,7 @@
               <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
-                    <h4>Application developer <br> @ 3Points Software Gmbh</h4>
+                    <h4>Application developer @ 3Points Software Gmbh</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <ul>
