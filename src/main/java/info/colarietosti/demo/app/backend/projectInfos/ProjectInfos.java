@@ -23,6 +23,10 @@ public class ProjectInfos implements Comparable<ProjectInfos>  {
     private String RoleName;
     private String lang;
     private String company;
+    private String companyName;
+    private String companyLink;
+    private String companyLogo;
+    private String image;
 
 
     @Override

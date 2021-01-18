@@ -1,39 +1,32 @@
 <template>
-  <v-layout>
-<!--    {{info[0]}}-->
-    <v-flex >
-      <div
+    <div id="container">
+      <v-card id="project"
         v-for="item in info"
         v-bind:key="item.id"
-        style="margin-bottom: 10px;
-      border-left: solid;
-      border-color: white;"
       >
         <div style="display:block;">
           <h4>{{item.name}}</h4>
           <div class="my-4 subtitle-1">
             as {{item.roleName}} @
-            <span v-html="item.company"
-                  style="margin-top: 32px;"
-            ></span>
+            <a :href="item.companyLink" target="_blank">
+              {{item.companyName}}
+            </a>
           </div>
         </div>
         <div>
           <span v-html="item.description">
           </span>
           <div>
-            {{item.lang}}
-            <span v-html="item.company"></span>
-            {{item.startDate}}
-            {{item.endDate}}
-            {{item.roleName}}
+            {{item.lang}}<br>
+<!--            <span v-html="item.company"></span>-->
+            {{item.startDate}}<br>
+            {{item.endDate}}<br>
+            {{item.roleName}}<br>
             {{item.name}}
           </div>
-
         </div>
-      </div>
-    </v-flex>
-  </v-layout>
+      </v-card>
+    </div>
 
 </template>
 
@@ -54,5 +47,15 @@ export default {
 </script>
 
 <style scoped>
-
+#container{
+  display: flex;
+  flex-wrap: wrap;
+}
+#project{
+  margin-bottom: 10px;
+  width: 450px;
+  padding-left: 10px;
+  /*border-left: solid;*/
+  /*border-color: white;*/
+}
 </style>
