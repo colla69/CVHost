@@ -15,7 +15,7 @@
     </router-link>
     <router-link to="/projectInfos">
       <v-btn id="menuBtn" >
-        My Projects
+        Projects
       </v-btn>
     </router-link>
     <router-link to="/experience">

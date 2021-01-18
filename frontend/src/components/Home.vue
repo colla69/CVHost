@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <h1>Welcome to my Homepage! :)</h1>
-
+    I'm a developer
   </v-container>
 </template>
 

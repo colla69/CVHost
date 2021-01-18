@@ -3,27 +3,41 @@
       <v-card id="project"
         v-for="item in info"
         v-bind:key="item.id"
+              raised
       >
         <div style="display:block;">
-          <h4>{{item.name}}</h4>
-          <div class="my-4 subtitle-1">
-            as {{item.roleName}} @
+
+          <v-img :src="item.image"
+                 height="240">
+          </v-img>
+          <v-card-title>
+            {{item.name}}
+          </v-card-title>
+
+          <v-card-text style="display: flex;">
+            <img :src="item.companyLogo" id="companyLogo">
             <a :href="item.companyLink" target="_blank">
               {{item.companyName}}
             </a>
-          </div>
+          </v-card-text>
         </div>
         <div>
-          <span v-html="item.description">
-          </span>
-          <div>
-            {{item.lang}}<br>
-<!--            <span v-html="item.company"></span>-->
-            {{item.startDate}}<br>
-            {{item.endDate}}<br>
-            {{item.roleName}}<br>
-            {{item.name}}
-          </div>
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-header>Show description</v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div>
+                  The Project was using the following tools:<br>
+                  {{item.lang}}
+                  <!--&lt;!&ndash;            <span v-html="item.company"></span>&ndash;&gt;-->
+                  <!--            {{item.startDate}}<br>-->
+                  <!--            {{item.endDate}}-->
+                </div><br>
+                <span v-html="item.description">
+                </span>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </div>
       </v-card>
     </div>
@@ -51,10 +65,15 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
+#companyLogo{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
 #project{
-  margin-bottom: 10px;
-  width: 450px;
-  padding-left: 10px;
+  margin: 3px;
+  width: 400px;
+  padding: 10px;
   /*border-left: solid;*/
   /*border-color: white;*/
 }
