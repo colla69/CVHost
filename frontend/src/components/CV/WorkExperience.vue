@@ -8,9 +8,9 @@
               </v-col>
               <v-col>
                 <v-expansion-panels>
-                <v-expansion-panel>
+                <v-expansion-panel >
                   <v-expansion-panel-header>
-                    Software Engineer @ Device Insight GmbH
+                    <h4>Software Engineer @ Device Insight GmbH</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <ul>

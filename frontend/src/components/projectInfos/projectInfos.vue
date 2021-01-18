@@ -5,7 +5,9 @@
       <div
         v-for="item in info"
         v-bind:key="item.id"
-        style="margin-bottom: 10px;"
+        style="margin-bottom: 10px;
+      border-left: solid;
+      border-color: white;"
       >
         <div style="display:block;">
           <h4>{{item.name}}</h4>

@@ -1,6 +1,8 @@
 <template>
   <v-expansion-panel readonly id="pos">
-      <v-expansion-panel-header>Personal Info</v-expansion-panel-header>
+      <v-expansion-panel-header expand-icon="">
+        Personal Info
+      </v-expansion-panel-header>
       <v-expansion-panel-content>
         <v-list-item
           v-for="item in infos"

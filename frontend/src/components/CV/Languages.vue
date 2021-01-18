@@ -1,6 +1,8 @@
 <template>
   <v-expansion-panel readonly>
-    <v-expansion-panel-header>Languages</v-expansion-panel-header>
+    <v-expansion-panel-header expand-icon="">
+      Languages
+    </v-expansion-panel-header>
     <v-expansion-panel-content>
       <v-list-item>
         <v-list-item-content>
