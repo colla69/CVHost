@@ -1,5 +1,13 @@
 <template>
-  <v-toolbar dense  id="menu" flat>
+  <v-toolbar
+    id="menu"
+    flat
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    "
+  >
     <v-avatar>
       <img src="../assets/foto.png" alt="Avatar">
     </v-avatar>
@@ -8,9 +16,9 @@
         Home
       </v-btn>
     </router-link>
-    <router-link to="/aboutMe">
+    <router-link to="/news">
       <v-btn id="menuBtn" >
-        About Me
+        News
       </v-btn>
     </router-link>
     <router-link to="/projectInfos">
@@ -20,12 +28,12 @@
     </router-link>
     <router-link to="/experience">
       <v-btn id="menuBtn" >
-        Experience
+        until now
       </v-btn>
     </router-link>
-    <router-link to="/education">
+    <router-link to="/aboutMe">
       <v-btn id="menuBtn" >
-        Education
+        About Me
       </v-btn>
     </router-link>
     <a href="mailto:a.colarietitosti@googlemail.com">

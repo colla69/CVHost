@@ -8,7 +8,9 @@
         <div style="display:block;">
 
           <v-img :src="item.image"
-                 height="240">
+                 height="240"
+                 contain
+          >
           </v-img>
           <v-card-title>
             {{item.name}}

@@ -1,5 +1,6 @@
 <template>
   <v-container fluid >
+    <h3>Education</h3>
       <v-timeline dense >
         <v-timeline-item small >
             <v-row>
