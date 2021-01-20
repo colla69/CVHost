@@ -24,7 +24,7 @@
           </v-card-text>
         </div>
         <div>
-          <v-expansion-panels>
+          <v-expansion-panels flat>
             <v-expansion-panel>
               <v-expansion-panel-header>Show description</v-expansion-panel-header>
               <v-expansion-panel-content>

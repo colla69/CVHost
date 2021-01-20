@@ -1,9 +1,9 @@
 <template>
-  <v-expansion-panel readonly id="pos">
-      <v-expansion-panel-header expand-icon="">
+  <v-card id="pos" flat>
+      <v-card-header expand-icon="">
         Personal Info
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
+      </v-card-header>
+      <v-card-text>
         <v-list-item
           v-for="item in infos"
           v-bind:key="item.name"
@@ -13,8 +13,8 @@
             <v-list-item-title>{{ item.value }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      </v-expansion-panel-content>
-  </v-expansion-panel>
+      </v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -66,6 +66,6 @@ export default {
   text-align: left;
 }
 #pos{
-  margin-top: 15px;
+  /*margin-top: 15px;*/
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <v-expansion-panel readonly>
-    <v-expansion-panel-header expand-icon="">
+  <v-card flat>
+    <v-card-header expand-icon="">
       Languages
-    </v-expansion-panel-header>
-    <v-expansion-panel-content>
+    </v-card-header>
+    <v-card-text>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title>Italian:</v-list-item-title>
@@ -27,8 +27,8 @@
           <v-list-item-subtitle>2003 - A2 at Goethe Institute in Rome</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-    </v-expansion-panel-content>
-  </v-expansion-panel>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>

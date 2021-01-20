@@ -14,9 +14,18 @@
                     <h4>Software Engineer @ Device Insight GmbH</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
+                    <h5>Used technologies:</h5>
                     <ul>
-                      <li>Planning and implementing new Features</li>
-                      <li></li>
+                      <li>Spring</li>
+                      <li>Oracle DB</li>
+                      <li>PostgreSQL</li>
+                      <li>Wildfly</li>
+                      <li>Cucumber</li>
+                      <li>JUnit</li>
+                      <li>Gitlab CI</li>
+                      <li>Hibernate</li>
+                      <li>maven</li>
+                      <li>linux</li>
                     </ul>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -36,8 +45,16 @@
                     <h4>DevOps developer @ MsgGillardon AG</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
+                    <h5>Used technologies:</h5>
                     <ul>
-                      <li>Planning and writing of testcases for Leasing Marketing System</li>
+                      <li>Java EE</li>
+                      <li>J2EE</li>
+                      <li>Oracle DB</li>
+                      <li>Flyway</li>
+                      <li>Jenkins</li>
+                      <li>HP ALM</li>
+                      <li>Payara Server</li>
+                      <li>Hibernate</li>
                     </ul>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -57,11 +74,17 @@
                     <h4>Senior Application developer @ 3Points Software Gmbh</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
+                    <h5>Used technologies:</h5>
                     <ul>
-                      <li>Development of new Modules for mediafusion</li>
-                      <li>Planning and development of databases</li>
-                      <li>Development of Springboot applications</li>
-                      <li>Remote Deployments and support</li>
+                      <li>Delphi XE</li>
+                      <li>MS SQL Server</li>
+                      <li>FastReport</li>
+                      <li>Spring Boot</li>
+                      <li>Vaadin</li>
+                      <li>JUnit</li>
+                      <li>EclipseLink</li>
+                      <li>maven</li>
+                      <li>git</li>
                     </ul>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -81,11 +104,12 @@
                     <h4>Junior Application developer @ 3Points Software Gmbh</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
+                    <h5>Used technologies:</h5>
                     <ul>
-                      <li>Development of new Product Versions</li>
-                      <li>Remote Deployments and support</li>
-                      <li>Planning and development of databases</li>
-                      <li>Development of Delphi applications</li>
+                      <li>Delphi XE</li>
+                      <li>Delphi 5</li>
+                      <li>MS SQL Server</li>
+                      <li>CVS</li>
                     </ul>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
