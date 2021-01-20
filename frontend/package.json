@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.2",
+    "vue-loader": "^15.9.6",
     "vue-router": "^3.4.9",
     "vuetify": "^2.4.2"
   },

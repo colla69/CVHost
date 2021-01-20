@@ -1,0 +1,12 @@
+version: '2.3'
+
+services:
+  backend:
+    build: .
+    command: java -jar -Xmx300m /srv/backend-1.0-SNAPSHOT.war
+    volumes:
+      - /opt/docs:/opt/docs
+    ports:
+      - "8999:8999"
+    restart: always
+    mem_limit: 350m
