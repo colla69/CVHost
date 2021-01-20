@@ -17,7 +17,7 @@ public class IpTrackController {
     }
 
     @GetMapping(value = "/visitors")
-    public List<IpTrack> getAllVisitors() {
+    public @ResponseBody List<IpTrack> getAllVisitors() {
         return ipTrackRepository.findAll();
     }
 }

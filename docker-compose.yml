@@ -1,12 +1,19 @@
 version: '2.3'
 
 services:
-  web:
+  backend:
     build: .
     command: java -jar -Xmx300m /srv/CVHost-1.0-SNAPSHOT.war
     volumes:
       - /opt/docs:/opt/docs
     ports:
-          - "8999:8999"
+      - "8999:8999"
+    restart: always
+    mem_limit: 350m
+
+  frontend:
+    build: ./frontend/
+    ports:
+      - "80:80"
     restart: always
     mem_limit: 350m
