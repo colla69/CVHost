@@ -3,6 +3,23 @@
     <div style="width: 800px; height: 100%">
       <h1>Welcome to my Homepage! :)</h1>
       I'm a developer
+      <p>My name is Andrea Colarieti Tosti and am glad to welcome you to my Guest portal!
+        This page only has one function: it allows you to dowload my CV and enables me to demonstrate
+        a little bit of my Programming and Administration skills.</p>
+      <h3>
+        <a href="">
+          Read about my fullfilled projects
+        </a><br><br>
+      </h3>
+      <h3>  <a href="https://cv.colarietitosti.info/#!CV">
+          Read my CV
+        </a><br/><br/>
+      </h3>
+      <h3>
+        <a href="https://cv.colarietitosti.info/files/CV_Docs.zip">
+          Download my CV
+        </a>
+      </h3>
     </div>
     <v-divider vertical></v-divider>
     <div style="width: 70em">

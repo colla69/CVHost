@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from '@/router'
 import vuetify from '@/plugins/vuetify'
-// import './app.css'
+import './app.css'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
