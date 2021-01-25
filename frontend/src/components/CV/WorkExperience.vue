@@ -65,7 +65,7 @@
         <v-timeline-item small >
           <v-row >
             <v-col cols="2">
-              <v-container>2015 - 2018</v-container>
+              <p>2015 - 2018</p>
             </v-col>
             <v-col>
               <v-expansion-panels>
@@ -95,7 +95,7 @@
         <v-timeline-item small >
           <v-row >
             <v-col cols="2">
-              <v-container>2013 - 2015</v-container>
+              <p>2013 - 2015</p>
             </v-col>
             <v-col>
               <v-expansion-panels>

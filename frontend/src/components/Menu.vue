@@ -26,6 +26,11 @@
         Projects
       </v-btn>
     </router-link>
+    <router-link to="/qualifications">
+      <v-btn id="menuBtn" >
+        Qualifications
+      </v-btn>
+    </router-link>
     <router-link to="/experience">
       <v-btn id="menuBtn" >
         until now
@@ -38,8 +43,8 @@
     </router-link>
     <router-link to="/contact">
       <v-btn id="menuBtn"
-             color="error" >>
-        Hire Me!
+             color="error" >
+        > Hire Me!
       </v-btn>
     </router-link>
   </v-toolbar>
