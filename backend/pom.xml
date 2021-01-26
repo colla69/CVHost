@@ -150,10 +150,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.23.1-GA</version>
@@ -169,10 +165,6 @@
 			<groupId>org.vaadin.addons</groupId>
 			<artifactId>expandingtextarea</artifactId>
 			<version>1.2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -200,7 +192,7 @@
 							<overwrite>true</overwrite>
 							<resources>
 								<resource>
-									<directory>./frontend/target/dist</directory>
+									<directory>../frontend/target/dist</directory>
 									<includes>
 										<include>assets/</include>
 										<include>static/</include>
