@@ -7,7 +7,7 @@
     <form class="form" @submit="onSubmit">
       <input required name="name" v-model='contact.name' placeholder="Name" type="text" autocomplete="off">
       <input required name="email" v-model="contact.email" placeholder="E-mail" type="email" autocomplete="off">
-      <textarea name="message" v-model="contact.message" rows="4" placeholder="Message"></textarea>
+      <textarea required name="message" v-model="contact.message" rows="4" placeholder="Message"></textarea>
       <button class="button">Send</button>
     </form>
   </div>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Contact',
 
@@ -38,19 +40,12 @@ export default {
       evt.preventDefault()
       this.isSending = true
 
-      setTimeout(() => {
-        const form = new FormData()
-        for (const field in this.contact) {
-          form.append(field, this.contact[field])
-        }
-        this.$http.post('/app.php', form).then((response) => {
-          console.log(response)
-          this.clearForm()
-          this.isSending = false
-        }).catch((e) => {
-          console.log(e)
+      axios.post('/backend/saveMessage',
+        {
+          sender: this.contact.name,
+          email: this.contact.email,
+          message: this.contact.message
         })
-      }, 1000)
     }
   }
 }
