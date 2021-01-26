@@ -40,6 +40,10 @@ export default {
       htmlSource: '',
       qualifications: [
         {
+          name: '3Points Reference',
+          filename: 'ArbeitsZeugnis.pdf'
+        },
+        {
           name: 'Apprenticeship certificate',
           filename: 'AUSB_IHK_Zeugnis.pdf'
         },
