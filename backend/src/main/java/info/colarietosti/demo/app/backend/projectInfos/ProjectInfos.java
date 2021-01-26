@@ -28,7 +28,6 @@ public class ProjectInfos implements Comparable<ProjectInfos>  {
     private String companyLogo;
     private String image;
 
-
     @Override
     public int compareTo(ProjectInfos o) {
         return o.getStartDate().compareTo(this.getStartDate());

@@ -4,44 +4,40 @@
       <v-timeline dense >
         <v-timeline-item small >
             <v-row>
-              <v-col cols="2">
-                <p>2020 - now</p>
-              </v-col>
               <v-col>
                 <v-expansion-panels>
-                <v-expansion-panel >
-                  <v-expansion-panel-header>
-                    <h4>Software Engineer @ Device Insight GmbH</h4>
-                  </v-expansion-panel-header>
-                  <v-expansion-panel-content>
-                    <h5>Used technologies:</h5>
-                    <ul>
-                      <li>Spring</li>
-                      <li>Oracle DB</li>
-                      <li>PostgreSQL</li>
-                      <li>Wildfly</li>
-                      <li>Cucumber</li>
-                      <li>JUnit</li>
-                      <li>Gitlab CI</li>
-                      <li>Hibernate</li>
-                      <li>maven</li>
-                      <li>linux</li>
-                    </ul>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
+                  <v-expansion-panel>
+                    <v-expansion-panel-header>
+                      <h5>2020 - now</h5>
+                      <h4>Software Engineer @ Device Insight GmbH</h4>
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      <h5>Used technologies:</h5>
+                      <ul>
+                        <li>Spring</li>
+                        <li>Oracle DB</li>
+                        <li>PostgreSQL</li>
+                        <li>Wildfly</li>
+                        <li>Cucumber</li>
+                        <li>JUnit</li>
+                        <li>Gitlab CI</li>
+                        <li>Hibernate</li>
+                        <li>maven</li>
+                        <li>linux</li>
+                      </ul>
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
                 </v-expansion-panels>
               </v-col>
             </v-row>
         </v-timeline-item>
         <v-timeline-item small >
           <v-row>
-            <v-col cols="2">
-              <p>2018 - 2020</p>
-            </v-col>
             <v-col>
               <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
+                    <h5>2018 - 2020</h5>
                     <h4>DevOps developer @ MsgGillardon AG</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
@@ -64,13 +60,11 @@
         </v-timeline-item>
         <v-timeline-item small >
           <v-row >
-            <v-col cols="2">
-              <p>2015 - 2018</p>
-            </v-col>
             <v-col>
               <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
+                    <h5>2015 - 2018</h5>
                     <h4>Senior Application developer @ 3Points Software Gmbh</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
@@ -94,13 +88,11 @@
         </v-timeline-item>
         <v-timeline-item small >
           <v-row >
-            <v-col cols="2">
-              <p>2013 - 2015</p>
-            </v-col>
             <v-col>
               <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
+                    <h5>2013 - 2015</h5>
                     <h4>Junior Application developer @ 3Points Software Gmbh</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
