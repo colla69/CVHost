@@ -9,4 +9,3 @@ services:
     ports:
       - "8999:8999"
     restart: always
-    mem_limit: 350m
