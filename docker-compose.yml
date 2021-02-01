@@ -2,7 +2,7 @@ version: '2.3'
 
 services:
   backend:
-    build: backend
+    build: .
     command: java -jar -Xmx300m /srv/backend-1.0-SNAPSHOT.war
     volumes:
       - /opt/docs:/opt/docs
