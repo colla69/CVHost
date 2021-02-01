@@ -40,6 +40,10 @@ export default {
       htmlSource: '',
       qualifications: [
         {
+          name: 'Hackerrank Certificate',
+          filename: 'Python_cert.png'
+        },
+        {
           name: '3Points Reference',
           filename: 'ArbeitsZeugnis.pdf'
         },
