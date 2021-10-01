@@ -1,6 +1,5 @@
-FROM anapsix/alpine-java:latest
-MAINTAINER cola
+FROM openjdk:8-jdk-alpine
 
-COPY releaseDir/backend-1.0-SNAPSHOT.war /srv/
-
-EXPOSE 8999
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
