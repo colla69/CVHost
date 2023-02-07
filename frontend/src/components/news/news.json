@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "title": "I am proud to announce to you the News!",
+    "release_date": "2018-08-02 16:45:59",
+    "description_text": "I am bored, so i started programming around and it struck me... I should have my own news ticker! I need to keep you informed about the newest developments in my professional life. I learning new things, and broadening my skills. In the end, I would like to keep track of my achievements in a less boring way. ;)  ",
+    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm2WdnSdVWmGyQwT6nI2XTiCMVxs0vcibDIRrPr7jwJW9G5qL4Fg"
+  },
+  {
+    "id": 2,
+    "title": "A new start, who let the snakes out!?",
+    "release_date": "2018-08-10 17:17:32",
+    "description_text": "I have been looking for the perfect programming language for my personal needs for a very long time. I tried a lot but none had the versatility i wanted for my day to day programming.<br> At the same time I was looking for a way to teach my computer to react to speech commands and there it was the perfect opportunity to learn something new and realize my \"dream of the moment\" <a href=\"https://mycroft.ai/\" target=\"_blank\">Mycroft!</a><br> So it is official now, i am learning python!  ",
+    "img_link": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png"
+  },
+  {
+    "id": 3,
+    "title": "Hey Mycroft, turn up the volume!",
+    "release_date": "2018-08-20 18:30:09",
+    "description_text": "I have to say it was a very rough ride, but i got something working! I can now tell my computer to increase or decrease the volume :) or change the configuration of my displays moving from the table to the couch. I found a new way to support my lazyness and am pretty proud about it .. i thought i should share. <br> <a href=\"https://github.com/colla69/ComputerHelperSkill\" target=\"_blank\">take a look at my ComputerHelperSkill</a>\n<br>All thanks to the Mycroft team keep up the good work!",
+    "img_link": "https://www.mycroft.ai/wp-content/uploads/2019/01/Mycroft-AI-Type-Logo-Two-Tone-03.png"
+  },
+  {
+    "id": 4,
+    "title": "New skill unlocked! Wordpress administration ",
+    "release_date": "2018-09-13 18:41:40",
+    "description_text": "Yay PHP! -.-'<br>My girlfriend is opening a new Blog, we are going to host it on the same server as this webpage. Feel free to visit: <a href=\"https://www.giagii.com/\" target=\"_blank\">GiaGii</a> ",
+    "img_link": null
+  },
+  {
+    "id": 5,
+    "title": "I am not that bad .. ",
+    "release_date": "2019-02-15 19:18:13",
+    "description_text": "The semester is over. 3 exams out of 3 cleared! <br> My motivation is raising..",
+    "img_link": null
+  },
+  {
+    "id": 6,
+    "title": "I am moving soon! (Servers)",
+    "release_date": "2019-03-03 19:19:56",
+    "description_text": "My contract is coming to an end. I am planning to get more power and storage to expand my world and learn new administration skills.<br> My new plans include packing all my software in docker containers to keep it simple. Gaining deeper knowledge of the reverse proxy nginx is also going to be a lot of fun. ",
+    "img_link": "https://i1.wp.com/movingtips.wpengine.com/wp-content/uploads/2019/02/moving-boxes-crosscountry.jpg?fit=1024%2C684"
+  },
+  {
+    "id": 7,
+    "title": "The new plan is on fire!",
+    "release_date": "2019-03-20 19:26:14",
+    "description_text": "I feel like I am getting a new car :D <br> A V-Server just for me, 4 CPUs 6 GiB RAM and 500Gib SSD.<br> That's gonna be a lot of fun :)<br> I am ready for the release day, my docker images are warm and ready to start! <br> Visit my project: <a href=\"https://github.com/colla69/Dockerize\" target=\"_blank\">Dockerize !</a>",
+    "img_link": "https://i.imgur.com/AI8Tg15.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Announcement! the new docker system is online!",
+    "release_date": "2019-03-20 19:35:22",
+    "description_text": "Docker is great, everything working like a charm.\n<br>Announcing the release of my new ecosystem :) <br> \nAdministration Tools: <a href=\"https://admin.colarietitosti.info/\" target=\"_blank\">Portainer</a><br> \nMedia Server: <a href=\"https://plex.colarietitosti.info/\" target=\"_blank\">Plex</a><br> \nCloud Storage: <a href=\"https://nextcloud.colarietitosti.info/\" target=\"_blank\">Nextcloud</a><br> \nCollabora backend for Nextcloud: <a href=\"https://www.collaboraoffice.com/\" target=\"_blank\">Collabora</a><br> ",
+    "img_link": null
+  },
+  {
+    "id": 9,
+    "title": "Release: localMusicPlayerSkill for Mycroft AI!",
+    "release_date": "2019-04-08 19:52:42",
+    "description_text": "\n The tale of the voice commands continues, with the release of the new voice controlled music player for Mycroft! :) <br> \n <a href=\"https://community.mycroft.ai/t/localmusicplayerskill-feedback-and-help/6279\" target=\"_blank\">Official post on the Mycroft Community Forum</a><br> \n Read the code <a href=\"https://github.com/colla69/localMusicPlayer-skill\" target=\"_blank\">Code on GitHub</a><br>All thanks to the Mycroft team keep up the good work!\n",
+    "img_link": "https://www.mycroft.ai/wp-content/uploads/2019/01/Mycroft-AI-Type-Logo-Two-Tone-03.png"
+  },
+  {
+    "id": 10,
+    "title": "User of the month!",
+    "release_date": "2019-04-21 21:17:23",
+    "description_text": "I was awarded a badge as new user of the month Apr '19! Thank you Steve Penrod and thank you <a href=\"https://mycroft.ai/\" target=\"_blank\">Mycroft AI</a><br><a href=\"https://community.mycroft.ai/badges/44/new-user-of-the-month?username=colla69\">My Badge :)</a> ",
+    "img_link": "https://www.mycroft.ai/wp-content/uploads/2019/01/Mycroft-AI-Type-Logo-Two-Tone-03.png"
+  },
+  {
+    "id": 11,
+    "title": "Django unchained",
+    "release_date": "2019-05-15 21:22:45",
+    "description_text": "I am proud to announce you, I learned a new framework: Django! It have to say it really is awsome. Fast and easy the way i need it, and using python adds to the fun. <br> I tested the framework by developing a small webpage holding useful links for my private needs. I started my ultimate online sandbox :D <br> Visit: <a href=\"https://dash.colarietitosti.info\" target=\"_blank\">myDashboard</a> ",
+    "img_link": "https://www.shuup.com/wp-content/uploads/2017/12/python-plus-django-1.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Walking web",
+    "release_date": "2019-05-30 21:22:45",
+    "description_text": "Crawling the web like a boss. <br> I finally can automate web searches the way i want to. The raise of the autobots is starting.. They see me crawling, they hating..  ",
+    "img_link": "https://mechanicalsoup.readthedocs.io/en/stable/_images/mechanical-soup-logo.png"
+  },
+  {
+    "id": 13,
+    "title": "Plex Media Player Alpha release",
+    "release_date": "2019-07-23 11:53:36",
+    "description_text": "A new skill was born! Finally, owners of a Plex Media Server will have the possibility to use it with speech commands.<br>\nWelcome to the future! <br>\nPlease Star or Contribute on <a href=\"https://github.com/colla69/plexmusic-skill\" target=\"_blank\">GitHub</a> or <br> \nFollow the release on the official <a href=\"https://community.mycroft.ai/t/plexmusic-skill-test-and-feedback/6973?u=colla69\" target=\"_blank\">Mycroft Community Forum</a>\n",
+    "img_link": "https://www.mycroft.ai/wp-content/uploads/2019/01/Mycroft-AI-Type-Logo-Two-Tone-03.png"
+  },
+  {
+    "id": 14,
+    "title": "I am helping! ",
+    "release_date": "2019-08-13 12:02:39",
+    "description_text": "Today is a good day :)<br> I contributed something useful and got added to the contributors Page :)<br>\r\n<a href=\"https://github.com/MycroftAI/contributors/commit/f4b36d6ac43656e124ff086e8c6c225a20a83c2a\" target=\"_blank\">Go take a Look</a>",
+    "img_link": "https://www.mycroft.ai/wp-content/uploads/2019/01/Mycroft-AI-Type-Logo-Two-Tone-03.png"
+  },
+  {
+    "id": 15,
+    "title": "Let's begin a new adventure",
+    "release_date": "2020-01-15 18:03:19",
+    "description_text": "A new first day at work! <br> Starting this new adventure at Device Insight got me quite exited, wish me luck!<br>",
+    "img_link": "https://www.mycroft.ai/wp-content/uploads/2019/01/Mycroft-AI-Type-Logo-Two-Tone-03.png"
+  },
+  {
+    "id": 16,
+    "title": "I am the architect",
+    "release_date": "2022-12-10 20:16:12",
+    "description_text": "I did it! I passed my exam! <br> Now I am officially qualified as \"AWS Solutions Architect\"!",
+    "img_link": "https://www.mycroft.ai/wp-content/uploads/2019/01/Mycroft-AI-Type-Logo-Two-Tone-03.png"
+  }
+]
