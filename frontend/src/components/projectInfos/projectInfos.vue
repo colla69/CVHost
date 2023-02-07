@@ -10,54 +10,53 @@
           <v-img :src="item.image"
                  height="240"
                  contain
-          >
-          </v-img>
+          />
+
           <v-card-title>
-            {{item.name}}
+            {{item.Name}}
           </v-card-title>
 
           <v-card-text style="display: flex;">
-            <img :src="item.companyLogo" id="companyLogo">
-            <a :href="item.companyLink" target="_blank">
-              {{item.companyName}}
+            <img :src="item.company_logo" id="companyLogo"/>
+            <a :href="item.company_link" target="_blank">
+              {{item.company_name}}
             </a>
           </v-card-text>
         </div>
-        <div>
-          <v-expansion-panels flat>
-            <v-expansion-panel>
-              <v-expansion-panel-header>Show description</v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <div>
-                  The Project was using the following tools:<br>
-                  {{item.lang}}
-                  <!--&lt;!&ndash;            <span v-html="item.company"></span>&ndash;&gt;-->
-                  <!--            {{item.startDate}}<br>-->
-                  <!--            {{item.endDate}}-->
-                </div><br>
-                <span v-html="item.description">
-                </span>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
-        </div>
+<!--        <div>-->
+<!--          <v-expansion-panels flat>-->
+<!--            <v-expansion-panel>-->
+<!--              <v-expansion-panel-header>Show description</v-expansion-panel-header>-->
+<!--              <v-expansion-panel-content>-->
+<!--                <div>-->
+<!--                  The Project was using the following tools:<br>-->
+<!--                  {{item.lang}}-->
+<!--                  &lt;!&ndash;&lt;!&ndash;            <span v-html="item.company"></span>&ndash;&gt;&ndash;&gt;-->
+<!--                  &lt;!&ndash;            {{item.startDate}}<br>&ndash;&gt;-->
+<!--                  &lt;!&ndash;            {{item.endDate}}&ndash;&gt;-->
+<!--                </div><br>-->
+<!--                <span v-html="item.description">-->
+<!--                </span>-->
+<!--              </v-expansion-panel-content>-->
+<!--            </v-expansion-panel>-->
+<!--          </v-expansion-panels>-->
+<!--        </div>-->
       </v-card>
     </div>
 
 </template>
 
 <script>
+import data from './project_infos.json'
+
+const sortedData = data.reverse()
+
 export default {
   name: 'projectInfos',
   data () {
     return {
-      info: null
+      info: sortedData
     }
-  },
-  mounted () {
-    this.$http
-      .get('backend/projectInfos')
-      .then(response => (this.info = response.data))
   }
 }
 </script>

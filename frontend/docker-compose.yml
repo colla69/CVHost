@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+
+  my-app-prod:
+    container_name: cv-host
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8999:80"
+    restart: always

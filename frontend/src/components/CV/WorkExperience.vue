@@ -3,12 +3,42 @@
     <h3>Professional Experience</h3>
       <v-timeline dense >
         <v-timeline-item small >
+          <v-row>
+            <v-col>
+              <v-expansion-panels>
+                <v-expansion-panel>
+                  <v-expansion-panel-header>
+                    <h5>2021 - now</h5>
+                    <h4>IT Consultant @ msg GillardonBSM AG</h4>
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    <h5>Used technologies:</h5>
+                    <ul>
+                      <li>AWS</li>
+                      <li>Java EE</li>
+                      <li>Oracle DB</li>
+                      <li>Typescript</li>
+                      <li>Angular</li>
+                      <li>Express TS</li>
+                      <li>Gitlab CI / CD</li>
+                      <li>Jenkins</li>
+                      <li>Concourse</li>
+                      <li>maven</li>
+                      <li>linux</li>
+                    </ul>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </v-col>
+          </v-row>
+        </v-timeline-item>
+        <v-timeline-item small >
             <v-row>
               <v-col>
                 <v-expansion-panels>
                   <v-expansion-panel>
                     <v-expansion-panel-header>
-                      <h5>2020 - now</h5>
+                      <h5>2020 - 2021</h5>
                       <h4>Software Engineer @ Device Insight GmbH</h4>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
@@ -37,7 +67,7 @@
               <v-expansion-panels>
                 <v-expansion-panel>
                   <v-expansion-panel-header>
-                    <h5>2018 - 2020</h5>
+                    <h5>2018 - 2021</h5>
                     <h4>DevOps developer @ MsgGillardon AG</h4>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
