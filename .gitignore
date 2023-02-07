@@ -1,4 +1,5 @@
 .idea/*
 target/*
+!target/dist
 !target/*.war
 frontend/node_modules/* 
