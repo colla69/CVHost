@@ -41,12 +41,12 @@
         About Me
       </v-btn>
     </router-link>
-    <router-link to="/contact">
+    <a href="mailto:a.colarietitosti@googlemail.com">
       <v-btn id="menuBtn"
              color="error" >
         > Hire Me!
       </v-btn>
-    </router-link>
+    </a>
   </v-toolbar>
 </template>
 

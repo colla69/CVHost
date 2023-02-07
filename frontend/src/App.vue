@@ -17,10 +17,6 @@ export default {
   name: 'App',
   components: {
     Menu
-  },
-  mounted: function () {
-    debugger
-    console.log('access!!')
   }
 }
 </script>
