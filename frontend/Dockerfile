@@ -1,16 +1,13 @@
-# build environment
-FROM node:12.2.0-alpine as build
-WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json /app/package.json
-RUN npm install --silent
-RUN npm install @vue/cli@3.7.0 -g
-COPY . /app
+# build stage
+FROM node:lts-alpine as build-stage
+WORKDIR .
+COPY package*.json ./
+RUN npm install
+COPY . .
 RUN npm run build
-RUN ls target
 
-# production environment
-FROM nginx:1.16.0-alpine
-COPY --from=build target/dist/ /usr/share/nginx/html
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
