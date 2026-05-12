@@ -1,14 +1,7 @@
 module.exports = {
-  assetsDir: "static",
+  assetsDir: 'static',
   publicPath: '/',
   devServer: {
-    disableHostCheck: true,
-    proxy: {
-      '^/backend': {
-        target: 'http://localhost:8999/backend/',
-        pathRewrite: { '^/backend': '' },
-        changeOrigin: true
-      }
-    }
+    allowedHosts: 'all'
   }
 }

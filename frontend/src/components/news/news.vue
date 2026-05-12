@@ -3,7 +3,7 @@
     <v-card id="project"
             v-for="item in news"
             v-bind:key="item.id"
-            raised
+            elevation="2"
     >
       <v-img :src="item.img_link"
              height="100"

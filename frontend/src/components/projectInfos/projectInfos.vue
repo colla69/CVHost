@@ -3,7 +3,7 @@
       <v-card id="project"
         v-for="item in info"
         v-bind:key="item.id"
-              raised
+        elevation="2"
       >
         <div style="display:block;">
 

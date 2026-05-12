@@ -1,53 +1,16 @@
 <template>
 <v-container>
   <div id="contact-form" class="contact-form">
-    <h1 class="contact-form_title">Contact Form</h1>
-<!--    <div class="separator"></div>-->
-
-    <form class="form" @submit="onSubmit">
-      <input required name="name" v-model='contact.name' placeholder="Name" type="text" autocomplete="off">
-      <input required name="email" v-model="contact.email" placeholder="E-mail" type="email" autocomplete="off">
-      <textarea required name="message" v-model="contact.message" rows="4" placeholder="Message"></textarea>
-      <button class="button">Send</button>
-    </form>
+    <h1 class="contact-form_title">Contact</h1>
+    <p>Feel free to reach out via email:</p>
+    <a class="mailto-link" href="mailto:a.colarietitosti@googlemail.com">a.colarietitosti@googlemail.com</a>
   </div>
 </v-container>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
-  name: 'Contact',
-
-  data: () => {
-    return {
-      contact: {
-        name: '',
-        email: '',
-        message: ''
-      },
-      isSending: false
-    }
-  },
-  methods: {
-    clearForm () {
-      for (const field in this.contact) {
-        this.contact[field] = ''
-      }
-    },
-    onSubmit (evt) {
-      evt.preventDefault()
-      this.isSending = true
-
-      axios.post('/backend/saveMessage',
-        {
-          sender: this.contact.name,
-          email: this.contact.email,
-          message: this.contact.message
-        })
-    }
-  }
+  name: 'Contact'
 }
 </script>
 

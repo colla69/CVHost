@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/components/Home'
 import aboutMe from '@/components/CV/AboutMe'
 import projectInfos from '@/components/projectInfos/projectInfos'
@@ -8,10 +7,8 @@ import experienceAndEducation from '@/components/CV/ExperienceAndEducation'
 import contactForm from '@/components/Contact/ContactForm'
 import qualifications from '@/components/CV/Qualifications'
 
-Vue.use(Router)
-
-const router = new Router({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     { path: '/', component: Home },
     { path: '/aboutMe', component: aboutMe },
@@ -22,7 +19,7 @@ const router = new Router({
     { path: '/qualifications', component: qualifications },
 
     // otherwise redirect to home
-    { path: '*', redirect: '/' }
+    { path: '/:pathMatch(.*)*', redirect: '/' }
   ]
 })
 

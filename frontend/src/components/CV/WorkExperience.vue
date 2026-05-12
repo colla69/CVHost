@@ -7,11 +7,13 @@
             <v-col>
               <v-expansion-panels>
                 <v-expansion-panel>
-                  <v-expansion-panel-header>
-                    <h5>2021 - now</h5>
-                    <h4>IT Consultant @ msg GillardonBSM AG</h4>
-                  </v-expansion-panel-header>
-                  <v-expansion-panel-content>
+                  <v-expansion-panel-title>
+                    <div>
+                      <h5>2021 - now</h5>
+                      <h4>IT Consultant @ msg GillardonBSM AG</h4>
+                    </div>
+                  </v-expansion-panel-title>
+                  <v-expansion-panel-text>
                     <h5>Used technologies:</h5>
                     <ul>
                       <li>AWS</li>
@@ -26,7 +28,7 @@
                       <li>maven</li>
                       <li>linux</li>
                     </ul>
-                  </v-expansion-panel-content>
+                  </v-expansion-panel-text>
                 </v-expansion-panel>
               </v-expansion-panels>
             </v-col>
@@ -37,11 +39,13 @@
               <v-col>
                 <v-expansion-panels>
                   <v-expansion-panel>
-                    <v-expansion-panel-header>
-                      <h5>2020 - 2021</h5>
-                      <h4>Software Engineer @ Device Insight GmbH</h4>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
+                    <v-expansion-panel-title>
+                      <div>
+                        <h5>2020 - 2021</h5>
+                        <h4>Software Engineer @ Device Insight GmbH</h4>
+                      </div>
+                    </v-expansion-panel-title>
+                    <v-expansion-panel-text>
                       <h5>Used technologies:</h5>
                       <ul>
                         <li>Spring</li>
@@ -55,7 +59,7 @@
                         <li>maven</li>
                         <li>linux</li>
                       </ul>
-                    </v-expansion-panel-content>
+                    </v-expansion-panel-text>
                   </v-expansion-panel>
                 </v-expansion-panels>
               </v-col>
@@ -66,11 +70,13 @@
             <v-col>
               <v-expansion-panels>
                 <v-expansion-panel>
-                  <v-expansion-panel-header>
-                    <h5>2018 - 2021</h5>
-                    <h4>DevOps developer @ MsgGillardon AG</h4>
-                  </v-expansion-panel-header>
-                  <v-expansion-panel-content>
+                  <v-expansion-panel-title>
+                    <div>
+                      <h5>2018 - 2021</h5>
+                      <h4>DevOps developer @ MsgGillardon AG</h4>
+                    </div>
+                  </v-expansion-panel-title>
+                  <v-expansion-panel-text>
                     <h5>Used technologies:</h5>
                     <ul>
                       <li>Java EE</li>
@@ -82,7 +88,7 @@
                       <li>Payara Server</li>
                       <li>Hibernate</li>
                     </ul>
-                  </v-expansion-panel-content>
+                  </v-expansion-panel-text>
                 </v-expansion-panel>
               </v-expansion-panels>
             </v-col>
@@ -93,11 +99,13 @@
             <v-col>
               <v-expansion-panels>
                 <v-expansion-panel>
-                  <v-expansion-panel-header>
-                    <h5>2015 - 2018</h5>
-                    <h4>Senior Application developer @ 3Points Software Gmbh</h4>
-                  </v-expansion-panel-header>
-                  <v-expansion-panel-content>
+                  <v-expansion-panel-title>
+                    <div>
+                      <h5>2015 - 2018</h5>
+                      <h4>Senior Application developer @ 3Points Software Gmbh</h4>
+                    </div>
+                  </v-expansion-panel-title>
+                  <v-expansion-panel-text>
                     <h5>Used technologies:</h5>
                     <ul>
                       <li>Delphi XE</li>
@@ -110,7 +118,7 @@
                       <li>maven</li>
                       <li>git</li>
                     </ul>
-                  </v-expansion-panel-content>
+                  </v-expansion-panel-text>
                 </v-expansion-panel>
               </v-expansion-panels>
             </v-col>
@@ -121,11 +129,13 @@
             <v-col>
               <v-expansion-panels>
                 <v-expansion-panel>
-                  <v-expansion-panel-header>
-                    <h5>2013 - 2015</h5>
-                    <h4>Junior Application developer @ 3Points Software Gmbh</h4>
-                  </v-expansion-panel-header>
-                  <v-expansion-panel-content>
+                  <v-expansion-panel-title>
+                    <div>
+                      <h5>2013 - 2015</h5>
+                      <h4>Junior Application developer @ 3Points Software Gmbh</h4>
+                    </div>
+                  </v-expansion-panel-title>
+                  <v-expansion-panel-text>
                     <h5>Used technologies:</h5>
                     <ul>
                       <li>Delphi XE</li>
@@ -133,7 +143,7 @@
                       <li>MS SQL Server</li>
                       <li>CVS</li>
                     </ul>
-                  </v-expansion-panel-content>
+                  </v-expansion-panel-text>
                 </v-expansion-panel>
               </v-expansion-panels>
             </v-col>

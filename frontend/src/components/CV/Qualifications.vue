@@ -2,11 +2,9 @@
   <div class="split">
     <v-list>
       <v-list-item v-for="item in qualifications" v-bind:key="item.name">
-        <v-list-item-content>
-          <v-btn @click="click(item)">
-            {{item.name}}
-          </v-btn>
-        </v-list-item-content>
+        <v-btn @click="click(item)">
+          {{item.name}}
+        </v-btn>
       </v-list-item>
     </v-list>
     <v-container>
