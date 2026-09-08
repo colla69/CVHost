@@ -306,5 +306,19 @@
     "company_logo": "/img/logo-msg.svg",
     "company_name": "msg for banking AG",
     "company_link": "https://www.msg-for-banking.de/"
+  },
+  {
+    "id": 23,
+    "Name": "BSI CRM customer platforms",
+    "start_date": "2025-06-01",
+    "end_date": null,
+    "description": "<p>Two customer platforms built on BSI's proprietary CRM base software, both administering operations at European scale, for BSI with Techem as the end customer. I keep them running and current in two-person teams: maintenance, dependency and platform updates and feature work across the Spring and Oracle backends and the Angular front end.</p>\n<p>Used Technologies:<br>- Java / Spring<br>- Oracle<br>- Angular<br>- BSI CRM</p>",
+    "role_name": "Senior IT Consultant / Senior Developer",
+    "lang": "Java / Spring / Oracle / Angular / BSI CRM",
+    "company": "<a href=\"https://www.msg-for-banking.de/\"> msg for banking AG </a>",
+    "image": "/img/news-collaboration.jpg",
+    "company_logo": "/img/logo-msg.svg",
+    "company_name": "msg for banking AG",
+    "company_link": "https://www.msg-for-banking.de/"
   }
 ]

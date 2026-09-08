@@ -51,9 +51,17 @@ decisioni tecniche si prendono vicino al business.
 
 *Società di consulenza del gruppo msg per banche e servizi finanziari.*
 
-> **TODO — la lacuna più importante.** Da 06/2025 a oggi non è coperto. Appena mi dai il progetto BSI
-> CRM / Techem (cliente, periodo, ruolo, dimensione del team, contenuto, tecnologie) lo scrivo qui come
-> prima voce.
+**Piattaforme CRM BSI** — BSI, cliente finale Techem · 06/2025 – oggi
+*Senior IT Consultant / Senior Developer · team di 2*
+Due piattaforme cliente basate sul software CRM proprietario di BSI, entrambe operative su scala
+europea. Le mantengo in esercizio e aggiornate in team di due persone: manutenzione, aggiornamenti di
+dipendenze e di piattaforma e sviluppo di funzionalità sui backend Spring e Oracle e sul frontend
+Angular.
+**Tecnologie:** Java, Spring, Oracle, Angular, BSI CRM
+
+> **TODO** — l'unico numero che conta qui: che cosa amministrano queste piattaforme su scala europea
+> (utenze, contatori, contratti, utenti — quello che il prodotto conta). È la cifra più grande a cui hai
+> accesso e sta nel tuo progetto attuale.
 
 **Applicazione showcase per l'euro digitale** — Pioneer Investments · 01/2025 – 05/2025
 *Senior IT Consultant / Senior Developer · team di 6*
@@ -65,13 +73,10 @@ sviluppatori, e responsabilità di team su due sviluppatori junior.
 
 **Migrazione dei GitLab runner su AWS** — interno, msg for banking · 05/2024 – 07/2024
 *Senior Developer · unico ingegnere sul progetto*
-Migrazione dei build agent aziendali su AWS con una data di cut-over fissa e più team dipendenti dai
-runner per tutta la durata. Allineamento agli standard aziendali di sicurezza e compliance e consegna di
-un template Terraform riutilizzabile per i runner futuri.
+Migrazione dei due build agent aziendali su AWS con una data di cut-over fissa e quattro progetti
+dipendenti dai runner per tutta la durata. Allineamento agli standard aziendali di sicurezza e
+compliance e consegna di un template Terraform riutilizzabile per i runner futuri.
 **Tecnologie:** Terraform, EKS, VPC, VPN, Route 53, AWS Cloud Services
-
-> **TODO** — qui mancano i numeri: quanti runner, quanti team dipendenti, quanto downtime al cut-over
-> (se zero, scriviamo zero), quanto tempo richiede un nuovo runner prima e dopo il template.
 
 **Piattaforma regolamentare IFRS 9** — Porsche Bank · 01/2024 – oggi
 *Senior Developer · team di 3*
@@ -147,8 +152,8 @@ con Hibernate, evoluzione dello schema con Flyway, deployment su Payara Server e
 pipeline Jenkins.
 **Tecnologie:** Java EE, JSF 2.0, Oracle, Hibernate, Flyway, Payara, Jenkins, HP ALM, Python
 
-> **TODO** — manca il mese di inizio nel 2018, e serve conferma che il cliente del replatforming
-> 2018/19 fosse BMW Financial Services.
+> **TODO** — resta aperto il mese di inizio nel 2018; volevi verificarlo. Su un CV bastano gli anni,
+> quindi è opzionale.
 
 ### 3Points Software GmbH
 

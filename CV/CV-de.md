@@ -51,9 +51,16 @@ der technische Entscheidungen nah am Fachbereich getroffen werden.
 
 *Beratungshaus der msg-Gruppe für Banken und Finanzdienstleister.*
 
-> **TODO — die wichtigste Lücke.** 06/2025 bis heute fehlt. Sobald du mir das BSI-CRM-/Techem-Projekt
-> gibst (Kunde, Zeitraum, Rolle, Teamgröße, Inhalt, Technologien), schreibe ich es hier als erstes
-> Projekt hinein.
+**BSI-CRM-Kundenplattformen** — BSI, Endkunde Techem · 06/2025 – heute
+*Senior IT Consultant / Senior Entwickler · Teams von je 2*
+Zwei Kundenplattformen auf der proprietären CRM-Basissoftware von BSI, beide auf europäischer Ebene im
+Einsatz. Betrieb und Aktualisierung in Zweierteams: Wartung, Abhängigkeits- und Plattform-Updates sowie
+Feature-Entwicklung an den Spring-/Oracle-Backends und am Angular-Frontend.
+**Technologien:** Java, Spring, Oracle, Angular, BSI CRM
+
+> **TODO** — die eine Zahl, die hier zählt: was diese Plattformen auf europäischer Ebene verwalten
+> (Haushalte, Zähler, Verträge, Nutzer — was das Produkt eben zählt). Es ist die größte Zahl, an die du
+> herankommst, und sie steckt in deinem aktuellen Projekt.
 
 **Showcase-Anwendung für den digitalen Euro** — Pioneer Investments · 01/2025 – 05/2025
 *Senior IT Consultant / Senior Entwickler · Team von 6*
@@ -66,13 +73,10 @@ REST
 
 **Umzug der GitLab-Build-Runner in die AWS-Cloud** — intern, msg for banking · 05/2024 – 07/2024
 *Senior Entwickler · alleinverantwortlich*
-Migration der Firmen-Build-Agents nach AWS gegen einen fixen Stichtag, während mehrere Teams
+Migration der beiden Firmen-Build-Agents nach AWS gegen einen fixen Stichtag, während vier Projekte
 durchgehend auf sie angewiesen waren. Abstimmung auf die Sicherheits- und Compliance-Standards des
 Unternehmens sowie ein wiederverwendbares Terraform-Template für künftige Runner.
 **Technologien:** Terraform, EKS, VPC, VPN, Route 53, AWS Cloud Services
-
-> **TODO** — hier fehlen Zahlen: wie viele Runner, wie viele abhängige Teams, wie viel Ausfallzeit beim
-> Stichtag (wenn keine: „ohne Ausfallzeit"), wie lange ein neuer Runner vorher und nachher braucht.
 
 **IFRS-9-Regulatorikplattform** — Porsche Bank · 01/2024 – heute
 *Senior Entwickler · Team von 3*
@@ -146,8 +150,8 @@ Defect-Management in HP ALM. Entwicklung und Wartung von Java-EE-Anwendungen auf
 Schemaverwaltung mit Flyway, Deployment auf Payara Server und Aufbau der Jenkins-Pipelines.
 **Technologien:** Java EE, JSF 2.0, Oracle, Hibernate, Flyway, Payara, Jenkins, HP ALM, Python
 
-> **TODO** — Startmonat 2018 fehlt, und bitte bestätigen, dass der Kunde des Replatformings 2018/19
-> BMW Financial Services war.
+> **TODO** — der Startmonat 2018 ist noch offen; du wolltest ihn nachschlagen. Jahresangaben genügen
+> auf einem Lebenslauf, das ist also optional.
 
 ### 3Points Software GmbH
 

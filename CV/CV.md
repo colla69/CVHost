@@ -51,9 +51,16 @@ decisions are made close to the business.
 
 *Consulting arm of the msg group for banks and financial services providers.*
 
-> **TODO — the most important gap in this CV.** Nothing covers 06/2025 to today. Give me the BSI CRM /
-> Techem engagement: client, period, your role, team size, what you built, stack — and I will write it in
-> here as the leading entry. It is the first thing every reader looks for.
+**BSI CRM customer platforms** — BSI, end customer Techem · 06/2025 – present
+*Senior IT Consultant / Senior Developer · two-person teams*
+Two customer platforms built on BSI's proprietary CRM base software, both administering operations at
+European scale. Keep them running and current in two-person teams: maintenance, dependency and platform
+updates and feature work across the Spring and Oracle backends and the Angular front end.
+**Stack:** Java, Spring, Oracle, Angular, BSI CRM
+
+> **TODO** — the one number worth having here: what these platforms administer at European scale
+> (households, meters, contracts, users — whatever the product counts). It is the biggest figure you
+> have access to and it sits in your current project.
 
 **Digital euro showcase application** — Pioneer Investments · 01/2025 – 05/2025
 *Senior IT Consultant / Senior Developer · team of 6*
@@ -64,14 +71,10 @@ documentation for both client and developers, and carried team responsibility fo
 
 **GitLab runner migration to AWS** — Internal, msg for banking · 05/2024 – 07/2024
 *Senior Developer · sole engineer*
-Migrated the company GitLab build agents into AWS against a fixed cut-over date, with several teams
-depending on them throughout. Aligned the setup with corporate security and compliance standards and
-delivered a reusable Terraform template for future runners.
+Migrated the company's two GitLab build agents into AWS against a fixed cut-over date, with four
+projects depending on them throughout. Aligned the setup with corporate security and compliance
+standards and delivered a reusable Terraform template for future runners.
 **Stack:** Terraform, EKS, VPC, VPN, Route 53, AWS Cloud Services
-
-> **TODO** — this is your strongest tech-lead evidence and it has no numbers. How many runners, how many
-> teams depended on them, how much downtime at cut-over (if none, say none), and how long a new runner
-> takes to stand up with the Terraform template versus before.
 
 **IFRS 9 regulatory platform** — Porsche Bank · 01/2024 – present
 *Senior Developer · team of 3*
@@ -143,8 +146,8 @@ Developed and maintained Java EE applications on Oracle with Hibernate, managed 
 Flyway and deployment on Payara Server, and built and maintained Jenkins pipelines.
 **Stack:** Java EE, JSF 2.0, Oracle, Hibernate, Flyway, Payara, Jenkins, HP ALM, Python
 
-> **TODO** — two small things: the month this role started in 2018, and confirmation that the 2018/19
-> replatforming customer was BMW Financial Services. Your sources name the system, not the customer.
+> **TODO** — the month this role started in 2018 is still open; you wanted to look it up. Years alone
+> are perfectly normal on a CV, so this one is optional.
 
 ### 3Points Software GmbH
 
@@ -214,9 +217,7 @@ valid until 04/2029
 - **CVHost** — personal CV and portfolio site, built and self-hosted end to end.
   *Vue 3, Vuetify 3, AWS S3, nginx*
 
-> **TODO — numbers.** One defensible figure per client project is the target and the CV currently has
-> one (60+ microservices). The GitLab runner migration, Mobih and HEIDI are the three where a number
-> would do the most work. See the list I gave you in the session; anything you can check in Jira or
-> GitLab is enough.
-
-> **TODO — LinkedIn.** Paste the URL and I will put it in the header next to GitHub.
+> **TODO — numbers.** The CV now carries three: 60+ microservices at VW FS, two runners serving four
+> projects, teams of 2–11. Two more would earn their place, and both are things you can look up: how
+> many devices or maintenance workers used Mobih at Porsche, and what the BSI platforms administer at
+> European scale.
