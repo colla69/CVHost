@@ -59,10 +59,6 @@ dipendenze e di piattaforma e sviluppo di funzionalità sui backend Spring e Ora
 Angular.
 **Tecnologie:** Java, Spring, Oracle, Angular, BSI CRM
 
-> **TODO** — l'unico numero che conta qui: che cosa amministrano queste piattaforme su scala europea
-> (utenze, contatori, contratti, utenti — quello che il prodotto conta). È la cifra più grande a cui hai
-> accesso e sta nel tuo progetto attuale.
-
 **Applicazione showcase per l'euro digitale** — Pioneer Investments · 01/2025 – 05/2025
 *Senior IT Consultant / Senior Developer · team di 6*
 Progettazione e sviluppo di un'applicazione di pagamento digitale sincronizzata e della relativa app
@@ -145,15 +141,13 @@ risoluzione di difetti, con contatto diretto con il cliente per tutta la durata.
 *Software bancario e soluzioni regolamentari per istituti finanziari.*
 
 **HEIDI — replatforming** — BMW Financial Services · 11/2018 – 12/2019
+*Studente lavoratore · test, gestione dei difetti e sviluppo*
 Ricostruzione su stack moderno di una piattaforma di leasing e finanziamento antecedente al 2000.
 Pianificazione e scrittura dei casi di test, implementazione delle correzioni emerse da ogni fase di
 test e gestione di test e difetti in HP ALM. Sviluppo e manutenzione di applicazioni Java EE su Oracle
 con Hibernate, evoluzione dello schema con Flyway, deployment su Payara Server e costruzione delle
 pipeline Jenkins.
 **Tecnologie:** Java EE, JSF 2.0, Oracle, Hibernate, Flyway, Payara, Jenkins, HP ALM, Python
-
-> **TODO** — resta aperto il mese di inizio nel 2018; volevi verificarlo. Su un CV bastano gli anni,
-> quindi è opzionale.
 
 ### 3Points Software GmbH
 
@@ -210,18 +204,3 @@ sviluppo software · 3Points Software GmbH · voto finale 71/100 · 2011 – 201
 - **Tedesco** — fluente, parlato e scritto. Parte della scuola secondaria e la formazione professionale
   svolte in Germania; TestDaF, Goethe-Institut di Monaco
 - **Inglese** — fluente, parlato e scritto; lingua di lavoro
-
----
-
-## Progetti open source e personali
-
-[github.com/colla69](https://github.com/colla69)
-
-- **Mycroft AI** — contributore dell'assistente vocale open source (11/2019 – 07/2020). Sviluppo di
-  intent di dialogo vocale e app pubblicate sul marketplace Mycroft, tra cui una skill per Plex con circa
-  15 stelle su GitHub; supporto all'installazione per gli utenti e moderazione delle richieste di
-  funzionalità. *Python, Mycroft Core, Mimic3, Mycroft Precise, Mozilla Common Voice*
-- **Personal DynDNS** — servizio DNS dinamico progettato e ospitato in proprio, attivo da 10/2019.
-  *Java, Spring Boot, nginx, Ubuntu Server*
-- **CVHost** — sito personale di CV e portfolio, costruito e ospitato interamente in proprio.
-  *Vue 3, Vuetify 3, AWS S3, nginx*

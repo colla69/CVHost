@@ -58,10 +58,6 @@ European scale. Keep them running and current in two-person teams: maintenance, 
 updates and feature work across the Spring and Oracle backends and the Angular front end.
 **Stack:** Java, Spring, Oracle, Angular, BSI CRM
 
-> **TODO** — the one number worth having here: what these platforms administer at European scale
-> (households, meters, contracts, users — whatever the product counts). It is the biggest figure you
-> have access to and it sits in your current project.
-
 **Digital euro showcase application** — Pioneer Investments · 01/2025 – 05/2025
 *Senior IT Consultant / Senior Developer · team of 6*
 Built a synchronised digital payment application and a companion mobile app, including a tested client
@@ -140,14 +136,12 @@ contact throughout.
 *Banking software and regulatory solutions for financial institutions.*
 
 **HEIDI replatforming** — BMW Financial Services · 11/2018 – 12/2019
+*Working student · test, defect management and development*
 Rebuild of a pre-2000 leasing and financing platform on a current stack. Planned and wrote test cases,
 implemented the fixes coming out of each test phase, and ran test and defect management in HP ALM.
 Developed and maintained Java EE applications on Oracle with Hibernate, managed schema evolution with
 Flyway and deployment on Payara Server, and built and maintained Jenkins pipelines.
 **Stack:** Java EE, JSF 2.0, Oracle, Hibernate, Flyway, Payara, Jenkins, HP ALM, Python
-
-> **TODO** — the month this role started in 2018 is still open; you wanted to look it up. Years alone
-> are perfectly normal on a CV, so this one is optional.
 
 ### 3Points Software GmbH
 
@@ -201,23 +195,3 @@ valid until 04/2029
 - **German** — fluent, spoken and written. Secondary schooling and vocational training completed in
   Germany; TestDaF, Goethe-Institut Munich
 - **English** — fluent, spoken and written; professional working language
-
----
-
-## Open Source & Personal Projects
-
-[github.com/colla69](https://github.com/colla69)
-
-- **Mycroft AI** — contributor to the open-source voice assistant (11/2019 – 07/2020). Built voice
-  dialogue intents and published apps to the Mycroft marketplace, including a Plex music skill with ~15
-  GitHub stars; supported users with installation and moderated feature requests. *Python, Mycroft Core,
-  Mimic3, Mycroft Precise, Mozilla Common Voice*
-- **Personal DynDNS** — self-designed and self-hosted dynamic DNS service, running since 10/2019. *Java,
-  Spring Boot, nginx, Ubuntu Server*
-- **CVHost** — personal CV and portfolio site, built and self-hosted end to end.
-  *Vue 3, Vuetify 3, AWS S3, nginx*
-
-> **TODO — numbers.** The CV now carries three: 60+ microservices at VW FS, two runners serving four
-> projects, teams of 2–11. Two more would earn their place, and both are things you can look up: how
-> many devices or maintenance workers used Mobih at Porsche, and what the BSI platforms administer at
-> European scale.

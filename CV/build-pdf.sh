@@ -11,10 +11,9 @@
 # Nothing runs this automatically. Run it by hand once the CVs are finished, then
 # rebuild the site and deploy — see DEPLOYMENT.md.
 #
-# Requires one of: pandoc (preferred), weasyprint, or wkhtmltopdf. None of them was
-# installed when this script was written; on Manjaro:
+# Requires one of: pandoc (preferred), weasyprint, or wkhtmltopdf. On Manjaro:
 #
-#   sudo pacman -S pandoc-cli texlive-latexrecommended   # pandoc route
+#   sudo pacman -S pandoc-cli typst                      # pandoc route, small
 #   sudo pacman -S python-weasyprint                     # weasyprint route
 #
 set -euo pipefail
@@ -33,13 +32,34 @@ fi
 
 render () {
   local src="$1" dst="$2"
+  # The CVs wrap prose across lines, so pandoc folds a project's title, role and
+  # description into one paragraph. Mark the structural lines — anything starting
+  # bold, and the italic role lines — as markdown hard breaks first, leaving the
+  # wrapped prose alone.
+  local tmp
+  tmp="$(mktemp --suffix=.md)"
+  trap 'rm -f "$tmp"' RETURN
+  # A line gets a hard break when the NEXT line opens a structural element (a bold
+  # title or an italic role line), and when the line itself is a whole italic role
+  # line. Deciding on the next line rather than the current one keeps wrapped
+  # continuations — long Stack lists, the certification line — unbroken.
+  awk '{ l[NR] = $0 }
+       END {
+         for (i = 1; i <= NR; i++) {
+           nxt = (i < NR ? l[i+1] : "")
+           hard = 0
+           if (nxt ~ /^\*/ && nxt !~ /^\*\*(Stack|Technologien|Tecnologie):\*\*/) hard = 1
+           if (l[i] ~ /^\*[^*].*\*$/) hard = 1
+           if (hard && l[i] != "") printf "%s  \n", l[i]; else print l[i]
+         }
+       }' "$src" > "$tmp"
+  src="$tmp"
   if command -v pandoc >/dev/null; then
-    pandoc "$src" -o "$dst" \
-      -V geometry:margin=2cm \
-      -V fontsize=10pt \
-      -V colorlinks=true \
-      -V linkcolor=black \
-      --metadata title=""
+    # typst renders these documents fine and is a fraction of a TeX install, so
+    # prefer it when present; otherwise pandoc falls back to its default engine.
+    local engine=()
+    command -v typst >/dev/null && engine=(--pdf-engine=typst)
+    pandoc "$src" -o "$dst" "${engine[@]}" --metadata-file="$CV_DIR/pdf-meta.yaml"
   elif command -v weasyprint >/dev/null; then
     # weasyprint needs HTML; pandoc is absent here, so use a minimal markdown->html
     npx --yes marked -i "$src" -o "${dst%.pdf}.html"

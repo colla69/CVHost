@@ -1,0 +1,12 @@
+# Page setup for the PDFs produced by build-pdf.sh.
+# `margin` is read by pandoc's typst template, `geometry` by the LaTeX one, so
+# the same file works whichever engine is installed.
+papersize: a4
+fontsize: 10pt
+geometry: margin=1.8cm
+margin:
+  x: 1.8cm
+  y: 1.8cm
+colorlinks: true
+# Hex, not a colour name: typst's template feeds this straight into rgb().
+linkcolor: "1a1a1a"
