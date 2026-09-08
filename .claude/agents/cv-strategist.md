@@ -33,11 +33,13 @@ owner fills them in.
 | Every project, with role name, dates, stack and client | `src/components/projectInfos/project_infos.json` |
 | Dated posts, the informal voice | `src/components/news/news.json` |
 | Landing pitch and the CV download link | `src/components/Home.vue` |
-| Old CV exports still downloadable | `public/data/` — `CV_en.pdf`, `CV_it.pdf`, `CVShort.pdf`, `Lebenslauf.pdf`, `CV_Docs.zip` |
+| Downloadable CV exports | `public/data/` — `CV_en.pdf`, `Lebenslauf.pdf`, `CV_it.pdf`, `CV_Docs.zip` |
 
-Those exports are the sharpest edge in the whole setup: they predate the current CV, they are linked from
-the home page, and a recruiter who downloads one is reading a CV that contradicts `CV/CV.md`. Whenever
-the master document changes materially, say out loud that the exports are now stale.
+Those exports are rendered from the three markdown files by `CV/build-pdf.sh` (pandoc + typst) and are
+what the home page's download link actually serves. They are the sharpest edge in the whole setup: the
+moment the master changes and they are not regenerated, a recruiter downloads a CV that contradicts
+`CV/CV.md`. After any material edit, say out loud that they need regenerating — and that regenerating
+alone changes nothing until the site is deployed.
 
 ## The story you are optimising
 
