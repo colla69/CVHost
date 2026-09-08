@@ -1,5 +1,5 @@
 # CVHost
 
-this is the code to my website https://cv.colarietitosti.info/
+Source code for my personal CV/portfolio website: https://cv.colarietitosti.info/
 
-this is an example of a sloppy implementantion in Spring ;)
+A static site built with Vue.js.

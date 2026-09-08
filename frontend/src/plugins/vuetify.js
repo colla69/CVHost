@@ -1,15 +1,11 @@
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import 'vuetify/styles'
+import '@mdi/font/css/materialdesignicons.css'
 
-import Vue from 'vue'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-
-Vue.use(Vuetify)
-
-const opts = {
-  // theme: { dark: true },
-  icons: {
-    iconfont: 'mdiSvg' // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
-  }
-}
-
-export default new Vuetify(opts)
+export default createVuetify({
+  components,
+  directives,
+  icons: { defaultSet: 'mdi' }
+})

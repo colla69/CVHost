@@ -36,9 +36,6 @@ export default {
   name: 'Home',
   components: {
     news
-  },
-  props: {
-    msg: String
   }
 }
 </script>

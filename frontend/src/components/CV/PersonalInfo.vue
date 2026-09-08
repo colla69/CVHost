@@ -1,17 +1,15 @@
 <template>
   <v-card id="pos" flat>
-      <v-card-header expand-icon="">
+      <v-card-title>
         Personal Info
-      </v-card-header>
+      </v-card-title>
       <v-card-text>
         <v-list-item
           v-for="item in infos"
           v-bind:key="item.name"
         >
-          <v-list-item-content>
-            <v-list-item-subtitle>{{ item.name }}</v-list-item-subtitle>
-            <v-list-item-title>{{ item.value }}</v-list-item-title>
-          </v-list-item-content>
+          <v-list-item-subtitle>{{ item.name }}</v-list-item-subtitle>
+          <v-list-item-title>{{ item.value }}</v-list-item-title>
         </v-list-item>
       </v-card-text>
   </v-card>
@@ -62,10 +60,5 @@ export default {
 </script>
 
 <style scoped>
-.v-list-item__content{
-  text-align: left;
-}
-#pos{
-  /*margin-top: 15px;*/
-}
+
 </style>
