@@ -52,6 +52,11 @@ Adding a news post or a project is a data edit, not a markup edit:
   a file that must exist in `public/data/` — verify it, a typo renders an empty iframe in production.
 - Bio, languages, work history → hardcoded in the matching `src/components/CV/*.vue`.
 
+`CV/CV.md` (outside `frontend/`) is the master CV document, kept by hand. It tells the same story as the
+`CV/` components and `project_infos.json`, and the two drift apart — the site is years older. Lines
+starting with `>` in it are working notes, not CV content. Changing the story on one side means checking
+the other; `cv-strategist` owns that.
+
 `v-html` on those strings is fine only because the owner authors them by hand. Never route anything from
 outside the repo into it.
 
@@ -88,9 +93,11 @@ and the owner is tracking it.
 
 ## Agents
 
-Four specialists live in `.claude/agents/`, each carrying deeper context than this file:
+Five specialists live in `.claude/agents/`, each carrying deeper context than this file:
 
 - `vue-expert` — feature work, fixes and refactors under `frontend/src/`
 - `unit-tester` — tests; knows no harness exists and must agree on one before installing anything
 - `code-quality-reviewer` — read-only review of a diff or branch; reports, does not edit
 - `aws-deployer` — hosting and deployment; confirms before any mutating AWS call
+- `cv-strategist` — the CV as a document: story, wording, recruiter/ATS keywords, and whether `CV/CV.md`
+  and the site still agree. Edits `CV/CV.md` only; site fixes go to `vue-expert`

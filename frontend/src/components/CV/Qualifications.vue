@@ -57,7 +57,7 @@ export default {
           filename: 'AUSB_3P_Zeugnis.pdf'
         },
         {
-          name: 'Abitur',
+          name: 'Liceo Scientifico Diploma',
           filename: 'ABI.pdf'
         },
         {

@@ -2,10 +2,14 @@
   <v-container fluid style="display: flex; width: 100%">
     <div style="width: 800px; height: 100%">
       <h1>Welcome to my Homepage! :)</h1>
-      I'm a developer
-      <p>My name is Andrea Colarieti Tosti and am glad to welcome you to my Guest portal!
-        This page only has one function: it allows you to dowload my CV and enables me to demonstrate
-        a little bit of my Programming and Administration skills.</p>
+      Senior IT Consultant &middot; Tech Lead
+      <p>My name is Andrea Colarieti Tosti and I am glad to welcome you to my Guest portal!
+        I have been building software for 13 years, the last five as a consultant for Porsche,
+        BMW Financial Services, Volkswagen Financial Services, Krones and a European asset manager
+        &mdash; from Java and Jakarta EE backends to React and Angular front ends, with AWS, Terraform
+        and CI/CD running through all of it.</p>
+      <p>This page lets you download my CV, read through the projects I have worked on, and see a little
+        of my programming and administration skills along the way.</p>
 <!--      <h3>-->
 <!--        <a href="">-->
 <!--          Read about my fullfilled projects-->

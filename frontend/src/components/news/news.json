@@ -110,5 +110,12 @@
     "release_date": "2022-12-10 20:16:12",
     "description_text": "I did it! I passed my exam! <br> Now I am officially qualified as \"AWS Solutions Architect\"!",
     "img_link": "/img/news-server-room.jpg"
+  },
+  {
+    "id": 17,
+    "title": "Same story, told properly this time",
+    "release_date": "2026-09-08 18:00:00",
+    "description_text": "My CV and this website had quietly drifted apart over the years &mdash; different dates, different job titles, even a different school. They now tell the same story, and the CV exists in English, German and Italian. <br> Thirteen years, from Delphi at 3Points to AWS, pipelines and leading developers at msg for banking. The project list on this site is finally up to date again as well.",
+    "img_link": "/img/news-blogging-desk.jpg"
   }
 ]

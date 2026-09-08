@@ -6,8 +6,8 @@
             <v-row>
               <v-col>
                 <h5>2011 - 2013</h5>
-                <h4>Apprenticeship as specialist for application development</h4>
-                <h5>Graduation: 71/100</h5>
+                <h4>Apprenticeship as specialist for application development (IHK)</h4>
+                <h5>@ 3Points Software GmbH &middot; Graduation: 71/100</h5>
               </v-col>
             </v-row>
         </v-timeline-item>
@@ -15,7 +15,7 @@
             <v-row>
               <v-col>
                 <h5>2010 - 2011</h5>
-                <h4>Scientific Gymnasium “Voltaire” ( Italy ) </h4>
+                <h4>Diploma di Liceo Scientifico &mdash; Liceo “Voltaire” ( Italy ) </h4>
                 <h5>Graduation: 70/100</h5>
               </v-col>
             </v-row>
