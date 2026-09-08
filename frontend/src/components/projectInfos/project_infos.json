@@ -8,8 +8,8 @@
     "role_name": "Beginner / Learning Phase",
     "lang": "Delphi 5",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
-    "image": null,
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "image": "/img/project-chess.jpg",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -22,8 +22,8 @@
     "role_name": "Beginner / Learning Phase",
     "lang": "Delphi 5",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
-    "image": null,
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "image": "/img/project-cipher-machine.jpg",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -37,7 +37,7 @@
     "lang": "Delphi 5",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
     "image": "https://beza1e1.tuxen.de/img/waterfall_fig10.png",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -51,7 +51,7 @@
     "lang": "Delphi XE",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
     "image": "https://images.squarespace-cdn.com/content/v1/5a6263b12278e7f00cae6e81/1517998012900-ZPA7MDBP38NIQT6XBPNB/ke17ZwdGBToddI8pDm48kNvT88LknE-K9M4pGNO0Iqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USOFn4xF8vTWDNAUBm5ducQhX-V3oVjSmr829Rco4W2Uo49ZdOtO_QXox0_W7i2zEA/Access-control-solutions-durban.jpg?format=2500w",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -65,7 +65,7 @@
     "lang": "Delphi XE / FastReport",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
     "image": "https://www.divis.eu/wp-content/uploads/2018/02/titelgraafik-module7.png",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -78,8 +78,8 @@
     "role_name": "Junior Programmer",
     "lang": "Delphi XE 7 / FastReport",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREBKF3EWwHdKnrVp8_E4ufGNuCNewAKxtnhSXf7u7AhlrDk562Tk5OW1As6LsyucQJrsRSZJeNKg-6mjkTPkdl0LEMRboBQ7JKWw&usqp=CAU&ec=45761792",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "image": "/img/project-financial-charts.jpg",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -92,8 +92,8 @@
     "role_name": "Junior Programmer",
     "lang": "Atlassian Bamboo / Linux Shell / PowerShell ",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
-    "image": "https://www.xenonstack.com/images/insights/2020/01/continuous-integration-and-continuous-delivery-xenonstack.png",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "image": "/img/project-conveyor.jpg",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -106,8 +106,8 @@
     "role_name": "Junior Programmer",
     "lang": "Java EE 7 / EclipseLink / Vaadin / Payara",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
-    "image": "https://deviniti.com/wp-content/uploads/2020/10/Jira-Service-Desk-Categorization.png",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "image": "/img/project-office-desk.jpg",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -121,7 +121,7 @@
     "lang": "Delphi XE 7",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
     "image": "https://d1dh93s7n44ml6.cloudfront.net/blog/wp-content/uploads/2017/04/19164943/Invoice-5.jpg",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -135,7 +135,7 @@
     "lang": "proprietary software",
     "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
     "image": "https://cdn.pressebox.de/a/4e98b570b09d6b2d/attachments/0911584.attachment/filename/Askozia+logo.png",
-    "company_logo": "https://media-exp1.licdn.com/dms/image/C560BAQFuKTxku-_5IA/company-logo_200_200/0/1519874800176?e=2159024400&v=beta&t=nJrwofMKgQSIGSe6sDi-C0vvSRy6r34yPd_Rl9cJX5I",
+    "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
     "company_link": "https://www.3points.de/"
   },
@@ -149,7 +149,7 @@
     "lang": "Java EE / JSF 2.0 / Oracle DB / Payara",
     "company": "<a href=\"https://www.msg-gillardon.de/\"> Msg Gillardon AG </a>",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZL9hnTyGItYZY2wOb87x-4h5s8y3Lu7O-OA&usqp=CAU",
-    "company_logo": "https://media.glassdoor.com/sqll/1153958/msggillardon-squarelogo-1474954412363.png",
+    "company_logo": "/img/logo-msg.svg",
     "company_name": "Msg Gillardon AG",
     "company_link": "https://www.msg-gillardon.de/"
   },
@@ -219,7 +219,7 @@
     "lang": null,
     "company": null,
     "image": "https://www.kuka.com/-/media/kuka-corporate/images/about-kuka/corporate-structure/symbolbild-systems.jpg?rev=-1&w=1400&hash=9C4174A43C56D86F82B1621CAC5713A6",
-    "company_logo": "https://media.glassdoor.com/sqll/1153958/msggillardon-squarelogo-1474954412363.png",
+    "company_logo": "/img/logo-msg.svg",
     "company_name": "Msg GillardonBSM AG",
     "company_link": "https://www.msg-gillardon.de/"
   },
@@ -233,7 +233,7 @@
     "lang": null,
     "company": null,
     "image": "https://assets.intersystems.com/dims4/default/a9dad27/2147483647/strip/true/crop/780x422+0+0/resize/780x422!/quality/90/?url=http%3A%2F%2Finter-systems-brightspot.s3.amazonaws.com%2F26%2Fbd%2F6a6aa762425f87ad7d5c2fe65f8c%2Fawslogo-image.jpg",
-    "company_logo": "https://media.glassdoor.com/sqll/1153958/msggillardon-squarelogo-1474954412363.png",
+    "company_logo": "/img/logo-msg.svg",
     "company_name": "Msg GillardonBSM AG",
     "company_link": "https://www.msg-gillardon.de/"
   }
