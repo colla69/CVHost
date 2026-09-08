@@ -1,11 +1,8 @@
 <template>
-  <v-expansion-panel
-    v-model="panel"
-  >
+  <v-expansion-panel>
     <v-expansion-panel-title>{{ title }}</v-expansion-panel-title>
     <v-expansion-panel-text>
       <v-list-item
-
         v-for="item in data"
         v-bind:key="item.name"
       >

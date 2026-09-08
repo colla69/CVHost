@@ -60,10 +60,5 @@ export default {
 </script>
 
 <style scoped>
-.v-list-item__content{
-  text-align: left;
-}
-#pos{
-  /*margin-top: 15px;*/
-}
+
 </style>

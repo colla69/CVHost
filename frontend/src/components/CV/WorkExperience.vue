@@ -1,8 +1,8 @@
 <template>
   <v-container fluid >
     <h3>Professional Experience</h3>
-      <v-timeline dense >
-        <v-timeline-item small >
+      <v-timeline side="end" >
+        <v-timeline-item size="small" >
           <v-row>
             <v-col>
               <v-expansion-panels>
@@ -34,7 +34,7 @@
             </v-col>
           </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
             <v-row>
               <v-col>
                 <v-expansion-panels>
@@ -65,7 +65,7 @@
               </v-col>
             </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
           <v-row>
             <v-col>
               <v-expansion-panels>
@@ -94,7 +94,7 @@
             </v-col>
           </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
           <v-row >
             <v-col>
               <v-expansion-panels>
@@ -124,7 +124,7 @@
             </v-col>
           </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
           <v-row >
             <v-col>
               <v-expansion-panels>

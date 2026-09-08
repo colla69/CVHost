@@ -31,11 +31,9 @@ export default {
     },
     click: function (item) {
       this.setHtmlSource(item.filename)
-      console.log(this.htmlSource)
     }
   },
   mounted () {
-    console.log('Component has been created!')
     this.init()
   },
   data: function () {

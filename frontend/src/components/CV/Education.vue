@@ -1,8 +1,8 @@
 <template>
   <v-container fluid >
     <h3>Education</h3>
-      <v-timeline dense >
-        <v-timeline-item small >
+      <v-timeline side="end" >
+        <v-timeline-item size="small" >
             <v-row>
               <v-col>
                 <h5>2011 - 2013</h5>
@@ -11,7 +11,7 @@
               </v-col>
             </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
             <v-row>
               <v-col>
                 <h5>2010 - 2011</h5>
@@ -20,7 +20,7 @@
               </v-col>
             </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
             <v-row>
               <v-col>
                 <h5>2008 - 2010</h5>
@@ -28,7 +28,7 @@
               </v-col>
             </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
             <v-row>
               <v-col>
                 <h5>09.2008</h5>
@@ -36,7 +36,7 @@
               </v-col>
             </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
             <v-row>
               <v-col>
                 <h5>2006 - 2008</h5>
@@ -44,7 +44,7 @@
               </v-col>
             </v-row>
         </v-timeline-item>
-        <v-timeline-item small>
+        <v-timeline-item size="small">
             <v-row>
               <v-col>
                 <h5>2002 - 2005</h5>
@@ -52,7 +52,7 @@
               </v-col>
             </v-row>
         </v-timeline-item>
-        <v-timeline-item small >
+        <v-timeline-item size="small" >
             <v-row>
               <v-col>
                 <h5>1997 - 2002</h5>

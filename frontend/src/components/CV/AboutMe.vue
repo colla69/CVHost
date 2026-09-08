@@ -16,12 +16,7 @@ import Languages from '@/components/CV/Languages'
 
 export default {
   name: 'aboutMe',
-  components: { Languages, PersonalInfo },
-  data () {
-    return {
-      panel: [0, 1]
-    }
-  }
+  components: { Languages, PersonalInfo }
 }
 </script>
 
