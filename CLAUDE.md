@@ -8,7 +8,9 @@ https://cv.colarietitosti.info/ and public at github.com/colla69/CVHost.
 - `frontend/` holds the entire application. Run npm from the repo root as
   `npm --prefix frontend run <script>` — no `cd` needed.
 - `frontend/src/components/` — one folder per page area: `CV/`, `news/`, `projectInfos/`, `Contact/`,
-  plus top-level `Home.vue` and `Menu.vue`.
+  plus top-level `Home.vue`, `Menu.vue` (app bar + drawer) and `SiteFooter.vue`.
+- `frontend/public/fonts/` — the three self-hosted variable typefaces. Never swap these for a Google
+  Fonts CDN link: it would send every visitor's IP to Google, which this site deliberately avoids.
 - `frontend/public/data/` — CV PDFs, certificates and images, served as static files.
 - `frontend/dist/` — build output, gitignored. This is the deployable artifact.
 - Dead weight, do not run or repair unless asked: `frontend/pom.xml` and `frontend/node/` (a Maven build
@@ -47,9 +49,16 @@ Adding a news post or a project is a data edit, not a markup edit:
 
 - News → `src/components/news/news.json`. The component reverses the array, so entries render
   newest-first; keep `id` ascending and unique. `description_text` renders through `v-html`.
-- Projects → `src/components/projectInfos/project_infos.json`.
-- Certificates → the `qualifications` array in `src/components/CV/Qualifications.vue`. Every entry names
-  a file that must exist in `public/data/` — verify it, a typo renders an empty iframe in production.
+- Projects → `src/components/projectInfos/project_infos.json`. `client` is the end customer (distinct
+  from `company_name`, the employer) and is omitted where no source states it. `featured: true` puts an
+  entry in the "Selected work" table on the home page — that table is curated by this flag, not by date.
+- Images → all local under `public/img/`, credited in `public/img/CREDITS.md`. Nothing is hot-linked;
+  keep it that way, and add a CREDITS row for anything new.
+- Certificates → the `qualifications` array in `src/components/CV/Qualifications.vue`. Every entry needs
+  `filename` (a PDF in `public/data/`) plus `issuer`, `year` and `group`, and a matching thumbnail at
+  `public/img/certs/<name>.jpg`, rendered from the PDF with
+  `magick -density 72 "data/X.pdf[0]" -background white -alpha remove -resize 520x -quality 76 img/certs/X.jpg`.
+  Verify both files exist — a typo renders a broken tile.
 - Bio, languages, work history → hardcoded in the matching `src/components/CV/*.vue`.
 
 `CV/CV.md` (outside `frontend/`) is the master CV document, kept by hand. It tells the same story as the
@@ -83,13 +92,25 @@ Two consequences before you touch routing or deploys:
 There is no CI. The CDK project was deleted in `8dd7cd4`; the `feature/aws` branch name is a leftover
 from that abandoned work.
 
+## Design system — "Ledger"
+
+Every component reads colour and type from CSS custom properties defined in `src/app.css` under
+`.v-theme--ledgerLight` / `.v-theme--ledgerDark`, which stay in step with the two Vuetify palettes in
+`src/plugins/vuetify.js`. **Never hard-code a colour in a component** — use `var(--lg-ink)`,
+`var(--lg-accent)`, `var(--lg-rule)` and friends so both themes keep working. Shared utility classes
+(`lg-page`, `lg-inner`, `lg-eyebrow`, `lg-display`, `lg-heading`, `lg-prose`, `lg-tnum`) live there too.
+
+The look is a ruled document: hairline bands, a 2px ink rule above each section heading, Archivo for
+display, Public Sans for prose, JetBrains Mono for labels and figures, one petrol accent.
+
+Layout is mobile-first and was measured at 320px and 390px with no horizontal overflow. There is
+deliberately no `overflow-x: hidden` guard, so a regression shows up instead of being masked.
+
 ## State of the tree
 
-`feature/aws` carries a large uncommitted Vue 2 → Vue 3 / Vuetify 2 → 3 migration. Expect leftovers in
-any component you open: `data()` state the template no longer reads (`Languages.vue`), Vuetify 2
-component names that were renamed in 3, debug `console.log` in lifecycle hooks (`Qualifications.vue`).
-Fix them when you touch the surrounding code and say what you cleaned up — the migration is unfinished
-and the owner is tracking it.
+The Vue 2 → Vue 3 / Vuetify 2 → 3 migration is finished, and the 2026 redesign went over every
+component. The leftovers this file used to warn about (unread `data()` state, Vuetify 2 component
+names, debug `console.log`, the dead `infoList.vue`) are gone.
 
 ## Agents
 

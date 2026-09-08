@@ -4,14 +4,14 @@
     "title": "I am proud to announce to you the News!",
     "release_date": "2018-08-02 16:45:59",
     "description_text": "I am bored, so i started programming around and it struck me... I should have my own news ticker! I need to keep you informed about the newest developments in my professional life. I learning new things, and broadening my skills. In the end, I would like to keep track of my achievements in a less boring way. ;)  ",
-    "img_link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm2WdnSdVWmGyQwT6nI2XTiCMVxs0vcibDIRrPr7jwJW9G5qL4Fg"
+    "img_link": "/img/news-press-room.jpg"
   },
   {
     "id": 2,
     "title": "A new start, who let the snakes out!?",
     "release_date": "2018-08-10 17:17:32",
     "description_text": "I have been looking for the perfect programming language for my personal needs for a very long time. I tried a lot but none had the versatility i wanted for my day to day programming.<br> At the same time I was looking for a way to teach my computer to react to speech commands and there it was the perfect opportunity to learn something new and realize my \"dream of the moment\" <a href=\"https://mycroft.ai/\" target=\"_blank\">Mycroft!</a><br> So it is official now, i am learning python!  ",
-    "img_link": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png"
+    "img_link": "/img/news-ball-python.jpg"
   },
   {
     "id": 3,
@@ -39,14 +39,14 @@
     "title": "I am moving soon! (Servers)",
     "release_date": "2019-03-03 19:19:56",
     "description_text": "My contract is coming to an end. I am planning to get more power and storage to expand my world and learn new administration skills.<br> My new plans include packing all my software in docker containers to keep it simple. Gaining deeper knowledge of the reverse proxy nginx is also going to be a lot of fun. ",
-    "img_link": "https://i1.wp.com/movingtips.wpengine.com/wp-content/uploads/2019/02/moving-boxes-crosscountry.jpg?fit=1024%2C684"
+    "img_link": "/img/news-shipping-containers.jpg"
   },
   {
     "id": 7,
     "title": "The new plan is on fire!",
     "release_date": "2019-03-20 19:26:14",
     "description_text": "I feel like I am getting a new car :D <br> A V-Server just for me, 4 CPUs 6 GiB RAM and 500Gib SSD.<br> That's gonna be a lot of fun :)<br> I am ready for the release day, my docker images are warm and ready to start! <br> Visit my project: <a href=\"https://github.com/colla69/Dockerize\" target=\"_blank\">Dockerize !</a>",
-    "img_link": "https://i.imgur.com/AI8Tg15.jpg"
+    "img_link": "/img/news-server-cables.jpg"
   },
   {
     "id": 8,
@@ -81,7 +81,7 @@
     "title": "The Walking web",
     "release_date": "2019-05-30 21:22:45",
     "description_text": "Crawling the web like a boss. <br> I finally can automate web searches the way i want to. The raise of the autobots is starting.. They see me crawling, they hating..  ",
-    "img_link": "https://mechanicalsoup.readthedocs.io/en/stable/_images/mechanical-soup-logo.png"
+    "img_link": "/img/news-spider-web.jpg"
   },
   {
     "id": 13,
