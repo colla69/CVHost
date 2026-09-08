@@ -3,3 +3,4 @@ target/*
 !target/dist
 !target/*.war
 frontend/node_modules/* 
+scripts/.env.deploy
