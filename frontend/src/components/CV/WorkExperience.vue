@@ -5,147 +5,60 @@
         <v-timeline-item size="small" >
           <v-row>
             <v-col>
-              <v-expansion-panels>
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <div>
-                      <h5>2021 - now</h5>
-                      <h4>IT Consultant @ msg GillardonBSM AG</h4>
-                    </div>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <h5>Used technologies:</h5>
-                    <ul>
-                      <li>AWS</li>
-                      <li>Java EE</li>
-                      <li>Oracle DB</li>
-                      <li>Typescript</li>
-                      <li>Angular</li>
-                      <li>Express TS</li>
-                      <li>Gitlab CI / CD</li>
-                      <li>Jenkins</li>
-                      <li>Concourse</li>
-                      <li>maven</li>
-                      <li>linux</li>
-                    </ul>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-              </v-expansion-panels>
+              <div>
+                <h5>2023 - now</h5>
+                <h4>Senior IT Consultant @ msg 4 banking A.G.</h4>
+              </div>
             </v-col>
           </v-row>
-        </v-timeline-item>
-        <v-timeline-item size="small" >
-            <v-row>
-              <v-col>
-                <v-expansion-panels>
-                  <v-expansion-panel>
-                    <v-expansion-panel-title>
-                      <div>
-                        <h5>2020 - 2021</h5>
-                        <h4>Software Engineer @ Device Insight GmbH</h4>
-                      </div>
-                    </v-expansion-panel-title>
-                    <v-expansion-panel-text>
-                      <h5>Used technologies:</h5>
-                      <ul>
-                        <li>Spring</li>
-                        <li>Oracle DB</li>
-                        <li>PostgreSQL</li>
-                        <li>Wildfly</li>
-                        <li>Cucumber</li>
-                        <li>JUnit</li>
-                        <li>Gitlab CI</li>
-                        <li>Hibernate</li>
-                        <li>maven</li>
-                        <li>linux</li>
-                      </ul>
-                    </v-expansion-panel-text>
-                  </v-expansion-panel>
-                </v-expansion-panels>
-              </v-col>
-            </v-row>
         </v-timeline-item>
         <v-timeline-item size="small" >
           <v-row>
             <v-col>
-              <v-expansion-panels>
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <div>
-                      <h5>2018 - 2021</h5>
-                      <h4>DevOps developer @ MsgGillardon AG</h4>
-                    </div>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <h5>Used technologies:</h5>
-                    <ul>
-                      <li>Java EE</li>
-                      <li>J2EE</li>
-                      <li>Oracle DB</li>
-                      <li>Flyway</li>
-                      <li>Jenkins</li>
-                      <li>HP ALM</li>
-                      <li>Payara Server</li>
-                      <li>Hibernate</li>
-                    </ul>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-              </v-expansion-panels>
+              <div>
+                <h5>2021 - 2022</h5>
+                <h4>IT Consultant @ msg GillardonBSM AG</h4>
+              </div>
             </v-col>
           </v-row>
         </v-timeline-item>
         <v-timeline-item size="small" >
-          <v-row >
+          <v-row>
             <v-col>
-              <v-expansion-panels>
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <div>
-                      <h5>2015 - 2018</h5>
-                      <h4>Senior Application developer @ 3Points Software Gmbh</h4>
-                    </div>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <h5>Used technologies:</h5>
-                    <ul>
-                      <li>Delphi XE</li>
-                      <li>MS SQL Server</li>
-                      <li>FastReport</li>
-                      <li>Spring Boot</li>
-                      <li>Vaadin</li>
-                      <li>JUnit</li>
-                      <li>EclipseLink</li>
-                      <li>maven</li>
-                      <li>git</li>
-                    </ul>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-              </v-expansion-panels>
+              <div>
+                <h5>2020 - 2021</h5>
+                <h4>Software Engineer @ Device Insight GmbH</h4>
+              </div>
             </v-col>
           </v-row>
         </v-timeline-item>
         <v-timeline-item size="small" >
-          <v-row >
+          <v-row>
             <v-col>
-              <v-expansion-panels>
-                <v-expansion-panel>
-                  <v-expansion-panel-title>
-                    <div>
-                      <h5>2013 - 2015</h5>
-                      <h4>Junior Application developer @ 3Points Software Gmbh</h4>
-                    </div>
-                  </v-expansion-panel-title>
-                  <v-expansion-panel-text>
-                    <h5>Used technologies:</h5>
-                    <ul>
-                      <li>Delphi XE</li>
-                      <li>Delphi 5</li>
-                      <li>MS SQL Server</li>
-                      <li>CVS</li>
-                    </ul>
-                  </v-expansion-panel-text>
-                </v-expansion-panel>
-              </v-expansion-panels>
+              <div>
+                <h5>2018 - 2021</h5>
+                <h4>DevOps developer @ MsgGillardon AG</h4>
+              </div>
+            </v-col>
+          </v-row>
+        </v-timeline-item>
+        <v-timeline-item size="small" >
+          <v-row>
+            <v-col>
+              <div>
+                <h5>2015 - 2018</h5>
+                <h4>Senior Application developer @ 3Points Software Gmbh</h4>
+              </div>
+            </v-col>
+          </v-row>
+        </v-timeline-item>
+        <v-timeline-item size="small" >
+          <v-row>
+            <v-col>
+              <div>
+                <h5>2013 - 2015</h5>
+                <h4>Junior Application developer @ 3Points Software Gmbh</h4>
+              </div>
             </v-col>
           </v-row>
         </v-timeline-item>
