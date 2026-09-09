@@ -34,8 +34,8 @@ Glassdoor). They are not the companies' real trademarks.
 
 These replaced images that were previously hot-linked from gstatic, imgur, squarespace,
 pinimg, cloudfront and several corporate sites. Same policy as above: Wikimedia Commons,
-stored locally, capped at 900px wide, JPEG q82. Two are **CC BY-SA 4.0** and their
-attribution below is required.
+stored locally, capped at 900px wide, JPEG q82. Two are **CC BY-SA 4.0** and one is
+**CC BY 2.0**; their attribution below is required.
 
 | File | Used for | Author | License | Source |
 | --- | --- | --- | --- | --- |
@@ -51,6 +51,7 @@ attribution below is required.
 | `project-invoice-form.jpg` | project #10 - mfXE13 Invoice module | Kurt Schwitters | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:1929_Kurt_Schwitters_Rechnungsbogen_%28invoice%29_Buchdruckerei_Buchbinderei_Wilhelm_Schr%C3%B6er_Hannover.jpg) |
 | `project-network-closet.jpg` | project #13 - Personal Dyn Dns | — | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cable_closet_bh.jpg) |
 | `project-power-lines.jpg` | project #16 - Energy Management Systems | C.Stadler/Bwag | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Himberg_-_Hochspannungs-Freileitungen.JPG) |
+| `project-jacquard-loom.jpg` | project #25 - PlayCryptoWithAI | McKay Savage | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Complicated_hand-loom_for_silk_weaving,_Kanchipuram,_Tamil_Nadu.jpg) |
 | `project-ledger-book.jpg` | project #24 - Objections and damages case platform | Paul Kammüller | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:1911-04-20_Illustrirte_Zeitung_S._0020_S._XX_Edler_%26_Krische_Hannover_Berlin,_EKHA_Lose-Bl%C3%A4tter-Gesch%C3%A4ftsbuch,_Paul_Kamm%C3%BCller_%28Ausschnitt%29.jpg) |
 | `project-voip-phone.jpg` | project #2 - Askozia VoIP server setup | Rakoon | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:20181025_162229_VoIP_telephone_in_Poland.jpg) |
 

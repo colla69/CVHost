@@ -10,20 +10,23 @@ Lungstr. 2, 81549 Monaco di Baviera, Germania · +49 157 84 89 14 09 · a.colari
 
 ## Profilo
 
-Sviluppatore software con 13 anni di esperienza professionale, gli ultimi cinque come consulente per
-Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, un asset manager europeo e
-un committente pubblico nella sanità. Lavora sull'intero stack — dai backend Java e
-Jakarta EE (Java EE) ai frontend in React, Angular e TypeScript — con infrastruttura AWS, Terraform
-e CI/CD come filo conduttore costante. Raccoglie i requisiti direttamente dalle unità di business e
-li traduce in progettazione dei processi, stime e documentazione; ha avuto responsabilità di team su
-sviluppatori junior sia lato consulenza sia lato cliente. Dal 2025 lo sviluppo assistito dall'IA è
-parte stabile di questo lavoro — Copilot e Claude nel flusso quotidiano, workflow agentici costruiti
-internamente e l'affiancamento di un team di progetto nell'adottarli. AWS Certified Solutions
-Architect – Associate. Madrelingua italiano, tedesco e inglese fluenti.
+Tredici anni di esperienza professionale e, sotto quasi tutta, la stessa mossa: capire un sistema
+abbastanza a fondo da vederne la struttura, e poi scrivere quella struttura una volta sola, così che il
+lavoro manuale — o l'attenzione costante — non serva più. Da release assemblate a mano è nato un sistema
+di consegna automatico. Da una migrazione cloud una tantum è nato anche il modello riutilizzabile per
+tutte quelle successive. Dal lavoro di sviluppo ricorrente sono nati agenti che oggi lo svolgono.
 
-Cerca ora un ruolo di tech lead o team lead con responsabilità end-to-end su un sistema e sul team che
-lo porta avanti — architettura, consegna e le persone che la realizzano — in un'organizzazione in cui le
-decisioni tecniche si prendono vicino al business.
+Cinque di quegli anni come consulente per Porsche, BMW Financial Services, Volkswagen Financial
+Services, Krones, un asset manager europeo e un committente pubblico nella sanità. Sull'intero stack —
+dai backend Java e Jakarta EE ai frontend in React, Angular, Vue e TypeScript, con AWS, Terraform,
+Kubernetes e CI/CD come costante. Raccoglie i requisiti direttamente dalle unità di business e li traduce
+in progettazione dei processi, stime e documentazione; ha avuto responsabilità di team su sviluppatori
+junior sia lato consulenza sia lato cliente. AWS Certified Solutions Architect – Associate. Madrelingua
+italiano, tedesco e inglese fluenti.
+
+Cerca lavoro con responsabilità end-to-end su un sistema: dove chi lo progetta se lo tiene, e dove
+rendere automatica la cosa giusta fa parte del mestiere invece di essere qualcosa fatto nei ritagli. Lo
+stesso istinto fuori dall'orario — vedi PlayCryptoWithAI più sotto.
 
 ---
 
@@ -37,10 +40,10 @@ decisioni tecniche si prendono vicino al business.
 - **Cloud & IaC** — AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, CodePipeline,
   CodeArtifact), Terraform, AWS CDK, Azure AD / SAML
 - **Container & operations** — Docker, Kubernetes, Linux, nginx
-- **CI/CD** — GitLab CI, Jenkins, Bamboo, Concourse CI, GitHub
+- **CI/CD & artefatti** — GitLab CI, Jenkins, Bamboo, Concourse CI, GitHub, Nexus, JFrog Artifactory,
+  AWS CodeArtifact
 - **Dati & messaging** — PostgreSQL, Oracle, MS SQL Server, DynamoDB, Kafka, SQL
 - **Test & qualità** — JUnit, Jest, Cypress, Supertest, Cucumber, Selenium, SonarQube, load testing K6
-- **Gestione artefatti** — Nexus, JFrog Artifactory, AWS CodeArtifact
 - **Piattaforme di business** — BSI CRM (BSI Masterclass)
 - **Leadership & metodo di lavoro** — responsabilità tecnica su team di 2–3 sviluppatori, affiancamento
   di junior, workshop sui requisiti con le unità di business, stime di effort, pianificazione delle
@@ -195,6 +198,20 @@ Realizzazione del framework e dei moduli ricavi e fatturazione, quest'ultimo con
 archiviazione. Pianificazione e implementazione delle release, contatto diretto con il cliente e
 risoluzione dei problemi sui sistemi in produzione.
 **Tecnologie:** Delphi XE, MS SQL Server, Windows Server 2012, FastReport, DevExpress, Jira, Git
+
+---
+
+## Progetti personali selezionati
+
+**PlayCryptoWithAI** — sistema di sviluppo agentico · 2026 – oggi · [github.com/colla69/PlayCryptoWithAI](https://github.com/colla69/PlayCryptoWithAI)
+*Autore unico*
+Un bot di trading multi-strategia per i mercati spot di Binance, che gira senza sorveglianza in Docker.
+Il tema vero è l'ingegneria che lo circonda: undici agenti Claude specializzati — revisione di rischio,
+sicurezza, backtest, pre-commit e progetto, accanto a progettazione della strategia, sviluppo e test —
+revisori volutamente in sola lettura, i più critici sul modello più potente, e regole nate da incidenti
+di produzione reali, così che ogni incidente sia diventato un'invariante verificata a ogni modifica
+successiva. I dati pubblicati sono stati sostituiti con altri più bassi ma pienamente riproducibili.
+**Tecnologie:** Node.js, Docker, API Binance, agenti / skill / regole Claude, Vitest
 
 ---
 

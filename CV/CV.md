@@ -10,20 +10,23 @@ Lungstr. 2, 81549 München, Germany · +49 157 84 89 14 09 · a.colarietitosti@g
 
 ## Profile
 
-Software engineer with 13 years of professional experience, the last five as a consultant delivering
-projects for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, a European
-asset manager and a public-sector client in healthcare. Works across the full stack,
-from Java and Jakarta EE (Java EE) backends to React, Angular and TypeScript front ends, with AWS
-infrastructure, Terraform and CI/CD as a constant thread. Takes requirements directly from business
-departments and turns them into process design, estimates and documentation, and has carried
-responsibility for junior developers on both the consultancy and the client side. Since 2025
-AI-assisted engineering has been a standing part of that delivery — Copilot and Claude in the daily
-loop, self-built agentic workflows, and bringing a project team onto both. AWS Certified Solutions
-Architect – Associate. Native Italian, fluent German and English.
+Thirteen years of professional experience, and one habit underneath most of it: understand a system
+well enough to see its structure, then encode that structure once so the manual work — or the vigilance
+— never has to happen again. Hand-assembled releases became an automated delivery system; a one-off
+cloud migration also produced the reusable template for every migration after it; recurring engineering
+work became a set of agents that now do it.
 
-Now looking for a tech lead or team lead role with end-to-end ownership of a system and of the team
-around it — architecture, delivery and the people doing it — in an organisation where engineering
-decisions are made close to the business.
+Five of those years as a consultant for Porsche, BMW Financial Services, Volkswagen Financial Services,
+Krones, a European asset manager and a public-sector client in healthcare. Full stack, from Java and
+Jakarta EE backends to React, Angular, Vue and TypeScript front ends, with AWS, Terraform, Kubernetes
+and CI/CD throughout. Takes requirements directly from business departments and turns them into process
+design, estimates and documentation; has carried responsibility for junior developers on both the
+consultancy and the client side. AWS Certified Solutions Architect – Associate. Native Italian, fluent
+German and English.
+
+Interested in work with end-to-end ownership of a system: where whoever designs it keeps it, and where
+making the right thing automatic counts as part of the job rather than something done in the gaps. The
+same instinct runs off the clock — see PlayCryptoWithAI below.
 
 ---
 
@@ -37,10 +40,10 @@ decisions are made close to the business.
 - **Cloud & IaC** — AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, CodePipeline,
   CodeArtifact), Terraform, AWS CDK, Azure AD / SAML
 - **Containers & Ops** — Docker, Kubernetes, Linux, nginx
-- **CI/CD** — GitLab CI, Jenkins, Bamboo, Concourse CI, GitHub
+- **CI/CD & artifacts** — GitLab CI, Jenkins, Bamboo, Concourse CI, GitHub, Nexus, JFrog Artifactory,
+  AWS CodeArtifact
 - **Data & messaging** — PostgreSQL, Oracle, MS SQL Server, DynamoDB, Kafka, SQL
 - **Testing & quality** — JUnit, Jest, Cypress, Supertest, Cucumber, Selenium, SonarQube, K6 load testing
-- **Artifact management** — Nexus, JFrog Artifactory, AWS CodeArtifact
 - **Business platforms** — BSI CRM (BSI Masterclass)
 - **Leadership & ways of working** — technical responsibility for teams of 2–3 developers, mentoring
   juniors, requirements workshops with business departments, effort estimation, release planning,
@@ -186,6 +189,20 @@ on a modern stack, including database maintenance and data migration. Built the 
 revenue and invoicing modules, the latter with an SAP interface and archiving. Release planning and
 implementation, direct customer contact and troubleshooting of live systems.
 **Stack:** Delphi XE, MS SQL Server, Windows Server 2012, FastReport, DevExpress, Jira, Git
+
+---
+
+## Selected Personal Work
+
+**PlayCryptoWithAI** — agentic engineering system · 2026 – present · [github.com/colla69/PlayCryptoWithAI](https://github.com/colla69/PlayCryptoWithAI)
+*Sole author*
+A multi-strategy trading bot for Binance spot markets, running unattended in Docker. The engineering
+system around it is the real subject: eleven specialised Claude agents — risk, security, backtest,
+pre-commit and project review alongside strategy design, development and testing — reviewers
+deliberately read-only, the highest-stakes ones on the strongest model, their rules written from real
+production incidents so each failure became an invariant enforced on every later change. Published
+performance figures were deliberately replaced with lower, fully reproducible ones.
+**Stack:** Node.js, Docker, Binance API, Claude agents / skills / rule files, Vitest
 
 ---
 

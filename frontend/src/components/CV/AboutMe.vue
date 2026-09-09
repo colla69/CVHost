@@ -16,9 +16,19 @@
         >
         <div class="bio">
           <p class="lg-prose bio-lead">
-            I am a software engineer with thirteen years behind me, the last five spent consulting
-            for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, a European
-            asset manager and a public-sector client in healthcare.
+            Thirteen years in, most of my work comes back to the same move: understand a system well
+            enough to see its structure, then write that structure down once so the manual work
+            &mdash; or the vigilance &mdash; never has to happen again.
+          </p>
+          <p class="lg-prose">
+            Hand-assembled releases became an automated delivery system. A one-off cloud migration
+            also produced the reusable template for every migration after it. Recurring engineering
+            work became a set of agents that now do it. I have been doing some version of this since
+            I was drawing motion paths in PowerPoint because it looked like programming.
+          </p>
+          <p class="lg-prose">
+            Five of those years consulting for Porsche, BMW Financial Services, Volkswagen Financial
+            Services, Krones, a European asset manager and a public-sector client in healthcare.
           </p>
           <p class="lg-prose">
             I work across the full stack — Java and Jakarta EE backends through React, Angular and
@@ -31,7 +41,10 @@
             Since 2025, AI-assisted engineering has been a standing part of how I deliver rather
             than an experiment: GitHub Copilot and Claude in the daily development loop, agentic
             workflows I built myself for the work that repeats, and getting a project team
-            productive with both.
+            productive with both. The sharpest version of it is off the clock &mdash;
+            <a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank"
+               rel="noopener noreferrer">PlayCryptoWithAI</a>, a live trading system whose real
+            subject is the eleven-agent review board around it.
           </p>
           <p class="lg-prose">
             I have carried technical responsibility for small teams on both the consultancy and the

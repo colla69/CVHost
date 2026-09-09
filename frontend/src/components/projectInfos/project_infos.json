@@ -355,5 +355,21 @@
     "company_logo": "/img/logo-msg.svg",
     "company_name": "msg for banking AG",
     "company_link": "https://www.msg-for-banking.de/"
+  },
+  {
+    "id": 25,
+    "Name": "PlayCryptoWithAI — an agentic engineering system",
+    "client": "Personal project",
+    "featured": true,
+    "start_date": "2026-05-22",
+    "end_date": null,
+    "description": "<p>A multi-strategy trading bot for Binance spot markets — 37 pairs on 12h candles, a confidence-weighted voting engine with multi-timeframe filters, regime gating and portfolio-level circuit breakers. It runs unattended in Docker with its own dashboard.</p>\n<p>The bot is the excuse. The point is the engineering system around it: <b>eleven specialised Claude agents</b> — risk, security, backtest, pre-commit and project reviewers alongside a strategy designer, developer and tester — plus rule files and skills that encode the project's invariants. Reviewers are read-only by design and the highest-stakes ones run on the strongest model.</p>\n<p>The reviewers are built from real incidents. When a silent price-mark freeze and a phantom-position bug each mis-stated live equity, the fix was not only the patch: the root cause became a rule the risk reviewer now enforces on every future change. Post-incident learning, encoded once, applied automatically from then on.</p>\n<p>The published numbers are the honest ones. An earlier headline figure was reproducible only by accident, so it was replaced with a lower, fully reproducible baseline the bot can be trusted to run on unattended — 90 days out of sample at +15.3%, Sharpe 3.04, max drawdown −4.4%.</p>\n<p>Used Technologies:<br>- Node.js / JavaScript / Docker<br>- Binance API / backtesting and optimisation harness<br>- Claude agents, skills and rule files<br>- Vitest / Node test runner</p>",
+    "role_name": "Sole author",
+    "lang": "Node.js / Docker / Claude agents / agentic architecture",
+    "company": "<a href=\"https://github.com/colla69/PlayCryptoWithAI\">GitHub</a>",
+    "image": "/img/project-jacquard-loom.jpg",
+    "company_logo": "/img/logo-personal.svg",
+    "company_name": "github.com/colla69",
+    "company_link": "https://github.com/colla69/PlayCryptoWithAI"
   }
 ]

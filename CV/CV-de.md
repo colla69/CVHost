@@ -10,20 +10,24 @@ Lungstr. 2, 81549 München · +49 157 84 89 14 09 · a.colarietitosti@googlemail
 
 ## Profil
 
-Softwareentwickler mit 13 Jahren Berufserfahrung, davon fünf als Consultant für Porsche, BMW
-Financial Services, Volkswagen Financial Services, Krones, einen europäischen Asset Manager und einen
-öffentlichen Auftraggeber im Gesundheitswesen. Arbeitet über den gesamten Stack — von Java- und Jakarta-EE-Backends
-(Java EE) bis zu Frontends mit React, Angular und TypeScript, mit AWS-Infrastruktur, Terraform und
-CI/CD als durchgehendem Faden. Nimmt Anforderungen direkt mit dem Fachbereich auf und überführt sie
-in Prozesskonzeption, Schätzungen und Dokumentation; Teamverantwortung für Juniorentwickler auf
-Berater- wie auf Kundenseite. Seit 2025 ist KI-gestützte Entwicklung fester Bestandteil dieser
-Arbeit — Copilot und Claude im täglichen Ablauf, selbst gebaute agentische Workflows und die
-Befähigung eines Projektteams im Umgang damit. AWS Certified Solutions Architect – Associate.
+Dreizehn Jahre Berufserfahrung — und darunter durchgehend dieselbe Bewegung: ein System so weit
+durchdringen, dass seine Struktur sichtbar wird, und diese Struktur einmal festschreiben, damit die
+Handarbeit — oder die Wachsamkeit — danach nicht mehr nötig ist. Aus von Hand zusammengestellten
+Releases wurde ein automatisiertes Auslieferungssystem. Aus einer einmaligen Cloud-Migration wurde
+zusätzlich die wiederverwendbare Vorlage für jede weitere. Aus wiederkehrender Entwicklungsarbeit wurden
+Agenten, die sie heute erledigen.
+
+Fünf dieser Jahre als Consultant für Porsche, BMW Financial Services, Volkswagen Financial Services,
+Krones, einen europäischen Asset Manager und einen öffentlichen Auftraggeber im Gesundheitswesen. Über
+den gesamten Stack — von Java- und Jakarta-EE-Backends bis zu Frontends mit React, Angular, Vue und
+TypeScript, durchgehend mit AWS, Terraform, Kubernetes und CI/CD. Nimmt Anforderungen direkt mit dem
+Fachbereich auf und überführt sie in Prozesskonzeption, Schätzungen und Dokumentation; Teamverantwortung
+für Juniorentwickler auf Berater- wie auf Kundenseite. AWS Certified Solutions Architect – Associate.
 Muttersprache Italienisch, verhandlungssicher in Deutsch und Englisch.
 
-Gesucht wird eine Rolle als Tech Lead bzw. Teamleiter mit End-to-End-Verantwortung für ein System und
-das Team dahinter — Architektur, Umsetzung und die Menschen, die sie tragen — in einer Organisation, in
-der technische Entscheidungen nah am Fachbereich getroffen werden.
+Gesucht wird Arbeit mit End-to-End-Verantwortung für ein System: wo diejenigen, die es entwerfen, es
+auch behalten, und wo es zur Aufgabe gehört, das Richtige automatisch zu machen statt nebenbei. Dieselbe
+Haltung außerhalb der Arbeitszeit — siehe PlayCryptoWithAI unten.
 
 ---
 
@@ -37,10 +41,10 @@ der technische Entscheidungen nah am Fachbereich getroffen werden.
 - **Cloud & IaC** — AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, CodePipeline,
   CodeArtifact), Terraform, AWS CDK, Azure AD / SAML
 - **Container & Betrieb** — Docker, Kubernetes, Linux, nginx
-- **CI/CD** — GitLab CI, Jenkins, Bamboo, Concourse CI, GitHub
+- **CI/CD & Artefakte** — GitLab CI, Jenkins, Bamboo, Concourse CI, GitHub, Nexus, JFrog Artifactory,
+  AWS CodeArtifact
 - **Daten & Messaging** — PostgreSQL, Oracle, MS SQL Server, DynamoDB, Kafka, SQL
 - **Test & Qualität** — JUnit, Jest, Cypress, Supertest, Cucumber, Selenium, SonarQube, K6-Lasttests
-- **Artefaktverwaltung** — Nexus, JFrog Artifactory, AWS CodeArtifact
 - **Fachanwendungen** — BSI CRM (BSI-Masterclass)
 - **Führung & Arbeitsweise** — fachliche Verantwortung für Teams von 2–3 Entwicklern, Betreuung von
   Junioren, Anforderungsworkshops mit dem Fachbereich, Aufwandsschätzung, Release-Planung, DevOps,
@@ -192,6 +196,20 @@ Aufbau des Frameworks sowie der Module für Erlöse und Fakturierung, letzteres 
 Archivierung. Release-Planung und Umsetzung, direkter Kundenkontakt und Störungsbehebung in
 Live-Systemen.
 **Technologien:** Delphi XE, MS SQL Server, Windows Server 2012, FastReport, DevExpress, Jira, Git
+
+---
+
+## Ausgewählte private Projekte
+
+**PlayCryptoWithAI** — agentisches Entwicklungssystem · 2026 – heute · [github.com/colla69/PlayCryptoWithAI](https://github.com/colla69/PlayCryptoWithAI)
+*Alleiniger Autor*
+Ein Multi-Strategie-Handelsbot für Binance-Spotmärkte, der unbeaufsichtigt in Docker läuft. Das
+eigentliche Thema ist die Technik darum herum: elf spezialisierte Claude-Agenten — Risiko-, Security-,
+Backtest-, Pre-Commit- und Projekt-Review neben Strategieentwurf, Entwicklung und Test — prüfende
+Agenten bewusst nur mit Leserechten, die kritischsten auf dem stärksten Modell, ihre Regeln aus echten
+Produktionsvorfällen abgeleitet, sodass aus jedem Vorfall eine bei jeder späteren Änderung geprüfte
+Invariante wurde. Die Kennzahlen wurden bewusst durch niedrigere, dafür voll reproduzierbare ersetzt.
+**Technologien:** Node.js, Docker, Binance-API, Claude-Agenten / Skills / Regeldateien, Vitest
 
 ---
 
