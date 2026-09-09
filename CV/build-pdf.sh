@@ -8,19 +8,28 @@
 #   CV-it.md  -> frontend/public/data/CV_it.pdf
 #   all three -> frontend/public/data/CV_Docs.zip
 #
+# md2typst.py parses the markdown into structure — companies, entries, dates,
+# technology lists — and cv-template.typ lays that out in the site's design
+# system. Neither file holds CV content: change the markdown, re-run this.
+#
 # Nothing runs this automatically. Run it by hand once the CVs are finished, then
 # rebuild the site and deploy — see DEPLOYMENT.md.
 #
-# Requires one of: pandoc (preferred), weasyprint, or wkhtmltopdf. On Manjaro:
+# Requires typst and python3. On Manjaro:
 #
-#   sudo pacman -S pandoc-cli typst                      # pandoc route, small
-#   sudo pacman -S python-weasyprint                     # weasyprint route
+#   sudo pacman -S typst woff2
 #
+# woff2 is optional: it supplies woff2_decompress, which unpacks the site's three
+# webfonts into a form typst can read. Without it the PDFs still build, but in
+# whatever fonts the system happens to offer.
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
 CV_DIR="CV"
 OUT_DIR="frontend/public/data"
+BUILD_DIR="$CV_DIR/.build"
+FONT_DIR="$BUILD_DIR/fonts"
+PHOTO="/frontend/src/assets/foto.jpg"
 
 # The `>` blockquote lines are working notes, never CV content. Refuse to publish
 # a CV that still has open ones.
@@ -30,60 +39,49 @@ if grep -rn '^>' "$CV_DIR"/CV.md "$CV_DIR"/CV-de.md "$CV_DIR"/CV-it.md; then
   exit 1
 fi
 
+rm -rf "$BUILD_DIR"
+mkdir -p "$BUILD_DIR" "$FONT_DIR"
+trap 'rm -rf "$BUILD_DIR"' EXIT
+
+# typst reads TTF/OTF, the site ships woff2. Unpack into the build directory
+# rather than committing a second copy of each font.
+font_args=()
+if command -v woff2_decompress >/dev/null; then
+  for woff2 in frontend/public/fonts/*.woff2; do
+    cp "$woff2" "$FONT_DIR/"
+    woff2_decompress "$FONT_DIR/$(basename "$woff2")" >/dev/null
+    rm -f "$FONT_DIR/$(basename "$woff2")"
+  done
+  font_args=(--font-path "$FONT_DIR")
+else
+  echo "woff2_decompress not found — falling back to system fonts." >&2
+fi
+
+photo_args=()
+if [ -f "frontend/src/assets/foto.jpg" ]; then
+  photo_args=(--photo "$PHOTO")
+else
+  echo "frontend/src/assets/foto.jpg missing — building without the portrait." >&2
+fi
+
 render () {
-  local src="$1" dst="$2"
-  # The CVs wrap prose across lines, so pandoc folds a project's title, role and
-  # description into one paragraph. Mark the structural lines — anything starting
-  # bold, and the italic role lines — as markdown hard breaks first, leaving the
-  # wrapped prose alone.
-  local tmp
-  tmp="$(mktemp --suffix=.md)"
-  trap 'rm -f "$tmp"' RETURN
-  # A line gets a hard break when the NEXT line opens a structural element (a bold
-  # title or an italic role line), and when the line itself is a whole italic role
-  # line. Deciding on the next line rather than the current one keeps wrapped
-  # continuations — long Stack lists, the certification line — unbroken.
-  awk '{ l[NR] = $0 }
-       END {
-         for (i = 1; i <= NR; i++) {
-           nxt = (i < NR ? l[i+1] : "")
-           hard = 0
-           if (nxt ~ /^\*/ && nxt !~ /^\*\*(Stack|Technologien|Tecnologie):\*\*/) hard = 1
-           if (l[i] ~ /^\*[^*].*\*$/) hard = 1
-           if (hard && l[i] != "") printf "%s  \n", l[i]; else print l[i]
-         }
-       }' "$src" > "$tmp"
-  src="$tmp"
-  if command -v pandoc >/dev/null; then
-    # typst renders these documents fine and is a fraction of a TeX install, so
-    # prefer it when present; otherwise pandoc falls back to its default engine.
-    local engine=()
-    command -v typst >/dev/null && engine=(--pdf-engine=typst)
-    pandoc "$src" -o "$dst" "${engine[@]}" --metadata-file="$CV_DIR/pdf-meta.yaml"
-  elif command -v weasyprint >/dev/null; then
-    # weasyprint needs HTML; pandoc is absent here, so use a minimal markdown->html
-    npx --yes marked -i "$src" -o "${dst%.pdf}.html"
-    weasyprint "${dst%.pdf}.html" "$dst"
-    rm -f "${dst%.pdf}.html"
-  elif command -v wkhtmltopdf >/dev/null; then
-    npx --yes marked -i "$src" -o "${dst%.pdf}.html"
-    wkhtmltopdf --enable-local-file-access "${dst%.pdf}.html" "$dst"
-    rm -f "${dst%.pdf}.html"
-  else
-    echo "No markdown-to-PDF converter found. See the header of this script." >&2
-    exit 1
-  fi
-  echo "wrote $dst"
+  local src="$1" dst="$2" lang="$3"
+  local typ="$BUILD_DIR/$(basename "${dst%.pdf}").typ"
+  python3 "$CV_DIR/md2typst.py" "$src" "$typ" \
+    --lang "$lang" --template ../cv-template.typ "${photo_args[@]}"
+  # --root keeps the portrait, which lives under frontend/, readable from a
+  # document that sits in CV/.build.
+  typst compile --root . "${font_args[@]}" "$typ" "$dst"
+  echo "wrote $dst ($(pdfinfo "$dst" 2>/dev/null | awk '/^Pages/ {print $2}') pages)"
 }
 
-render "$CV_DIR/CV.md"    "$OUT_DIR/CV_en.pdf"
-render "$CV_DIR/CV-de.md" "$OUT_DIR/Lebenslauf.pdf"
-render "$CV_DIR/CV-it.md" "$OUT_DIR/CV_it.pdf"
+render "$CV_DIR/CV.md"    "$OUT_DIR/CV_en.pdf"     en
+render "$CV_DIR/CV-de.md" "$OUT_DIR/Lebenslauf.pdf" de
+render "$CV_DIR/CV-it.md" "$OUT_DIR/CV_it.pdf"     it
 
 rm -f "$OUT_DIR/CV_Docs.zip"
 zip -j "$OUT_DIR/CV_Docs.zip" \
   "$OUT_DIR/CV_en.pdf" "$OUT_DIR/Lebenslauf.pdf" "$OUT_DIR/CV_it.pdf"
 
 echo
-echo "Done. CVShort.pdf and CVShort.jpg are older one-pagers and were left untouched."
-echo "Home.vue links CV_Docs.zip, so the download is now current."
+echo "Done. Home.vue links CV_Docs.zip, so the download is now current."
