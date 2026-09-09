@@ -117,5 +117,12 @@
     "release_date": "2026-09-08 18:00:00",
     "description_text": "My CV and this website had quietly drifted apart over the years &mdash; different dates, different job titles, even a different school. They now tell the same story, and the CV exists in English, German and Italian. <br> Thirteen years, from Delphi at 3Points to AWS, pipelines and leading developers at msg for banking. The project list on this site is finally up to date again as well.",
     "img_link": "/img/news-blogging-desk.jpg"
+  },
+  {
+    "id": 18,
+    "title": "I gave my trading bot a review board",
+    "release_date": "2026-09-09 15:00:00",
+    "description_text": "I built <a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\">PlayCryptoWithAI</a> to learn agentic architecture properly. It trades 37 Binance pairs unattended in Docker, and it works, which still surprises me.<br><br>The bot isn't the interesting part. It has <b>eleven reviewing agents</b> — risk, security, backtest, pre-commit, project — and their rules were written by my own outages. When a silent price-mark freeze and a phantom-position bug each mis-stated my live equity, the fix wasn't only the patch: the root cause became a rule that gets checked on every change from then on. The patch fixes the instance; the rule fixes the class.<br><br>Two things I'd tell anyone pointing agents at code that matters. Reviewers get <i>read-only</i> tools — an agent that can edit is an agent that can quietly make a problem disappear instead of reporting it. And prefer reproducible numbers over impressive ones: I deleted a better-looking backtest result because I couldn't reproduce it exactly, which made it an anecdote rather than a result.<br><br>Written up in full in <code>writing/agentic-review-board.md</code>, and the <code>.claude/</code> directory is public in the repo if you want to steal from it.",
+    "img_link": "/img/project-jacquard-loom.jpg"
   }
 ]

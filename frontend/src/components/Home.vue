@@ -7,19 +7,20 @@
         <p class="lg-eyebrow">Senior IT Consultant &middot; Tech Lead &middot; München</p>
         <h1 class="lg-display hero-name">Andrea Colarieti&nbsp;Tosti</h1>
         <p class="lg-prose hero-pitch">
-          <b>{{ yearsEngineering }} years</b> building software &mdash; <b>{{ yearsConsulting }} of them</b>
-          as a consultant for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones
-          and the German public sector. Java and Jakarta EE backends through React, Angular and Vue
-          front ends, with AWS, Terraform and CI/CD running under all of it.
+          <b>{{ yearsEngineering }} years</b> building software, with one habit underneath most of it:
+          understand a system well enough to see its structure, then encode that structure once so the
+          manual work &mdash; or the vigilance &mdash; never has to happen again.
         </p>
         <p class="lg-prose hero-ai">
-          Since 2025, <b>AI-assisted engineering</b> has been a standing part of how I deliver, not an
-          experiment: Copilot and Claude in the daily loop, agentic workflows I built myself, and a
-          project team brought onto both.
+          Hand-assembled releases became an automated delivery system. A one-off cloud migration also
+          produced the reusable template for every migration after it. Recurring engineering work
+          became <b>a set of agents that now do it</b>.
         </p>
         <p class="lg-prose hero-seeking">
-          Now looking for a tech lead role with end-to-end ownership of a system and of the team
-          around it, in an organisation where engineering decisions are made close to the business.
+          {{ yearsConsulting }} years of that as a consultant for Porsche, BMW Financial Services,
+          Volkswagen Financial Services, Krones and the German public sector. Looking for work with
+          end-to-end ownership of a system &mdash; where whoever designs it keeps it, and where making
+          the right thing automatic is part of the job rather than something done in the gaps.
         </p>
         <div class="hero-cta">
           <v-btn href="/data/CV_en.pdf" download size="large" variant="flat" color="primary">

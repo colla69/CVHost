@@ -2,7 +2,7 @@
 # `margin` is read by pandoc's typst template, `geometry` by the LaTeX one, so
 # the same file works whichever engine is installed.
 papersize: a4
-fontsize: 10pt
+fontsize: 9.5pt
 # Tightened from 1.8cm when the KV engagement and the AI skills group were added:
 # all three languages spilled onto a fourth page. German runs longest, so the
 # vertical margin is what keeps it to three — check all three after any edit.
