@@ -11,12 +11,15 @@ Lungstr. 2, 81549 Monaco di Baviera, Germania · +49 157 84 89 14 09 · a.colari
 ## Profilo
 
 Sviluppatore software con 13 anni di esperienza professionale, gli ultimi cinque come consulente per
-Porsche, BMW Financial Services, Volkswagen Financial Services, Krones e un asset manager europeo.
-Lavora sull'intero stack — dai backend Java e Jakarta EE (Java EE) ai frontend in React, Angular e
-TypeScript — con infrastruttura AWS, Terraform e CI/CD come filo conduttore costante. Raccoglie i
-requisiti direttamente dalle unità di business e li traduce in progettazione dei processi, stime e
-documentazione; ha avuto responsabilità di team su sviluppatori junior sia lato consulenza sia lato
-cliente. AWS Certified Solutions Architect – Associate. Madrelingua italiano, tedesco e inglese fluenti.
+Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, un asset manager europeo e
+un ente pubblico del sistema sanitario tedesco. Lavora sull'intero stack — dai backend Java e
+Jakarta EE (Java EE) ai frontend in React, Angular e TypeScript — con infrastruttura AWS, Terraform
+e CI/CD come filo conduttore costante. Raccoglie i requisiti direttamente dalle unità di business e
+li traduce in progettazione dei processi, stime e documentazione; ha avuto responsabilità di team su
+sviluppatori junior sia lato consulenza sia lato cliente. Dal 2025 lo sviluppo assistito dall'IA è
+parte stabile di questo lavoro — Copilot e Claude nel flusso quotidiano, workflow agentici costruiti
+internamente e l'affiancamento di un team di progetto nell'adottarli. AWS Certified Solutions
+Architect – Associate. Madrelingua italiano, tedesco e inglese fluenti.
 
 Cerca ora un ruolo di tech lead o team lead con responsabilità end-to-end su un sistema e sul team che
 lo porta avanti — architettura, consegna e le persone che la realizzano — in un'organizzazione in cui le
@@ -27,7 +30,9 @@ decisioni tecniche si prendono vicino al business.
 ## Competenze tecniche
 
 - **Backend / JVM** — Java, Spring, Spring Boot, Jakarta EE (Java EE / J2EE), Hibernate, WildFly, Payara
-- **Frontend** — TypeScript, React, Angular, RxJS, Vue.js, JSF 2.0, Vaadin, Material UI
+- **Sviluppo assistito dall'IA** — GitHub Copilot, Claude, workflow di sviluppo agentici, prompt
+  pattern, refactoring e generazione di test assistiti, affiancamento del team
+- **Frontend** — TypeScript, React, Angular, RxJS, Vue.js, Pinia, JSF 2.0, Vaadin, Material UI
 - **Node / API** — NestJS, Express, Prisma, REST, architetture backend-for-frontend
 - **Cloud & IaC** — AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, CodePipeline,
   CodeArtifact), Terraform, AWS CDK, Azure AD / SAML
@@ -51,10 +56,21 @@ decisioni tecniche si prendono vicino al business.
 
 *Società di consulenza del gruppo msg per banche e servizi finanziari.*
 
-**Piattaforme CRM BSI** — BSI, cliente finale Techem · 06/2025 – oggi
+**Ricorsi e danni nella liquidazione dei compensi medici** — Kassenärztliche Vereinigung, cliente non nominato · 08/2025 – oggi
+*Senior IT Consultant / Senior Developer · team di 4: un architetto, io e due sviluppatori junior*
+Sostituzione di processi Excel consolidati da anni con un'applicazione web per una Kassenärztliche
+Vereinigung, l'ente di diritto pubblico che liquida i compensi dei medici convenzionati. Il sistema
+gestisce i ricorsi (Widerspruch) contro gli avvisi di compenso e le richieste per i cosiddetti
+sonstige Schäden derivanti da quella liquidazione. Backend Spring Boot, frontend Vue 3 con Pinia,
+esecuzione interamente su Kubernetes. Qui lo sviluppo assistito dall'IA è parte stabile della
+consegna: GitHub Copilot e Claude nel flusso di sviluppo quotidiano, workflow agentici costruiti
+internamente per le attività ricorrenti e affiancamento pratico dei due junior su entrambi.
+**Tecnologie:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
+
+**Piattaforme CRM BSI** — BSI, cliente finale Techem · 06/2025 – 07/2025
 *Senior IT Consultant / Senior Developer · team di 2*
 Due piattaforme cliente basate sul software CRM proprietario di BSI, entrambe operative su scala
-europea. Le mantengo in esercizio e aggiornate in team di due persone: manutenzione, aggiornamenti di
+europea. Le ho mantenute in esercizio e aggiornate in team di due persone: manutenzione, aggiornamenti di
 dipendenze e di piattaforma e sviluppo di funzionalità sui backend Spring e Oracle e sul frontend
 Angular.
 **Tecnologie:** Java, Spring, Oracle, Angular, BSI CRM

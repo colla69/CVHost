@@ -11,12 +11,15 @@ Lungstr. 2, 81549 München, Germany · +49 157 84 89 14 09 · a.colarietitosti@g
 ## Profile
 
 Software engineer with 13 years of professional experience, the last five as a consultant delivering
-projects for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones and a European asset
-manager. Works across the full stack, from Java and Jakarta EE (Java EE) backends to React, Angular and
-TypeScript front ends, with AWS infrastructure, Terraform and CI/CD as a constant thread. Takes
-requirements directly from business departments and turns them into process design, estimates and
-documentation, and has carried responsibility for junior developers on both the consultancy and the
-client side. AWS Certified Solutions Architect – Associate. Native Italian, fluent German and English.
+projects for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, a European
+asset manager and a public body in the German statutory health system. Works across the full stack,
+from Java and Jakarta EE (Java EE) backends to React, Angular and TypeScript front ends, with AWS
+infrastructure, Terraform and CI/CD as a constant thread. Takes requirements directly from business
+departments and turns them into process design, estimates and documentation, and has carried
+responsibility for junior developers on both the consultancy and the client side. Since 2025
+AI-assisted engineering has been a standing part of that delivery — Copilot and Claude in the daily
+loop, self-built agentic workflows, and bringing a project team onto both. AWS Certified Solutions
+Architect – Associate. Native Italian, fluent German and English.
 
 Now looking for a tech lead or team lead role with end-to-end ownership of a system and of the team
 around it — architecture, delivery and the people doing it — in an organisation where engineering
@@ -27,7 +30,9 @@ decisions are made close to the business.
 ## Technical Skills
 
 - **Backend / JVM** — Java, Spring, Spring Boot, Jakarta EE (Java EE / J2EE), Hibernate, WildFly, Payara
-- **Frontend** — TypeScript, React, Angular, RxJS, Vue.js, JSF 2.0, Vaadin, Material UI
+- **AI-assisted engineering** — GitHub Copilot, Claude, agentic development workflows, prompt patterns,
+  tool-assisted refactoring and test generation, enabling a team to work this way
+- **Frontend** — TypeScript, React, Angular, RxJS, Vue.js, Pinia, JSF 2.0, Vaadin, Material UI
 - **Node / APIs** — NestJS, Express, Prisma, REST, backend-for-frontend architectures
 - **Cloud & IaC** — AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, CodePipeline,
   CodeArtifact), Terraform, AWS CDK, Azure AD / SAML
@@ -51,10 +56,21 @@ decisions are made close to the business.
 
 *Consulting arm of the msg group for banks and financial services providers.*
 
-**BSI CRM customer platforms** — BSI, end customer Techem · 06/2025 – present
+**Physician fee settlement — objections and damages** — Kassenärztliche Vereinigung, client not named · 08/2025 – present
+*Senior IT Consultant / Senior Developer · team of 4: an architect, myself and two junior developers*
+Replacing long-established Excel-based processes with a web application for a Kassenärztliche
+Vereinigung, the public-law body that settles panel doctors' fees. The system handles objections
+(Widerspruch) against fee notices and claims for sonstige Schäden arising out of that settlement.
+Spring Boot backend, Vue 3 front end with Pinia, the whole system running on Kubernetes. AI-assisted
+engineering is a standing part of delivery here: GitHub Copilot and Claude in the daily development
+loop, self-built agentic workflows for recurring engineering work, and hands-on enablement of the two
+junior developers on both.
+**Stack:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
+
+**BSI CRM customer platforms** — BSI, end customer Techem · 06/2025 – 07/2025
 *Senior IT Consultant / Senior Developer · two-person teams*
 Two customer platforms built on BSI's proprietary CRM base software, both administering operations at
-European scale. Keep them running and current in two-person teams: maintenance, dependency and platform
+European scale. Kept them running and current in two-person teams: maintenance, dependency and platform
 updates and feature work across the Spring and Oracle backends and the Angular front end.
 **Stack:** Java, Spring, Oracle, Angular, BSI CRM
 

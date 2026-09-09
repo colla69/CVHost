@@ -17,8 +17,8 @@
         <div class="bio">
           <p class="lg-prose bio-lead">
             I am a software engineer with thirteen years behind me, the last five spent consulting
-            for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones and a
-            European asset manager.
+            for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, a European
+            asset manager and a Kassenärztliche Vereinigung.
           </p>
           <p class="lg-prose">
             I work across the full stack — Java and Jakarta EE backends through React, Angular and
@@ -26,6 +26,12 @@
             thread. Most of what I enjoy sits at the seam between the two: taking requirements
             straight from a business department and turning them into process design, estimates and
             documentation that developers can actually build from.
+          </p>
+          <p class="lg-prose">
+            Since 2025, AI-assisted engineering has been a standing part of how I deliver rather
+            than an experiment: GitHub Copilot and Claude in the daily development loop, agentic
+            workflows I built myself for the work that repeats, and getting a project team
+            productive with both.
           </p>
           <p class="lg-prose">
             I have carried technical responsibility for small teams on both the consultancy and the
@@ -77,8 +83,13 @@ export default {
           items: 'Java · Spring · Spring Boot · Jakarta EE · Hibernate · WildFly · Payara'
         },
         {
+          name: 'AI-assisted engineering',
+          items: 'GitHub Copilot · Claude · agentic development workflows · prompt patterns · ' +
+            'tool-assisted refactoring and test generation · enabling a team to work this way'
+        },
+        {
           name: 'Frontend',
-          items: 'TypeScript · React · Angular · RxJS · Vue.js · JSF 2.0 · Vaadin · Material UI'
+          items: 'TypeScript · React · Angular · RxJS · Vue.js · Pinia · JSF 2.0 · Vaadin · Material UI'
         },
         {
           name: 'Node / APIs',

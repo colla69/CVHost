@@ -10,13 +10,16 @@ Lungstr. 2, 81549 München · +49 157 84 89 14 09 · a.colarietitosti@googlemail
 
 ## Profil
 
-Softwareentwickler mit 13 Jahren Berufserfahrung, davon fünf als Consultant für Porsche, BMW Financial
-Services, Volkswagen Financial Services, Krones und einen europäischen Asset Manager. Arbeitet über den
-gesamten Stack — von Java- und Jakarta-EE-Backends (Java EE) bis zu Frontends mit React, Angular und
-TypeScript, mit AWS-Infrastruktur, Terraform und CI/CD als durchgehendem Faden. Nimmt Anforderungen
-direkt mit dem Fachbereich auf und überführt sie in Prozesskonzeption, Schätzungen und Dokumentation;
-Teamverantwortung für Juniorentwickler auf Berater- wie auf Kundenseite. AWS Certified Solutions
-Architect – Associate. Muttersprache Italienisch, verhandlungssicher in Deutsch und Englisch.
+Softwareentwickler mit 13 Jahren Berufserfahrung, davon fünf als Consultant für Porsche, BMW
+Financial Services, Volkswagen Financial Services, Krones, einen europäischen Asset Manager und eine
+Kassenärztliche Vereinigung. Arbeitet über den gesamten Stack — von Java- und Jakarta-EE-Backends
+(Java EE) bis zu Frontends mit React, Angular und TypeScript, mit AWS-Infrastruktur, Terraform und
+CI/CD als durchgehendem Faden. Nimmt Anforderungen direkt mit dem Fachbereich auf und überführt sie
+in Prozesskonzeption, Schätzungen und Dokumentation; Teamverantwortung für Juniorentwickler auf
+Berater- wie auf Kundenseite. Seit 2025 ist KI-gestützte Entwicklung fester Bestandteil dieser
+Arbeit — Copilot und Claude im täglichen Ablauf, selbst gebaute agentische Workflows und die
+Befähigung eines Projektteams im Umgang damit. AWS Certified Solutions Architect – Associate.
+Muttersprache Italienisch, verhandlungssicher in Deutsch und Englisch.
 
 Gesucht wird eine Rolle als Tech Lead bzw. Teamleiter mit End-to-End-Verantwortung für ein System und
 das Team dahinter — Architektur, Umsetzung und die Menschen, die sie tragen — in einer Organisation, in
@@ -27,7 +30,9 @@ der technische Entscheidungen nah am Fachbereich getroffen werden.
 ## Technische Kompetenzen
 
 - **Backend / JVM** — Java, Spring, Spring Boot, Jakarta EE (Java EE / J2EE), Hibernate, WildFly, Payara
-- **Frontend** — TypeScript, React, Angular, RxJS, Vue.js, JSF 2.0, Vaadin, Material UI
+- **KI-gestützte Entwicklung** — GitHub Copilot, Claude, agentische Entwicklungs-Workflows,
+  Prompt-Patterns, werkzeuggestütztes Refactoring und Testerstellung, Befähigung des Teams
+- **Frontend** — TypeScript, React, Angular, RxJS, Vue.js, Pinia, JSF 2.0, Vaadin, Material UI
 - **Node / APIs** — NestJS, Express, Prisma, REST, Backend-for-Frontend-Architekturen
 - **Cloud & IaC** — AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, CodePipeline,
   CodeArtifact), Terraform, AWS CDK, Azure AD / SAML
@@ -51,7 +56,17 @@ der technische Entscheidungen nah am Fachbereich getroffen werden.
 
 *Beratungshaus der msg-Gruppe für Banken und Finanzdienstleister.*
 
-**BSI-CRM-Kundenplattformen** — BSI, Endkunde Techem · 06/2025 – heute
+**Widersprüche und sonstige Schäden in der Honorarabrechnung** — Kassenärztliche Vereinigung, Kunde nicht genannt · 08/2025 – heute
+*Senior IT Consultant / Senior Entwickler · Team von 4: Architekt, Senior (ich), zwei Junioren*
+Ablösung langjährig gewachsener Excel-Prozesse durch eine Webanwendung für eine Kassenärztliche
+Vereinigung. Das System bearbeitet Widersprüche gegen Honorarbescheide sowie sonstige Schäden aus der
+Honorarabrechnung der Vertragsärzte. Spring-Boot-Backend, Vue-3-Frontend mit Pinia, Betrieb auf
+Kubernetes. KI-gestützte Entwicklung ist fester Bestandteil der Lieferung: GitHub Copilot und Claude
+im täglichen Entwicklungsablauf, selbst gebaute agentische Workflows für wiederkehrende Aufgaben und
+praktische Befähigung der beiden Juniorentwickler.
+**Technologien:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
+
+**BSI-CRM-Kundenplattformen** — BSI, Endkunde Techem · 06/2025 – 07/2025
 *Senior IT Consultant / Senior Entwickler · Teams von je 2*
 Zwei Kundenplattformen auf der proprietären CRM-Basissoftware von BSI, beide auf europäischer Ebene im
 Einsatz. Betrieb und Aktualisierung in Zweierteams: Wartung, Abhängigkeits- und Plattform-Updates sowie
@@ -199,6 +214,6 @@ gültig bis 04/2029
 ## Sprachen
 
 - **Italienisch** — Muttersprache
-- **Deutsch** — verhandlungssicher in Wort und Schrift. Schulzeit in Teilen sowie Berufsausbildung in
-  Deutschland absolviert; TestDaF, Goethe-Institut München
+- **Deutsch** — verhandlungssicher; Schulzeit und Berufsausbildung in Deutschland, TestDaF
+  (Goethe-Institut München)
 - **Englisch** — verhandlungssicher in Wort und Schrift; berufliche Arbeitssprache

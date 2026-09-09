@@ -3,10 +3,13 @@
 # the same file works whichever engine is installed.
 papersize: a4
 fontsize: 10pt
-geometry: margin=1.8cm
+# Tightened from 1.8cm when the KV engagement and the AI skills group were added:
+# all three languages spilled onto a fourth page. German runs longest, so the
+# vertical margin is what keeps it to three — check all three after any edit.
+geometry: margin=1.5cm
 margin:
-  x: 1.8cm
-  y: 1.8cm
+  x: 1.5cm
+  y: 1.2cm
 colorlinks: true
 # Hex, not a colour name: typst's template feeds this straight into rgb().
 linkcolor: "1a1a1a"

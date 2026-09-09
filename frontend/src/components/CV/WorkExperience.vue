@@ -25,9 +25,11 @@ export default {
           period: '2024 — today',
           title: 'Senior IT Consultant',
           company: 'msg for banking AG · Ismaning',
-          detail: 'BSI CRM platforms for Techem, the digital euro showcase for Pioneer ' +
-            'Investments, the IFRS 9 regulatory platform at Porsche Bank, and the GitLab ' +
-            'runner migration into AWS.'
+          detail: 'Currently replacing Excel-based processes for objections and damages ' +
+            'in physician fee settlement at a Kassenärztliche Vereinigung, with AI-assisted ' +
+            'engineering as a standing part of delivery. Before that the digital euro ' +
+            'showcase for Pioneer Investments, BSI CRM platforms for Techem, the IFRS 9 ' +
+            'regulatory platform at Porsche Bank and the GitLab runner migration into AWS.'
         },
         {
           period: '2021 — 2023',

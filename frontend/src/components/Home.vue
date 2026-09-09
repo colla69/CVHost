@@ -8,9 +8,14 @@
         <h1 class="lg-display hero-name">Andrea Colarieti&nbsp;Tosti</h1>
         <p class="lg-prose hero-pitch">
           <b>{{ yearsEngineering }} years</b> building software &mdash; <b>{{ yearsConsulting }} of them</b>
-          as a consultant for Porsche, BMW Financial Services, Volkswagen Financial Services and
-          Krones. Java and Jakarta EE backends through React and Angular front ends, with AWS,
-          Terraform and CI/CD running under all of it.
+          as a consultant for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones
+          and a Kassenärztliche Vereinigung. Java and Jakarta EE backends through React, Angular and Vue
+          front ends, with AWS, Terraform and CI/CD running under all of it.
+        </p>
+        <p class="lg-prose hero-ai">
+          Since 2025, <b>AI-assisted engineering</b> has been a standing part of how I deliver, not an
+          experiment: Copilot and Claude in the daily loop, agentic workflows I built myself, and a
+          project team brought onto both.
         </p>
         <p class="lg-prose hero-seeking">
           Now looking for a tech lead role with end-to-end ownership of a system and of the team
@@ -141,7 +146,8 @@ export default {
         'Krones',
         'Techem',
         'Schwarz IT',
-        'Pioneer Investments'
+        'Pioneer Investments',
+        'Kassenärztliche Vereinigung'
       ],
       // Slice before reverse: the JSON import is a shared module-level array.
       featured: projects
@@ -196,6 +202,16 @@ export default {
 
 .hero-pitch b {
   color: var(--lg-ink);
+  font-weight: 600;
+}
+
+.hero-ai {
+  font-size: clamp(0.9375rem, 1.9vw, 1.0625rem);
+  margin: 0 0 1.25rem;
+}
+
+.hero-ai b {
+  color: var(--lg-accent);
   font-weight: 600;
 }
 
