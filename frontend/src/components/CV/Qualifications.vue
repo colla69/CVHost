@@ -5,8 +5,8 @@
         <p class="lg-eyebrow">{{ qualifications.length }} documents</p>
         <h1 class="lg-heading page-title">Certificates</h1>
         <p class="lg-prose page-intro">
-          Diplomas, employment references and language certificates, as issued. Every one opens as
-          a PDF.
+          Diplomas, employment references, exam results and language certificates, as issued. Every
+          one opens as a PDF.
         </p>
       </header>
 
@@ -72,6 +72,20 @@ export default {
       dialog: false,
       active: null,
       qualifications: [
+        {
+          name: 'AWS Certified Solutions Architect — Associate',
+          issuer: 'Amazon Web Services · recertification · score 755/1000',
+          year: '2026',
+          group: 'Professional',
+          filename: 'AWS_SAA_2026.pdf'
+        },
+        {
+          name: 'AWS Certified Solutions Architect — Associate',
+          issuer: 'Amazon Web Services · first certification · score 736/1000',
+          year: '2022',
+          group: 'Professional',
+          filename: 'AWS_SAA_2022.pdf'
+        },
         {
           name: 'Python (Basic)',
           issuer: 'HackerRank',

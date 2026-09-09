@@ -106,20 +106,69 @@
   },
   {
     "id": 16,
+    "title": "A new adventure, and this time it is consulting",
+    "release_date": "2021-06-01 08:30:00",
+    "description_text": "First day at msgGillardonBSM AG in Ismaning, and my first day as a consultant.<br> The first engagement is already lined up: Mobih, a mobile maintenance application for Porsche AG that replaces paper-based processes in automobile production with an iOS app designed around the workflow people already have. Requirements come straight from the business department, which is exactly the part of this job I was hoping for.",
+    "img_link": "/img/project-conveyor.jpg"
+  },
+  {
+    "id": 17,
     "title": "I am the architect",
     "release_date": "2022-12-10 20:16:12",
     "description_text": "I did it! I passed my exam! <br> Now I am officially qualified as \"AWS Solutions Architect\"!",
     "img_link": "/img/news-server-room.jpg"
   },
   {
-    "id": 17,
+    "id": 18,
+    "title": "Sixty microservices and counting",
+    "release_date": "2023-01-16 19:20:00",
+    "description_text": "New project, and a different order of scale. I am operating and deploying more than 60 AWS backend microservices for Volkswagen Financial Services, integrating and calculating financing products inside the group cloud ecosystem.<br> Some of them I migrated off the old platform, some are new and mine from the first commit. TypeScript and NestJS in the services, Concourse CI on Fargate underneath, K6 when we need to know what actually breaks rather than what we assume will. The part I did not expect to enjoy is sitting with the business department and turning a requirement into an estimate somebody can plan against.",
+    "img_link": "/img/project-network-closet.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Same desk, new name on the door",
+    "release_date": "2024-01-08 18:10:00",
+    "description_text": "msgGillardonBSM has merged into msg for banking AG, so my employer changed name at the turn of the year while the work carried straight on. Senior IT Consultant now.<br> The new engagement is the IFRS 9 regulatory platform at Porsche Bank: a long-lived Java EE codebase to modernise &mdash; refactoring, security updates, dependencies that stopped being maintained years ago &mdash; along with the pipelines and DevOps processes around it, which are moving into AWS. Old code that a lot of people quietly depend on is its own kind of interesting.",
+    "img_link": "/img/project-ledger-book.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Moving servers again, only this time they are not mine",
+    "release_date": "2024-05-20 17:40:00",
+    "description_text": "Five years ago I moved my own servers and wrote about it here. This time it is the company's: both GitLab build agents into AWS, against a fixed cut-over date, with four projects building on them throughout.<br> The real constraint was corporate security and compliance &mdash; the setup has to satisfy them before it satisfies me. It went over on the date, and what came out of it is a reusable Terraform template the next runner can be built from, rather than a runbook nobody reads.",
+    "img_link": "/img/news-shipping-containers.jpg"
+  },
+  {
+    "id": 21,
+    "title": "Paying with a euro that does not exist yet",
+    "release_date": "2025-01-20 18:00:00",
+    "description_text": "New project: a showcase application for the digital euro at Pioneer Investments &mdash; a synchronised payment application, a companion mobile app, and a tested client for the ECB's REST APIs.<br> Team of six, and two junior developers are my responsibility this time, not someone else's. I ran the requirements gathering with the business department and owned the process design and documentation for both sides: the client, who has to recognise their own process in it, and the developers, who have to build from it.",
+    "img_link": "/img/project-financial-charts.jpg"
+  },
+  {
+    "id": 22,
+    "title": "Out of Excel, into production",
+    "release_date": "2025-08-18 19:30:00",
+    "description_text": "After two months on BSI's CRM customer platforms &mdash; Spring and Oracle behind an Angular front end, kept current in two-person teams &mdash; I am on something with a longer horizon.<br> A public-sector client in the German healthcare system is replacing long-established Excel-based processes with a real web application: objection procedures and claims for damages arising out of settlement. Spring Boot, Vue 3 with Pinia, the whole system on Kubernetes, in a team of four.<br><br>The part worth writing down is how it gets built. AI-assisted engineering is a standing part of delivery here rather than a side experiment: GitHub Copilot and Claude in the daily loop, agentic workflows I built for the work that keeps recurring, and &mdash; the bit I actually care about &mdash; getting the two junior developers genuinely good at both.",
+    "img_link": "/img/project-invoice-form.jpg"
+  },
+  {
+    "id": 23,
+    "title": "Still the architect",
+    "release_date": "2026-04-21 20:05:00",
+    "description_text": "Recertified: AWS Certified Solutions Architect &ndash; Associate, valid until April 2029.<br> Three years and change since the first badge, and the exam has aged better than I expected &mdash; most of what it asks about is what I have been doing since anyway: Lambda and DynamoDB, VPCs and Route 53, Fargate, and the pipelines that put things there. Good to have it in writing again.",
+    "img_link": "/img/news-gold-medal.jpg"
+  },
+  {
+    "id": 24,
     "title": "Same story, told properly this time",
     "release_date": "2026-09-08 18:00:00",
     "description_text": "My CV and this website had quietly drifted apart over the years &mdash; different dates, different job titles, even a different school. They now tell the same story, and the CV exists in English, German and Italian. <br> Thirteen years, from Delphi at 3Points to AWS, pipelines and leading developers at msg for banking. The project list on this site is finally up to date again as well.",
     "img_link": "/img/news-blogging-desk.jpg"
   },
   {
-    "id": 18,
+    "id": 25,
     "title": "I gave my trading bot a review board",
     "release_date": "2026-09-09 15:00:00",
     "description_text": "I built <a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\">PlayCryptoWithAI</a> to learn agentic architecture properly. It trades 37 Binance pairs unattended in Docker, and it works, which still surprises me.<br><br>The bot isn't the interesting part. It has <b>eleven reviewing agents</b> — risk, security, backtest, pre-commit, project — and their rules were written by my own outages. When a silent price-mark freeze and a phantom-position bug each mis-stated my live equity, the fix wasn't only the patch: the root cause became a rule that gets checked on every change from then on. The patch fixes the instance; the rule fixes the class.<br><br>Two things I'd tell anyone pointing agents at code that matters. Reviewers get <i>read-only</i> tools — an agent that can edit is an agent that can quietly make a problem disappear instead of reporting it. And prefer reproducible numbers over impressive ones: I deleted a better-looking backtest result because I couldn't reproduce it exactly, which made it an anecdote rather than a result.<br><br>Written up in full in <code>writing/agentic-review-board.md</code>, and the <code>.claude/</code> directory is public in the repo if you want to steal from it.",
