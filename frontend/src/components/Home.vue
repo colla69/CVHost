@@ -163,7 +163,7 @@ export default {
       return [
         { value: this.yearsEngineering, label: 'Years engineering' },
         { value: this.yearsConsulting, label: 'Years consulting' },
-        { value: '60+', label: 'AWS microservices run' },
+        { value: '20+', label: 'Clients & teams' },
         { value: 'SA–A', label: 'AWS certified architect' }
       ]
     }
