@@ -11,8 +11,8 @@ Lungstr. 2, 81549 München · +49 157 84 89 14 09 · a.colarietitosti@googlemail
 ## Profil
 
 Softwareentwickler mit 13 Jahren Berufserfahrung, davon fünf als Consultant für Porsche, BMW
-Financial Services, Volkswagen Financial Services, Krones, einen europäischen Asset Manager und eine
-Kassenärztliche Vereinigung. Arbeitet über den gesamten Stack — von Java- und Jakarta-EE-Backends
+Financial Services, Volkswagen Financial Services, Krones, einen europäischen Asset Manager und einen
+öffentlichen Auftraggeber im Gesundheitswesen. Arbeitet über den gesamten Stack — von Java- und Jakarta-EE-Backends
 (Java EE) bis zu Frontends mit React, Angular und TypeScript, mit AWS-Infrastruktur, Terraform und
 CI/CD als durchgehendem Faden. Nimmt Anforderungen direkt mit dem Fachbereich auf und überführt sie
 in Prozesskonzeption, Schätzungen und Dokumentation; Teamverantwortung für Juniorentwickler auf
@@ -56,14 +56,14 @@ der technische Entscheidungen nah am Fachbereich getroffen werden.
 
 *Beratungshaus der msg-Gruppe für Banken und Finanzdienstleister.*
 
-**Widersprüche und sonstige Schäden in der Honorarabrechnung** — Kassenärztliche Vereinigung, Kunde nicht genannt · 08/2025 – heute
+**Widerspruchs- und Schadensfälle in der Abrechnung** — öffentlicher Auftraggeber im Gesundheitswesen, nicht genannt · 08/2025 – heute
 *Senior IT Consultant / Senior Entwickler · Team von 4: Architekt, Senior (ich), zwei Junioren*
-Ablösung langjährig gewachsener Excel-Prozesse durch eine Webanwendung für eine Kassenärztliche
-Vereinigung. Das System bearbeitet Widersprüche gegen Honorarbescheide sowie sonstige Schäden aus der
-Honorarabrechnung der Vertragsärzte. Spring-Boot-Backend, Vue-3-Frontend mit Pinia, Betrieb auf
-Kubernetes. KI-gestützte Entwicklung ist fester Bestandteil der Lieferung: GitHub Copilot und Claude
-im täglichen Entwicklungsablauf, selbst gebaute agentische Workflows für wiederkehrende Aufgaben und
-praktische Befähigung der beiden Juniorentwickler.
+Ablösung langjährig gewachsener Excel-Prozesse durch eine Webanwendung für einen öffentlichen
+Auftraggeber im Gesundheitswesen. Das System bearbeitet Widerspruchsverfahren sowie sonstige Schäden
+aus der Abrechnung. Spring-Boot-Backend, Vue-3-Frontend mit Pinia, Betrieb auf Kubernetes.
+KI-gestützte Entwicklung ist fester Bestandteil der Lieferung: GitHub Copilot und Claude im täglichen
+Entwicklungsablauf, selbst gebaute agentische Workflows für wiederkehrende Aufgaben und praktische
+Befähigung der beiden Juniorentwickler.
 **Technologien:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
 
 **BSI-CRM-Kundenplattformen** — BSI, Endkunde Techem · 06/2025 – 07/2025

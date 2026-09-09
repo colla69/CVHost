@@ -9,7 +9,7 @@
         <p class="lg-prose hero-pitch">
           <b>{{ yearsEngineering }} years</b> building software &mdash; <b>{{ yearsConsulting }} of them</b>
           as a consultant for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones
-          and a Kassenärztliche Vereinigung. Java and Jakarta EE backends through React, Angular and Vue
+          and the German public sector. Java and Jakarta EE backends through React, Angular and Vue
           front ends, with AWS, Terraform and CI/CD running under all of it.
         </p>
         <p class="lg-prose hero-ai">
@@ -147,7 +147,7 @@ export default {
         'Techem',
         'Schwarz IT',
         'Pioneer Investments',
-        'Kassenärztliche Vereinigung'
+        'Public sector · healthcare'
       ],
       // Slice before reverse: the JSON import is a shared module-level array.
       featured: projects

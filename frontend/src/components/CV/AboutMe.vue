@@ -18,7 +18,7 @@
           <p class="lg-prose bio-lead">
             I am a software engineer with thirteen years behind me, the last five spent consulting
             for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, a European
-            asset manager and a Kassenärztliche Vereinigung.
+            asset manager and a public-sector client in healthcare.
           </p>
           <p class="lg-prose">
             I work across the full stack — Java and Jakarta EE backends through React, Angular and

@@ -12,7 +12,7 @@ Lungstr. 2, 81549 Monaco di Baviera, Germania · +49 157 84 89 14 09 · a.colari
 
 Sviluppatore software con 13 anni di esperienza professionale, gli ultimi cinque come consulente per
 Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, un asset manager europeo e
-un ente pubblico del sistema sanitario tedesco. Lavora sull'intero stack — dai backend Java e
+un committente pubblico nella sanità. Lavora sull'intero stack — dai backend Java e
 Jakarta EE (Java EE) ai frontend in React, Angular e TypeScript — con infrastruttura AWS, Terraform
 e CI/CD come filo conduttore costante. Raccoglie i requisiti direttamente dalle unità di business e
 li traduce in progettazione dei processi, stime e documentazione; ha avuto responsabilità di team su
@@ -56,14 +56,13 @@ decisioni tecniche si prendono vicino al business.
 
 *Società di consulenza del gruppo msg per banche e servizi finanziari.*
 
-**Ricorsi e danni nella liquidazione dei compensi medici** — Kassenärztliche Vereinigung, cliente non nominato · 08/2025 – oggi
+**Piattaforma per ricorsi e danni nella liquidazione** — committente pubblico nella sanità tedesca, non nominato · 08/2025 – oggi
 *Senior IT Consultant / Senior Developer · team di 4: un architetto, io e due sviluppatori junior*
-Sostituzione di processi Excel consolidati da anni con un'applicazione web per una Kassenärztliche
-Vereinigung, l'ente di diritto pubblico che liquida i compensi dei medici convenzionati. Il sistema
-gestisce i ricorsi (Widerspruch) contro gli avvisi di compenso e le richieste per i cosiddetti
-sonstige Schäden derivanti da quella liquidazione. Backend Spring Boot, frontend Vue 3 con Pinia,
-esecuzione interamente su Kubernetes. Qui lo sviluppo assistito dall'IA è parte stabile della
-consegna: GitHub Copilot e Claude nel flusso di sviluppo quotidiano, workflow agentici costruiti
+Sostituzione di processi Excel consolidati da anni con un'applicazione web per un committente pubblico
+del sistema sanitario tedesco. Il sistema gestisce i procedimenti di ricorso (Widerspruchsverfahren) e
+le richieste per i cosiddetti sonstige Schäden derivanti dalla liquidazione. Backend Spring Boot,
+frontend Vue 3 con Pinia, esecuzione su Kubernetes. Qui lo sviluppo assistito dall'IA è parte stabile
+della consegna: GitHub Copilot e Claude nel flusso quotidiano, workflow agentici costruiti
 internamente per le attività ricorrenti e affiancamento pratico dei due junior su entrambi.
 **Tecnologie:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
 

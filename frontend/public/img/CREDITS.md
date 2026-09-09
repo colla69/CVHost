@@ -51,7 +51,7 @@ attribution below is required.
 | `project-invoice-form.jpg` | project #10 - mfXE13 Invoice module | Kurt Schwitters | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:1929_Kurt_Schwitters_Rechnungsbogen_%28invoice%29_Buchdruckerei_Buchbinderei_Wilhelm_Schr%C3%B6er_Hannover.jpg) |
 | `project-network-closet.jpg` | project #13 - Personal Dyn Dns | — | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cable_closet_bh.jpg) |
 | `project-power-lines.jpg` | project #16 - Energy Management Systems | C.Stadler/Bwag | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Himberg_-_Hochspannungs-Freileitungen.JPG) |
-| `project-ledger-book.jpg` | project #24 - Physician fee settlement, objections and damages | Paul Kammüller | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:1911-04-20_Illustrirte_Zeitung_S._0020_S._XX_Edler_%26_Krische_Hannover_Berlin,_EKHA_Lose-Bl%C3%A4tter-Gesch%C3%A4ftsbuch,_Paul_Kamm%C3%BCller_%28Ausschnitt%29.jpg) |
+| `project-ledger-book.jpg` | project #24 - Objections and damages case platform | Paul Kammüller | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:1911-04-20_Illustrirte_Zeitung_S._0020_S._XX_Edler_%26_Krische_Hannover_Berlin,_EKHA_Lose-Bl%C3%A4tter-Gesch%C3%A4ftsbuch,_Paul_Kamm%C3%BCller_%28Ausschnitt%29.jpg) |
 | `project-voip-phone.jpg` | project #2 - Askozia VoIP server setup | Rakoon | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:20181025_162229_VoIP_telephone_in_Poland.jpg) |
 
 Three further entries reuse photos already listed above rather than adding near-duplicates:

@@ -12,7 +12,7 @@ Lungstr. 2, 81549 München, Germany · +49 157 84 89 14 09 · a.colarietitosti@g
 
 Software engineer with 13 years of professional experience, the last five as a consultant delivering
 projects for Porsche, BMW Financial Services, Volkswagen Financial Services, Krones, a European
-asset manager and a public body in the German statutory health system. Works across the full stack,
+asset manager and a public-sector client in healthcare. Works across the full stack,
 from Java and Jakarta EE (Java EE) backends to React, Angular and TypeScript front ends, with AWS
 infrastructure, Terraform and CI/CD as a constant thread. Takes requirements directly from business
 departments and turns them into process design, estimates and documentation, and has carried
@@ -56,15 +56,14 @@ decisions are made close to the business.
 
 *Consulting arm of the msg group for banks and financial services providers.*
 
-**Physician fee settlement — objections and damages** — Kassenärztliche Vereinigung, client not named · 08/2025 – present
+**Objections and damages case platform** — public-sector client in healthcare, not named · 08/2025 – present
 *Senior IT Consultant / Senior Developer · team of 4: an architect, myself and two junior developers*
-Replacing long-established Excel-based processes with a web application for a Kassenärztliche
-Vereinigung, the public-law body that settles panel doctors' fees. The system handles objections
-(Widerspruch) against fee notices and claims for sonstige Schäden arising out of that settlement.
-Spring Boot backend, Vue 3 front end with Pinia, the whole system running on Kubernetes. AI-assisted
-engineering is a standing part of delivery here: GitHub Copilot and Claude in the daily development
-loop, self-built agentic workflows for recurring engineering work, and hands-on enablement of the two
-junior developers on both.
+Replacing long-established Excel-based processes with a web application for a public-sector client in
+the German healthcare system. The system handles objection procedures (Widerspruchsverfahren) and
+claims for sonstige Schäden arising out of settlement. Spring Boot backend, Vue 3 front end with
+Pinia, the whole system running on Kubernetes. AI-assisted engineering is a standing part of delivery
+here: GitHub Copilot and Claude in the daily development loop, self-built agentic workflows for
+recurring engineering work, and hands-on enablement of the two junior developers on both.
 **Stack:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
 
 **BSI CRM customer platforms** — BSI, end customer Techem · 06/2025 – 07/2025
