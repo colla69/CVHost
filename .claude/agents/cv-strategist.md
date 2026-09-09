@@ -35,7 +35,7 @@ owner fills them in.
 | Landing pitch and the CV download link | `src/components/Home.vue` |
 | Downloadable CV exports | `public/data/` — `CV_en.pdf`, `Lebenslauf.pdf`, `CV_it.pdf`, `CV_Docs.zip` |
 
-Those exports are rendered from the three markdown files by `CV/build-pdf.sh` (pandoc + typst) and are
+Those exports are rendered from the three markdown files by `CV/build-pdf.sh` (md2typst.py + typst) and are
 what the home page's download link actually serves. They are the sharpest edge in the whole setup: the
 moment the master changes and they are not regenerated, a recruiter downloads a CV that contradicts
 `CV/CV.md`. After any material edit, say out loud that they need regenerating — and that regenerating
