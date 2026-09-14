@@ -2,6 +2,18 @@
 
 How cv.colarietitosti.info is actually served, and how to publish to it.
 
+## Migrating to AWS — in progress
+
+The site is moving off the Strato box entirely: Route 53 for DNS, CloudFront for TLS and
+caching, a private S3 bucket as origin. All of it is CDK, in `infra/` — **see
+[`infra/README.md`](infra/README.md) for the architecture, the reasoning and the runbook.**
+That is the authoritative document for the target state; what follows describes production
+as it stands today, until the cutover lands.
+
+`scripts/aws-infra.sh` no longer provisions anything. It has two read-only subcommands:
+`status` (what exists in AWS and what is live) and `verify` (diff the new Route 53 zone
+against live DNS, the gate before the nameserver change).
+
 ## Architecture
 
 ```
@@ -24,6 +36,11 @@ cp scripts/.env.deploy.example scripts/.env.deploy   # fill in DEPLOY_BUCKET
 ./scripts/deploy.sh --apply                           # publish
 ./scripts/deploy.sh --apply --no-build                # publish an existing dist/
 ```
+
+`DEPLOY_BUCKET` and `CF_DISTRIBUTION_ID` both fall back to the `CvHostSite` stack outputs,
+so once `infra/` is deployed neither needs to be set by hand. After the cutover the script
+also issues a CloudFront invalidation for `/`, `/index.html` and `/data/*` — the hashed
+assets under `static/` are immutable for a year and never need one.
 
 The script builds, then uploads in three passes, deliberately ordered so the live `index.html` never
 references hashed assets that have not landed yet:
@@ -71,7 +88,8 @@ interactive login — deploys use `default`, region `eu-central-1`.
 S3's key-not-found straight through. Only in-app navigation from `/` works; a refresh or a shared link
 fails.
 
-This cannot be fixed from this repo. `frontend/public/.htaccess` is a leftover from the older
+This is fixed by the CloudFront migration (`infra/functions/spa-fallback.js`). Until then
+it cannot be fixed from this repo. `frontend/public/.htaccess` is a leftover from the older
 plain-Apache setup and `frontend/nginx.conf` belonged to the Docker image deleted in `8dd7cd4` —
 neither is what serves production. The fix belongs in the nginx config **on the Strato host**, roughly:
 
