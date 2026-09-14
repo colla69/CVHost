@@ -13,6 +13,10 @@
 #   DEPLOY_PREFIX   (optional)  key prefix inside the bucket, default none
 #   AWS_PROFILE     (optional)  default "default"
 #   AWS_REGION      (optional)  default "eu-central-1"
+#   CF_DISTRIBUTION_ID (optional) CloudFront distribution to invalidate after upload.
+#
+# DEPLOY_BUCKET and CF_DISTRIBUTION_ID both fall back to the outputs of the
+# CvHostSite CDK stack (infra/), so after the migration neither needs setting.
 
 set -euo pipefail
 
@@ -38,9 +42,30 @@ for arg in "$@"; do
   esac
 done
 
-: "${DEPLOY_BUCKET:?set DEPLOY_BUCKET (in scripts/.env.deploy or the environment)}"
 export AWS_PROFILE="${AWS_PROFILE:-default}"
 export AWS_REGION="${AWS_REGION:-eu-central-1}"
+
+# The bucket and the distribution are outputs of the CDK stack in infra/.
+# Reading them from CloudFormation means there is no resource name duplicated
+# into a config file to drift, and a redeploy that replaces either one is picked
+# up here without anyone editing anything. The stack is in us-east-1 because
+# CloudFront reads its certificate from there; the bucket sync uses AWS_REGION.
+stack_output() {
+  aws cloudformation describe-stacks --region us-east-1 --stack-name CvHostSite \
+    --query "Stacks[0].Outputs[?OutputKey=='$1'].OutputValue|[0]" --output text 2>/dev/null \
+    | grep -v '^None$' || true
+}
+
+[ -n "${DEPLOY_BUCKET:-}" ]      || DEPLOY_BUCKET="$(stack_output BucketName)"
+[ -n "${CF_DISTRIBUTION_ID:-}" ] || CF_DISTRIBUTION_ID="$(stack_output DistributionId)"
+
+if [ -z "${DEPLOY_BUCKET:-}" ]; then
+  echo "ERROR: no DEPLOY_BUCKET, and the CvHostSite stack has no BucketName output." >&2
+  echo "       Either set DEPLOY_BUCKET in scripts/.env.deploy, or deploy the stack:" >&2
+  echo "         npm --prefix infra run deploy:site" >&2
+  echo "       If you expected the stack to exist, check your credentials first." >&2
+  exit 1
+fi
 
 PREFIX="${DEPLOY_PREFIX:-}"
 PREFIX="${PREFIX#/}"; PREFIX="${PREFIX%/}"
@@ -104,6 +129,26 @@ aws s3 cp "$DIST/index.html" "${TARGET}/index.html" \
   --cache-control 'no-cache,must-revalidate' \
   --content-type 'text/html; charset=utf-8' "${DRY[@]}"
 
+# --- invalidate CloudFront ---------------------------------------------------
+# S3 is the origin, not the thing visitors hit, so a fresh upload is invisible
+# until the edge caches are told. index.html is no-cache and data/ is 5 minutes,
+# but the hashed assets under static/ are immutable-for-a-year, so a targeted
+# invalidation of the two mutable prefixes is enough and stays inside the
+# 1000-free-paths-per-month allowance.
+if [ "$APPLY" -eq 1 ] && [ -n "${CF_DISTRIBUTION_ID:-}" ]; then
+  say "Invalidating CloudFront ${CF_DISTRIBUTION_ID}"
+  inv=$(aws cloudfront create-invalidation \
+          --distribution-id "$CF_DISTRIBUTION_ID" \
+          --paths '/' '/index.html' '/data/*' \
+          --query 'Invalidation.Id' --output text)
+  echo "invalidation ${inv} submitted; edges typically catch up within a minute"
+elif [ "$APPLY" -eq 1 ]; then
+  say "No CloudFront distribution configured"
+  echo "While nginx on the Strato box still proxies the bucket directly there is no"
+  echo "edge cache to invalidate. Once CvHostSite is deployed this resolves itself"
+  echo "from the stack outputs -- see infra/README.md."
+fi
+
 # --- verify the live site, not the exit code ---------------------------------
 if [ "$APPLY" -eq 1 ]; then
   say "Verifying https://cv.colarietitosti.info/"
@@ -116,9 +161,15 @@ if [ "$APPLY" -eq 1 ]; then
     echo "Deep link /qualifications -> 200"
   else
     echo "NOTE: deep link /qualifications -> ${deep}."
-    echo "      Expected until the SPA fallback is fixed. The nginx that proxies to this"
-    echo "      bucket runs on the Strato host, not in this repo, and must rewrite unknown"
-    echo "      paths to /index.html. Uploading files here cannot fix it."
+    if [ -n "${CF_DISTRIBUTION_ID:-}" ]; then
+      echo "      CloudFront is serving this site, so the SpaFallback function should have"
+      echo "      rewritten this to /index.html. Check it is still associated with the"
+      echo "      default cache behaviour in infra/lib/site-stack.ts."
+    else
+      echo "      Expected while the Strato box still proxies the bucket: its nginx passes"
+      echo "      S3's key-not-found straight through. CloudFront fixes this at the cutover;"
+      echo "      uploading files here cannot."
+    fi
   fi
 else
   say "Dry run complete — no changes were made."
