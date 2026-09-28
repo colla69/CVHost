@@ -23,9 +23,13 @@ conflict.
 
 ## The routine
 
-A claude.ai cloud routine on the owner's account, not something in this repo. It runs Monday and Thursday
-at 07:07 Europe/Berlin, in a cloud environment with **Full** network access (the default "Trusted"
-allowlist blocks job boards). Its prompt, kept here so the repo shows what it does:
+A claude.ai cloud routine on the owner's account, not something in this repo: its schedule, prompt, model
+and environment live there, and it clones `master` on every run, so changes to the agent or the profile
+take effect without touching it. It runs Monday and Thursday at **02:07 Europe/Berlin**. The time is
+deliberate: a run draws on the owner's subscription limits, and the five-hour usage window it opens has
+closed by about 07:00, before the working day. It runs in a cloud environment with **Full** network
+access (the default "Trusted" allowlist blocks job boards). Its prompt, kept here so the repo shows what
+it does (editing this copy does not change the routine):
 
 > Use the job-scout agent (`.claude/agents/job-scout.md`) to run a scheduled sweep exactly as its
 > definition describes — unattended, `trigger: routine`, no questions. When it returns, run

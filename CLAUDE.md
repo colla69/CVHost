@@ -117,8 +117,8 @@ names, debug `console.log`, the dead `infoList.vue`) are gone.
 ## Job search
 
 `job-scout` searches for remote roles and records every sweep under `jobs/`. It runs on demand
-(`claude --agent job-scout`, or `@agent-job-scout`) and as a cloud routine on Monday and Thursday
-mornings, which **pushes one commit straight to `master`**, touching only `jobs/`. Pull before you
+(`claude --agent job-scout`, or `@agent-job-scout`) and as a cloud routine at 02:07 on Monday and
+Thursday nights, which **pushes one commit straight to `master`**, touching only `jobs/`. Pull before you
 commit.
 
 `jobs/runs/*.json` are history: never edit or reformat a committed sweep. `jobs/runs/*.md` and
