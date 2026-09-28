@@ -1,0 +1,53 @@
+{
+  "trigger": ["manual", "routine"],
+  "source_method": ["api", "feed", "websearch", "fetch"],
+  "source_status": ["ok", "empty", "blocked", "error"],
+  "lane": ["tech-lead", "fullstack", "ai-eng", "other"],
+  "contract": ["permanent", "freelance", "unknown"],
+  "seniority": ["junior", "mid", "senior", "staff", "lead", "principal", "head", "unknown"],
+  "remote_type": ["remote", "remote-first", "hybrid", "onsite", "unknown"],
+  "regions": ["EU", "EEA", "EUROPE", "DACH", "EMEA", "WORLDWIDE", "AMERICAS", "LATAM", "APAC"],
+  "currency": ["EUR", "CHF", "GBP", "USD", "PLN", "SEK", "DKK", "NOK", "CZK"],
+  "salary_period": ["year", "month", "day", "hour"],
+  "verdict": ["shortlisted", "kept", "dropped"],
+  "drop_reason": [
+    "not-germany",
+    "onsite",
+    "too-junior",
+    "ml-research",
+    "off-lane",
+    "stack-mismatch",
+    "language",
+    "closed",
+    "stale",
+    "excluded-company",
+    "low-score",
+    "other"
+  ],
+  "stack": [
+    "java", "kotlin", "scala", "groovy",
+    "spring", "spring-boot", "jakarta-ee", "quarkus", "micronaut", "hibernate",
+    "typescript", "javascript", "node", "nestjs", "express",
+    "react", "angular", "vue", "svelte", "nextjs",
+    "python", "go", "rust", "csharp", "dotnet", "php", "ruby", "elixir", "cpp",
+    "ios", "android", "flutter", "react-native",
+    "aws", "azure", "gcp",
+    "terraform", "cdk", "pulumi", "kubernetes", "docker", "helm", "linux",
+    "ci-cd", "gitlab-ci", "github-actions", "jenkins", "argocd",
+    "kafka", "rabbitmq", "microservices", "rest", "graphql", "grpc",
+    "postgresql", "oracle", "mysql", "sql-server", "mongodb", "dynamodb", "redis", "elasticsearch",
+    "llm", "rag", "agents", "mlops", "ml", "pytorch", "data-engineering",
+    "observability", "security",
+    "sap", "salesforce", "crm"
+  ],
+  "domain": [
+    "fintech", "banking", "insurance", "payments", "regtech", "leasing", "crypto",
+    "automotive", "mobility", "logistics",
+    "health", "public-sector",
+    "industrial-iot", "manufacturing", "energy", "climate",
+    "ecommerce", "retail", "travel", "media", "gaming", "education", "telecom",
+    "saas", "devtools", "ai", "security", "hr",
+    "consulting", "staffing",
+    "other"
+  ]
+}
