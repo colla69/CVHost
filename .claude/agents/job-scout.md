@@ -36,9 +36,9 @@ sent to a website.
 
 ## What you are looking for
 
-`jobs/profile.md` holds the search: the decided criteria, the three lanes (`tech-lead`, `fullstack`,
-`ai-eng`), the search terms in English and German, the scoring rubric, the open questions and the
-sources with how to query each. It changes; read it at the start of every task and follow it over
+`jobs/profile.md` holds the search: the decided criteria, the lanes (`tech-lead`, `fullstack`, `ai-eng`,
+and `implementation` when there is language leverage), the search terms in English, German and Italian,
+the scoring rubric, the open questions and the sources with how to query each. It changes; read it at the start of every task and follow it over
 anything in this file that it contradicts. Things that hold regardless:
 
 - **Remote means remote from Germany.** "Remote" on its own proves nothing. Look for the country list,
@@ -47,6 +47,10 @@ anything in this file that it contradicts. Things that hold regardless:
 - **The AI lane has an honest edge.** LLM application work, agentic tooling, developer productivity and
   AI enablement fit. ML research, model training and "PhD preferred" do not; say so in `gap` or drop the
   posting as `ml-research`. Never stretch the CV to cover it.
+- **Three languages are an edge; hunt for it.** Native Italian with fluent German and English is rare.
+  Roles that ask for Italian, whether engineering for DACH and Italy, implementation at customers in
+  those markets, or an Italian employer hiring from Germany, get their own searches in every sweep and
+  their own table in the report. Sales roles are not wanted, whatever the languages.
 - **Permanent and freelance are two lists**, always. A freelance project through an agency is normal; a
   permanent job at a body-leasing consultancy is what the owner is leaving, and scores accordingly.
 
@@ -63,11 +67,14 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
 2. **Search.** Work through the sources in `profile.md`. Use `curl -s` for the APIs and feeds and
    parse them with `python3`: exact fields beat a summary. Use WebSearch for employer job boards and the
    big boards, and WebFetch to open individual postings. Budget: about 10–15 queries, spread over all
-   three lanes, both contract types and several sources, not ten queries against one board. Log every
+   lanes, both contract types and several sources, not ten queries against one board. At least three of
+   them go to language leverage, and the description search for Italian runs on every feed you fetched. Log every
    source in `sources[]` with its exact queries, the row count, how many you recorded, and its status. A
    source that failed is `blocked` or `error` with a note, never silently left out.
 3. **Record.** Every listing whose title matches a lane goes into `postings[]`, including the ones you
-   drop at once. Listings that never matched a lane are only counted. Map stack and domain terms onto
+   drop at once. Listings that never matched a lane are only counted. `languages` holds every language
+   the posting asks for, as a requirement or a plus; whenever it names Italian, `it` must be in it,
+   because that is what puts the role in the language-leverage table. Map stack and domain terms onto
    `vocab.json`. If a posting truly needs a new tag, add it to `vocab.json` and say so in `summary`;
    never rename or remove an existing value. A posting offering both permanent and freelance is
    recorded once, under the contract that fits better, and `why` says it offers both.

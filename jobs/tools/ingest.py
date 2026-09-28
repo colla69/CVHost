@@ -2,7 +2,7 @@
 """Validate job-scout sweeps, write their reports and rebuild the postings index.
 
     python3 jobs/tools/ingest.py jobs/runs/<run_id>.json   # a new sweep: normalise, validate, report, index
-    python3 jobs/tools/ingest.py                           # check every sweep and rebuild the index
+    python3 jobs/tools/ingest.py                           # check every sweep, rebuild reports and index
 
 A new sweep is rewritten in place once: every posting gets its canonical id and every object a fixed key
 order. Sweeps already committed to git are history and are never rewritten; the script refuses to.
@@ -218,7 +218,7 @@ def build_index(runs):
 
 
 def cell(text):
-    return str(text or '').replace('|', '\\|').replace('\n', ' ').strip()
+    return str(text or '').replace('|', '\\|').replace('<', '&lt;').replace('\n', ' ').strip()
 
 
 def link(p):
@@ -251,6 +251,16 @@ def salary_text(salary):
     return f'{span} {salary["currency"]}/{salary["period"]}'
 
 
+def language_leverage(p):
+    """Italian among the languages a posting asks for: the edge three languages give the owner."""
+    return 'it' in p['languages']
+
+
+DETAIL_MIN = 6
+DETAIL_HEAD = ['| Score | Role | Lane · level | Remote | Pay | Stack | Languages | Posted | Why it fits | Gap |',
+               '| ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
+
+
 def render(run, first_seen):
     postings = run['postings']
     counts = {v: sum(1 for p in postings if p['verdict'] == v) for v in VOCAB['verdict']}
@@ -262,37 +272,56 @@ def render(run, first_seen):
         '',
         run['summary'].strip(),
         '',
+        f'Tables list every role scoring {DETAIL_MIN} or more. A **bold** score is on the shortlist; the '
+        'small figures under it are stack · level · remote · domain · company, 0–2 each.',
+        '',
     ]
 
     def seen(p):
         earlier = first_seen.get(p['id'])
-        return 'new' if earlier is None else f'since {earlier[:10]}'
+        return 'new' if earlier is None else f'seen since {earlier[:10]}'
 
     def rank(p):
         return (-p['score']['total'], p['company'].lower())
 
+    def detail(p, with_contract):
+        s = p['score']
+        total = f'**{s["total"]}**' if p['verdict'] == 'shortlisted' else str(s['total'])
+        parts = '·'.join(str(s[k]) for k in SCORE_KEYS[:-1])
+        role = f'{link(p)}<br>{cell(p["company"])}<br><sub>{cell(p["source"])} · {seen(p)}</sub>'
+        if not p['verified']:
+            role += '<br>*unverified*'
+        lane = f'{p["lane"]}<br>{p["seniority"]}' + (f'<br>{p["contract"]}' if with_contract else '')
+        return (f'| {total}<br><sub>{parts}</sub> | {role} | {lane} | {cell(remote_text(p["remote"]))} '
+                f'| {cell(salary_text(p["salary"]))} | {cell(", ".join(p["stack"][:6])) or "—"} '
+                f'| {", ".join(p["languages"]) or "—"} | {p["posted_at"] or "—"} '
+                f'| {cell(p["why"])} | {cell(p["gap"])} |')
+
+    listed = [p for p in postings if p['verdict'] != 'dropped']
+    leverage = sorted((p for p in listed if language_leverage(p)), key=rank)
+    lines += ['## Language leverage — roles that ask for Italian', '']
+    if leverage:
+        lines += ['Every contract type, every score: here the three languages are the edge.', '']
+        lines += DETAIL_HEAD + [detail(p, True) for p in leverage]
+    else:
+        lines += ['No role that passed the filters asked for Italian this time.']
+    lines.append('')
+
+    others = [p for p in listed if not language_leverage(p)]
     for contract in VOCAB['contract']:
-        shortlist = sorted((p for p in postings if p['verdict'] == 'shortlisted' and p['contract'] == contract),
-                           key=rank)
-        if not shortlist and contract == 'unknown':
+        rows = sorted((p for p in others if p['contract'] == contract and p['score']['total'] >= DETAIL_MIN),
+                      key=rank)
+        if not rows and contract == 'unknown':
             continue
-        lines += [f'## {contract.capitalize()} — shortlist', '']
-        if not shortlist:
-            lines += ['Nothing cleared the bar this time.', '']
-            continue
-        lines += ['| Score | Role | Company | Remote | Salary | Why it fits | Gap | Seen |',
-                  '| ---: | --- | --- | --- | --- | --- | --- | --- |']
-        for p in shortlist:
-            role = link(p) + ('' if p['verified'] else ' *(unverified)*')
-            lines.append(f'| {p["score"]["total"]} | {role} | {cell(p["company"])} | {cell(remote_text(p["remote"]))} '
-                         f'| {cell(salary_text(p["salary"]))} | {cell(p["why"])} | {cell(p["gap"])} | {seen(p)} |')
+        lines += [f'## {contract.capitalize()} — score {DETAIL_MIN} and up', '']
+        lines += DETAIL_HEAD + [detail(p, False) for p in rows] if rows else ['Nothing reached 6 this time.']
         lines.append('')
 
-    kept = sorted((p for p in postings if p['verdict'] == 'kept'), key=rank)
-    if kept:
-        lines += ['## Kept — passed the filters, below the shortlist', '']
-        lines += [f'- {p["score"]["total"]} · {link(p)} — {p["company"]} · {p["contract"]} · '
-                  f'{remote_text(p["remote"])} · {seen(p)}' for p in kept]
+    below = sorted((p for p in others if p['score']['total'] < DETAIL_MIN), key=rank)
+    if below:
+        lines += [f'## Kept — score below {DETAIL_MIN}', '']
+        lines += [f'- {p["score"]["total"]} · {link(p)} — {cell(p["company"])} · {p["lane"]} · {p["contract"]} · '
+                  f'{remote_text(p["remote"])} · {seen(p)}' for p in below]
         lines.append('')
 
     dropped = [p for p in postings if p['verdict'] == 'dropped']
@@ -343,15 +372,15 @@ def main(argv):
         sys.exit(f'{len(errors)} problem(s); nothing written but the normalised sweep file')
 
     runs.sort(key=lambda r: r['run_id'])
-    if new_path:
-        new_run = next(r for r in runs if r['run_id'] == new_path.stem)
-        first_seen = {}
-        for run in runs:
-            if run['run_id'] >= new_run['run_id']:
-                break
-            for p in run['postings']:
-                first_seen.setdefault(p['id'], run['run_id'])
-        new_path.with_suffix('.md').write_text(render(new_run, first_seen))
+    # Reports are derived, so every one is regenerated: an improved layout reaches old sweeps too, and
+    # a report can never drift from its sweep. "Seen since" only looks at earlier sweeps, so this is stable.
+    first_seen, fresh = {}, set()
+    for run in runs:
+        (RUNS / f'{run["run_id"]}.md').write_text(render(run, first_seen))
+        if new_path and run['run_id'] == new_path.stem:
+            new_run, fresh = run, {p['id'] for p in run['postings'] if p['id'] not in first_seen}
+        for p in run['postings']:
+            first_seen.setdefault(p['id'], run['run_id'])
 
     index = build_index(runs)
     INDEX.write_text(''.join(json.dumps(row, ensure_ascii=False) + '\n' for row in index))
@@ -359,7 +388,6 @@ def main(argv):
     print(f'{len(runs)} sweep(s) valid; index holds {len(index)} unique posting(s).')
     if new_path:
         shortlisted = [p for p in new_run['postings'] if p['verdict'] == 'shortlisted']
-        fresh = [p for p in new_run['postings'] if p['id'] not in first_seen]
         print(f'{new_run["run_id"]}: {len(new_run["postings"])} evaluated, {len(shortlisted)} shortlisted, '
               f'{len(fresh)} never seen before. Report: {new_path.with_suffix(".md").relative_to(JOBS.parent)}')
 

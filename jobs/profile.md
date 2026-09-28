@@ -22,6 +22,18 @@ Decided with the owner on 2026-09-28.
      agentic tooling. Evidence: the eleven-agent review board around PlayCryptoWithAI
      (`writing/agentic-review-board.md`) and Copilot/Claude as a standing part of client delivery. Not
      ML research, not model training.
+  4. `implementation` — implementation, integration or technical consulting at a product company: rolling
+     its product out at customers in Germany, Italy or Switzerland, integration lead, technical project
+     lead. Close to the consulting years, but on the vendor's side. **Only in scope with language
+     leverage** (below); without it, it is `off-lane`.
+- **Language leverage** (decided 2026-09-28): native Italian plus fluent German and English is an edge
+  few candidates have, so it is searched for on purpose, not just noticed. A posting has it when it asks
+  for Italian, as a requirement or a plus; `languages` then contains `it`. Three kinds count:
+  engineering roles at companies whose customers, teams or offices span DACH and Italy (lanes 1–3 as
+  usual); implementation and consulting roles for those markets (lane 4); and Italian employers or Italian
+  subsidiaries hiring engineers who can work from Germany. Customer-facing sales roles (pre-sales, account
+  management, sales engineering) are not wanted. The report lists these roles in their own table, whatever
+  their contract or score.
 - **Supporting keywords, not a lane:** AWS (Solutions Architect – Associate, valid to 04/2029),
   Terraform/CDK, Kubernetes, CI/CD.
 - **Languages:** Italian (native), German, English — all three are working languages.
@@ -39,6 +51,23 @@ Combine a lane term with a remote term. German postings say "remote" in many way
 Remote terms: `remote`, `fully remote`, `remote-first`, `remote Germany`, `remote EU`, `100% remote`,
 `Remote in Deutschland`, `deutschlandweit remote`, `mobiles Arbeiten 100%`, `Homeoffice 100%`.
 
+### Language leverage
+
+At least three queries in every sweep go here: the structured feeds almost never surface these roles (8
+of 326 Arbeitnow rows mentioned Italian or Italy on 2026-09-28, one of them a remote engineering role).
+
+| | Terms |
+| --- | --- |
+| German | `Italienisch` + Softwareentwickler / Java Entwickler / Tech Lead / Teamleiter; `Deutsch und Italienisch`; `Italienischkenntnisse` Entwickler; `DACH und Italien`; `Implementierung` / `Integration Consultant` / `Technischer Projektleiter` + Italienisch |
+| English | `Italian speaking` + software engineer / tech lead / implementation consultant; `German and Italian` engineer; `DACH and Italy`; `Italian market` + engineer |
+| Italian | `sviluppatore Java full remote`; `tech lead full remote`; `sviluppatore senior` + `tedesco`; `consulente tecnico` / `implementation specialist` + `tedesco`; `lavoro da remoto dalla Germania` |
+
+Also, in every feed that carries description text (Arbeitnow, GermanTechJobs, HN, Himalayas, Remotive,
+Remote OK, We Work Remotely), search the description for `italien|italian|italiano|italia|italy`. A role
+found that way is recorded when it fits a lane, even if its title matched none of the lane terms.
+
+An Italian employer still has to be able to hire from Germany: "remote, Italy only" is `not-germany`.
+
 ## Scoring
 
 Hard filters first — any one drops the posting, with its `drop_reason`:
@@ -50,7 +79,7 @@ Hard filters first — any one drops the posting, with its `drop_reason`:
 - `ml-research` — ML research or model training at the core.
 - `stack-mismatch` — the core stack is one the CV lacks entirely (Rails, .NET, systems-level Go or Rust,
   game engines, native mobile), however good the role looks otherwise.
-- `off-lane` — none of the three lanes.
+- `off-lane` — none of the four lanes; an `implementation` role without language leverage; any sales role.
 - `closed` / `stale` — closed, or first published more than ~60 days ago. A stated application deadline
   still in the future, or a re-advertisement by the company itself within the last 30 days (for example in
   this month's HN thread), makes it current again.
@@ -84,7 +113,6 @@ freelance list, agencies and consultancies are the normal channel and are not pe
 > Companies or industries to avoid?
 > Preferred company size — startup, scale-up, established?
 > Travel limit — is "a few days a quarter" the ceiling?
-> Italian-market roles (Italian employer, or Italian as a job requirement) — wanted?
 
 ## Sources
 
@@ -102,6 +130,7 @@ Checked 2026-09-28 from this machine; every sweep also records per-source status
 | Employer job boards | WebSearch `site:boards.greenhouse.io`, `site:jobs.lever.co`, `site:jobs.ashbyhq.com`, `site:jobs.personio.de`, `site:join.com` + lane term + remote Germany/EU | Postings straight from the company — the best source for the tech-lead lane |
 | Big boards | WebSearch on LinkedIn job pages, StepStone, XING, Indeed.de, Welcome to the Jungle, Wellfound, EU Remote Jobs, Landing.jobs | Public pages only; many block fetching — then keep the search-result facts and mark `verified: false` |
 | Freelance | freelancermap.de, GULP, freelance.de, Malt — public listings, via WebSearch or fetch | Not yet checked |
+| Language leverage | WebSearch with the terms above on LinkedIn job pages, StepStone, Indeed (.de and .it), InfoJobs.it and the employer boards; plus the description search in every feed | Not yet checked; the Italian boards may block fetching, in which case record `verified: false` |
 
 ### Source notes
 

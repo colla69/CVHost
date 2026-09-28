@@ -2,7 +2,7 @@
   "trigger": ["manual", "routine"],
   "source_method": ["api", "feed", "websearch", "fetch"],
   "source_status": ["ok", "empty", "blocked", "error"],
-  "lane": ["tech-lead", "fullstack", "ai-eng", "other"],
+  "lane": ["tech-lead", "fullstack", "ai-eng", "implementation", "other"],
   "contract": ["permanent", "freelance", "unknown"],
   "seniority": ["junior", "mid", "senior", "staff", "lead", "principal", "head", "unknown"],
   "remote_type": ["remote", "remote-first", "hybrid", "onsite", "unknown"],
