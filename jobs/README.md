@@ -32,15 +32,18 @@ access (the default "Trusted" allowlist blocks job boards). Its prompt, kept her
 it does (editing this copy does not change the routine):
 
 > Use the job-scout agent (`.claude/agents/job-scout.md`) to run a scheduled sweep exactly as its
-> definition describes — unattended, `trigger: routine`, no questions. When it returns, run
+> definition describes — unattended, `trigger: routine`, no questions. If the agent cannot be started as
+> a subagent, read `.claude/agents/job-scout.md` and follow it yourself. When the sweep is done, run
 > `python3 jobs/tools/ingest.py` (no argument) and confirm it passes. Stage only paths under `jobs/`,
 > check with `git status --short` that nothing outside `jobs/` is staged, and commit with the message
 > `job-scout: sweep <run_id> (<n> shortlisted)`. Push to `master`. If that push is rejected, push the same
 > commit to `claude/job-sweep-<run_id>` instead and say so. Finish with the report path, the shortlist
 > counts per contract, and any source that was blocked.
 
-Manage it with `/schedule list`, `/schedule run` (a sweep now) and `/schedule update`, or at
-claude.ai/code/routines.
+The routine is "job-scout sweep", `trig_01QJBZG6WBiStVKEjUzcj3EF`, model Opus 5.5, no connectors. Its
+cron is `7 0 * * 1,4` in UTC, which does not follow daylight saving: 02:07 in Berlin in summer, 01:07 in
+winter. Manage it with `/schedule list`, `/schedule run` (a sweep now) and `/schedule update`, or at
+https://claude.ai/code/routines/trig_01QJBZG6WBiStVKEjUzcj3EF.
 
 ## A sweep: `runs/<run_id>.json`, schema 1
 
