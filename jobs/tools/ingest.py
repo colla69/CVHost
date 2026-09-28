@@ -306,6 +306,13 @@ def render(run, first_seen):
     else:
         lines += ['No role that passed the filters asked for Italian this time.']
     lines.append('')
+    missed = sorted((p for p in postings if p['verdict'] == 'dropped' and language_leverage(p)),
+                    key=lambda p: (-(p['score']['total'] if p['score'] else -1), p['company'].lower()))
+    if missed:
+        lines += ['### Asked for Italian, but dropped', '']
+        lines += [f'- {p["score"]["total"] if p["score"] else "–"} · {link(p)} — {cell(p["company"])} · '
+                  f'{p["contract"]} · **{p["drop_reason"]}** · {cell(remote_text(p["remote"]))}' for p in missed]
+        lines.append('')
 
     others = [p for p in listed if not language_leverage(p)]
     for contract in VOCAB['contract']:
@@ -330,7 +337,8 @@ def render(run, first_seen):
         for reason in VOCAB['drop_reason']:
             hits = [p for p in dropped if p['drop_reason'] == reason]
             if hits:
-                examples = ', '.join(cell(p['company']) for p in hits[:4]) + (' …' if len(hits) > 4 else '')
+                companies = list(dict.fromkeys(cell(p['company']) for p in hits))
+                examples = ', '.join(companies[:4]) + (' …' if len(companies) > 4 else '')
                 lines.append(f'| {reason} | {len(hits)} | {examples} |')
         lines.append('')
 

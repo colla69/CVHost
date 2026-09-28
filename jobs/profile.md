@@ -130,7 +130,7 @@ Checked 2026-09-28 from this machine; every sweep also records per-source status
 | Employer job boards | WebSearch `site:boards.greenhouse.io`, `site:jobs.lever.co`, `site:jobs.ashbyhq.com`, `site:jobs.personio.de`, `site:join.com` + lane term + remote Germany/EU | Postings straight from the company — the best source for the tech-lead lane |
 | Big boards | WebSearch on LinkedIn job pages, StepStone, XING, Indeed.de, Welcome to the Jungle, Wellfound, EU Remote Jobs, Landing.jobs | Public pages only; many block fetching — then keep the search-result facts and mark `verified: false` |
 | Freelance | freelancermap.de, GULP, freelance.de, Malt — public listings, via WebSearch or fetch | Not yet checked |
-| Language leverage | WebSearch with the terms above on LinkedIn job pages, StepStone, Indeed (.de and .it), InfoJobs.it and the employer boards; plus the description search in every feed | Not yet checked; the Italian boards may block fetching, in which case record `verified: false` |
+| Language leverage | WebSearch with the terms above on LinkedIn job pages, StepStone, freelancermap and the employer boards (Greenhouse, Lever, Ashby, Personio, Workable, join.com); plus the description search in every feed | First run 2026-09-28: low yield everywhere; freelancermap found the only real Italian-language engineering project. Indeed returns listing pages only; InfoJobs.it has shut down |
 
 ### Source notes
 
@@ -160,3 +160,27 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   Linked Greenhouse (`boards-api.greenhouse.io/v1/boards/<board>/jobs/<id>`) and Workable
   (`apply.workable.com/api/v2/accounts/<acct>/jobs/<shortcode>`) APIs are the reliable way to verify HN roles;
   Workable's HTML page does not render.
+- 2026-09-28 (language-leverage sweep, first run of the WebSearch sources) — **InfoJobs.it has shut down**: its
+  posting pages show only "Questa piattaforma è ufficialmente chiusa e non più disponibile", while search engines
+  still index old listings. Drop it from the language-leverage sources.
+- 2026-09-28 — **Indeed (.de and .it)** through WebSearch returns only search-result pages (`q-…-jobs.html`,
+  `offerte-lavoro`), never a posting, and one result was an hCaptcha page. Worthless for this search as it stands.
+- 2026-09-28 — **StepStone** through WebSearch returns mostly category pages; one real posting in nine results and
+  `site:` queries ignore "Italienisch". Low yield; not fetched yet.
+- 2026-09-28 — **LinkedIn** job pages: WebSearch returns mostly aggregate pages ("62 Jobs für Italian Speaking in
+  Deutschland"), and the Italian-speaking postings that surface are sales, support or years old. Public
+  `/jobs/view/…` pages do open with WebFetch and show "no longer accepting applications", so they can be verified.
+- 2026-09-28 — **Employer boards via `site:`** (Personio, Greenhouse, Lever, Ashby, join.com): the search ignores the
+  language term and returns remote German postings instead, several already gone (Greenhouse 404, Lever "Document
+  not found"). Their public APIs are the fast way to verify: Lever `api.lever.co/v0/postings/<acct>/<id>?mode=json`,
+  Ashby `api.ashbyhq.com/posting-api/job-board/<board>?includeCompensation=true` (a whole board, with location,
+  workplace type, publish date, pay and full text, in one call), Greenhouse `boards-api…/jobs?content=true`,
+  Workable `apply.workable.com/api/v1/widget/accounts/<acct>` for a board. Personio posting pages open with WebFetch.
+- 2026-09-28 — **freelancermap** via WebSearch was the one source that surfaced a real Italian-leverage engineering
+  project. Project pages open with WebFetch but show no posting date; the stated start date is the only age signal.
+- 2026-09-28 — **Open WebSearch** (no `site:`): mostly aggregators (Glassdoor, Jooble, remoterocketship, jobleads).
+  The phrasing employers actually use is "Italian Speaker"/"Italian speaking" in the job title; that found
+  TeamViewer's roles. Naming Italian employers (Satispay, Moneyfarm, Scalapay) finds their boards, but so far they
+  hire engineers only in Milan. Aggregators: startup.jobs returns 403; freehire.me opens and links the original ad.
+- 2026-09-28 — **Himalayas** `q=italian&country=Germany` returns non-engineering rows only; in other queries "Italy"
+  matches `locationRestrictions`, so run the Italian regex on descriptions, not on location lists.

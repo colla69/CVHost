@@ -1,0 +1,2131 @@
+{
+  "schema": 1,
+  "run_id": "2026-09-28T1018Z",
+  "started_at": "2026-09-28T10:18:30Z",
+  "finished_at": "2026-09-28T10:29:51Z",
+  "trigger": "manual",
+  "agent_sha": "49a3101",
+  "profile_sha": "49a3101",
+  "summary": "A manual sweep aimed at language leverage: 24 WebSearch queries (over the usual 10-15, as the owner asked), plus the Italian description search on seven feeds, which found only cross-ING. The first sweep had recorded cross-ING without the Italian it asks for; it is corrected here and still fails on Germany. No role that asks for Italian passed the filters. The closest are a freelancermap Java/Spring Boot/React project for a South Tyrol customer with Italian code comments (dropped: 3-4 days onsite a month) and Moneyfarm's Lead Backend Engineer (Java/Go on AWS, agentic AI tools, Italian required, EUR 65-80k, Milan only); TeamViewer's Italian-speaker implementation role has closed, and Sierra's Italian-speaking agent engineer is in-person in London. Italian employers (Satispay, Moneyfarm, Scalapay) hire engineers only in Milan, the Italian-speaking roles open to Germany are sales or support, and the only shortlist entry is zollsoft's fully remote senior Kotlin/Java role in medical-practice software (7, no Italian). InfoJobs Italia has shut down, Indeed (.de/.it) and StepStone return only listing pages through WebSearch, and the Ashby, Lever and Workable public APIs proved the fastest way to verify; vocab.json is unchanged.",
+  "open_questions": [
+    "Travel ceiling for freelance: the South Tyrol project (Java/Spring Boot/React via Amoria Bond, Italian code comments and API names, 6 months, 4-5 days a week) wants 3-4 days onsite every month, about 9-12 a quarter. Would you take that for a freelance project where Italian is the edge, or does 'a few days a quarter' hold?",
+    "Italian employers so far hire engineers in Milan only: Satispay (three office days a week) and Moneyfarm (hybrid, Italian required, Java/Go lead role at EUR 65-80k). Is Milan ever an option (relocation or regular commuting), or are these always not-germany?",
+    "The profile counts an Italian employer that can hire from Germany as language leverage, but the schema only marks roles that ask for Italian. Newtwen (remote EU, optional hybrid in Italy, Python) asks for no Italian, so it stays out of the language table. Should 'Italian employer open to Germany' get its own marker?",
+    "Freelance long-runners: STINGEL's 100% remote Java/Spring Boot/Kafka project (started 11/2024, runs to 12/2029) is still listed as open on freelancermap. Drop such listings as stale, or keep them while the agency still lists them?",
+    "Still open from profile.md: minimum salary and day rate (or 'asked, not stored'), notice period at msg, consultancies as a permanent employer (default down-rank applied to VISION, Academic Work, Intercon, 3Pillar), companies to avoid, and preferred company size."
+  ],
+  "sources": [
+    {
+      "name": "arbeitnow",
+      "method": "api",
+      "queries": [
+        "job-board-api?page=1",
+        "job-board-api?page=2",
+        "job-board-api?page=3",
+        "description/title/tags regex italien|italian|italiano|italia|italy"
+      ],
+      "results": 751,
+      "evaluated": 1,
+      "status": "ok",
+      "note": "Description search only this sweep (326 + 325 + 100 rows). 18 rows mention Italy or Italian, mostly as an office country (IonQ x8) or in sales roles (OpenTable x3, Aircall, Synology); the one lane role that asks for Italian is cross-ING (Bern), which the first sweep had recorded without it."
+    },
+    {
+      "name": "germantechjobs",
+      "method": "feed",
+      "queries": [
+        "rss",
+        "description regex italien|italian|italiano|italia|italy"
+      ],
+      "results": 611,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "Two items mention Italian: retarus (Senior IT Service Engineer, email services; Italian a plus) and a dual-study place whose company has a plant in Italy. Neither is in a lane."
+    },
+    {
+      "name": "hn-whoishiring",
+      "method": "api",
+      "queries": [
+        "search?tags=comment,story_49522897&hitsPerPage=1000",
+        "top-level comment regex italien|italian|italiano|italia|italy"
+      ],
+      "results": 256,
+      "evaluated": 1,
+      "status": "ok",
+      "note": "256 top-level posts in the September thread; one mentions Italy: Newtwen, REMOTE (EU) with an option to work hybrid in Italy, asking for no Italian. No October thread yet."
+    },
+    {
+      "name": "himalayas",
+      "method": "api",
+      "queries": [
+        "q=italian&country=Germany",
+        "q=java&country=Germany",
+        "q=software engineer&country=Germany"
+      ],
+      "results": 58,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "q=italian: 18 rows, none in a lane (language teachers, sales, support, a lease specialist, a clinical success manager, a mercor language-expert gig). In the java and software-engineer rows Italy appears only in locationRestrictions; no description asks for Italian. Run the regex on the description, not the location list."
+    },
+    {
+      "name": "remoteok",
+      "method": "api",
+      "queries": [
+        "api (no tag, browser User-Agent)",
+        "description regex italien|italian|italiano|italia|italy"
+      ],
+      "results": 99,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "No row mentions Italian or Italy."
+    },
+    {
+      "name": "weworkremotely",
+      "method": "feed",
+      "queries": [
+        "remote-full-stack-programming-jobs.rss",
+        "remote-back-end-programming-jobs.rss",
+        "description regex italien|italian|italiano|italia|italy"
+      ],
+      "results": 46,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "41 + 5 items. No description asks for Italian; Italy appears only in Lemon.io's country lists."
+    },
+    {
+      "name": "remotive",
+      "method": "api",
+      "queries": [
+        "remote-jobs (one call)",
+        "description regex italien|italian|italiano|italia|italy"
+      ],
+      "results": 17,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "Still 17 jobs in total; none mentions Italian. Second call of the day (the API asks for at most 4)."
+    },
+    {
+      "name": "stepstone",
+      "method": "websearch",
+      "queries": [
+        "site:stepstone.de Softwareentwickler Java Italienisch remote"
+      ],
+      "results": 9,
+      "evaluated": 1,
+      "status": "ok",
+      "note": "WebSearch returns StepStone category pages ('Java Entwickler Jobs ... Home Office'), not postings; one posting came back (Academic Work) and nothing that asks for Italian. The open tech-lead query also landed only on StepStone result pages. Not fetched."
+    },
+    {
+      "name": "indeed-de",
+      "method": "websearch",
+      "queries": [
+        "site:de.indeed.com Italienischkenntnisse Softwareentwickler Homeoffice"
+      ],
+      "results": 9,
+      "evaluated": 0,
+      "status": "empty",
+      "note": "Only search-result pages (q-...-jobs.html) came back, one titled 'hCaptcha solve page': Indeed keeps its listings behind a captcha. No posting to record; not fetched."
+    },
+    {
+      "name": "indeed-it",
+      "method": "websearch",
+      "queries": [
+        "site:it.indeed.com sviluppatore Java full remote tedesco"
+      ],
+      "results": 9,
+      "evaluated": 0,
+      "status": "empty",
+      "note": "Only 'offerte-lavoro' search pages came back, never a posting; the open Italian-phrase queries ('italiano e tedesco', 'anche dall'estero') landed on the same pages. Useless through WebSearch."
+    },
+    {
+      "name": "linkedin",
+      "method": "websearch",
+      "queries": [
+        "site:linkedin.com/jobs \"Italian speaking\" software engineer Germany remote",
+        "site:linkedin.com/jobs/view \"Italian\" \"German\" software engineer OR \"tech lead\" remote Europe DACH Italy"
+      ],
+      "results": 20,
+      "evaluated": 3,
+      "status": "ok",
+      "note": "Mostly aggregate pages ('62 Jobs fuer Italian Speaking in Deutschland'); the postings that came back were support (SUSE), sales (Materialise, Parloa, Contentful) or years old. Public /jobs/view pages open with WebFetch: Parloa's was read in full (closed, pre-sales)."
+    },
+    {
+      "name": "infojobs-it",
+      "method": "websearch",
+      "queries": [
+        "site:infojobs.it sviluppatore senior tedesco remoto"
+      ],
+      "results": 9,
+      "evaluated": 1,
+      "status": "error",
+      "note": "InfoJobs Italia has shut down: the posting page shows only 'Questa piattaforma e ufficialmente chiusa e non piu disponibile'. Search engines still index its old listings. Remove it from the sources."
+    },
+    {
+      "name": "personio",
+      "method": "websearch",
+      "queries": [
+        "site:jobs.personio.de Italienisch Softwareentwickler OR \"Technischer Projektleiter\" remote"
+      ],
+      "results": 9,
+      "evaluated": 2,
+      "status": "ok",
+      "note": "Real postings (zollsoft x2, ACT Digital, a Techpilot sales role), but the search ignored 'Italienisch' except in the sales role. Personio posting pages open with WebFetch."
+    },
+    {
+      "name": "greenhouse",
+      "method": "websearch",
+      "queries": [
+        "site:boards.greenhouse.io OR site:job-boards.greenhouse.io \"German and Italian\" engineer remote",
+        "boards-api.greenhouse.io/v1/boards/scalapaysrl/jobs?content=true",
+        "boards-api.greenhouse.io/v1/boards/scalapaysrl/jobs/4728930101"
+      ],
+      "results": 17,
+      "evaluated": 2,
+      "status": "ok",
+      "note": "The search ignored the language phrase and returned Germany-remote postings (ICE, Grafana, Nubank, eyeo), some long gone (ICE: 404 in the API). Scalapay's board holds 8 jobs and no engineering role; the Full-Stack posting an open search surfaced returns 404."
+    },
+    {
+      "name": "lever",
+      "method": "websearch",
+      "queries": [
+        "site:jobs.lever.co \"Italian\" \"German\" implementation OR integration engineer remote Europe",
+        "api.lever.co/v0/postings/<account>/<id>?mode=json (Aircall, Deliverect)"
+      ],
+      "results": 9,
+      "evaluated": 7,
+      "status": "ok",
+      "note": "No result asked for Italian. Lever's public API verifies a posting in one call (location list, workplace type, created date, full text); Aircall's returned 'Document not found'."
+    },
+    {
+      "name": "ashby",
+      "method": "websearch",
+      "queries": [
+        "site:jobs.ashbyhq.com \"fluent in German and Italian\" OR \"German and Italian\" engineer OR consultant",
+        "api.ashbyhq.com/posting-api/job-board/satispay",
+        "api.ashbyhq.com/posting-api/job-board/decagon",
+        "api.ashbyhq.com/posting-api/job-board/sierra"
+      ],
+      "results": 447,
+      "evaluated": 9,
+      "status": "ok",
+      "note": "The search returned German-speaking roles, mostly sales and solutions consulting. The posting API gives location, workplace type, publish date, pay and full text per board in one call (Satispay 90, Decagon 146, Sierra 201 jobs): Sierra has an 'Italian speaking' agent engineer (London, in-person) and Satispay's engineering roles are all Milan with three office days."
+    },
+    {
+      "name": "join-com",
+      "method": "websearch",
+      "queries": [
+        "site:join.com Italienisch Entwickler OR Consultant OR Projektleiter remote"
+      ],
+      "results": 9,
+      "evaluated": 3,
+      "status": "ok",
+      "note": "Returned remote German postings but ignored 'Italienisch'; none asks for Italian. Not fetched."
+    },
+    {
+      "name": "freelancermap",
+      "method": "websearch",
+      "queries": [
+        "site:freelancermap.de Italienisch Java OR Entwickler OR Consultant Projekt remote"
+      ],
+      "results": 9,
+      "evaluated": 5,
+      "status": "ok",
+      "note": "The only source that surfaced a real Italian-leverage engineering project (Amoria Bond, South Tyrol, Java/React). Project pages open with WebFetch but show no posting date; start dates give the age away (STINGEL's project started 11/2024)."
+    },
+    {
+      "name": "workable",
+      "method": "api",
+      "queries": [
+        "apply.workable.com/j/6088C3156A (redirect from an aggregator's apply link)",
+        "apply.workable.com/api/v1/widget/accounts/moneyfarm",
+        "apply.workable.com/api/v2/accounts/moneyfarm/jobs/<shortcode> x3"
+      ],
+      "results": 15,
+      "evaluated": 3,
+      "status": "ok",
+      "note": "Moneyfarm's board, reached from freehire.me's apply link (startup.jobs returned 403). All engineering roles are Milan or Cagliari, hybrid, not remote; the three senior-or-lead ones ask for Italian."
+    },
+    {
+      "name": "websearch-open",
+      "method": "websearch",
+      "queries": [
+        "\"Deutsch und Italienisch\" Implementation Consultant Software remote",
+        "\"Italienisch\" \"Tech Lead\" OR \"Teamleiter Softwareentwicklung\" OR \"Lead Entwickler\" remote Stellenangebot 2026",
+        "\"AI Engineer\" OR \"KI Engineer\" Italienisch Deutsch remote Stelle 2026",
+        "\"italiano e tedesco\" OR \"tedesco e italiano\" sviluppatore OR \"software engineer\" OR \"consulente tecnico\" remoto offerta lavoro 2026",
+        "\"Italian speaking\" \"Deployment Engineer\" OR \"Implementation Engineer\" OR \"Integration Engineer\" OR \"Implementation Consultant\" Europe remote 2026",
+        "\"Italienischkenntnisse\" Softwareentwickler OR \"Java Entwickler\" OR \"Integration Consultant\" 100% remote Deutschland",
+        "\"Italian Speaker\" OR \"Italian speaking\" \"Technical Consultant\" OR \"Solutions Consultant\" OR \"Implementation Engineer\" Germany GmbH software 2026",
+        "\"DACH and Italy\" OR \"DACH & Italy\" OR \"Germany and Italy\" software engineer OR \"implementation\" remote job",
+        "\"full remote\" \"anche dall'estero\" sviluppatore Java OR \"tech lead\" OR \"full stack\" OR \"AI engineer\" 2026",
+        "Italienisch Softwareentwickler OR \"Solution Architect\" OR \"Technischer Projektleiter\" Zucchetti OR TeamSystem OR Reply OR \"Engineering D-HUB\" Deutschland remote",
+        "\"Italian\" required \"German\" \"software engineer\" OR \"backend engineer\" OR \"full stack\" Satispay OR Scalapay OR Qonto OR Moneyfarm OR Doctolib OR Agicap remote Europe",
+        "Moneyfarm \"Software Engineer\" backend remote Italy Germany careers 2026"
+      ],
+      "results": 108,
+      "evaluated": 6,
+      "status": "ok",
+      "note": "Mostly aggregators (Glassdoor, Jooble, remoterocketship, jobleads) and listing pages. Employers put 'Italian Speaker' in the title, and that phrase found TeamViewer's two roles; naming Italian employers found Satispay, Scalapay and Moneyfarm, all Milan-only. The Zucchetti/TeamSystem/Reply query found nothing. Aggregator pages: startup.jobs 403, freehire.me opens and carries the original apply link."
+    }
+  ],
+  "postings": [
+    {
+      "id": "amoria-bond--senior-fullstack-entwickler-java-react",
+      "url": "https://www.freelancermap.de/projekt/senior-fullstack-entwickler-java-react-m-w-d-3018118",
+      "source": "freelancermap",
+      "company": "Amoria Bond GmbH",
+      "title": "Senior Fullstack Entwickler (Java / React) (m/w/d)",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": "CET",
+        "onsite_days_per_quarter": 10.5,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "en",
+        "it"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "react"
+      ],
+      "domain": [],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 2,
+        "company": 1,
+        "total": 7
+      },
+      "why": "Java/Spring Boot with React is the CV's core (Spring Boot and Vue at the healthcare client, React/TypeScript on the digital-euro app), and Italian code comments and API names make native Italian a real onboarding edge.",
+      "gap": "Onsite in South Tyrol about once a month for 3-4 days (9-12 a quarter, over the ceiling), 4-5 days a week for 6 months; rate, end customer and posting date not stated."
+    },
+    {
+      "id": "moneyfarm--lead-software-engineer-backend",
+      "url": "https://apply.workable.com/j/6088C3156A",
+      "source": "workable",
+      "company": "Moneyfarm",
+      "title": "Lead Software Engineer - Backend",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 65000,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en",
+        "it"
+      ],
+      "stack": [
+        "java",
+        "go",
+        "aws",
+        "kubernetes",
+        "ci-cd",
+        "microservices"
+      ],
+      "domain": [
+        "fintech"
+      ],
+      "posted_at": "2026-07-31",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 0,
+        "domain": 2,
+        "company": 1,
+        "total": 7
+      },
+      "why": "Leads a Java/Go partner platform on AWS ECS/EKS with agentic AI tools as the daily workflow and Italian-speaking partners: Porsche Bank pipelines and their AWS migration, 60+ AWS microservices at VW FS, the eleven-agent review board.",
+      "gap": "Workable lists only Milan, hybrid, not remote; asks 7+ years of backend, about 8 of the CV's on Java; pension/insurance domain (a plus) is not on the CV."
+    },
+    {
+      "id": "moneyfarm--senior-software-engineer-backend",
+      "url": "https://apply.workable.com/j/795EB5B945",
+      "source": "workable",
+      "company": "Moneyfarm",
+      "title": "Senior Software Engineer - Backend",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 48000,
+        "max": 68000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en",
+        "it"
+      ],
+      "stack": [
+        "java",
+        "go"
+      ],
+      "domain": [
+        "fintech"
+      ],
+      "posted_at": "2026-07-31",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 0,
+        "domain": 2,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Java or Go backend for a wealth-management platform with agentic AI tools in the daily loop and Italian asked: Java backends for Porsche Bank and BMW FS, Claude and Copilot in delivery at the current client.",
+      "gap": "Milan only, hybrid, not remote; pay is an Italian CCNL Credito band (EUR 48-68k)."
+    },
+    {
+      "id": "moneyfarm--senior-software-engineer-frontend",
+      "url": "https://apply.workable.com/j/DD702C60CF",
+      "source": "workable",
+      "company": "Moneyfarm",
+      "title": "Senior Software Engineer - Frontend",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 48000,
+        "max": 68000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en",
+        "it"
+      ],
+      "stack": [
+        "typescript",
+        "react"
+      ],
+      "domain": [
+        "fintech"
+      ],
+      "posted_at": "2026-07-31",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 0,
+        "domain": 2,
+        "company": 1,
+        "total": 6
+      },
+      "why": "TypeScript/React data-heavy investor UIs with Italian asked: the React/Material UI front end of the digital-euro payment app, Angular/RxJS at Porsche.",
+      "gap": "Milan only, hybrid, not remote; front end only; design tokens and Storybook are not on the CV."
+    },
+    {
+      "id": "sierra--software-engineer-agent-italian-speaking",
+      "url": "https://jobs.ashbyhq.com/sierra/6207b02d-d334-4000-b84e-2af779171838",
+      "source": "ashby",
+      "company": "Sierra",
+      "title": "Software Engineer, Agent (Italian speaking)",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "onsite",
+        "countries": [
+          "GB"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 150000,
+        "max": 315000,
+        "currency": "GBP",
+        "period": "year"
+      },
+      "languages": [
+        "en",
+        "it"
+      ],
+      "stack": [
+        "llm",
+        "rag",
+        "agents",
+        "react",
+        "typescript"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": "2025-12-04",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 0,
+        "domain": 2,
+        "company": 1,
+        "total": 5
+      },
+      "why": "Builds customer-facing AI agents for Italian-speaking customers (agent tooling, RAG, React/TypeScript a plus): the eleven-agent review board and Claude in daily delivery.",
+      "gap": "London office of a company that calls itself primarily in-person; first published 2025-12-04; customer-facing LLM agents in production are not on the CV, only engineering agents."
+    },
+    {
+      "id": "parloa--lead-senior-solution-engineer-dach-uk-spain-italy-france",
+      "url": "https://www.linkedin.com/jobs/view/lead-senior-solution-engineer-dach-uk-spain-italy-france-f-m-d-at-parloa-4361181554",
+      "source": "linkedin",
+      "company": "Parloa",
+      "title": "Lead/Senior Solution Engineer DACH/UK/Spain/Italy/France (f/m/d)",
+      "lane": "other",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "EU"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en",
+        "de",
+        "it"
+      ],
+      "stack": [
+        "llm"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "off-lane",
+      "score": null,
+      "why": "Covers the DACH and Italian markets for a Munich/Berlin AI voice company, in the local language plus English.",
+      "gap": "Pre-sales solution engineering alongside sellers (PoCs, technical deep dives), which the profile rules out; LinkedIn says it no longer accepts applications (posted about 8 months ago)."
+    },
+    {
+      "id": "teamviewer-germany--implementation-engineer-italian-speaker",
+      "url": "https://careers.teamviewer.com/jobs/7587701-implementation-engineer-italian-speaker",
+      "source": "websearch-open",
+      "company": "TeamViewer Germany GmbH",
+      "title": "Implementation Engineer - Italian Speaker",
+      "lane": "implementation",
+      "contract": "unknown",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "it"
+      ],
+      "stack": [],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Post-sales implementation for Italian-speaking customers at a German product company: exactly the implementation lane with language leverage.",
+      "gap": "The page says the position is no longer active; the search snippet dated it June 2026. Worth watching TeamViewer for a repost."
+    },
+    {
+      "id": "teamviewer-germany--technical-support-engineer-italian-speaker",
+      "url": "https://careers.teamviewer.com/jobs/7743568-technical-support-engineer-italian-speaker-all-genders",
+      "source": "websearch-open",
+      "company": "TeamViewer Germany GmbH",
+      "title": "Technical Support Engineer, Italian Speaker (all genders)",
+      "lane": "other",
+      "contract": "unknown",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "it"
+      ],
+      "stack": [],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "off-lane",
+      "score": null,
+      "why": "Italian-speaking role at TeamViewer's German entity.",
+      "gap": "Technical support, not engineering, implementation or leadership; not opened."
+    },
+    {
+      "id": "cross-ing--full-stack-senior-software-developer",
+      "url": "https://www.arbeitnow.ch/jobs/companies/cross-ing-ag/remote-full-stack-senior-software-developer-bern-4969",
+      "source": "arbeitnow",
+      "company": "cross-ING AG",
+      "title": "Full Stack Senior Software Developer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "CH"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "en",
+        "it"
+      ],
+      "stack": [
+        "java",
+        "cpp",
+        "csharp",
+        "javascript",
+        "react",
+        "vue",
+        "angular",
+        "docker",
+        "kubernetes",
+        "aws",
+        "mongodb"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-09-28",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": {
+        "stack": 1,
+        "seniority": 0,
+        "remote": 1,
+        "domain": 2,
+        "company": 1,
+        "total": 5
+      },
+      "why": "Full stack across Java and React/Vue/Angular with Docker, Kubernetes and AWS, Italian a plus: the CV has all three front-end frameworks and Java/Spring backends.",
+      "gap": "Names only Bern and 'Remote' (Swiss engineering firm); no German location or entity. C++ and C# are not on the CV; tagged Mid despite the title. The first sweep recorded it without the Italian it asks for."
+    },
+    {
+      "id": "newtwen--backend-cloud-platform-engineer",
+      "url": "https://news.ycombinator.com/item?id=49527588",
+      "source": "hn-whoishiring",
+      "company": "Newtwen",
+      "title": "Backend & Cloud Platform Engineer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EU"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 70000,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "python",
+        "docker",
+        "gcp",
+        "ci-cd"
+      ],
+      "domain": [
+        "industrial-iot"
+      ],
+      "posted_at": "2026-09-01",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 0,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 5
+      },
+      "why": "Owns a greenfield cloud backend with CI/CD and IaC and makes the architecture calls: the GitLab runner migration to AWS with its Terraform template, and pipeline ownership at Porsche Bank.",
+      "gap": "Python/FastAPI on GCP with neural-network training pipelines, while the CV's backends are Java and TypeScript on AWS; 'REMOTE (EU)' with no German entity or EOR named; hybrid in Italy is only an option and Italian is not asked."
+    },
+    {
+      "id": "satispay--backend-tech-lead-business-domain",
+      "url": "https://jobs.ashbyhq.com/satispay/424a7547-f4ba-4dc6-acd1-9b0da74872fd",
+      "source": "ashby",
+      "company": "Satispay",
+      "title": "Backend Tech Lead - Business Domain",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 39,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 51000,
+        "max": 66500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "payments",
+        "fintech"
+      ],
+      "posted_at": "2026-03-18",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Backend tech lead at an Italian payments company, close to the CV's banking and leasing platforms (Porsche Bank, BMW FS, VW FS).",
+      "gap": "Milan only, three office days a week (Tuesday, Thursday and one more); first published 2026-03-18; asks for no Italian."
+    },
+    {
+      "id": "satispay--lead-backend-engineer-consumer-growth",
+      "url": "https://jobs.ashbyhq.com/satispay/47b4fbeb-c796-478b-8645-d25686e084bb",
+      "source": "ashby",
+      "company": "Satispay",
+      "title": "Lead Backend Engineer - Consumer Growth",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 39,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 51000,
+        "max": 66500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "payments",
+        "fintech"
+      ],
+      "posted_at": "2026-07-15",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Lead backend role at an Italian payments company; the CV's banking and financing platforms are the nearest domain.",
+      "gap": "Milan only, three office days a week; asks for no Italian."
+    },
+    {
+      "id": "satispay--senior-backend-software-engineer-core-domain",
+      "url": "https://jobs.ashbyhq.com/satispay/8b74b5c9-3798-40ff-9fa7-9db74e54c2aa",
+      "source": "ashby",
+      "company": "Satispay",
+      "title": "Senior Backend Software Engineer - Core Domain",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 39,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 51000,
+        "max": 66500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "payments",
+        "fintech"
+      ],
+      "posted_at": "2026-05-06",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Senior backend at an Italian payments company; the digital-euro payment application is the nearest CV project.",
+      "gap": "Milan only, three office days a week; asks for no Italian."
+    },
+    {
+      "id": "satispay--senior-backend-software-engineer-consumer-growth",
+      "url": "https://jobs.ashbyhq.com/satispay/794356e3-dcd9-4fdc-863a-f703feaf148c",
+      "source": "ashby",
+      "company": "Satispay",
+      "title": "Senior Backend Software Engineer - Consumer Growth",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 39,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 51000,
+        "max": 66500,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "payments",
+        "fintech"
+      ],
+      "posted_at": "2026-07-15",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Senior backend at an Italian payments company; the digital-euro payment application is the nearest CV project.",
+      "gap": "Milan only, three office days a week; asks for no Italian."
+    },
+    {
+      "id": "satispay--staff-software-engineer",
+      "url": "https://jobs.ashbyhq.com/satispay/7487e169-446f-4ca6-9f52-05b4280e5a47",
+      "source": "ashby",
+      "company": "Satispay",
+      "title": "Staff Software Engineer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "staff",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 39,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 64000,
+        "max": 88000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "payments",
+        "fintech"
+      ],
+      "posted_at": "2026-06-26",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Staff engineer at an Italian payments company; the CV's financial-services platforms are the nearest domain.",
+      "gap": "Milan only, three office days a week; asks for no Italian."
+    },
+    {
+      "id": "satispay--staff-software-engineer-consumer-wealth",
+      "url": "https://jobs.ashbyhq.com/satispay/d65851c8-6737-4d0c-910c-27f37e93433b",
+      "source": "ashby",
+      "company": "Satispay",
+      "title": "Staff Software Engineer - Consumer Wealth",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "staff",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 39,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 64000,
+        "max": 88000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "payments",
+        "fintech"
+      ],
+      "posted_at": "2026-09-17",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Staff engineer for an Italian fintech's wealth product; the CV's banking years and the asset-manager client are the nearest domain.",
+      "gap": "Milan only, three office days a week; asks for no Italian."
+    },
+    {
+      "id": "sierra--software-engineer-agent-german-speaking",
+      "url": "https://jobs.ashbyhq.com/sierra/9ebc3a79-82bf-478d-bd98-d473d41bdeaf",
+      "source": "ashby",
+      "company": "Sierra",
+      "title": "Software Engineer, Agent (German speaking)",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "onsite",
+        "countries": [
+          "GB"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 150000,
+        "max": 315000,
+        "currency": "GBP",
+        "period": "year"
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [
+        "llm",
+        "rag",
+        "agents",
+        "react",
+        "typescript"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": "2025-08-21",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "Builds AI agents for German-speaking customers: the agentic review board and Claude in daily delivery.",
+      "gap": "London, primarily in-person company; first published 2025-08-21; asks for German, not Italian."
+    },
+    {
+      "id": "decagon--agent-deployment-engineer-german-speaking",
+      "url": "https://jobs.ashbyhq.com/decagon/2059c9be-8da0-49a5-9849-e45f6f6a14d8",
+      "source": "ashby",
+      "company": "Decagon",
+      "title": "Agent Deployment Engineer - German Speaking",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "onsite",
+        "countries": [
+          "GB"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 110000,
+        "max": 150000,
+        "currency": "GBP",
+        "period": "year"
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [
+        "llm",
+        "agents"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": "2026-07-21",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "Deploys LLM agents at German-speaking customers, writing code and validating integrations end to end: close to the ai-eng lane and the CV's requirements work with business departments.",
+      "gap": "London office of a self-described in-office company; asks for German, not Italian."
+    },
+    {
+      "id": "aircall--implementation-specialist-german-speaker-dach-market-berlin",
+      "url": "https://jobs.lever.co/aircall/2da1c337-c21b-42a0-a748-8808ed08298d",
+      "source": "lever",
+      "company": "Aircall",
+      "title": "Implementation Specialist (German Speaker) - DACH Market - Berlin",
+      "lane": "implementation",
+      "contract": "unknown",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [],
+      "domain": [
+        "saas",
+        "telecom"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Customer onboarding for the DACH market at a cloud telephony SaaS.",
+      "gap": "Lever's API returns 'Document not found', so the posting is gone; it asked for German, not Italian, so it would have been off-lane anyway."
+    },
+    {
+      "id": "deliverect--implementation-consultant",
+      "url": "https://jobs.lever.co/deliverect/a2a206c9-9ecf-4a24-8db9-32cc6d6a11b1",
+      "source": "lever",
+      "company": "Deliverect",
+      "title": "Implementation Consultant",
+      "lane": "implementation",
+      "contract": "permanent",
+      "seniority": "mid",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "GB",
+          "BE",
+          "ES",
+          "NL",
+          "DE",
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": "2026-09-04",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "off-lane",
+      "score": null,
+      "why": "Implementation consultant for a restaurant-integration SaaS with Berlin and Milan among its offices.",
+      "gap": "Names no language beyond English ('any additional languages are a plus'), so no language leverage; asks 1-3 years client-facing experience; hybrid is 3 days in a local office."
+    },
+    {
+      "id": "ice--senior-product-engineer-germany-or-uk-remote-or-hybrid",
+      "url": "https://boards.greenhouse.io/internationalcopyrightenterpriseservices/jobs/4557686101",
+      "source": "greenhouse",
+      "company": "ICE",
+      "title": "Senior Product Engineer (m/f/d) - Germany or UK - Remote or Hybrid",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE",
+          "GB"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "media"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Senior product engineering at a music-copyright licensing hub, open to Germany: the broadcasting-rights and licence systems at 3Points (2013-2020).",
+      "gap": "Greenhouse's API returns 404: the posting is gone and survives only in the search index."
+    },
+    {
+      "id": "zollsoft--senior-softwareentwickler-in-kotlin-java-full-remote",
+      "url": "https://zollsoft.jobs.personio.de/job/2380025?language=de",
+      "source": "personio",
+      "company": "zollsoft GmbH",
+      "title": "Senior Softwareentwickler:in Kotlin/Java (full remote)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "CET",
+        "onsite_days_per_quarter": 0,
+        "eor": false
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "kotlin",
+        "java",
+        "postgresql",
+        "docker"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "shortlisted",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 2,
+        "domain": 2,
+        "company": 1,
+        "total": 7
+      },
+      "why": "Fully remote from anywhere in Germany on tomedo, a medical practice-management product: Java backends since 2018 (Java EE at BMW FS, Spring at Krones, Spring Boot now) and the current public-sector healthcare client.",
+      "gap": "Kotlin leads the stack and is not on the CV; senior IC, not a lead role; the tomedo client is Apple-based; no pay or posting date stated."
+    },
+    {
+      "id": "zollsoft--softwareentwickler-in-mit-fokus-auf-api-entwicklung-remote",
+      "url": "https://zollsoft.jobs.personio.de/job/2457798?language=de",
+      "source": "personio",
+      "company": "zollsoft GmbH",
+      "title": "Softwareentwickler:in mit Fokus auf API Entwicklung (Remote)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java",
+        "rest"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 0,
+        "remote": 1,
+        "domain": 2,
+        "company": 1,
+        "total": 5
+      },
+      "why": "API development at a medical-practice software maker, Java preferred per the search snippet: REST backends in Java across the CV.",
+      "gap": "Not opened; level unclear; zollsoft's senior posting shows Kotlin leads its stack."
+    },
+    {
+      "id": "stingel-consulting--java-entwickler-ab-november-bis-2029-100-remote-fulltime",
+      "url": "https://www.freelancermap.de/projekt/java-entwickler-ab-november-bis-2029-100-prozent-remote-fulltime",
+      "source": "freelancermap",
+      "company": "STINGEL CONSULTING GmbH",
+      "title": "Java Entwickler - Ab November - bis 2029 - 100% remote - fulltime",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 0,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "docker",
+        "kubernetes",
+        "helm",
+        "gitlab-ci",
+        "kafka",
+        "rabbitmq",
+        "microservices"
+      ],
+      "domain": [
+        "mobility",
+        "public-sector"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 2,
+        "domain": 1,
+        "company": 1,
+        "total": 7
+      },
+      "why": "Java/Spring Boot microservices with Kafka, Kubernetes/Helm and GitLab CI, 100% remote in Germany: the VW FS microservice platform and the GitLab/Kubernetes work at msg.",
+      "gap": "Start date on the page is 01.11.2024 and no posting date is shown, so the ad is almost two years old; still listed as open (runs to 12/2029). Helm and RabbitMQ are not on the CV."
+    },
+    {
+      "id": "unnamed-freelancermap--4-java-entwickler-uberwiegend-remote",
+      "url": "https://www.freelancermap.de/projekt/4-java-entwickler-m-w-d-ueberwiegend-remote",
+      "source": "freelancermap",
+      "company": "unnamed (freelancermap)",
+      "title": "4 Java Entwickler (m/w/d) überwiegend remote",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Mostly remote Java project.",
+      "gap": "The search snippet gives 01.05.2025-31.10.2025 with 60 hours onsite in Nuremberg: the project is over. Not opened."
+    },
+    {
+      "id": "unnamed-freelancermap--freelance-senior-java-entwickler-gesucht-langlaufer-95-remote-spannendes-umfeld",
+      "url": "https://www.freelancermap.de/projekt/freelance-senior-java-entwickler-gesucht-m-w-d-langlaeufer-95-prozent-remote-spannendes-umfeld",
+      "source": "freelancermap",
+      "company": "unnamed (freelancermap)",
+      "title": "FREELANCE // Senior Java Entwickler gesucht (m/w/d) // Langläufer // 95% remote // Spannendes Umfeld",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote-first",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Long-running senior Java project, 95% remote: Java EE and Spring backends at BMW FS, Porsche Bank, Krones and the current client.",
+      "gap": "The snippet asks 8+ years of Java; the CV's Java starts late 2018, just under 8 years (the years before were Delphi). Not opened: poster, end customer, rate and date unknown; quarterly travel to Dresden."
+    },
+    {
+      "id": "unnamed-freelancermap--java-fullstack-entwickler-remote-teilzeit-asap-3-mon",
+      "url": "https://www.freelancermap.de/projektboerse/projekte/entwicklung/2557496-projekt-java-frontend-entwickler-remote-teilzeit-asap-3-mon-remote.html",
+      "source": "freelancermap",
+      "company": "unnamed (freelancermap)",
+      "title": "Java Fullstack-Entwickler (m/w/d) - remote - Teilzeit - asap - 3 Mon. +",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 0,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 5
+      },
+      "why": "Remote Java full-stack support work: the CV's Java EE and JSF years at BMW FS.",
+      "gap": "Part-time (2-3 days a week) for 3+ months; its project number is far older than current ones, so it may be stale; not opened."
+    },
+    {
+      "id": "academic-work-germany--softwareentwickler-java-remote",
+      "url": "https://www.stepstone.de/stellenangebote--Softwareentwickler-Java-m-w-d-Remote-bundesweit-Home-Office-Academic-Work-Germany-GmbH-Hamburg--14034188-inline.html",
+      "source": "stepstone",
+      "company": "Academic Work Germany GmbH",
+      "title": "Softwareentwickler Java (m/w/d) - Remote",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "staffing"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 0,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 4
+      },
+      "why": "Java development, remote across Germany per the listing title.",
+      "gap": "A staffing firm's ad (permanent list, down-ranked); level and client unknown; not opened."
+    },
+    {
+      "id": "vesterling--senior-software-entwickler-java-fullstack-100-remote-moglich-bis-90-000-euro-mwd",
+      "url": "https://www.vesterling.com/job/22020-senior-software-entwickler-java-fullstack-deutschland-100-koeln-bis-100/",
+      "source": "websearch-open",
+      "company": "VESTERLING",
+      "title": "Senior Software Entwickler JAVA | Fullstack | 100% remote möglich, bis 90.000 Euro (mwd)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": null,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Senior Java full stack with architecture responsibility at a SaaS company, 100% remote possible: the CV's core.",
+      "gap": "Recruiter ad for an unnamed client (the URL mentions Koeln); pay cap from the title; not opened."
+    },
+    {
+      "id": "wematch-consulting--software-entwickler-smalltalk-java-100-remote",
+      "url": "https://www.remotely.de/job/wematch-consulting-software-entwickler-smalltalk-java-mwd-100-remote",
+      "source": "websearch-open",
+      "company": "WeMatch Consulting",
+      "title": "Software Entwickler - Smalltalk & Java (m/w/d) - 100% Remote",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "low-score",
+      "score": {
+        "stack": 1,
+        "seniority": 0,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 3
+      },
+      "why": "Java with third-level support, 100% remote.",
+      "gap": "Smalltalk is not on the CV; a consultancy's ad; level unclear; not opened."
+    },
+    {
+      "id": "vision-consulting--java-entwickler-bundesweit-remote",
+      "url": "https://visionconsulting.de/jobs/java-entwickler-m-w-d-bundesweit-remote-2/12448/",
+      "source": "websearch-open",
+      "company": "VISION Consulting GmbH",
+      "title": "Java Entwickler (m/w/d) bundesweit/remote",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 0,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 4
+      },
+      "why": "Java development, Germany-wide and remote per the title.",
+      "gap": "A consultancy as permanent employer (down-ranked); level unclear; not opened."
+    },
+    {
+      "id": "dl-remote--ai-engineer",
+      "url": "https://jobs.dl-remote.com/jobs/8241155-ai-engineer",
+      "source": "websearch-open",
+      "company": "DL Remote",
+      "title": "AI Engineer",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [
+        "llm",
+        "agents"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 5
+      },
+      "why": "LLM and agentic AI solutions with technical leadership on customer projects, German C1: the agentic review board and Claude-based delivery at the current client.",
+      "gap": "Not opened: employer, remote terms and level (mid, senior or lead) unclear."
+    },
+    {
+      "id": "grafana-labs--principal-backend-engineer-grafana-remote-germany",
+      "url": "https://boards.greenhouse.io/grafanalabs/jobs/5239833004",
+      "source": "greenhouse",
+      "company": "Grafana Labs",
+      "title": "Principal Backend Engineer, Grafana (Remote, Germany)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "principal",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "devtools"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 0,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 2,
+        "total": 6
+      },
+      "why": "Principal backend role on an open-source observability product, remote in Germany per the title.",
+      "gap": "Not opened; Grafana's backend is Go (its public repository), which the CV lacks; the job id may be old."
+    },
+    {
+      "id": "jobgether--lead-applied-ai-engineer-europe-remote",
+      "url": "https://jobs.lever.co/jobgether/b946a68c-dddb-4498-a2df-444f47ac8af6",
+      "source": "lever",
+      "company": "Jobgether",
+      "title": "Lead Applied AI Engineer, Europe Remote",
+      "lane": "ai-eng",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EUROPE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "llm"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Lead applied-AI role, remote across Europe: the eleven-agent review board and AI enablement of two juniors at the current client.",
+      "gap": "Jobgether reposts ads for unnamed partner companies, so the employer is unknown; not opened."
+    },
+    {
+      "id": "jobgether--staff-software-engineer",
+      "url": "https://jobs.lever.co/jobgether/70af7161-69d8-4722-b260-15116a505ff8",
+      "source": "lever",
+      "company": "Jobgether",
+      "title": "Staff Software Engineer",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "staff",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 5
+      },
+      "why": "Staff engineer, 100% remote from Germany per the search snippet.",
+      "gap": "Jobgether repost for an unnamed employer; stack unknown; not opened."
+    },
+    {
+      "id": "yuno--engineering-manager-payments-integrations",
+      "url": "https://jobs.lever.co/yuno/fdcc8441-1779-4759-a25e-bd996a1c3acc",
+      "source": "lever",
+      "company": "Yuno",
+      "title": "Engineering Manager - Payments Integrations",
+      "lane": "tech-lead",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EUROPE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "payments"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 2,
+        "company": 1,
+        "total": 7
+      },
+      "why": "Leads payment-integration engineering, remote in Europe per the snippet: ECB REST client and payment app for the digital euro, financing integrations at VW FS, team responsibility for 2-3 developers.",
+      "gap": "Not opened, so it cannot be shortlisted: stack and Germany eligibility unconfirmed; an engineering-manager role leans more on people management than the CV's small-team lead. Open it next sweep."
+    },
+    {
+      "id": "3pillar--lead-ai-integration-engineer",
+      "url": "https://jobs.lever.co/3pillarglobal/e8b567bf-183a-4d82-a6db-c22ad4b698fa",
+      "source": "lever",
+      "company": "3Pillar",
+      "title": "Lead AI Integration Engineer",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote-first",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "llm"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 5
+      },
+      "why": "Leads AI integration work for clients: agentic workflows at the current client and the agent review board.",
+      "gap": "A product-development consultancy as permanent employer (down-ranked); hiring region not shown in the snippet; not opened."
+    },
+    {
+      "id": "nova--senior-integration-engineer-remote-mexico",
+      "url": "https://jobs.lever.co/ioconnectservices.com/927f09f4-db0e-4d53-aadb-18522e39d4bf",
+      "source": "lever",
+      "company": "Nova",
+      "title": "Senior Integration Engineer (Remote, Mexico)",
+      "lane": "implementation",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "MX"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Senior integration engineering.",
+      "gap": "Remote from Mexico per the title; no language leverage."
+    },
+    {
+      "id": "braintrust--software-engineer-tech-lead-remote",
+      "url": "https://www.linkedin.com/jobs/view/software-engineer-+-tech-lead-remote-at-braintrust-3402215812",
+      "source": "linkedin",
+      "company": "Braintrust",
+      "title": "Software Engineer + Tech Lead [Remote]",
+      "lane": "tech-lead",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "US"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Tech lead role.",
+      "gap": "LinkedIn lists it in New York, United States; not opened."
+    },
+    {
+      "id": "alten-italia--angular-developer-full-remote",
+      "url": "https://it.linkedin.com/jobs/view/angular-developer-full-remote-it-at-alten-italia-3820665130",
+      "source": "linkedin",
+      "company": "ALTEN Italia",
+      "title": "Angular Developer (Full Remote)",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "angular"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Full-remote Angular work at the Italian arm of an engineering consultancy.",
+      "gap": "Not opened; the LinkedIn job id belongs to early 2024 (inferred), and a body-leasing consultancy is what the owner is leaving."
+    },
+    {
+      "id": "intercon-solutions-gmbh-it-engineering-experts--senior-frontend-entwickler-willkommen-in-der-modernen-welt",
+      "url": "https://join.com/companies/intercon-solutions1/10418981-senior-frontend-entwickler-m-w-d-willkommen-in-der-modernen-welt",
+      "source": "join-com",
+      "company": "Intercon Solutions GmbH IT & Engineering Experts",
+      "title": "Senior Frontend - Entwickler (m/w/d) - Willkommen in der modernen Welt!",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "react",
+        "javascript"
+      ],
+      "domain": [
+        "staffing"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 5
+      },
+      "why": "Senior React front end, remote per join.com: React/TypeScript on the digital-euro app.",
+      "gap": "A staffing firm's ad (down-ranked); front end only; not opened."
+    },
+    {
+      "id": "we7-digital--remote-software-developer-entwickler-api-integration",
+      "url": "https://join.com/companies/we7/15980675-remote-software-developer-entwickler-api-und-integration-m-w-d",
+      "source": "join-com",
+      "company": "WE7 Digital",
+      "title": "Remote Software Developer/Entwickler - API & Integration (m/w/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "rest"
+      ],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 0,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 4
+      },
+      "why": "Remote API and integration development: the ECB REST client and the SAP and Azure AD integrations on the CV.",
+      "gap": "Level and stack unclear; 50-100% part-time possible; not opened."
+    },
+    {
+      "id": "codecentric--backend-entwickler-in-und-consultant",
+      "url": "https://join.com/companies/codecentric/4709432-backend-entwickler-in-und-consultant-w-d-m",
+      "source": "join-com",
+      "company": "codecentric",
+      "title": "Backend Entwickler:in und Consultant (w/d/m)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "low-score",
+      "score": {
+        "stack": 1,
+        "seniority": 0,
+        "remote": 0,
+        "domain": 1,
+        "company": 0,
+        "total": 2
+      },
+      "why": "Backend development with consulting at an IT consultancy.",
+      "gap": "join.com labels it Leipzig, not remote; a consultancy as permanent employer; old join id; not opened."
+    },
+    {
+      "id": "unnamed-infojobs-it--sviluppatore-java-azienda-padova-lavoro-da-remoto",
+      "url": "https://www.infojobs.it/milano/sviluppatore-java-azienda-padova-lavoro-da-remoto/of-i865b4afa034095be9b4d288637ee93",
+      "source": "infojobs-it",
+      "company": "unnamed (InfoJobs.it)",
+      "title": "SVILUPPATORE JAVA - AZIENDA PADOVA- LAVORO DA REMOTO",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "IT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Remote Java role for a Padua company.",
+      "gap": "InfoJobs Italia has shut down; the page shows only the closure notice."
+    }
+  ]
+}
