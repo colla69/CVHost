@@ -16,7 +16,8 @@ https://cv.colarietitosti.info/ and public at github.com/colla69/CVHost.
 - `jobs/` — the owner's job search and its full history, kept by `job-scout`. Not part of the site; see
   "Job search" below and `jobs/README.md`.
 - Dead weight, do not run or repair unless asked: `frontend/pom.xml` and `frontend/node/` (a Maven build
-  wrapper pinned to node v12) and `frontend/target/` (stale build output from it).
+  wrapper pinned to node v12). Its stale `frontend/target/` output and the unused Docker image
+  (`Dockerfile`, `docker-compose.yml`) were deleted on 2026-10-03.
 
 ## Commands
 
