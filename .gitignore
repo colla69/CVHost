@@ -1,7 +1,6 @@
 .idea/*
-target/*
-!target/dist
-!target/*.war
+# Maven output from frontend/pom.xml, at any depth
+target/
 frontend/node_modules/*
 scripts/.env.deploy
 

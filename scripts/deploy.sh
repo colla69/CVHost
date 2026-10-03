@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# Build CVHost and publish it to the S3 bucket that nginx (on the Strato box)
-# reverse-proxies for cv.colarietitosti.info.
+# Build CVHost and publish it to the S3 bucket behind CloudFront for
+# cv.colarietitosti.info, then invalidate the mutable paths.
 #
 # Usage:
 #   scripts/deploy.sh              # dry run — prints every change, uploads nothing
@@ -143,10 +143,10 @@ if [ "$APPLY" -eq 1 ] && [ -n "${CF_DISTRIBUTION_ID:-}" ]; then
           --query 'Invalidation.Id' --output text)
   echo "invalidation ${inv} submitted; edges typically catch up within a minute"
 elif [ "$APPLY" -eq 1 ]; then
-  say "No CloudFront distribution configured"
-  echo "While nginx on the Strato box still proxies the bucket directly there is no"
-  echo "edge cache to invalidate. Once CvHostSite is deployed this resolves itself"
-  echo "from the stack outputs -- see infra/README.md."
+  say "No CloudFront distribution found"
+  echo "WARNING: the CvHostSite stack has no DistributionId output, so nothing was"
+  echo "invalidated and visitors may get stale copies for a while. Check the stack:"
+  echo "  scripts/aws-infra.sh status"
 fi
 
 # --- verify the live site, not the exit code ---------------------------------
@@ -161,14 +161,18 @@ if [ "$APPLY" -eq 1 ]; then
     echo "Deep link /qualifications -> 200"
   else
     echo "NOTE: deep link /qualifications -> ${deep}."
-    if [ -n "${CF_DISTRIBUTION_ID:-}" ]; then
-      echo "      CloudFront is serving this site, so the SpaFallback function should have"
-      echo "      rewritten this to /index.html. Check it is still associated with the"
+    # Whether CloudFront is actually serving this hostname is a property of DNS,
+    # not of whether a distribution exists. Ask the response, not the config: a
+    # stack can be deployed for days before the cutover record is created.
+    if curl -sI --max-time 20 https://cv.colarietitosti.info/ | grep -qi '^via:.*cloudfront'; then
+      echo "      CloudFront IS serving this hostname, so the SpaFallback function should"
+      echo "      have rewritten this to /index.html. Check it is still associated with the"
       echo "      default cache behaviour in infra/lib/site-stack.ts."
     else
-      echo "      Expected while the Strato box still proxies the bucket: its nginx passes"
-      echo "      S3's key-not-found straight through. CloudFront fixes this at the cutover;"
-      echo "      uploading files here cannot."
+      echo "      This hostname is NOT being served by CloudFront. Check its Route 53 alias"
+      echo "      records -- CvHostSite creates them while \"cutover\" is true in"
+      echo "      infra/cdk.json -- and that nothing else claims the name:"
+      echo "        scripts/aws-infra.sh status"
     fi
   fi
 else

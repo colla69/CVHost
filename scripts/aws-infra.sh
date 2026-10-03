@@ -200,6 +200,11 @@ for raw in open(sys.argv[1]):
         continue
     records.append(parts[0])
 
+if not records:
+    print('    The zone file lists no records, so there is nothing to compare.')
+    print('    The cv, apex and www aliases belong to CvHostSite; check those with: status')
+    sys.exit(0)
+
 print('    %-36s %-22s %-22s' % ('NAME', 'ROUTE 53', 'LIVE NOW'))
 mismatches = 0
 for name in records:

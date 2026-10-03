@@ -7,26 +7,28 @@ reads and reports; it does not provision.
 ## What it builds
 
 ```
-                    cv.colarietitosti.info
-                              |
-                     Route 53 A + AAAA alias          CvHostSite
-                              |
-                      CloudFront distribution
-                      ├─ ACM certificate (us-east-1)
-                      ├─ CloudFront Function (viewer-request)  ← SPA deep links
-                      ├─ CachingOptimized + SecurityHeaders policies
-                      └─ Origin Access Control (SigV4)
-                              |
-                      S3 bucket — private, versioned           CvHostSite
-                      BlockPublicAccess: ALL
+     cv.colarietitosti.info    colarietitosti.info    www.colarietitosti.info
+                  \                    |                    /
+                   Route 53 A + AAAA aliases, one pair each            CvHostSite
+                                       |
+                           CloudFront distribution
+                           ├─ ACM certificate (us-east-1), all three names
+                           ├─ CloudFront Function (viewer-request)
+                           │    apex, www → 301 https://cv.colarietitosti.info/<path>
+                           │    cv        → SPA deep links
+                           ├─ CachingOptimized + SecurityHeaders policies
+                           └─ Origin Access Control (SigV4)
+                                       |
+                           S3 bucket — private, versioned              CvHostSite
+                           BlockPublicAccess: ALL
 
-  colarietitosti.info  A     → 85.214.103.161   (Strato box, unchanged)
-  *.colarietitosti.info CNAME → apex            (wildcard, unchanged)   CvHostDns
+  Hosted zone, plus whatever zone-records.txt lists (nothing today)    CvHostDns
 ```
 
-Only `cv` moves to AWS. The apex and `admin.colarietitosti.info` keep being served by the
-Strato box at `85.214.103.161`; the DNS stack reproduces their records so that moving the
-nameservers changes nothing for them.
+Everything on the domain is AWS. The zone used to mirror the Strato zone (apex, a
+wildcard and eight subdomains on the box at `85.214.103.161`). Those records were removed
+in the Strato exit (`STRATO-EXIT.md`, Phase 3), because the box goes away with the account
+and its IP goes to someone else. Any other name under the domain now gets NXDOMAIN.
 
 ## Two stacks, and why
 
@@ -95,6 +97,11 @@ npm --prefix infra run deploy:site    # stack 2, only after delegation
 
 ## Migration runbook
 
+**Done.** Steps 1–8 were completed between 2026-09-14 and 2026-10-02. The Strato exit that followed
+(domain transfer, removing the box's records, apex/www redirect) is recorded in
+[`../STRATO-EXIT.md`](../STRATO-EXIT.md), which also covers what's left of step 9. The table stays
+as the record of how a zero-downtime move was sequenced.
+
 | # | Step | Visitor impact | Rollback |
 | --- | --- | --- | --- |
 | 1 | Fill in `zone-records.txt` from the Strato panel (**DNS-Einstellungen *and* Subdomains**) | none | n/a |
@@ -105,7 +112,7 @@ npm --prefix infra run deploy:site    # stack 2, only after delegation
 | 6 | `scripts/deploy.sh --apply` — fills the new bucket | none | n/a |
 | 7 | Check `https://<DistributionDomainName>/` **and `/qualifications`** | none | n/a |
 | 8 | `cdk deploy CvHostSite -c cutover=true` — **this is the switch** | the real cutover | redeploy without the flag, ~150 s |
-| 9 | Retire the Strato nginx vhost for `cv`, its certbot entry (see below) and the old public `cv-host` bucket | none | n/a |
+| 9 | Retire the old public `cv-host` bucket (deleted 2026-10-03). The Strato box and its nginx go with the Strato account | none | n/a |
 
 Steps 5 and 8 are separate on purpose. The bucket is empty the moment `CvHostSite` first
 deploys, so creating the alias at the same time would point real visitors at a 404 until
@@ -167,33 +174,17 @@ hours** for an NS change to reach the `.info` registry, though it is usually far
 Until it lands, the old nameservers stay authoritative and nothing changes for anyone —
 there is no half-migrated state.
 
-## Let's Encrypt on the Strato box
+## TLS
 
-The box terminates TLS with per-hostname Let's Encrypt certificates and proxies to S3 over
-plain HTTP. Two consequences:
-
-- **The other hostnames keep renewing.** `admin`, `nextcloud`, `grafana` and the rest still
-  resolve to `85.214.103.161` after the nameserver move, so HTTP-01 challenges still land
-  on the box and certbot carries on. Nothing to do. (This would *not* hold if renewal used
-  DNS-01 against a Strato API — worth a glance at `/etc/letsencrypt/renewal/*.conf` if any
-  of them do.)
-- **`cv` will start failing renewal, and mailing you about it.** After step 8 the name
-  resolves to CloudFront, so the HTTP-01 challenge for `cv.colarietitosti.info` no longer
-  reaches the box and certbot fails on that one certificate every cycle. Remove it as part
-  of step 9:
-
-  ```sh
-  # on 85.214.103.161
-  certbot delete --cert-name cv.colarietitosti.info
-  # and drop the cv server block from the nginx config, then: nginx -t && systemctl reload nginx
-  ```
-
-The plaintext hop disappears with the migration: CloudFront reaches S3 over HTTPS with
-SigV4-signed requests via Origin Access Control, and the bucket refuses anything else
-(`enforceSSL`).
+CloudFront terminates TLS with one ACM certificate for `cv`, the apex and `www`, renewed by ACM
+automatically, since its DNS validation records sit in the zone CDK owns. CloudFront reaches S3 over
+HTTPS with SigV4-signed requests via Origin Access Control, and the bucket refuses anything else
+(`enforceSSL`). The Strato box's Let's Encrypt certificates and the plaintext proxy hop are gone with
+the box.
 
 ## Cost
 
-Hosted zone $0.50/month. CloudFront's perpetual free tier covers 1 TB/month and 10 M
-requests; this site will not approach it. ACM certificates are free. S3 storage for a
-~10 MB site is cents. Realistically **$0.50–$1.00/month**, essentially all of it the zone.
+Hosted zone $0.50/month. The `.info` registration at Route 53 Domains is roughly $25–28 a year,
+billed on renewal each August. CloudFront's perpetual free tier covers 1 TB/month and 10 M requests;
+this site won't come close. ACM certificates are free. S3 storage for a ~10 MB site is cents. All in,
+**about $32–35 a year**, nearly all of it the domain and the zone.

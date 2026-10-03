@@ -16,7 +16,8 @@ https://cv.colarietitosti.info/ and public at github.com/colla69/CVHost.
 - `jobs/` — the owner's job search and its full history, kept by `job-scout`. Not part of the site; see
   "Job search" below and `jobs/README.md`.
 - Dead weight, do not run or repair unless asked: `frontend/pom.xml` and `frontend/node/` (a Maven build
-  wrapper pinned to node v12) and `frontend/target/` (stale build output from it).
+  wrapper pinned to node v12). Its stale `frontend/target/` output and the unused Docker image
+  (`Dockerfile`, `docker-compose.yml`) were deleted on 2026-10-03.
 
 ## Commands
 
@@ -76,23 +77,27 @@ outside the repo into it.
 The router uses `createWebHistory`, so `/news` and friends are real URLs and the host must rewrite
 unknown paths to `index.html`. In-app, unmatched paths redirect to `/` via the router catch-all.
 
-**How production actually serves:** `cv.colarietitosti.info` → CNAME → `colarietitosti.info` →
-`85.214.103.161`, a Strato box running nginx, which reverse-proxies to an **S3 bucket** holding the
-built site. No CloudFront. See `DEPLOYMENT.md` for the full picture and the runbook.
+**How production actually serves:** `cv.colarietitosti.info` → Route 53 alias → **CloudFront** →
+private S3 bucket. `colarietitosti.info` and `www` answer from the same distribution with a 301 to
+`cv`. The domain is registered at Route 53 too. All of it is CDK in `infra/`. See `DEPLOYMENT.md` to
+publish and `infra/README.md` for the architecture.
 
-Neither rewrite config in this repo is what runs in production: `frontend/public/.htaccess` is from the
-older plain-Apache setup, and `frontend/nginx.conf` belonged to the Docker image deleted in `8dd7cd4`.
-**The nginx that actually routes traffic lives on the Strato host, outside this repo** — editing those
-files does not change the live site.
+The SPA rewrite is the CloudFront Function `infra/functions/spa-fallback.js`: any extensionless path
+serves `index.html`, so deep links work and a new route needs no host change. A path whose last
+segment contains a dot is treated as a file and fails if missing. There is no other rewrite
+config: the old `.htaccess` and `nginx.conf` were deleted on 2026-10-03.
 
-Two consequences before you touch routing or deploys:
+Before you touch routing or deploys:
 
-- **Deep links are broken in production.** `/qualifications` returns 404: the proxy passes S3's
-  key-not-found straight through instead of falling back to `index.html`. Only in-app navigation works.
-- The live `index.html` is dated **2023-02-08**, so the deployed site is far behind this repo.
+- Content goes out with `scripts/deploy.sh --apply`. Infrastructure changes are `cdk deploy` in
+  `infra/`: preview with `cdk diff` first. Auto mode refuses the deploy, so the owner runs it with `!`.
+- `"cutover": true` in `infra/cdk.json` is what keeps the live aliases. Never deploy `CvHostSite`
+  with `-c cutover=false` unless you mean to take the site offline.
+- The old Strato box (`85.214.103.161`) serves nothing here and goes away with the Strato account on
+  2026-11-02. Never point a record at it. `STRATO-EXIT.md` has the history and the leftovers.
 
-There is no CI. The CDK project was deleted in `8dd7cd4`; the `feature/aws` branch name is a leftover
-from that abandoned work.
+There is no CI. Deploys are run by hand. The `feature/aws` branch name is left over from earlier,
+abandoned infrastructure attempts (see `DEPLOYMENT.md`, History).
 
 ## Design system — "Ledger"
 

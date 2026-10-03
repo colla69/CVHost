@@ -50,9 +50,10 @@ introduced into a component that doesn't already use it. Run
 `npm --prefix frontend run lint -- --no-fix` and fold any real output into your report — but do not
 pad the report with lint output the user can get themselves.
 
-**6. The two hosting configs.** The router uses `createWebHistory`, so unknown paths must rewrite to
-`index.html`. If routing changed, check that `frontend/public/.htaccess` and `frontend/nginx.conf` still
-agree with each other and with the routes in `src/router.js`.
+**6. The hosting rewrite.** The router uses `createWebHistory`, so unknown paths must rewrite to
+`index.html`. In production that's `infra/functions/spa-fallback.js`, which rewrites extensionless
+paths only. If routing changed, check that every route in `src/router.js` is extensionless, or the
+edge serves it as a missing file.
 
 **7. Content-site specifics.** `v-html` is used on strings from the content JSON and that is acceptable
 while the site owner authors them by hand — flag it only if a change routes anything external into that

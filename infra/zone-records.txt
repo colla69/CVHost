@@ -1,53 +1,23 @@
-# DNS records for colarietitosti.info, mirrored from the Strato zone.
+# DNS records for colarietitosti.info that CDK creates in Route 53, beyond the
+# ones CvHostSite owns (the cv / apex / www aliases and the ACM validation records).
 #
-# Single source of truth, read by two things:
+# Read by two things:
 #   - infra/lib/dns-stack.ts       creates them in Route 53 via CDK
-#   - scripts/aws-infra.sh verify  diffs them against live DNS before cutover
+#   - scripts/aws-infra.sh verify  diffs them against live DNS
 #
 # Format, one record per line, '#' starts a comment:
 #   name   TYPE   TTL    value          '@' = zone apex
 #   @      MX     3600   10 mx.example.net.;20 mx2.example.net.     ';' separates values
 #
 # An unsupported TYPE throws at synth time rather than being skipped -- a record
-# silently dropped here is a subdomain that goes dark at the nameserver cutover.
+# silently dropped here is a name that silently goes dark.
 #
-# Source: Strato panel, 2026-09-14. Apex A plus "Subdomains (8)". Confirmed from
-# outside the same day: no AAAA, MX, TXT or CAA anywhere in the zone.
-
-# The Strato box. Serves the apex redirect to admin, and every vhost below.
-@     A      3600   85.214.103.161
-
-# The wildcard, and it is load-bearing. Strato lists 8 subdomains and admin is
-# NOT one of them -- yet admin.colarietitosti.info serves a live site with its
-# own Let's Encrypt certificate and the apex redirects to it. So that list does
-# not enumerate every working hostname, and anything relying on the wildcard
-# that nobody remembers would go dark without this line.
-*     CNAME  3600   colarietitosti.info.
-
-# The 8 subdomains from the Strato panel, minus cv. Every one resolves to the
-# box today and must keep doing so; only cv moves to AWS.
+# Empty on purpose since the Strato exit (STRATO-EXIT.md, Phase 3). This file used
+# to mirror the Strato zone: the apex A, a wildcard CNAME and eight subdomains, all
+# pointing at the Strato box 85.214.103.161. The box is gone with the Strato
+# account on 2026-11-02, and Strato hands its IP to another customer. A record left
+# pointing at it would let that customer serve pages -- and obtain a certificate --
+# for a name under this domain. So none of them may come back, the wildcard least
+# of all: it answered for every name nobody had thought of.
 #
-# These are redundant while the wildcard above exists -- it already answers them
-# identically. They are listed anyway for two reasons: `aws-infra.sh verify`
-# then checks each name individually before the cutover instead of trusting one
-# wildcard probe, and naming every live host is the prerequisite for eventually
-# dropping the wildcard. While that wildcard is there, a name cannot actually be
-# retired: deleting its record just falls through to the wildcard.
-#
-# Owner's note 2026-09-14: most of these are unused. Retiring them is a separate
-# job from this migration -- see the note above about why deleting a record is
-# not enough on its own.
-collabora  A  3600  85.214.103.161   # nginx up, backend returns 502
-dash       A  3600  85.214.103.161   # alive, HTTP 401 auth gate
-grafana    A  3600  85.214.103.161   # alive, redirects
-homestats  A  3600  85.214.103.161   # no certificate of its own, does not answer
-nextcloud  A  3600  85.214.103.161   # alive, redirects
-plex       A  3600  85.214.103.161   # own certificate, service not answering
-ssh        A  3600  85.214.103.161   # port 22, not a web vhost -- likely still in use
-
-# Live and serving, but absent from Strato's subdomain list. Proof that the
-# panel's list is not the whole truth, which is why the wildcard stays.
-admin      A  3600  85.214.103.161
-
-# cv is deliberately absent: CvHostSite creates it as an A/AAAA alias to
-# CloudFront. The ACM validation CNAME is absent too -- CDK writes it itself.
+# The apex and www now redirect to cv at CloudFront; see SiteStack.

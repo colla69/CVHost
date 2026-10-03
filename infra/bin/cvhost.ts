@@ -26,8 +26,10 @@ const dns = new DnsStack(app, 'CvHostDns', {
   terminationProtection: true
 })
 
-// Off unless asked for explicitly: `cdk deploy CvHostSite -c cutover=true`.
-// See SiteStackProps.cutover for why pointing DNS at a freshly created,
+// On since the cutover of 2026-10-02, via "cutover": true in cdk.json, so a
+// plain `cdk deploy CvHostSite` can never quietly drop the live cv alias.
+// Building the stack from scratch? Deploy with `-c cutover=false` first --
+// see SiteStackProps.cutover for why pointing DNS at a freshly created,
 // still-empty bucket is its own step.
 const cutover = app.node.tryGetContext('cutover') === true ||
                 app.node.tryGetContext('cutover') === 'true'
@@ -35,6 +37,8 @@ const cutover = app.node.tryGetContext('cutover') === true ||
 new SiteStack(app, 'CvHostSite', {
   env,
   siteDomain,
+  // The apex and www have no content of their own; they 301 to the CV.
+  redirectDomains: [zoneDomain, `www.${zoneDomain}`],
   hostedZone: dns.hostedZone,
   cutover,
   description: 'CVHost - S3 + CloudFront + ACM for the CV site'
