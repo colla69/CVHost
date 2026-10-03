@@ -83,8 +83,8 @@ publish and `infra/README.md` for the architecture.
 
 The SPA rewrite is the CloudFront Function `infra/functions/spa-fallback.js`: any extensionless path
 serves `index.html`, so deep links work and a new route needs no host change. A path whose last
-segment contains a dot is treated as a file and fails if missing. `frontend/public/.htaccess` and
-`frontend/nginx.conf` are dead leftovers from older hosts, and editing them changes nothing.
+segment contains a dot is treated as a file and fails if missing. There is no other rewrite
+config: the old `.htaccess` and `nginx.conf` were deleted on 2026-10-03.
 
 Before you touch routing or deploys:
 

@@ -90,5 +90,4 @@ The router uses `createWebHistory`, so `/news` and friends are real URLs and the
 unknown paths to `index.html`. In production that rewrite is the CloudFront Function
 `infra/functions/spa-fallback.js`: any extensionless path serves `index.html`, and a path whose last
 segment has a dot is treated as a file. A new route therefore needs no host change, unless its path
-contains a dot. `frontend/public/.htaccess` and `frontend/nginx.conf` are dead leftovers from older
-hosts. Editing them changes nothing.
+contains a dot.

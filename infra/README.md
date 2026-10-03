@@ -112,7 +112,7 @@ as the record of how a zero-downtime move was sequenced.
 | 6 | `scripts/deploy.sh --apply` — fills the new bucket | none | n/a |
 | 7 | Check `https://<DistributionDomainName>/` **and `/qualifications`** | none | n/a |
 | 8 | `cdk deploy CvHostSite -c cutover=true` — **this is the switch** | the real cutover | redeploy without the flag, ~150 s |
-| 9 | Retire the Strato nginx vhost for `cv`, its certbot entry (see below) and the old public `cv-host` bucket | none | n/a |
+| 9 | Retire the old public `cv-host` bucket (deleted 2026-10-03). The Strato box and its nginx go with the Strato account | none | n/a |
 
 Steps 5 and 8 are separate on purpose. The bucket is empty the moment `CvHostSite` first
 deploys, so creating the alias at the same time would point real visitors at a 404 until

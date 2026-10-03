@@ -296,8 +296,10 @@ end date, chase it. Approving it at Strato speeds it up (1.5).
 
 ## Phase 5: Clean up
 
-**5.1 Delete the old world-readable bucket `cv-host`** (eu-central-1), once CloudFront has served
-`cv` for a while. First confirm the stack's bucket is a different one:
+**5.1 Delete the old world-readable bucket `cv-host`** (eu-central-1). **Done 2026-10-03.** Before
+deleting, all 87 of its objects were confirmed present in the stack's bucket at the same sizes, and
+the only CloudFront distribution was confirmed to read from the new bucket. The commands, for the
+record:
 
 ```sh
 aws cloudformation describe-stacks --region us-east-1 --stack-name CvHostSite \
@@ -310,8 +312,8 @@ $5, email alert. It catches a surprise long before the invoice does.
 
 **5.3 Docs: done 2026-10-03.** `CLAUDE.md`, `DEPLOYMENT.md`, `infra/README.md`, `scripts/deploy.sh`,
 `scripts/.env.deploy.example`, and the `aws-deployer`, `vue-expert` and `code-quality-reviewer`
-agents now describe the CloudFront setup. Still open: deleting the dead `frontend/public/.htaccess`
-and `frontend/nginx.conf`.
+agents now describe the CloudFront setup. The dead `frontend/public/.htaccess` and
+`frontend/nginx.conf` were deleted the same day.
 
 ---
 

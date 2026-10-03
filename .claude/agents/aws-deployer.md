@@ -45,8 +45,6 @@ www.colarietitosti.info ┘                             └─ CloudFront Functi
   header of `zone-records.txt` explains why. `STRATO-EXIT.md` is the history and the leftovers list.
 - **Content goes out with `scripts/deploy.sh --apply`**, which reads the bucket and distribution from
   the stack outputs and invalidates the mutable paths. A content change never needs `cdk deploy`.
-- Leftover: the old world-readable bucket `cv-host` (eu-central-1) serves nothing and is due for
-  deletion (STRATO-EXIT.md Phase 5).
 
 **Two older attempts are in git history, both abandoned:** `9915c15` (2021, CDK v1, a VPC nobody
 needed) and a Java CDK stack for Amplify Hosting deleted in `8dd7cd4`. The `feature/aws` branch name
@@ -70,8 +68,7 @@ the corporate root (`scripts/deploy.sh` auto-detects `~/.aws/corporate-ca.pem`),
 - **SPA routing lives in `infra/functions/spa-fallback.js`.** `createWebHistory` means `/news` is a
   real URL that must return `index.html`. The function rewrites extensionless paths only, so a missing
   `/data/x.pdf` still fails instead of returning the SPA shell with a fake 200. Don't replace it with a
-  blanket 403/404 → `/index.html` error response. `frontend/public/.htaccess` and
-  `frontend/nginx.conf` are dead leftovers from older hosts, and nothing reads them.
+  blanket 403/404 → `/index.html` error response.
 - **Cache policy is two-tier.** `/static/*` immutable, one year. `index.html` `no-cache` or a few
   seconds. Every deploy that changes `index.html` needs an invalidation of at least `/index.html`;
   invalidating `/*` on every deploy is wasteful once past the free tier but fine while iterating.

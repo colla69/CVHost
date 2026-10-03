@@ -30,8 +30,7 @@ cp scripts/.env.deploy.example scripts/.env.deploy   # nothing to fill in; see b
 ```
 
 `DEPLOY_BUCKET` and `CF_DISTRIBUTION_ID` both come from the `CvHostSite` stack outputs, so
-neither needs setting. Setting `DEPLOY_BUCKET` would override that, and could publish to the old
-`cv-host` bucket while it still exists. After uploading, the script issues a CloudFront
+neither needs setting, and setting `DEPLOY_BUCKET` overrides that. After uploading, the script issues a CloudFront
 invalidation for `/`, `/index.html` and `/data/*`. The hashed assets under `static/` are immutable
 for a year and never need one.
 
