@@ -6,10 +6,17 @@ import * as route53 from 'aws-cdk-lib/aws-route53'
 import * as targets from 'aws-cdk-lib/aws-route53-targets'
 import * as s3 from 'aws-cdk-lib/aws-s3'
 import { Construct } from 'constructs'
+import * as fs from 'fs'
 import * as path from 'path'
 
 export interface SiteStackProps extends cdk.StackProps {
   siteDomain: string
+  /**
+   * Hostnames that answer with a 301 to siteDomain, keeping the path -- the
+   * apex and www. They share the certificate and the distribution; the
+   * viewer-request function does the redirecting.
+   */
+  redirectDomains: string[]
   hostedZone: route53.IPublicHostedZone
   /**
    * Create the Route 53 alias that points the live hostname at CloudFront.
@@ -76,20 +83,29 @@ export class SiteStack extends cdk.Stack {
     // the hosted zone automatically -- no manual record, no wildcard collision.
     const certificate = new acm.Certificate(this, 'Certificate', {
       domainName: props.siteDomain,
+      subjectAlternativeNames: props.redirectDomains,
       validation: acm.CertificateValidation.fromDns(props.hostedZone)
     })
 
+    // CloudFront Functions have no environment variables, so the hostnames are
+    // written into the code here. A placeholder left behind would ship a function
+    // that throws on every request, so refuse to synth instead.
+    const functionCode = fs.readFileSync(path.join(__dirname, '..', 'functions', 'spa-fallback.js'), 'utf8')
+      .replace('__SITE_DOMAIN__', props.siteDomain)
+      .replace('__REDIRECT_HOSTS__', JSON.stringify(props.redirectDomains))
+    if (functionCode.includes('__SITE_DOMAIN__') || functionCode.includes('__REDIRECT_HOSTS__')) {
+      throw new Error('functions/spa-fallback.js: a placeholder was not substituted')
+    }
+
     const spaFallback = new cloudfront.Function(this, 'SpaFallback', {
-      code: cloudfront.FunctionCode.fromFile({
-        filePath: path.join(__dirname, '..', 'functions', 'spa-fallback.js')
-      }),
+      code: cloudfront.FunctionCode.fromInline(functionCode),
       runtime: cloudfront.FunctionRuntime.JS_2_0,
-      comment: 'Rewrite extensionless paths to /index.html for vue-router history mode'
+      comment: 'Redirect apex and www to the CV host; rewrite extensionless paths to /index.html'
     })
 
     this.distribution = new cloudfront.Distribution(this, 'Distribution', {
       comment: `CVHost - ${props.siteDomain}`,
-      domainNames: [props.siteDomain],
+      domainNames: [props.siteDomain, ...props.redirectDomains],
       certificate,
       defaultRootObject: 'index.html',
       minimumProtocolVersion: cloudfront.SecurityPolicyProtocol.TLS_V1_2_2021,
@@ -116,26 +132,39 @@ export class SiteStack extends cdk.Stack {
       }
     })
 
-    // The label under the zone apex, e.g. "cv" for cv.colarietitosti.info. An
-    // explicit record beats the wildcard CNAME inherited from Strato, so until
-    // these exist the hostname keeps resolving to the Strato box exactly as it
-    // does today.
+    // A + AAAA aliases for every hostname the distribution answers. Route 53
+    // takes a full hostname as the record name, apex included.
+    //
+    // The cv records keep their original construct ids: a new id for the same
+    // name and type makes CloudFormation create the replacement before deleting
+    // the old record, and that create fails because the name is taken.
     if (props.cutover) {
-      const recordName = props.siteDomain.replace(`.${props.hostedZone.zoneName}`, '')
       const aliasTarget = route53.RecordTarget.fromAlias(new targets.CloudFrontTarget(this.distribution))
+      const zoneName = props.hostedZone.zoneName
+      const label = (domain: string): string => {
+        if (domain === zoneName) return 'Apex'
+        const name = domain.slice(0, -(zoneName.length + 1)).replace(/[^A-Za-z0-9]/g, '')
+        return name.charAt(0).toUpperCase() + name.slice(1)
+      }
+      const aliases: Array<[string, string]> = [
+        ['SiteAlias', props.siteDomain],
+        ...props.redirectDomains.map((d): [string, string] => [`Redirect${label(d)}Alias`, d])
+      ]
 
-      new route53.ARecord(this, 'SiteAliasA', {
-        zone: props.hostedZone,
-        recordName,
-        target: aliasTarget,
-        comment: 'CVHost - CloudFront'
-      })
+      aliases.forEach(([id, recordName]) => {
+        new route53.ARecord(this, `${id}A`, {
+          zone: props.hostedZone,
+          recordName,
+          target: aliasTarget,
+          comment: 'CVHost - CloudFront'
+        })
 
-      new route53.AaaaRecord(this, 'SiteAliasAAAA', {
-        zone: props.hostedZone,
-        recordName,
-        target: aliasTarget,
-        comment: 'CVHost - CloudFront'
+        new route53.AaaaRecord(this, `${id}AAAA`, {
+          zone: props.hostedZone,
+          recordName,
+          target: aliasTarget,
+          comment: 'CVHost - CloudFront'
+        })
       })
     }
 
