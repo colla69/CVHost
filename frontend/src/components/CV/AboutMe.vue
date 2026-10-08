@@ -70,16 +70,16 @@ const COPY = {
       'healthcare.',
     bioStack: 'I work across the full stack — Java and Jakarta EE backends through React, ' +
       'Angular and TypeScript front ends — with AWS infrastructure, Terraform and CI/CD as the ' +
-      'constant thread. Most of what I enjoy sits at the seam between the two: taking ' +
-      'requirements straight from a business department and turning them into process design, ' +
-      'estimates and documentation that developers can actually build from.',
+      'constant thread. Most of what I enjoy sits at the seam between business and ' +
+      'engineering: taking requirements straight from a business department and turning them ' +
+      'into process design, estimates and documentation that developers can actually build from.',
     bioAi: 'Since 2025, AI-assisted engineering has been a standing part of how I deliver rather ' +
       'than an experiment: GitHub Copilot and Claude in the daily development loop, agentic ' +
       'workflows I built myself for the work that repeats, and getting a project team ' +
       'productive with both. The sharpest version of it is off the clock — ' +
       '<a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank" ' +
       'rel="noopener noreferrer">PlayCryptoWithAI</a>, a live trading system whose real ' +
-      'subject is the eleven-agent review board around it.',
+      'subject is the eleven agents built around it.',
     bioLeading: 'I have carried technical responsibility for small teams on both the ' +
       'consultancy and the client side, and mentored junior developers in both. What I am ' +
       'looking for now is a tech lead role with end-to-end ownership of a system and of the ' +

@@ -130,9 +130,10 @@ const COPY = {
       'migration also produced the reusable template for every migration after it. Recurring ' +
       'engineering work became <b>a set of agents that now do it</b>.',
     seeking: n => n + ' years of that as a consultant for Porsche, BMW Financial Services, ' +
-      'Volkswagen Financial Services, Krones and the German public sector. Looking for work ' +
-      'with end-to-end ownership of a system — where whoever designs it keeps it, and where ' +
-      'making the right thing automatic is part of the job rather than something done in the gaps.',
+      'Volkswagen Financial Services, Krones and a public-sector client in healthcare. Looking ' +
+      'for work with end-to-end ownership of a system — where whoever designs it keeps it, and ' +
+      'where making the right thing automatic is part of the job rather than something done in ' +
+      'the gaps.',
     downloadCv: 'Download CV',
     getInTouch: 'Get in touch',
     deliveredFor: 'Delivered for',

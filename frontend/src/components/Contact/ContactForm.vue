@@ -56,7 +56,7 @@ const COPY = {
     intro: 'Email is the quickest way to reach me, and I answer every message that is not a ' +
       'mailshot. If you are hiring, the CV below has the detail this site summarises.',
     cvHeading: 'Curriculum vitae',
-    cvIntro: 'The same document in three languages. It carries the contact details kept off ' +
+    cvIntro: 'The same document in three languages. It carries the personal details kept off ' +
       'this public page — address, phone number and date of birth.'
   },
   de: {

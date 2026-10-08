@@ -25,7 +25,7 @@
     "start_date": "2012-05-01",
     "end_date": "2012-09-01",
     "description": {
-      "en": "<p>I helped research and test different Software and then setup a new <a href=\"https://askozia.com/\">askozia PBP server.<br /></a> The work included planning and implementation of a voice mail service.</p>"
+      "en": "<p>I helped research and test different Software and then set up a new <a href=\"https://askozia.com/\">askozia PBX server.<br /></a> The work included planning and implementation of a voice mail service.</p>"
     },
     "role_name": {
       "en": "Apprentice (Ausbildung)"
@@ -42,7 +42,7 @@
   {
     "id": 3,
     "Name": {
-      "en": "Cryprography with SHA 512"
+      "en": "Cryptography with SHA 512"
     },
     "start_date": "2012-09-01",
     "end_date": "2012-11-30",
@@ -67,7 +67,7 @@
     "start_date": "2012-12-01",
     "end_date": "2013-04-01",
     "description": {
-      "en": "<p>mediafusion manages data in form of a tree (e.g. Series , Seasons and Episodes).<br />To improve Data Recording speed, I implemented the Copy/Update tool, enabling users to update information to the underlying nodes or leaves or to copy whole datasets.</p>"
+      "en": "<p>mediafusion manages data in the form of a tree (e.g. Series, Seasons and Episodes).<br />To improve Data Recording speed, I implemented the Copy/Update tool, enabling users to update information to the underlying nodes or leaves or to copy whole datasets.</p>"
     },
     "role_name": {
       "en": "Apprentice (Ausbildung)"
@@ -127,7 +127,7 @@
     "start_date": "2016-02-28",
     "end_date": "2016-09-28",
     "description": {
-      "en": "<p>A new module to manage and calculate revenues was needed in <a href=\"https://www.3points.de\">mediafusion</a>.<br />I implemented the new module from scratch, from the database design to the GUI. The whole revenue process for the Red Arrow Systems International licencing was covered and it was subequently updated with complex controlling views to help the managers keep track of the cashflow.<br />I also offered updates and bugfixes for several years.</p>"
+      "en": "<p>A new module to manage and calculate revenues was needed in <a href=\"https://www.3points.de\">mediafusion</a>.<br />I implemented the new module from scratch, from the database design to the GUI. The whole revenue process for the Red Arrow Systems International licencing was covered and it was subsequently updated with complex controlling views to help the managers keep track of the cashflow.<br />I also offered updates and bugfixes for several years.</p>"
     },
     "role_name": {
       "en": "Senior Application Developer"
@@ -170,7 +170,7 @@
     "start_date": "2016-12-26",
     "end_date": "2017-07-27",
     "description": {
-      "en": "<p style=\"text-align: center;\">After working on the new Prototype, we had a lot of technical diifficulties deploying the new Webpages correctly, since developers had to manually pull feartures and configs together to compile Release versions. <br />That lead way to often to small small errors, leading to multiple hotfix deliveries and bloated costs for both parties.<br />After a short period of time, I planned and implemented an automatic delivery System in Bamboo and JIRA, tha was able to create new feature branches, and pulling the right ones back together at release time, as well as compiling the code end getting an installable package ready for deployment. (local or remote)<br />The new automation reduced management costs significantly since a tidy organisation in JIRA was everithing that was needed to keep everithing running without hickups.</p>\n<p style=\"text-align: center;\">Used Technologies:<br />- Atlassian Tool Stack<br />- Bamboo Config as Code (Groovy based DSL)<br />- Linux Shell / Power Shell</p>"
+      "en": "<p style=\"text-align: center;\">After working on the new Prototype, we had a lot of technical difficulties deploying the new Webpages correctly, since developers had to manually pull features and configs together to compile Release versions. <br />That led way too often to small errors, leading to multiple hotfix deliveries and bloated costs for both parties.<br />After a short period of time, I planned and implemented an automatic delivery System in Bamboo and JIRA, that was able to create new feature branches, and pulling the right ones back together at release time, as well as compiling the code and getting an installable package ready for deployment. (local or remote)<br />The new automation reduced management costs significantly since a tidy organisation in JIRA was everything that was needed to keep everything running without hiccups.</p>\n<p style=\"text-align: center;\">Used Technologies:<br />- Atlassian Tool Stack<br />- Bamboo Config as Code (Groovy based DSL)<br />- Linux Shell / Power Shell</p>"
     },
     "role_name": {
       "en": "Senior Application Developer"
@@ -411,7 +411,7 @@
     "start_date": "2024-01-01",
     "end_date": null,
     "description": {
-      "en": "<p>Maintenance and modernisation of a long-lived regulatory codebase at Porsche Bank, in a team of three: refactoring, security updates, replacement of outdated dependencies and cross-OS compatibility work. I own the pipelines and DevOps processes, including their migration into the AWS cloud, next to feature development and customer change requests.</p>\n<p>Used Technologies:<br>- Java EE / Hibernate / WildFly<br>- JUnit<br>- GitLab CI / SonarQube / AWS</p>"
+      "en": "<p>Maintenance and modernisation of a long-lived regulatory codebase at Porsche Bank that my department looks after, worked on alongside other projects whenever it needs hands, in a team of three: refactoring, security updates, replacement of outdated dependencies and cross-OS compatibility work. I own the pipelines and DevOps processes, including their migration into the AWS cloud, next to feature development and customer change requests.</p>\n<p>Used Technologies:<br>- Java EE / Hibernate / WildFly<br>- JUnit<br>- GitLab CI / SonarQube / AWS</p>"
     },
     "role_name": {
       "en": "Senior Developer"
@@ -480,7 +480,7 @@
     "start_date": "2025-06-01",
     "end_date": "2025-07-31",
     "description": {
-      "en": "<p>Two customer platforms built on BSI's proprietary CRM base software, both administering operations at European scale, for BSI with Techem as the end customer. I keep them running and current in two-person teams: maintenance, dependency and platform updates and feature work across the Spring and Oracle backends and the Angular front end.</p>\n<p>Used Technologies:<br>- Java / Spring<br>- Oracle<br>- Angular<br>- BSI CRM</p>"
+      "en": "<p>Two customer platforms built on BSI's proprietary CRM base software, both administering operations at European scale, for BSI with Techem as the end customer. I kept them running and current in two-person teams: maintenance, dependency and platform updates and feature work across the Spring and Oracle backends and the Angular front end.</p>\n<p>Used Technologies:<br>- Java / Spring<br>- Oracle<br>- Angular<br>- BSI CRM</p>"
     },
     "role_name": {
       "en": "Senior IT Consultant / Senior Developer"

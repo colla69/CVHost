@@ -49,7 +49,7 @@ export default {
           level: { en: 'Fluent', de: 'Verhandlungs\u00ADsicher', it: 'Fluente' },
           proof: [
             {
-              en: 'Secondary schooling and vocational training completed in Germany.',
+              en: 'Part of secondary school and the vocational training in Germany.',
               de: 'Schulzeit und Berufsausbildung in Deutschland.',
               it: 'Parte della scuola secondaria e la formazione professionale svolte in Germania.'
             },

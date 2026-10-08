@@ -164,7 +164,7 @@ export default {
         },
         {
           name: {
-            en: 'Fachinformatiker Anwendungsentwicklung',
+            en: 'Fachinformatiker für Anwendungsentwicklung',
             de: 'Fachinformatiker für Anwendungsentwicklung',
             it: 'Fachinformatiker für Anwendungsentwicklung'
           },

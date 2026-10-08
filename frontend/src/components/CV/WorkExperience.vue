@@ -45,8 +45,9 @@ export default {
             en: 'Currently replacing Excel-based processes for objection and damages ' +
               'cases at a public-sector client in healthcare, with AI-assisted engineering as ' +
               'a standing part of delivery. Before that the digital euro showcase for Pioneer ' +
-              'Investments, BSI CRM platforms for Techem, the IFRS 9 regulatory platform at ' +
-              'Porsche Bank and the GitLab runner migration into AWS.',
+              'Investments, BSI CRM platforms for Techem and the GitLab runner migration into ' +
+              'AWS. Alongside all of it, whenever it needs hands, the IFRS 9 regulatory platform ' +
+              'at Porsche Bank that my department looks after.',
             de: 'Derzeit Ablösung Excel-basierter Prozesse für Widerspruchs- und Schadensfälle ' +
               'bei einem öffentlichen Auftraggeber im Gesundheitswesen, mit KI-gestützter ' +
               'Entwicklung als festem Bestandteil der Lieferung. Davor die Showcase-Anwendung zum ' +
