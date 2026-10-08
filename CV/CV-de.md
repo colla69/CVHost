@@ -95,10 +95,11 @@ Unternehmens sowie ein wiederverwendbares Terraform-Template für künftige Runn
 
 **IFRS-9-Regulatorikplattform** — Porsche Bank · 01/2024 – heute
 *Senior Entwickler · Team von 3*
-Wartung und Modernisierung eines langlebigen Codestands: Refactoring, Sicherheitsupdates, Austausch
-veralteter Abhängigkeiten und betriebssystemübergreifende Kompatibilität. Verantwortung für Pipelines
-und DevOps-Prozesse einschließlich ihres Umzugs in die AWS-Cloud, dazu Feature-Entwicklung und
-Kundenanforderungen.
+Eine Plattform, die meine Abteilung betreut; Mitarbeit parallel zu den anderen Projekten, wann immer
+dort Unterstützung gebraucht wird. Wartung und Modernisierung eines langlebigen Codestands:
+Refactoring, Sicherheitsupdates, Austausch veralteter Abhängigkeiten und betriebssystemübergreifende
+Kompatibilität. Verantwortung für Pipelines und DevOps-Prozesse einschließlich ihres Umzugs in die
+AWS-Cloud, dazu Feature-Entwicklung und Kundenanforderungen.
 **Technologien:** Java EE, Hibernate, WildFly, JUnit, GitLab CI, SonarQube
 
 ### msgGillardonBSM AG — Ismaning
@@ -232,6 +233,6 @@ gültig bis 04/2029
 ## Sprachen
 
 - **Italienisch** — Muttersprache
-- **Deutsch** — verhandlungssicher; Schulzeit und Berufsausbildung in Deutschland, TestDaF
-  (Goethe-Institut München)
+- **Deutsch** — verhandlungssicher; ein Teil der Sekundarstufe und die Berufsausbildung in Deutschland,
+  TestDaF (Goethe-Institut München)
 - **Englisch** — verhandlungssicher in Wort und Schrift; berufliche Arbeitssprache

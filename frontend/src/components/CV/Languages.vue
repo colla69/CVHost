@@ -50,7 +50,7 @@ export default {
           proof: [
             {
               en: 'Part of secondary school and the vocational training in Germany.',
-              de: 'Schulzeit und Berufsausbildung in Deutschland.',
+              de: 'Ein Teil der Sekundarstufe und die Berufsausbildung in Deutschland.',
               it: 'Parte della scuola secondaria e la formazione professionale svolte in Germania.'
             },
             { en: 'TestDaF — Goethe-Institut München, 2010', de: 'TestDaF — Goethe-Institut München, 2010', it: 'TestDaF — Goethe-Institut München, 2010' },

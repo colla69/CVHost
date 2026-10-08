@@ -51,14 +51,16 @@ export default {
             de: 'Derzeit Ablösung Excel-basierter Prozesse für Widerspruchs- und Schadensfälle ' +
               'bei einem öffentlichen Auftraggeber im Gesundheitswesen, mit KI-gestützter ' +
               'Entwicklung als festem Bestandteil der Lieferung. Davor die Showcase-Anwendung zum ' +
-              'digitalen Euro für Pioneer Investments, BSI-CRM-Plattformen für Techem, die ' +
-              'IFRS-9-Regulatorikplattform bei der Porsche Bank und der Umzug der GitLab-Runner in ' +
-              'die AWS-Cloud.',
+              'digitalen Euro für Pioneer Investments, BSI-CRM-Plattformen für Techem und der ' +
+              'Umzug der GitLab-Runner in die AWS-Cloud. Parallel zu allem die von meiner ' +
+              'Abteilung betreute IFRS-9-Regulatorikplattform bei der Porsche Bank, wann immer ' +
+              'dort Unterstützung gebraucht wird.',
             it: 'Attualmente sostituisco processi basati su Excel per ricorsi e danni presso un ' +
               'committente pubblico nella sanità, con lo sviluppo assistito dall’IA come parte ' +
               'stabile della consegna. In precedenza l’applicazione showcase per l’euro digitale ' +
-              'per Pioneer Investments, le piattaforme CRM BSI per Techem, la piattaforma ' +
-              'regolamentare IFRS 9 per Porsche Bank e la migrazione dei GitLab runner su AWS.'
+              'per Pioneer Investments, le piattaforme CRM BSI per Techem e la migrazione dei ' +
+              'GitLab runner su AWS. In parallelo a tutto questo, ogni volta che serve una mano, ' +
+              'la piattaforma regolamentare IFRS 9 per Porsche Bank, seguita dal mio reparto.'
           }
         },
         {

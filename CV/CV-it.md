@@ -94,8 +94,9 @@ compliance e consegna di un template Terraform riutilizzabile per i runner futur
 
 **Piattaforma regolamentare IFRS 9** — Porsche Bank · 01/2024 – oggi
 *Senior Developer · team di 3*
-Manutenzione e ammodernamento di un codebase di lunga vita: refactoring, aggiornamenti di sicurezza,
-sostituzione di dipendenze obsolete e compatibilità cross-OS. Responsabilità delle pipeline e dei
+Una piattaforma seguita dal mio reparto, su cui lavoro in parallelo agli altri progetti ogni volta che
+serve una mano. Manutenzione e ammodernamento di un codebase di lunga vita: refactoring, aggiornamenti
+di sicurezza, sostituzione di dipendenze obsolete e compatibilità cross-OS. Responsabilità delle pipeline e dei
 processi DevOps, inclusa la loro migrazione in cloud AWS, insieme allo sviluppo di nuove funzionalità e
 alle richieste di modifica del cliente.
 **Tecnologie:** Java EE, Hibernate, WildFly, JUnit, GitLab CI, SonarQube

@@ -106,9 +106,9 @@ const COPY = {
     bioStack: 'Ich arbeite über den gesamten Stack — von Java- und Jakarta-EE-Backends bis zu ' +
       'Frontends mit React, Angular und TypeScript — und durchgehend mit AWS-Infrastruktur, ' +
       'Terraform und CI/CD. Das meiste, was mir an der Arbeit Freude macht, liegt an der ' +
-      'Nahtstelle zwischen beidem: Anforderungen direkt mit dem Fachbereich aufnehmen und in ' +
-      'Prozesskonzeption, Schätzungen und Dokumentation überführen, die Entwickler tatsächlich ' +
-      'umsetzen können.',
+      'Nahtstelle zwischen Fachlichkeit und Technik: Anforderungen direkt mit dem Fachbereich ' +
+      'aufnehmen und in Prozesskonzeption, Schätzungen und Dokumentation überführen, die ' +
+      'Entwickler tatsächlich umsetzen können.',
     bioAi: 'Seit 2025 ist KI-gestützte Entwicklung fester Bestandteil meiner Lieferung und kein ' +
       'Experiment mehr: GitHub Copilot und Claude im täglichen Entwicklungsablauf, selbst gebaute ' +
       'agentische Workflows für die Arbeit, die sich wiederholt, und die Befähigung eines ' +
@@ -116,7 +116,7 @@ const COPY = {
       'außerhalb der Arbeitszeit — ' +
       '<a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank" ' +
       'rel="noopener noreferrer">PlayCryptoWithAI</a>, ein Handelssystem im Live-Betrieb, dessen ' +
-      'eigentliches Thema das Review-Gremium aus elf Agenten darum herum ist.',
+      'eigentliches Thema die elf darum herum gebauten Agenten sind.',
     bioLeading: 'Ich habe auf Berater- wie auf Kundenseite die fachliche Verantwortung für kleine ' +
       'Teams getragen und auf beiden Seiten Juniorentwickler betreut. Was ich jetzt suche, ist ' +
       'eine Rolle als Tech Lead mit End-to-End-Verantwortung für ein System und für das Team ' +
@@ -141,7 +141,7 @@ const COPY = {
       'nella sanità.',
     bioStack: 'Lavoro sull’intero stack — dai backend Java e Jakarta EE ai frontend in React, ' +
       'Angular e TypeScript — con l’infrastruttura AWS, Terraform e CI/CD come costante. Gran ' +
-      'parte di ciò che mi piace di questo lavoro sta nel punto di giunzione tra le due cose: ' +
+      'parte di ciò che mi piace di questo lavoro sta nel punto di giunzione tra business e sviluppo: ' +
       'raccogliere i requisiti direttamente dall’unità di business e tradurli in progettazione dei ' +
       'processi, stime e documentazione su cui gli sviluppatori possano davvero costruire.',
     bioAi: 'Dal 2025 lo sviluppo assistito dall’IA è una parte stabile del mio modo di consegnare, ' +
@@ -151,7 +151,7 @@ const COPY = {
       'di lavoro — ' +
       '<a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank" ' +
       'rel="noopener noreferrer">PlayCryptoWithAI</a>, un sistema di trading in esercizio il cui ' +
-      'vero tema è il comitato di revisione di undici agenti che lo circonda.',
+      'vero tema sono gli undici agenti costruiti intorno a esso.',
     bioLeading: 'Ho avuto responsabilità tecnica su piccoli team sia lato consulenza sia lato ' +
       'cliente, e in entrambi ho affiancato sviluppatori junior. Ora cerco un ruolo da Tech Lead ' +
       'con responsabilità end-to-end su un sistema e sul team che lo circonda, in un contesto dove ' +

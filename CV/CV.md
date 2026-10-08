@@ -92,6 +92,7 @@ standards and delivered a reusable Terraform template for future runners.
 
 **IFRS 9 regulatory platform** — Porsche Bank · 01/2024 – present
 *Senior Developer · team of 3*
+A platform my department looks after, worked on alongside the other projects whenever it needs hands.
 Maintenance and modernisation of a long-lived codebase: refactoring, security updates, replacement of
 outdated dependencies and cross-OS compatibility work. Owns the pipelines and DevOps processes, including
 their migration into the AWS cloud, alongside feature development and customer change requests.
@@ -224,6 +225,6 @@ valid until 04/2029
 ## Languages
 
 - **Italian** — native speaker
-- **German** — fluent, spoken and written. Secondary schooling and vocational training completed in
+- **German** — fluent, spoken and written. Part of secondary school and the vocational training in
   Germany; TestDaF, Goethe-Institut Munich
 - **English** — fluent, spoken and written; professional working language

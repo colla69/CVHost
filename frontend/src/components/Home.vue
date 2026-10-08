@@ -160,9 +160,10 @@ const COPY = {
       'wiederverwendbare Vorlage für jede weitere. Aus wiederkehrender Entwicklungsarbeit wurden ' +
       '<b>Agenten, die sie heute erledigen</b>.',
     seeking: n => n + ' dieser Jahre als Consultant für Porsche, BMW Financial Services, ' +
-      'Volkswagen Financial Services, Krones und den öffentlichen Sektor in Deutschland. Ich suche ' +
-      'Arbeit mit End-to-End-Verantwortung für ein System — wo diejenigen, die es entwerfen, es ' +
-      'auch behalten, und wo es zur Aufgabe gehört, das Richtige automatisch zu machen statt nebenbei.',
+      'Volkswagen Financial Services, Krones und einen öffentlichen Auftraggeber im ' +
+      'Gesundheitswesen. Ich suche Arbeit mit End-to-End-Verantwortung für ein System — wo ' +
+      'diejenigen, die es entwerfen, es auch behalten, und wo es zur Aufgabe gehört, das Richtige ' +
+      'automatisch zu machen statt nebenbei.',
     downloadCv: 'CV herunterladen',
     getInTouch: 'Kontakt aufnehmen',
     deliveredFor: 'Projekte für',
@@ -187,10 +188,10 @@ const COPY = {
       'migrazione cloud una tantum è nato anche il modello riutilizzabile per tutte quelle ' +
       'successive. Dal lavoro di sviluppo ricorrente sono nati <b>agenti che oggi lo svolgono</b>.',
     seeking: n => n + ' di quegli anni come consulente per Porsche, BMW Financial Services, ' +
-      'Volkswagen Financial Services, Krones e il settore pubblico tedesco. Cerco lavoro con ' +
-      'responsabilità end-to-end su un sistema — dove chi lo progetta se lo tiene, e dove rendere ' +
-      'automatica la cosa giusta fa parte del mestiere invece di essere qualcosa fatto nei ritagli ' +
-      'di tempo.',
+      'Volkswagen Financial Services, Krones e un committente pubblico nella sanità. Cerco ' +
+      'lavoro con responsabilità end-to-end su un sistema — dove chi lo progetta se lo tiene, e ' +
+      'dove rendere automatica la cosa giusta fa parte del mestiere invece di essere qualcosa ' +
+      'fatto nei ritagli di tempo.',
     downloadCv: 'Scarica il CV',
     getInTouch: 'Mi contatti',
     deliveredFor: 'Progetti per',

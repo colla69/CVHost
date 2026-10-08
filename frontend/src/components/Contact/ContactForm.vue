@@ -66,7 +66,7 @@ const COPY = {
       'kein Massenversand ist. Wenn Sie eine Stelle besetzen, finden Sie im Lebenslauf unten die ' +
       'Details, die diese Website nur zusammenfasst.',
     cvHeading: 'Lebenslauf',
-    cvIntro: 'Dasselbe Dokument in drei Sprachen. Es enthält die Kontaktdaten, die auf dieser ' +
+    cvIntro: 'Dasselbe Dokument in drei Sprachen. Es enthält die persönlichen Angaben, die auf dieser ' +
       'öffentlichen Seite bewusst fehlen — Adresse, Telefonnummer und Geburtsdatum.'
   },
   it: {
@@ -76,7 +76,7 @@ const COPY = {
       'sia un invio di massa. Se sta assumendo, il CV qui sotto contiene i dettagli che questo ' +
       'sito riassume.',
     cvHeading: 'Curriculum vitae',
-    cvIntro: 'Lo stesso documento in tre lingue. Contiene i dati di contatto che restano fuori da ' +
+    cvIntro: 'Lo stesso documento in tre lingue. Contiene i dati personali che restano fuori da ' +
       'questa pagina pubblica — indirizzo, numero di telefono e data di nascita.'
   }
 }
