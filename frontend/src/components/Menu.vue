@@ -25,6 +25,32 @@
       </router-link>
     </nav>
 
+    <v-menu location="bottom end">
+      <template #activator="{ props }">
+        <v-btn
+          ref="langBtn"
+          v-bind="props"
+          variant="text"
+          size="small"
+          class="lang-btn ml-2"
+          :aria-label="t.chooseLanguage + ' (' + $lang.code.toUpperCase() + ')'"
+        >
+          {{ $lang.code.toUpperCase() }}
+        </v-btn>
+      </template>
+      <v-list density="compact">
+        <v-list-item
+          v-for="language in languages"
+          :key="language.code"
+          :lang="language.code"
+          :title="language.name"
+          :active="language.code === $lang.code"
+          :aria-current="language.code === $lang.code ? 'true' : undefined"
+          @click="chooseLanguage(language.code)"
+        ></v-list-item>
+      </v-list>
+    </v-menu>
+
     <v-btn
       :icon="dark ? 'mdi-weather-sunny' : 'mdi-weather-night'"
       variant="text"
@@ -36,7 +62,7 @@
 
     <v-btn
       v-if="!compact"
-      :href="cvFile"
+      :href="$lang.language.cv"
       download
       class="cta ml-3 mr-1"
       variant="flat"
@@ -63,7 +89,7 @@
     </v-list>
     <template #append>
       <div class="pa-4">
-        <v-btn :href="cvFile" download block variant="flat" color="primary" class="cta">
+        <v-btn :href="$lang.language.cv" download block variant="flat" color="primary" class="cta">
           Download CV
         </v-btn>
         <v-btn
@@ -80,12 +106,20 @@
 </template>
 
 <script>
+import { LANGUAGES, pick, setLanguage } from '@/i18n'
+
+const COPY = {
+  en: {
+    chooseLanguage: 'Choose language'
+  }
+}
+
 export default {
   name: 'Menu',
   data () {
     return {
       drawer: false,
-      cvFile: '/data/CV_en.pdf',
+      languages: LANGUAGES,
       links: [
         { to: '/', label: 'Home', icon: 'mdi-home-outline' },
         { to: '/projectInfos', label: 'Work', icon: 'mdi-briefcase-outline' },
@@ -98,6 +132,9 @@ export default {
     }
   },
   computed: {
+    t () {
+      return pick(COPY)
+    },
     // Seven links plus the brand and CTA still fit at 1280px; below that the
     // bar crowds, so it collapses into the drawer.
     compact () {
@@ -108,6 +145,12 @@ export default {
     }
   },
   methods: {
+    chooseLanguage (code) {
+      setLanguage(code)
+      // The chosen item vanishes with the menu; hand keyboard focus back to the
+      // button instead of letting it fall to <body>.
+      this.$nextTick(() => this.$refs.langBtn.$el.focus())
+    },
     toggleTheme () {
       const next = this.dark ? 'ledgerLight' : 'ledgerDark'
       this.$vuetify.theme.change(next)
@@ -179,6 +222,10 @@ export default {
 
 .cta {
   font-weight: 600;
+}
+
+.lang-btn {
+  font-family: var(--lg-mono);
 }
 
 .drawer-head {

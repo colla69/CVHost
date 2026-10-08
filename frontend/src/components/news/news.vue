@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     formatDate (value) {
-      return new Date(value).toLocaleDateString('en-GB', {
+      return new Date(value).toLocaleDateString(this.$lang.language.dates, {
         year: 'numeric',
         month: 'long',
         day: 'numeric'

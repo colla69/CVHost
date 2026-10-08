@@ -93,8 +93,8 @@ as special, which breaks prose and the email address — just `src/i18n.js`:
 - Page copy lives in a per-component `COPY = { en, de, it }` block, read through
   `computed: { t () { return pick(COPY) } }`. Data lists and the content JSON keep one list and turn only
   the language-dependent fields into `{ en, de, it }` maps, read with `$tr()`.
-- Missing translations fall back to English. Dev builds warn in the console on every fallback — that is
-  the completeness check. Scoped CSS needs `:deep()` to reach `v-html` prose; a `<router-link>` never
+- Missing translations — a whole block or a single key — fall back to English. Dev builds warn in the
+  console (`[i18n]`, once per message) on each fallback — that is the completeness check. Scoped CSS needs `:deep()` to reach `v-html` prose; a `<router-link>` never
   goes inside `v-html`.
 - `vue-expert` builds structure and writes English; `cv-strategist` writes German and Italian, editing
   text values only. `.claude/agents/vue-expert.md` has the full rules.

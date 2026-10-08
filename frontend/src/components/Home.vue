@@ -23,7 +23,7 @@
           the right thing automatic is part of the job rather than something done in the gaps.
         </p>
         <div class="hero-cta">
-          <v-btn href="/data/CV_en.pdf" download size="large" variant="flat" color="primary">
+          <v-btn :href="$lang.language.cv" download size="large" variant="flat" color="primary">
             Download CV
           </v-btn>
           <v-btn
@@ -110,7 +110,7 @@
           </p>
         </div>
         <div class="hero-cta">
-          <v-btn href="/data/CV_en.pdf" download size="large" variant="flat" color="primary">
+          <v-btn :href="$lang.language.cv" download size="large" variant="flat" color="primary">
             Download CV
           </v-btn>
           <v-btn to="/contact" size="large" variant="outlined" class="btn-quiet">
@@ -176,7 +176,7 @@ export default {
       return start === end ? String(start) : start + '—' + String(end).slice(2)
     },
     noteDate (value) {
-      return new Date(value).toLocaleDateString('en-GB', { year: 'numeric', month: 'short' })
+      return new Date(value).toLocaleDateString(this.$lang.language.dates, { year: 'numeric', month: 'short' })
     }
   }
 }

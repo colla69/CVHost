@@ -13,7 +13,7 @@
     </dl>
     <p class="card-note">
       Address, phone number and date of birth are in the
-      <a href="/data/CV_en.pdf" download>CV download</a> rather than on this public page.
+      <a :href="$lang.language.cv" download>CV download</a> rather than on this public page.
     </p>
   </section>
 </template>

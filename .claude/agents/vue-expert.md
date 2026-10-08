@@ -62,10 +62,13 @@ message syntax treats `@ { } |` as special, which breaks the email address and p
 - `setLanguage(code)` — the switcher in `Menu.vue` calls it; it persists the explicit choice.
 - `tr(value)` — a plain string passes through; a `{ en, de, it }` object returns the active language,
   falling back to `en`.
-- `pick(COPY)` — returns `COPY[lang.code]`, falling back to `COPY.en`.
-- In development builds only, `tr` and `pick` warn in the console on every fallback and when a copy
-  block's keys differ from `en`. Those warnings are the completeness check — a page in German or
-  Italian with a warning is not finished.
+- `pick(COPY)` — returns the active block merged over `COPY.en`, so a missing block, a missing key or
+  an empty `''` value falls back to English instead of rendering blank.
+- In development builds only, `tr` and `pick` warn in the console (prefixed `[i18n]`, each distinct
+  message once per page load) when they fall back, and when a copy block's keys differ from `en`. Those
+  warnings are the completeness check — a page in German or Italian with a warning is not finished. They
+  only see text that has already moved into a `COPY` block or a map; English still hard-coded in a
+  template produces no warning at all.
 - The plugin exposes `this.$lang` and `this.$tr` to every component and keeps `<html lang>` in sync.
 
 **Where translated text lives — two patterns, each with a clear use:**
@@ -129,6 +132,8 @@ There is no test suite. Your verification loop is:
 1. `npm --prefix frontend run lint -- --no-fix` — report only. Plain `npm run lint` auto-fixes, which
    hides problems in an unreviewed diff, so prefer `--no-fix` and make the corrections deliberately.
 2. `npm --prefix frontend run build` for anything touching config, imports, the router or `i18n.js`.
+   The build lints in production mode, where `.eslintrc.js` turns `no-console` (and `no-debugger`) into
+   warnings that a development-mode `lint` does not show — read the build's eslint output too.
 3. For visible changes, say which pages should be looked at in **all three languages** — German at
    320px, 390px and 1280px in particular, because it runs longest and the layout deliberately has no
    `overflow-x` guard — and that the dev console must show no fallback warnings. The main session
