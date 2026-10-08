@@ -183,11 +183,7 @@
   },
   {
     "id": 8,
-    "Name": {
-      "en": "Webavail \"Sell It All\"",
-      "de": "Webavail \"Sell It All\"",
-      "it": "Webavail \"Sell It All\""
-    },
+    "Name": "Webavail \"Sell It All\"",
     "start_date": "2016-10-26",
     "end_date": "2016-12-27",
     "description": {

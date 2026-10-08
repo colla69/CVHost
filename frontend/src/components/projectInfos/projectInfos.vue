@@ -64,9 +64,10 @@
 import { pick } from '@/i18n'
 import data from './project_infos.json'
 
-// description and role_name are { en, de, it } maps, as are Name, client and
-// lang wherever they hold ordinary words; product and company names stay plain
-// strings. Render all five through $tr, which passes a plain string through.
+// description and role_name are { en, de, it } maps, as are Name, client, lang
+// and company_name wherever they hold ordinary words; product and company names
+// stay plain strings. Render all six through $tr, which passes a plain string
+// through.
 
 // Copy before reversing: the JSON import is a module-level array shared with
 // every other component that imports it.
