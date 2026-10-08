@@ -175,7 +175,9 @@ translate the text nodes only: tags, attributes and `href`s stay byte-identical.
 - Your rule against recruiter English holds in every language: no *leidenschaftlich*, *Macher*,
   *appassionato* or *proattivo*, no inflated verbs. Plain and slightly dry, like the owner.
 - The Notes posts (`news.json`) are a personal log since 2018. Translate their casual voice as it is —
-  do not polish it into marketing, and do not fix their content. Their typos are not yours to carry
+  do not polish it into marketing, and do not fix their content. They are the one exception to the
+  formal address: readers are *ihr*/*euch* and *voi*, as in every existing post. Song and show titles
+  used as jokes ("The Walking web", "Django unchained", "who let the snakes out!?") stay in English. Their typos are not yours to carry
   over; write the translation correctly.
 - Never add a fact in translation. Where the English is ambiguous, translate the most literal reading and
   name the spot in your report so the owner can decide.
