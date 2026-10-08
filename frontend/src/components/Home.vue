@@ -4,27 +4,15 @@
     <!-- ── Hero ──────────────────────────────────────────────── -->
     <section class="hero lg-page">
       <div class="lg-inner">
-        <p class="lg-eyebrow">Senior IT Consultant &middot; Tech Lead &middot; München</p>
+        <p class="lg-eyebrow">{{ t.eyebrow }}</p>
         <h1 class="lg-display hero-name">Andrea Colarieti&nbsp;Tosti</h1>
-        <p class="lg-prose hero-pitch">
-          <b>{{ yearsEngineering }} years</b> building software, with one habit underneath most of it:
-          understand a system well enough to see its structure, then encode that structure once so the
-          manual work &mdash; or the vigilance &mdash; never has to happen again.
-        </p>
-        <p class="lg-prose hero-ai">
-          Hand-assembled releases became an automated delivery system. A one-off cloud migration also
-          produced the reusable template for every migration after it. Recurring engineering work
-          became <b>a set of agents that now do it</b>.
-        </p>
-        <p class="lg-prose hero-seeking">
-          {{ yearsConsulting }} years of that as a consultant for Porsche, BMW Financial Services,
-          Volkswagen Financial Services, Krones and the German public sector. Looking for work with
-          end-to-end ownership of a system &mdash; where whoever designs it keeps it, and where making
-          the right thing automatic is part of the job rather than something done in the gaps.
-        </p>
+        <!-- Hand-authored copy from COPY below; never external input. -->
+        <p class="lg-prose hero-pitch" v-html="t.pitch(yearsEngineering)"></p>
+        <p class="lg-prose hero-ai" v-html="t.agents"></p>
+        <p class="lg-prose hero-seeking">{{ t.seeking(yearsConsulting) }}</p>
         <div class="hero-cta">
           <v-btn :href="$lang.language.cv" download size="large" variant="flat" color="primary">
-            Download CV
+            {{ t.downloadCv }}
           </v-btn>
           <v-btn
             href="mailto:a.colarietitosti@googlemail.com"
@@ -32,7 +20,7 @@
             variant="outlined"
             class="btn-quiet"
           >
-            Get in touch
+            {{ t.getInTouch }}
           </v-btn>
         </div>
       </div>
@@ -41,8 +29,8 @@
     <!-- ── Clients ───────────────────────────────────────────── -->
     <section class="strip lg-page">
       <div class="lg-inner strip-inner">
-        <span class="strip-label">Delivered for</span>
-        <span v-for="name in clients" :key="name" class="strip-item">{{ name }}</span>
+        <span class="strip-label">{{ t.deliveredFor }}</span>
+        <span v-for="client in clients" :key="$tr(client)" class="strip-item">{{ $tr(client) }}</span>
       </div>
     </section>
 
@@ -60,9 +48,9 @@
     <section class="band lg-page">
       <div class="lg-inner">
         <div class="band-head">
-          <h2 class="lg-heading">Selected work</h2>
+          <h2 class="lg-heading">{{ t.selectedWork }}</h2>
           <router-link to="/projectInfos" class="band-more">
-            All {{ projectCount }} projects
+            {{ t.allProjects(projectCount) }}
             <v-icon icon="mdi-arrow-right" size="16"></v-icon>
           </router-link>
         </div>
@@ -82,9 +70,9 @@
     <section class="band lg-page">
       <div class="lg-inner">
         <div class="band-head">
-          <h2 class="lg-heading">Latest notes</h2>
+          <h2 class="lg-heading">{{ t.latestNotes }}</h2>
           <router-link to="/news" class="band-more">
-            All notes
+            {{ t.allNotes }}
             <v-icon icon="mdi-arrow-right" size="16"></v-icon>
           </router-link>
         </div>
@@ -103,18 +91,15 @@
     <section class="closer lg-page">
       <div class="lg-inner closer-inner">
         <div>
-          <h2 class="lg-heading">Hiring for a tech lead role?</h2>
-          <p class="lg-prose closer-text">
-            The full CV is one download, in English, German or Italian. Certificates and references
-            are on the site as well.
-          </p>
+          <h2 class="lg-heading">{{ t.closerHeading }}</h2>
+          <p class="lg-prose closer-text">{{ t.closerText }}</p>
         </div>
         <div class="hero-cta">
           <v-btn :href="$lang.language.cv" download size="large" variant="flat" color="primary">
-            Download CV
+            {{ t.downloadCv }}
           </v-btn>
           <v-btn to="/contact" size="large" variant="outlined" class="btn-quiet">
-            Contact
+            {{ $tr(contactLabel) }}
           </v-btn>
         </div>
       </div>
@@ -124,6 +109,8 @@
 </template>
 
 <script>
+import { pick } from '@/i18n'
+import { pageLabel } from '@/nav'
 import projects from '@/components/projectInfos/project_infos.json'
 import news from '@/components/news/news.json'
 
@@ -131,6 +118,37 @@ import news from '@/components/news/news.json'
 // page from quietly going stale the way the old hardcoded copy did.
 const CAREER_START = 2013
 const CONSULTING_START = 2021
+
+// pitch and agents are HTML (rendered with v-html); the rest is plain text.
+const COPY = {
+  en: {
+    eyebrow: 'Senior IT Consultant · Tech Lead · München',
+    pitch: n => '<b>' + n + ' years</b> building software, with one habit underneath most of ' +
+      'it: understand a system well enough to see its structure, then encode that structure ' +
+      'once so the manual work — or the vigilance — never has to happen again.',
+    agents: 'Hand-assembled releases became an automated delivery system. A one-off cloud ' +
+      'migration also produced the reusable template for every migration after it. Recurring ' +
+      'engineering work became <b>a set of agents that now do it</b>.',
+    seeking: n => n + ' years of that as a consultant for Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones and the German public sector. Looking for work ' +
+      'with end-to-end ownership of a system — where whoever designs it keeps it, and where ' +
+      'making the right thing automatic is part of the job rather than something done in the gaps.',
+    downloadCv: 'Download CV',
+    getInTouch: 'Get in touch',
+    deliveredFor: 'Delivered for',
+    yearsEngineering: 'Years engineering',
+    yearsConsulting: 'Years consulting',
+    clientsAndTeams: 'Clients & teams',
+    awsArchitect: 'AWS certified architect',
+    selectedWork: 'Selected work',
+    allProjects: n => 'All ' + n + ' projects',
+    latestNotes: 'Latest notes',
+    allNotes: 'All notes',
+    closerHeading: 'Hiring for a tech lead role?',
+    closerText: 'The full CV is one download, in English, German or Italian. Certificates and ' +
+      'references are on the site as well.'
+  }
+}
 
 export default {
   name: 'Home',
@@ -140,6 +158,7 @@ export default {
       yearsEngineering: thisYear - CAREER_START,
       yearsConsulting: thisYear - CONSULTING_START,
       projectCount: projects.length,
+      contactLabel: pageLabel('/contact'),
       clients: [
         'Porsche',
         'BMW Financial Services',
@@ -148,7 +167,7 @@ export default {
         'Techem',
         'Schwarz IT',
         'Pioneer Investments',
-        'Public sector · healthcare'
+        { en: 'Public sector · healthcare' }
       ],
       // Slice before reverse: the JSON import is a shared module-level array.
       featured: projects
@@ -159,12 +178,15 @@ export default {
     }
   },
   computed: {
+    t () {
+      return pick(COPY)
+    },
     figures () {
       return [
-        { value: this.yearsEngineering, label: 'Years engineering' },
-        { value: this.yearsConsulting, label: 'Years consulting' },
-        { value: '20+', label: 'Clients & teams' },
-        { value: 'SA–A', label: 'AWS certified architect' }
+        { value: this.yearsEngineering, label: this.t.yearsEngineering },
+        { value: this.yearsConsulting, label: this.t.yearsConsulting },
+        { value: '20+', label: this.t.clientsAndTeams },
+        { value: 'SA–A', label: this.t.awsArchitect }
       ]
     }
   },
@@ -201,7 +223,7 @@ export default {
   margin: 0 0 1rem;
 }
 
-.hero-pitch b {
+.hero-pitch :deep(b) {
   color: var(--lg-ink);
   font-weight: 600;
 }
@@ -211,7 +233,7 @@ export default {
   margin: 0 0 1.25rem;
 }
 
-.hero-ai b {
+.hero-ai :deep(b) {
   color: var(--lg-accent);
   font-weight: 600;
 }

@@ -9,7 +9,8 @@ https://cv.colarietitosti.info/ and public at github.com/colla69/CVHost.
   `npm --prefix frontend run <script>` — no `cd` needed.
 - `frontend/src/components/` — one folder per page area: `CV/`, `news/`, `projectInfos/`, `Contact/`,
   plus top-level `Home.vue`, `Menu.vue` (app bar, drawer, theme and language switch) and `SiteFooter.vue`.
-- `frontend/src/i18n.js` — the language module; see "Languages" below.
+- `frontend/src/i18n.js` — the language module; see "Languages" below. `frontend/src/nav.js` — the page
+  list with its translated labels, shared by the app bar, drawer and footer.
 - `frontend/public/fonts/` — the three self-hosted variable typefaces. Never swap these for a Google
   Fonts CDN link: it would send every visitor's IP to Google, which this site deliberately avoids.
 - `frontend/public/data/` — CV PDFs, certificates and images, served as static files.
@@ -92,7 +93,8 @@ as special, which breaks prose and the email address — just `src/i18n.js`:
   `this.$tr`. Never hard-code a CV path or a date locale.
 - Page copy lives in a per-component `COPY = { en, de, it }` block, read through
   `computed: { t () { return pick(COPY) } }`. Data lists and the content JSON keep one list and turn only
-  the language-dependent fields into `{ en, de, it }` maps, read with `$tr()`.
+  the language-dependent fields into `{ en, de, it }` maps, read with `$tr()`. `COPY` values stay flat
+  (strings and functions), and page names come only from `PAGES` in `src/nav.js`.
 - Missing translations — a whole block or a single key — fall back to English. Dev builds warn in the
   console (`[i18n]`, once per message) on each fallback — that is the completeness check. Scoped CSS needs `:deep()` to reach `v-html` prose; a `<router-link>` never
   goes inside `v-html`.

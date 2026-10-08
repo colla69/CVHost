@@ -21,7 +21,10 @@ Layout:
   `npm --prefix frontend run <script>` so you never have to `cd`.
 - `frontend/src/components/` — one folder per page area: `CV/`, `news/`, `projectInfos/`, `Contact/`,
   plus top-level `Home.vue`, `Menu.vue` (app bar, drawer, theme and language switch) and `SiteFooter.vue`.
-- `frontend/src/i18n.js` — the language module. `frontend/src/app.css` — the "Ledger" design tokens.
+- `frontend/src/i18n.js` — the language module. `frontend/src/nav.js` — `PAGES`, the one list of pages
+  with their `{ en, de, it }` labels, read by the app bar, the drawer, the footer and any link that
+  names a page (`pageLabel(to)`); never write a page's name anywhere else.
+  `frontend/src/app.css` — the "Ledger" design tokens.
 - `frontend/src/plugins/vuetify.js` — `createVuetify` with a full component + directive import, so every
   `<v-*>` tag is globally registered and needs no import. Icon set is MDI.
 - `frontend/public/data/` — the CV PDFs, certificates and images, served as static files.
@@ -76,7 +79,10 @@ message syntax treats `@ { } |` as special, which breaks the email address and p
 1. **Page copy and prose** (headings, intros, button labels, bio paragraphs): a module-level
    `const COPY = { en: {...}, de: {...}, it: {...} }` above `export default`, read through
    `computed: { t () { return pick(COPY) } }` and used as `{{ t.heading }}`. All three blocks carry the
-   same keys. Counts are small functions: `allProjects: n => 'All ' + n + ' projects'`.
+   same keys. Counts are small functions: `allProjects: n => 'All ' + n + ' projects'`. Keep the
+   values flat — strings and functions only, no arrays or nested objects — because `pick` checks
+   top-level keys only: a paragraph missing from an array would vanish without a warning. Several
+   paragraphs get several named keys (`bioLead`, `bioStack`, …).
 2. **Data lists and content JSON** (roles, education, skills, certificates, projects, news): one list.
    Only the fields that differ by language become `{ en, de, it }`, rendered with `$tr(item.field)`.
    Company names, digits, file names, links and ids stay plain strings. Never split a list into three

@@ -2,18 +2,18 @@
   <v-app-bar :elevation="0" height="68" class="lg-bar">
     <v-app-bar-nav-icon
       v-if="compact"
-      :aria-label="drawer ? 'Close menu' : 'Open menu'"
+      :aria-label="drawer ? t.closeMenu : t.openMenu"
       @click="drawer = !drawer"
     />
 
-    <router-link to="/" class="brand" aria-label="Home">
+    <router-link to="/" class="brand" :aria-label="$tr(homeLabel)">
       <span class="brand-mark">ACT</span>
       <span v-if="!compact" class="brand-name">Andrea Colarieti Tosti</span>
     </router-link>
 
     <v-spacer></v-spacer>
 
-    <nav v-if="!compact" class="links" aria-label="Main">
+    <nav v-if="!compact" class="links" :aria-label="t.mainNav">
       <router-link
         v-for="link in links"
         :key="link.to"
@@ -21,7 +21,7 @@
         class="link"
         exact-active-class="link--on"
       >
-        {{ link.label }}
+        {{ $tr(link.label) }}
       </router-link>
     </nav>
 
@@ -56,7 +56,7 @@
       variant="text"
       size="small"
       class="ml-2"
-      :aria-label="dark ? 'Switch to light theme' : 'Switch to dark theme'"
+      :aria-label="dark ? t.toLight : t.toDark"
       @click="toggleTheme"
     ></v-btn>
 
@@ -68,21 +68,21 @@
       variant="flat"
       color="primary"
     >
-      Download CV
+      {{ t.downloadCv }}
     </v-btn>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" temporary location="start" width="272">
     <div class="drawer-head">
       <span class="brand-mark">ACT</span>
-      <p class="lg-eyebrow mt-2">Senior IT Consultant</p>
+      <p class="lg-eyebrow mt-2">{{ t.role }}</p>
     </div>
     <v-list nav density="comfortable">
       <v-list-item
         v-for="link in links"
         :key="link.to"
         :to="link.to"
-        :title="link.label"
+        :title="$tr(link.label)"
         :prepend-icon="link.icon"
         exact
       ></v-list-item>
@@ -90,7 +90,7 @@
     <template #append>
       <div class="pa-4">
         <v-btn :href="$lang.language.cv" download block variant="flat" color="primary" class="cta">
-          Download CV
+          {{ t.downloadCv }}
         </v-btn>
         <v-btn
           href="mailto:a.colarietitosti@googlemail.com"
@@ -98,7 +98,7 @@
           variant="outlined"
           class="mt-2 cta"
         >
-          Get in touch
+          {{ t.getInTouch }}
         </v-btn>
       </div>
     </template>
@@ -107,10 +107,20 @@
 
 <script>
 import { LANGUAGES, pick, setLanguage } from '@/i18n'
+import { PAGES, pageLabel } from '@/nav'
 
+// Page names come from PAGES in src/nav.js, shared with the footer.
 const COPY = {
   en: {
-    chooseLanguage: 'Choose language'
+    chooseLanguage: 'Choose language',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    mainNav: 'Main',
+    toLight: 'Switch to light theme',
+    toDark: 'Switch to dark theme',
+    downloadCv: 'Download CV',
+    getInTouch: 'Get in touch',
+    role: 'Senior IT Consultant'
   }
 }
 
@@ -120,15 +130,8 @@ export default {
     return {
       drawer: false,
       languages: LANGUAGES,
-      links: [
-        { to: '/', label: 'Home', icon: 'mdi-home-outline' },
-        { to: '/projectInfos', label: 'Work', icon: 'mdi-briefcase-outline' },
-        { to: '/experience', label: 'Experience', icon: 'mdi-timeline-outline' },
-        { to: '/qualifications', label: 'Certificates', icon: 'mdi-certificate-outline' },
-        { to: '/news', label: 'Notes', icon: 'mdi-note-text-outline' },
-        { to: '/aboutMe', label: 'About', icon: 'mdi-account-outline' },
-        { to: '/contact', label: 'Contact', icon: 'mdi-email-outline' }
-      ]
+      links: PAGES,
+      homeLabel: pageLabel('/')
     }
   },
   computed: {

@@ -2,8 +2,8 @@
   <div class="lg-page">
     <div class="lg-inner">
       <header class="page-head">
-        <p class="lg-eyebrow">Rome → Munich</p>
-        <h1 class="lg-heading page-title">About</h1>
+        <p class="lg-eyebrow">{{ t.eyebrow }}</p>
+        <h1 class="lg-heading page-title">{{ t.heading }}</h1>
       </header>
 
       <section class="intro">
@@ -15,56 +15,23 @@
           height="900"
         >
         <div class="bio">
-          <p class="lg-prose bio-lead">
-            Thirteen years in, most of my work comes back to the same move: understand a system well
-            enough to see its structure, then write that structure down once so the manual work
-            &mdash; or the vigilance &mdash; never has to happen again.
-          </p>
-          <p class="lg-prose">
-            Hand-assembled releases became an automated delivery system. A one-off cloud migration
-            also produced the reusable template for every migration after it. Recurring engineering
-            work became a set of agents that now do it. I have been doing some version of this since
-            I was drawing motion paths in PowerPoint because it looked like programming.
-          </p>
-          <p class="lg-prose">
-            Five of those years consulting for Porsche, BMW Financial Services, Volkswagen Financial
-            Services, Krones, a European asset manager and a public-sector client in healthcare.
-          </p>
-          <p class="lg-prose">
-            I work across the full stack — Java and Jakarta EE backends through React, Angular and
-            TypeScript front ends — with AWS infrastructure, Terraform and CI/CD as the constant
-            thread. Most of what I enjoy sits at the seam between the two: taking requirements
-            straight from a business department and turning them into process design, estimates and
-            documentation that developers can actually build from.
-          </p>
-          <p class="lg-prose">
-            Since 2025, AI-assisted engineering has been a standing part of how I deliver rather
-            than an experiment: GitHub Copilot and Claude in the daily development loop, agentic
-            workflows I built myself for the work that repeats, and getting a project team
-            productive with both. The sharpest version of it is off the clock &mdash;
-            <a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank"
-               rel="noopener noreferrer">PlayCryptoWithAI</a>, a live trading system whose real
-            subject is the eleven-agent review board around it.
-          </p>
-          <p class="lg-prose">
-            I have carried technical responsibility for small teams on both the consultancy and the
-            client side, and mentored junior developers in both. What I am looking for now is a tech
-            lead role with end-to-end ownership of a system and of the team around it, somewhere
-            engineering decisions are made close to the business.
-          </p>
-          <p class="lg-prose">
-            I was born in Rome and moved to Munich in 2008. Italian is my first language; I work in
-            German and English every day.
-          </p>
+          <p class="lg-prose bio-lead">{{ t.bioLead }}</p>
+          <p class="lg-prose">{{ t.bioHabit }}</p>
+          <p class="lg-prose">{{ t.bioClients }}</p>
+          <p class="lg-prose">{{ t.bioStack }}</p>
+          <!-- Hand-authored copy from COPY below; never external input. -->
+          <p class="lg-prose" v-html="t.bioAi"></p>
+          <p class="lg-prose">{{ t.bioLeading }}</p>
+          <p class="lg-prose">{{ t.bioOrigin }}</p>
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-head lg-heading">What I work with</h2>
+        <h2 class="section-head lg-heading">{{ t.skillsHeading }}</h2>
         <div class="skills">
-          <div v-for="group in skills" :key="group.name" class="skill-group">
-            <h3 class="skill-name lg-eyebrow">{{ group.name }}</h3>
-            <p class="skill-items">{{ group.items }}</p>
+          <div v-for="group in skills" :key="$tr(group.name)" class="skill-group">
+            <h3 class="skill-name lg-eyebrow">{{ $tr(group.name) }}</h3>
+            <p class="skill-items">{{ $tr(group.items) }}</p>
           </div>
         </div>
       </section>
@@ -80,9 +47,48 @@
 </template>
 
 <script>
+import { pick } from '@/i18n'
 import PersonalInfo from '@/components/CV/PersonalInfo'
 import Languages from '@/components/CV/Languages'
 import portrait from '@/assets/foto.jpg'
+
+// One key per bio paragraph, so each falls back to English on its own.
+// bioAi is HTML (rendered with v-html); the rest is plain text.
+const COPY = {
+  en: {
+    eyebrow: 'Rome → Munich',
+    heading: 'About',
+    bioLead: 'Thirteen years in, most of my work comes back to the same move: understand a ' +
+      'system well enough to see its structure, then write that structure down once so the ' +
+      'manual work — or the vigilance — never has to happen again.',
+    bioHabit: 'Hand-assembled releases became an automated delivery system. A one-off cloud ' +
+      'migration also produced the reusable template for every migration after it. Recurring ' +
+      'engineering work became a set of agents that now do it. I have been doing some version ' +
+      'of this since I was drawing motion paths in PowerPoint because it looked like programming.',
+    bioClients: 'Five of those years consulting for Porsche, BMW Financial Services, Volkswagen ' +
+      'Financial Services, Krones, a European asset manager and a public-sector client in ' +
+      'healthcare.',
+    bioStack: 'I work across the full stack — Java and Jakarta EE backends through React, ' +
+      'Angular and TypeScript front ends — with AWS infrastructure, Terraform and CI/CD as the ' +
+      'constant thread. Most of what I enjoy sits at the seam between the two: taking ' +
+      'requirements straight from a business department and turning them into process design, ' +
+      'estimates and documentation that developers can actually build from.',
+    bioAi: 'Since 2025, AI-assisted engineering has been a standing part of how I deliver rather ' +
+      'than an experiment: GitHub Copilot and Claude in the daily development loop, agentic ' +
+      'workflows I built myself for the work that repeats, and getting a project team ' +
+      'productive with both. The sharpest version of it is off the clock — ' +
+      '<a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank" ' +
+      'rel="noopener noreferrer">PlayCryptoWithAI</a>, a live trading system whose real ' +
+      'subject is the eleven-agent review board around it.',
+    bioLeading: 'I have carried technical responsibility for small teams on both the ' +
+      'consultancy and the client side, and mentored junior developers in both. What I am ' +
+      'looking for now is a tech lead role with end-to-end ownership of a system and of the ' +
+      'team around it, somewhere engineering decisions are made close to the business.',
+    bioOrigin: 'I was born in Rome and moved to Munich in 2008. Italian is my first language; ' +
+      'I work in German and English every day.',
+    skillsHeading: 'What I work with'
+  }
+}
 
 export default {
   name: 'aboutMe',
@@ -90,51 +96,62 @@ export default {
   data () {
     return {
       portrait,
+      // Lists made only of product names stay plain strings; anything with
+      // words in it is a { en, de, it } map.
       skills: [
         {
-          name: 'Backend / JVM',
+          name: { en: 'Backend / JVM' },
           items: 'Java · Spring · Spring Boot · Jakarta EE · Hibernate · WildFly · Payara'
         },
         {
-          name: 'AI-assisted engineering',
-          items: 'GitHub Copilot · Claude · agentic development workflows · prompt patterns · ' +
-            'tool-assisted refactoring and test generation · enabling a team to work this way'
+          name: { en: 'AI-assisted engineering' },
+          items: {
+            en: 'GitHub Copilot · Claude · agentic development workflows · prompt patterns · ' +
+              'tool-assisted refactoring and test generation · enabling a team to work this way'
+          }
         },
         {
-          name: 'Frontend',
+          name: { en: 'Frontend' },
           items: 'TypeScript · React · Angular · RxJS · Vue.js · Pinia · JSF 2.0 · Vaadin · Material UI'
         },
         {
-          name: 'Node / APIs',
-          items: 'NestJS · Express · Prisma · REST · backend-for-frontend architectures'
+          name: { en: 'Node / APIs' },
+          items: { en: 'NestJS · Express · Prisma · REST · backend-for-frontend architectures' }
         },
         {
-          name: 'Cloud & IaC',
+          name: { en: 'Cloud & IaC' },
           items: 'AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, ' +
             'CodePipeline, CodeArtifact) · Terraform · AWS CDK · Azure AD / SAML'
         },
         {
-          name: 'Containers & ops',
+          name: { en: 'Containers & ops' },
           items: 'Docker · Kubernetes · Linux · nginx'
         },
         {
-          name: 'CI/CD',
+          name: { en: 'CI/CD' },
           items: 'GitLab CI · Jenkins · Bamboo · Concourse CI · GitHub'
         },
         {
-          name: 'Data & messaging',
+          name: { en: 'Data & messaging' },
           items: 'PostgreSQL · Oracle · MS SQL Server · DynamoDB · Kafka · SQL'
         },
         {
-          name: 'Testing & quality',
+          name: { en: 'Testing & quality' },
           items: 'JUnit · Jest · Cypress · Supertest · Cucumber · Selenium · SonarQube · K6'
         },
         {
-          name: 'Ways of working',
-          items: 'Technical responsibility for teams of 2–3 · mentoring juniors · requirements ' +
-            'workshops · effort estimation · release planning · Scrum · DevSecOps'
+          name: { en: 'Ways of working' },
+          items: {
+            en: 'Technical responsibility for teams of 2–3 · mentoring juniors · requirements ' +
+              'workshops · effort estimation · release planning · Scrum · DevSecOps'
+          }
         }
       ]
+    }
+  },
+  computed: {
+    t () {
+      return pick(COPY)
     }
   }
 }

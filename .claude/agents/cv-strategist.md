@@ -150,7 +150,13 @@ English; you fill in `de` and `it`. Two shapes, both described in `vue-expert`'s
   `it` blocks, with exactly the keys of `en` — no more, no fewer. Where an `en` value is a small function
   (`n => 'All ' + n + ' projects'`), the `de`/`it` one is the same shape with your wording.
 - A `{ "en": "…", "de": "…", "it": "…" }` map on a field — in a component's data list, in
-  `project_infos.json`, in `news.json`. You add or edit the `de` and `it` values.
+  `src/nav.js` (the page names, shared by every menu and link), in `project_infos.json`, in
+  `news.json`. You add or edit the `de` and `it` values.
+
+The same English phrase can sit in more than one component ("Download CV" in the app bar and on the
+home page, the role line on the home page and in the footer). Translate each occurrence the same way.
+Keep the leading or trailing space of a sentence fragment that is split around a link (`noteBefore`,
+`introAfter`), and never leave a value empty — an empty string counts as missing and shows English.
 
 **Your edit boundary is the text values themselves.** Never touch markup, bindings, keys, ids, dates,
 file names, links, functions' parameters, or any line outside those blocks and maps. If the English is

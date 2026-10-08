@@ -2,12 +2,9 @@
   <div class="lg-page">
     <div class="lg-inner">
       <header class="page-head">
-        <p class="lg-eyebrow">{{ news.length }} entries &middot; since 2018</p>
-        <h1 class="lg-heading page-title">Notes</h1>
-        <p class="lg-prose page-intro">
-          A running log of what I have been learning and building, kept since 2018 &mdash;
-          side projects, home infrastructure and the occasional milestone.
-        </p>
+        <p class="lg-eyebrow">{{ t.eyebrow(news.length) }}</p>
+        <h1 class="lg-heading page-title">{{ t.heading }}</h1>
+        <p class="lg-prose page-intro">{{ t.intro }}</p>
       </header>
 
       <div class="feed">
@@ -33,17 +30,32 @@
 </template>
 
 <script>
+import { pick } from '@/i18n'
 import data from './news.json'
 
 // Copy before reversing: reversing the import in place mutated the array for
 // every other component that imports news.json.
 const newestFirst = data.slice().reverse()
 
+const COPY = {
+  en: {
+    eyebrow: n => n + ' entries · since 2018',
+    heading: 'Notes',
+    intro: 'A running log of what I have been learning and building, kept since 2018 — side ' +
+      'projects, home infrastructure and the occasional milestone.'
+  }
+}
+
 export default {
   name: 'news',
   data () {
     return {
       news: newestFirst
+    }
+  },
+  computed: {
+    t () {
+      return pick(COPY)
     }
   },
   methods: {

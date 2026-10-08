@@ -2,47 +2,43 @@
   <div class="lg-page">
     <div class="lg-inner">
       <header class="page-head">
-        <p class="lg-eyebrow">Open to tech lead and team lead roles</p>
-        <h1 class="lg-heading page-title">Get in touch</h1>
-        <p class="lg-prose page-intro">
-          Email is the quickest way to reach me, and I answer every message that is not a mailshot.
-          If you are hiring, the CV below has the detail this site summarises.
-        </p>
+        <p class="lg-eyebrow">{{ t.eyebrow }}</p>
+        <h1 class="lg-heading page-title">{{ t.heading }}</h1>
+        <p class="lg-prose page-intro">{{ t.intro }}</p>
       </header>
 
       <section class="channels">
         <a
           v-for="channel in channels"
-          :key="channel.label"
+          :key="channel.href"
           :href="channel.href"
           :target="channel.external ? '_blank' : null"
           :rel="channel.external ? 'noopener noreferrer' : null"
           class="channel"
         >
           <v-icon :icon="channel.icon" size="20" class="channel-icon"></v-icon>
-          <span class="channel-label lg-eyebrow">{{ channel.label }}</span>
+          <span class="channel-label lg-eyebrow">{{ $tr(channel.label) }}</span>
           <span class="channel-value">{{ channel.value }}</span>
         </a>
       </section>
 
       <section class="downloads">
-        <h2 class="section-head lg-heading">Curriculum vitae</h2>
-        <p class="lg-prose downloads-intro">
-          The same document in three languages. It carries the contact details kept off this public
-          page — address, phone number and date of birth.
-        </p>
+        <h2 class="section-head lg-heading">{{ t.cvHeading }}</h2>
+        <p class="lg-prose downloads-intro">{{ t.cvIntro }}</p>
+        <!-- Each CV is named in its own language, like the language switcher. -->
         <div class="download-row">
           <v-btn
-            v-for="file in files"
-            :key="file.href"
-            :href="file.href"
+            v-for="language in languages"
+            :key="language.code"
+            :href="language.cv"
+            :lang="language.code"
             download
             variant="outlined"
             size="large"
             class="download"
             prepend-icon="mdi-file-download-outline"
           >
-            {{ file.label }}
+            {{ language.name }}
           </v-btn>
         </div>
       </section>
@@ -51,13 +47,28 @@
 </template>
 
 <script>
+import { LANGUAGES, pick } from '@/i18n'
+
+const COPY = {
+  en: {
+    eyebrow: 'Open to tech lead and team lead roles',
+    heading: 'Get in touch',
+    intro: 'Email is the quickest way to reach me, and I answer every message that is not a ' +
+      'mailshot. If you are hiring, the CV below has the detail this site summarises.',
+    cvHeading: 'Curriculum vitae',
+    cvIntro: 'The same document in three languages. It carries the contact details kept off ' +
+      'this public page — address, phone number and date of birth.'
+  }
+}
+
 export default {
   name: 'Contact',
   data () {
     return {
+      languages: LANGUAGES,
       channels: [
         {
-          label: 'Email',
+          label: { en: 'Email' },
           value: 'a.colarietitosti@googlemail.com',
           href: 'mailto:a.colarietitosti@googlemail.com',
           icon: 'mdi-email-outline'
@@ -76,12 +87,12 @@ export default {
           icon: 'mdi-github',
           external: true
         }
-      ],
-      files: [
-        { label: 'English', href: '/data/CV_en.pdf' },
-        { label: 'Deutsch', href: '/data/Lebenslauf.pdf' },
-        { label: 'Italiano', href: '/data/CV_it.pdf' }
       ]
+    }
+  },
+  computed: {
+    t () {
+      return pick(COPY)
     }
   }
 }

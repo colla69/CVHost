@@ -1,14 +1,14 @@
 <template>
   <section class="card">
-    <h2 class="card-head lg-eyebrow">Languages</h2>
+    <h2 class="card-head lg-eyebrow">{{ t.heading }}</h2>
     <dl class="rows">
-      <div v-for="language in languages" :key="language.name" class="row">
+      <div v-for="language in languages" :key="$tr(language.name)" class="row">
         <dt>
-          <span class="lang-name">{{ language.name }}</span>
-          <span class="lang-level">{{ language.level }}</span>
+          <span class="lang-name">{{ $tr(language.name) }}</span>
+          <span class="lang-level">{{ $tr(language.level) }}</span>
         </dt>
         <dd>
-          <p v-for="proof in language.proof" :key="proof" class="proof">{{ proof }}</p>
+          <p v-for="proof in language.proof" :key="$tr(proof)" class="proof">{{ $tr(proof) }}</p>
         </dd>
       </div>
     </dl>
@@ -16,35 +16,50 @@
 </template>
 
 <script>
+import { pick } from '@/i18n'
+
+const COPY = {
+  en: {
+    heading: 'Languages'
+  }
+}
+
 export default {
   name: 'Languages',
   data () {
     return {
       languages: [
         {
-          name: 'Italian',
-          level: 'Native',
-          proof: ['Born in Rome; schooling in Rome and Udine.']
-        },
-        {
-          name: 'German',
-          level: 'Fluent',
+          name: { en: 'Italian' },
+          level: { en: 'Native' },
           proof: [
-            'Secondary schooling and vocational training completed in Germany.',
-            'TestDaF — Goethe-Institut München, 2010',
-            'B1 Zertifikat Deutsch — Goethe-Institut Rome, 2004'
+            { en: 'Born in Rome; schooling in Rome and Udine.' }
           ]
         },
         {
-          name: 'English',
-          level: 'Fluent',
+          name: { en: 'German' },
+          level: { en: 'Fluent' },
           proof: [
-            'Professional working language.',
-            'B1 Preliminary (PET) — British Council Rome, 2005',
-            'A2 Key (KET) — British Council Rome, 2004'
+            { en: 'Secondary schooling and vocational training completed in Germany.' },
+            { en: 'TestDaF — Goethe-Institut München, 2010' },
+            { en: 'B1 Zertifikat Deutsch — Goethe-Institut Rome, 2004' }
+          ]
+        },
+        {
+          name: { en: 'English' },
+          level: { en: 'Fluent' },
+          proof: [
+            { en: 'Professional working language.' },
+            { en: 'B1 Preliminary (PET) — British Council Rome, 2005' },
+            { en: 'A2 Key (KET) — British Council Rome, 2004' }
           ]
         }
       ]
+    }
+  },
+  computed: {
+    t () {
+      return pick(COPY)
     }
   }
 }

@@ -1,14 +1,14 @@
 <template>
   <section class="section">
-    <h2 class="section-head lg-heading">Professional experience</h2>
+    <h2 class="section-head lg-heading">{{ t.heading }}</h2>
 
     <ol class="index">
-      <li v-for="role in roles" :key="role.period + role.company" class="entry">
-        <span class="entry-period lg-tnum">{{ role.period }}</span>
+      <li v-for="role in roles" :key="$tr(role.period) + $tr(role.company)" class="entry">
+        <span class="entry-period lg-tnum">{{ $tr(role.period) }}</span>
         <div class="entry-body">
-          <h3 class="entry-role">{{ role.title }}</h3>
-          <p class="entry-company">{{ role.company }}</p>
-          <p v-if="role.detail" class="entry-detail">{{ role.detail }}</p>
+          <h3 class="entry-role">{{ $tr(role.title) }}</h3>
+          <p class="entry-company">{{ $tr(role.company) }}</p>
+          <p v-if="role.detail" class="entry-detail">{{ $tr(role.detail) }}</p>
         </div>
       </li>
     </ol>
@@ -16,57 +16,84 @@
 </template>
 
 <script>
+import { pick } from '@/i18n'
+
+const COPY = {
+  en: {
+    heading: 'Professional experience'
+  }
+}
+
 export default {
   name: 'WorkExperience',
   data () {
     return {
+      // A bare year range or company name stays a plain string; anything with
+      // words in it is a { en, de, it } map.
       roles: [
         {
-          period: '2024 — today',
-          title: 'Senior IT Consultant',
+          period: { en: '2024 — today' },
+          title: { en: 'Senior IT Consultant' },
           company: 'msg for banking AG · Ismaning',
-          detail: 'Currently replacing Excel-based processes for objection and damages ' +
-            'cases at a public-sector client in healthcare, with AI-assisted engineering as ' +
-            'a standing part of delivery. Before that the digital euro showcase for Pioneer ' +
-            'Investments, BSI CRM platforms for Techem, the IFRS 9 regulatory platform at ' +
-            'Porsche Bank and the GitLab runner migration into AWS.'
+          detail: {
+            en: 'Currently replacing Excel-based processes for objection and damages ' +
+              'cases at a public-sector client in healthcare, with AI-assisted engineering as ' +
+              'a standing part of delivery. Before that the digital euro showcase for Pioneer ' +
+              'Investments, BSI CRM platforms for Techem, the IFRS 9 regulatory platform at ' +
+              'Porsche Bank and the GitLab runner migration into AWS.'
+          }
         },
         {
           period: '2021 — 2023',
-          title: 'IT Consultant',
+          title: { en: 'IT Consultant' },
           company: 'msgGillardonBSM AG · Ismaning',
-          detail: 'More than 60 AWS microservices at Volkswagen Financial Services, the HEIDI ' +
-            'sales portal at BMW Financial Services, and Mobih, an iOS maintenance application ' +
-            'for Porsche production.'
+          detail: {
+            en: 'More than 60 AWS microservices at Volkswagen Financial Services, the HEIDI ' +
+              'sales portal at BMW Financial Services, and Mobih, an iOS maintenance application ' +
+              'for Porsche production.'
+          }
         },
         {
           period: '2020 — 2021',
-          title: 'Software Engineer',
-          company: 'Device Insight GmbH (now KUKA Digital) · Munich',
-          detail: 'Energy monitoring and reporting for Schwarz IT, and a remote service platform ' +
-            'for Krones bottling lines with Azure AD and AWS Cognito login.'
+          title: { en: 'Software Engineer' },
+          company: { en: 'Device Insight GmbH (now KUKA Digital) · Munich' },
+          detail: {
+            en: 'Energy monitoring and reporting for Schwarz IT, and a remote service platform ' +
+              'for Krones bottling lines with Azure AD and AWS Cognito login.'
+          }
         },
         {
           period: '2018 — 2019',
-          title: 'DevOps Werkstudent',
+          title: { en: 'DevOps Werkstudent' },
           company: 'msgGillardon AG',
-          detail: 'The HEIDI replatforming at BMW Financial Services: test and defect management, ' +
-            'Java EE development and Jenkins pipelines.'
+          detail: {
+            en: 'The HEIDI replatforming at BMW Financial Services: test and defect management, ' +
+              'Java EE development and Jenkins pipelines.'
+          }
         },
         {
           period: '2015 — 2018',
-          title: 'Senior Application Developer',
+          title: { en: 'Senior Application Developer' },
           company: '3Points Software GmbH',
-          detail: 'Broadcasting rights management for Red Arrow International, and an automated ' +
-            'release system in Bamboo and Jira that replaced hand-assembled releases.'
+          detail: {
+            en: 'Broadcasting rights management for Red Arrow International, and an automated ' +
+              'release system in Bamboo and Jira that replaced hand-assembled releases.'
+          }
         },
         {
           period: '2013 — 2015',
-          title: 'Junior Application Developer',
+          title: { en: 'Junior Application Developer' },
           company: '3Points Software GmbH',
-          detail: 'Ground-up rebuild of a rights management system on Delphi XE and MS SQL Server.'
+          detail: {
+            en: 'Ground-up rebuild of a rights management system on Delphi XE and MS SQL Server.'
+          }
         }
       ]
+    }
+  },
+  computed: {
+    t () {
+      return pick(COPY)
     }
   }
 }

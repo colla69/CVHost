@@ -5,19 +5,19 @@
         <div class="foot-id">
           <p class="brand-mark">ACT</p>
           <p class="foot-name">Andrea Colarieti Tosti</p>
-          <p class="foot-role">Senior IT Consultant &middot; Tech Lead &middot; München</p>
+          <p class="foot-role">{{ t.role }}</p>
         </div>
 
-        <nav class="foot-col" aria-label="Pages">
-          <p class="lg-eyebrow">Pages</p>
+        <nav class="foot-col" :aria-label="t.pages">
+          <p class="lg-eyebrow">{{ t.pages }}</p>
           <router-link v-for="link in links" :key="link.to" :to="link.to">
-            {{ link.label }}
+            {{ $tr(link.label) }}
           </router-link>
         </nav>
 
         <div class="foot-col">
-          <p class="lg-eyebrow">Elsewhere</p>
-          <a href="mailto:a.colarietitosti@googlemail.com">Email</a>
+          <p class="lg-eyebrow">{{ t.elsewhere }}</p>
+          <a href="mailto:a.colarietitosti@googlemail.com">{{ t.email }}</a>
           <a href="https://github.com/colla69" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a
             href="https://www.linkedin.com/in/andrea-colarieti-662032197/"
@@ -27,33 +27,48 @@
         </div>
 
         <div class="foot-col">
-          <p class="lg-eyebrow">Curriculum</p>
-          <a href="/data/CV_en.pdf" download>CV — English</a>
-          <a href="/data/Lebenslauf.pdf" download>Lebenslauf — Deutsch</a>
-          <a href="/data/CV_it.pdf" download>CV — Italiano</a>
+          <p class="lg-eyebrow">{{ t.curriculum }}</p>
+          <!-- Each CV is named in its own language, like the language switcher,
+               so these labels are the same on every version of the page. -->
+          <a href="/data/CV_en.pdf" download lang="en">CV — English</a>
+          <a href="/data/Lebenslauf.pdf" download lang="de">Lebenslauf — Deutsch</a>
+          <a href="/data/CV_it.pdf" download lang="it">CV — Italiano</a>
         </div>
       </div>
 
-      <p class="foot-fine">
-        Built with Vue and Vuetify. Photography credits in
-        <code>public/img/CREDITS.md</code>. No trackers, no cookies, no third-party fonts.
-      </p>
+      <!-- Hand-authored copy from COPY below; never external input. -->
+      <p class="foot-fine" v-html="t.fine"></p>
     </div>
   </footer>
 </template>
 
 <script>
+import { pick } from '@/i18n'
+import { PAGES } from '@/nav'
+
+// Page names come from PAGES in src/nav.js, shared with the app bar.
+const COPY = {
+  en: {
+    role: 'Senior IT Consultant · Tech Lead · München',
+    pages: 'Pages',
+    elsewhere: 'Elsewhere',
+    email: 'Email',
+    curriculum: 'Curriculum',
+    fine: 'Built with Vue and Vuetify. Photography credits in <code>public/img/CREDITS.md</code>. ' +
+      'No trackers, no cookies, no third-party fonts.'
+  }
+}
+
 export default {
   name: 'SiteFooter',
   data () {
     return {
-      links: [
-        { to: '/projectInfos', label: 'Work' },
-        { to: '/experience', label: 'Experience' },
-        { to: '/qualifications', label: 'Certificates' },
-        { to: '/news', label: 'Notes' },
-        { to: '/aboutMe', label: 'About' }
-      ]
+      links: PAGES.filter(page => page.footer)
+    }
+  },
+  computed: {
+    t () {
+      return pick(COPY)
     }
   }
 }
@@ -132,7 +147,7 @@ export default {
   color: var(--lg-faint);
 }
 
-.foot-fine code {
+.foot-fine :deep(code) {
   font-family: var(--lg-mono);
   font-size: 0.9em;
 }
