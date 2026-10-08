@@ -120,7 +120,9 @@ needs the text in three languages:
   newest-first; keep `id` ascending and unique. `title` and `description_text` are `{ en, de, it }`;
   `description_text` is rendered with `v-html`, so it may contain markup.
 - Projects → `src/components/projectInfos/project_infos.json`. `description` and `role_name` are
-  `{ en, de, it }`, as are `client`, `lang` and `Name` where they are words rather than proper names.
+  `{ en, de, it }`, as are `client`, `lang`, `Name` and `company_name` where they are words rather than
+  proper names ("Personal project", "For the glory"); read them with `$tr`, including the
+  `client || company_name` fallback.
   `client` is the end customer, distinct from `company_name` (the employer); `featured: true` puts an
   entry in the home page's "Selected work" table.
 - Certificates → the `qualifications` array in `src/components/CV/Qualifications.vue`. Every entry names

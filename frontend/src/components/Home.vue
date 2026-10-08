@@ -57,9 +57,9 @@
 
         <ul class="worklist">
           <li v-for="project in featured" :key="project.id" class="work">
-            <span class="work-title">{{ project.Name }}</span>
-            <span class="work-client">{{ project.client || project.company_name }}</span>
-            <span class="work-stack">{{ project.lang }}</span>
+            <span class="work-title">{{ $tr(project.Name) }}</span>
+            <span class="work-client">{{ $tr(project.client || project.company_name) }}</span>
+            <span class="work-stack">{{ $tr(project.lang) }}</span>
             <span class="work-years lg-tnum">{{ years(project) }}</span>
           </li>
         </ul>
@@ -79,9 +79,9 @@
 
         <div class="notes">
           <article v-for="item in latestNotes" :key="item.id" class="note">
-            <v-img :src="item.img_link" :alt="item.title" height="150" cover class="note-img"></v-img>
+            <v-img :src="item.img_link" :alt="$tr(item.title)" height="150" cover class="note-img"></v-img>
             <p class="note-date lg-tnum">{{ noteDate(item.release_date) }}</p>
-            <h3 class="note-title">{{ item.title }}</h3>
+            <h3 class="note-title">{{ $tr(item.title) }}</h3>
           </article>
         </div>
       </div>

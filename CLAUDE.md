@@ -57,7 +57,8 @@ languages (see "Languages"):
   newest-first; keep `id` ascending and unique. `title` and `description_text` are `{ en, de, it }`
   maps; `description_text` renders through `v-html`.
 - Projects → `src/components/projectInfos/project_infos.json`. `description` and `role_name` are
-  `{ en, de, it }` maps, as are `client`, `lang` and `Name` where they are words rather than names.
+  `{ en, de, it }` maps, as are `client`, `lang`, `Name` and `company_name` where they are words rather
+  than names.
   `client` is the end customer (distinct from `company_name`, the employer) and is omitted where no
   source states it. `featured: true` puts an entry in the "Selected work" table on the home page — that
   table is curated by this flag, not by date.

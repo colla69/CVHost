@@ -11,20 +11,20 @@
         <article v-for="item in info" :key="item.id" class="card">
           <v-img
             :src="item.image"
-            :alt="item.Name"
+            :alt="$tr(item.Name)"
             :aspect-ratio="16 / 10"
             cover
             class="card-img"
           ></v-img>
 
           <div class="card-body">
-            <p class="card-client">{{ item.client || item.company_name }}</p>
-            <h2 class="card-title">{{ item.Name }}</h2>
+            <p class="card-client">{{ $tr(item.client || item.company_name) }}</p>
+            <h2 class="card-title">{{ $tr(item.Name) }}</h2>
 
             <dl class="card-meta">
               <div>
                 <dt>{{ t.role }}</dt>
-                <dd>{{ item.role_name }}</dd>
+                <dd>{{ $tr(item.role_name) }}</dd>
               </div>
               <div>
                 <dt>{{ t.dates }}</dt>
@@ -32,14 +32,14 @@
               </div>
             </dl>
 
-            <p class="card-stack">{{ item.lang }}</p>
+            <p class="card-stack">{{ $tr(item.lang) }}</p>
 
             <v-expansion-panels flat class="card-panels">
               <v-expansion-panel elevation="0">
                 <v-expansion-panel-title class="card-toggle">{{ t.whatIDid }}</v-expansion-panel-title>
                 <v-expansion-panel-text>
                   <!-- Hand-authored copy from project_infos.json; never external input. -->
-                  <div class="card-desc lg-prose" v-html="item.description"></div>
+                  <div class="card-desc lg-prose" v-html="$tr(item.description)"></div>
                   <a
                     v-if="item.company_link"
                     :href="item.company_link"
@@ -47,7 +47,7 @@
                     rel="noopener noreferrer"
                     class="card-link"
                   >
-                    {{ item.company_name }}
+                    {{ $tr(item.company_name) }}
                     <v-icon icon="mdi-open-in-new" size="14"></v-icon>
                   </a>
                 </v-expansion-panel-text>
@@ -63,6 +63,10 @@
 <script>
 import { pick } from '@/i18n'
 import data from './project_infos.json'
+
+// description and role_name are { en, de, it } maps, as are Name, client and
+// lang wherever they hold ordinary words; product and company names stay plain
+// strings. Render all five through $tr, which passes a plain string through.
 
 // Copy before reversing: the JSON import is a module-level array shared with
 // every other component that imports it.

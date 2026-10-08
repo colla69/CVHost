@@ -11,7 +11,7 @@
         <article v-for="item in news" :key="item.id" class="note">
           <v-img
             :src="item.img_link"
-            :alt="item.title"
+            :alt="$tr(item.title)"
             :aspect-ratio="16 / 9"
             cover
             class="note-img"
@@ -19,9 +19,9 @@
 
           <div class="note-body">
             <p class="note-date lg-tnum">{{ formatDate(item.release_date) }}</p>
-            <h2 class="note-title">{{ item.title }}</h2>
+            <h2 class="note-title">{{ $tr(item.title) }}</h2>
             <!-- Hand-authored copy from news.json; never external input. -->
-            <div class="note-text lg-prose" v-html="item.description_text"></div>
+            <div class="note-text lg-prose" v-html="$tr(item.description_text)"></div>
           </div>
         </article>
       </div>
@@ -32,6 +32,8 @@
 <script>
 import { pick } from '@/i18n'
 import data from './news.json'
+
+// title and description_text are { en, de, it } maps; render them through $tr.
 
 // Copy before reversing: reversing the import in place mutated the array for
 // every other component that imports news.json.
