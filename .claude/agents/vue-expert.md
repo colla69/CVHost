@@ -23,7 +23,8 @@ Layout:
   plus top-level `Home.vue`, `Menu.vue` (app bar, drawer, theme and language switch) and `SiteFooter.vue`.
 - `frontend/src/i18n.js` — the language module. `frontend/src/nav.js` — `PAGES`, the one list of pages
   with their `{ en, de, it }` labels, read by the app bar, the drawer, the footer and any link that
-  names a page (`pageLabel(to)`); never write a page's name anywhere else.
+  names a page (`pageLabel(to)`); never write a page's name as link text or tab title anywhere else.
+  A page's `<h1>` is its own copy and may differ ("Zeugnisse und Zertifikate" under "Zertifikate").
   `frontend/src/app.css` — the "Ledger" design tokens.
 - `frontend/src/plugins/vuetify.js` — `createVuetify` with a full component + directive import, so every
   `<v-*>` tag is globally registered and needs no import. Icon set is MDI.
@@ -97,7 +98,8 @@ with `v-html` — allowed only because the owner authors it, same rule as the co
   Split the sentence around it: `{{ t.introBefore }}<router-link …>{{ t.work }}</router-link>{{ t.introAfter }}`.
 
 **Never hard-code** a CV path — use `$lang.language.cv` — or a date locale — use
-`$lang.language.dates`. Page titles are `meta.title: { en, de, it }` in `router.js`.
+`$lang.language.dates`. Tab titles are `meta.title` in `router.js`: `pageLabel(path)` from `nav.js`,
+except for `/` and `/contact`, whose titles deliberately differ from their menu labels.
 
 **Who writes which words.** You build structure and write the English. The German and Italian wording
 belongs to `cv-strategist`, which may edit text values inside `COPY` blocks and `{ en, de, it }` maps

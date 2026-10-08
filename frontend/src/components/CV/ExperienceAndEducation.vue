@@ -44,6 +44,26 @@ const COPY = {
     introAfter: '.',
     certHeading: 'Certifications',
     certDetail: 'First certified December 2022, recertified April 2026, valid until April 2029.'
+  },
+  de: {
+    eyebrow: '2013 bis heute',
+    heading: 'Werdegang',
+    introBefore: 'Wo ich gearbeitet habe und wo ich ausgebildet wurde. Die Details zu jedem ' +
+      'einzelnen Projekt finden Sie unter ',
+    introAfter: '.',
+    certHeading: 'Zertifikate',
+    certDetail: 'Erstzertifiziert im Dezember 2022, rezertifiziert im April 2026, gültig bis ' +
+      'April 2029.'
+  },
+  it: {
+    eyebrow: 'Dal 2013 a oggi',
+    heading: 'Esperienza',
+    introBefore: 'Dove ho lavorato e dove mi sono formato. Il dettaglio progetto per progetto è ' +
+      'nella sezione ',
+    introAfter: '.',
+    certHeading: 'Certificazioni',
+    certDetail: 'Prima certificazione a dicembre 2022, ricertificazione ad aprile 2026, valida ' +
+      'fino ad aprile 2029.'
   }
 }
 

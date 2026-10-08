@@ -21,6 +21,12 @@ import { pick } from '@/i18n'
 const COPY = {
   en: {
     heading: 'Languages'
+  },
+  de: {
+    heading: 'Sprachen'
+  },
+  it: {
+    heading: 'Lingue'
   }
 }
 
@@ -30,28 +36,36 @@ export default {
     return {
       languages: [
         {
-          name: { en: 'Italian' },
-          level: { en: 'Native' },
+          name: { en: 'Italian', de: 'Italienisch', it: 'Italiano' },
+          level: { en: 'Native', de: 'Muttersprache', it: 'Madrelingua' },
           proof: [
-            { en: 'Born in Rome; schooling in Rome and Udine.' }
+            { en: 'Born in Rome; schooling in Rome and Udine.', de: 'Geboren in Rom; Schulzeit in Rom und Udine.', it: 'Nato a Roma; scuola a Roma e a Udine.' }
           ]
         },
         {
-          name: { en: 'German' },
-          level: { en: 'Fluent' },
+          name: { en: 'German', de: 'Deutsch', it: 'Tedesco' },
+          // \u00AD is a soft hyphen: the one long German word has to break to fit
+          // the 7rem label column. Keep it.
+          level: { en: 'Fluent', de: 'Verhandlungs\u00ADsicher', it: 'Fluente' },
           proof: [
-            { en: 'Secondary schooling and vocational training completed in Germany.' },
-            { en: 'TestDaF — Goethe-Institut München, 2010' },
-            { en: 'B1 Zertifikat Deutsch — Goethe-Institut Rome, 2004' }
+            {
+              en: 'Secondary schooling and vocational training completed in Germany.',
+              de: 'Schulzeit und Berufsausbildung in Deutschland.',
+              it: 'Parte della scuola secondaria e la formazione professionale svolte in Germania.'
+            },
+            { en: 'TestDaF — Goethe-Institut München, 2010', de: 'TestDaF — Goethe-Institut München, 2010', it: 'TestDaF — Goethe-Institut München, 2010' },
+            { en: 'B1 Zertifikat Deutsch — Goethe-Institut Rome, 2004', de: 'B1 Zertifikat Deutsch — Goethe-Institut Rom, 2004', it: 'B1 Zertifikat Deutsch — Goethe-Institut Roma, 2004' }
           ]
         },
         {
-          name: { en: 'English' },
-          level: { en: 'Fluent' },
+          name: { en: 'English', de: 'Englisch', it: 'Inglese' },
+          // \u00AD is a soft hyphen: the one long German word has to break to fit
+          // the 7rem label column. Keep it.
+          level: { en: 'Fluent', de: 'Verhandlungs\u00ADsicher', it: 'Fluente' },
           proof: [
-            { en: 'Professional working language.' },
-            { en: 'B1 Preliminary (PET) — British Council Rome, 2005' },
-            { en: 'A2 Key (KET) — British Council Rome, 2004' }
+            { en: 'Professional working language.', de: 'Berufliche Arbeitssprache.', it: 'Lingua di lavoro.' },
+            { en: 'B1 Preliminary (PET) — British Council Rome, 2005', de: 'B1 Preliminary (PET) — British Council Rom, 2005', it: 'B1 Preliminary (PET) — British Council Roma, 2005' },
+            { en: 'A2 Key (KET) — British Council Rome, 2004', de: 'A2 Key (KET) — British Council Rom, 2004', it: 'A2 Key (KET) — British Council Roma, 2004' }
           ]
         }
       ]

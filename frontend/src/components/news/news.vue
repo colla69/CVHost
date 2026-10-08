@@ -43,6 +43,18 @@ const COPY = {
     heading: 'Notes',
     intro: 'A running log of what I have been learning and building, kept since 2018 — side ' +
       'projects, home infrastructure and the occasional milestone.'
+  },
+  de: {
+    eyebrow: n => n + ' Einträge · seit 2018',
+    heading: 'Notizen',
+    intro: 'Ein fortlaufendes Logbuch dessen, was ich gelernt und gebaut habe, geführt seit 2018 — ' +
+      'Nebenprojekte, die Infrastruktur zu Hause und ab und zu ein Meilenstein.'
+  },
+  it: {
+    eyebrow: n => n + ' note · dal 2018',
+    heading: 'Note',
+    intro: 'Un diario continuo di ciò che ho imparato e costruito, tenuto dal 2018 — progetti ' +
+      'personali, l’infrastruttura di casa e ogni tanto un traguardo.'
   }
 }
 

@@ -28,7 +28,7 @@
     <v-menu location="bottom end">
       <template #activator="{ props }">
         <v-btn
-          ref="langBtn"
+          id="lang-switch"
           v-bind="props"
           variant="text"
           size="small"
@@ -121,6 +121,28 @@ const COPY = {
     downloadCv: 'Download CV',
     getInTouch: 'Get in touch',
     role: 'Senior IT Consultant'
+  },
+  de: {
+    chooseLanguage: 'Sprache wählen',
+    openMenu: 'Menü öffnen',
+    closeMenu: 'Menü schließen',
+    mainNav: 'Hauptmenü',
+    toLight: 'Zum hellen Design wechseln',
+    toDark: 'Zum dunklen Design wechseln',
+    downloadCv: 'CV herunterladen',
+    getInTouch: 'Kontakt aufnehmen',
+    role: 'Senior IT Consultant'
+  },
+  it: {
+    chooseLanguage: 'Scegli la lingua',
+    openMenu: 'Apri il menu',
+    closeMenu: 'Chiudi il menu',
+    mainNav: 'Menu principale',
+    toLight: 'Passa al tema chiaro',
+    toDark: 'Passa al tema scuro',
+    downloadCv: 'Scarica il CV',
+    getInTouch: 'Mi contatti',
+    role: 'Senior IT Consultant'
   }
 }
 
@@ -151,8 +173,12 @@ export default {
     chooseLanguage (code) {
       setLanguage(code)
       // The chosen item vanishes with the menu; hand keyboard focus back to the
-      // button instead of letting it fall to <body>.
-      this.$nextTick(() => this.$refs.langBtn.$el.focus())
+      // button instead of letting it fall to <body>. Found by id, because the
+      // activator props carry Vuetify's own ref and would override a template ref.
+      this.$nextTick(() => {
+        const button = document.getElementById('lang-switch')
+        if (button) button.focus()
+      })
     },
     toggleTheme () {
       const next = this.dark ? 'ledgerLight' : 'ledgerDark'

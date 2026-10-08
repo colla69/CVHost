@@ -81,6 +81,38 @@ const COPY = {
     download: 'Download',
     zipNote: 'Prefer everything in one file? The ' +
       '<a href="/data/CV_Docs.zip" download>complete document set</a> is a single download.'
+  },
+  de: {
+    eyebrow: n => n + ' Dokumente',
+    heading: 'Zeugnisse und Zertifikate',
+    intro: 'Abschlusszeugnisse, Arbeitszeugnisse, Prüfungsergebnisse und Sprachzertifikate, so wie ' +
+      'sie ausgestellt wurden. Jedes Dokument öffnet sich als PDF.',
+    groupProfessional: 'Beruf',
+    groupEducation: 'Schulbildung',
+    groupLanguages: 'Sprachen',
+    firstPageOf: name => 'Erste Seite: ' + name,
+    view: 'Ansehen',
+    close: 'Schließen',
+    openInNewTab: 'In neuem Tab öffnen',
+    download: 'Herunterladen',
+    zipNote: 'Lieber alles in einer Datei? Die ' +
+      '<a href="/data/CV_Docs.zip" download>vollständigen Unterlagen</a> gibt es als einen einzigen Download.'
+  },
+  it: {
+    eyebrow: n => n + ' documenti',
+    heading: 'Certificati',
+    intro: 'Diplomi, referenze di lavoro, esiti d’esame e certificati linguistici, così come sono ' +
+      'stati rilasciati. Ognuno si apre come PDF.',
+    groupProfessional: 'Lavoro',
+    groupEducation: 'Istruzione',
+    groupLanguages: 'Lingue',
+    firstPageOf: name => 'Prima pagina di ' + name,
+    view: 'Visualizza',
+    close: 'Chiudi',
+    openInNewTab: 'Apri in una nuova scheda',
+    download: 'Scarica',
+    zipNote: 'Preferisce avere tutto in un unico file? La ' +
+      '<a href="/data/CV_Docs.zip" download>documentazione completa</a> si scarica in una volta sola.'
   }
 }
 
@@ -96,14 +128,22 @@ export default {
       qualifications: [
         {
           name: 'AWS Certified Solutions Architect — Associate',
-          issuer: { en: 'Amazon Web Services · recertification · score 755/1000' },
+          issuer: {
+            en: 'Amazon Web Services · recertification · score 755/1000',
+            de: 'Amazon Web Services · Rezertifizierung · Ergebnis 755/1000',
+            it: 'Amazon Web Services · ricertificazione · punteggio 755/1000'
+          },
           year: '2026',
           group: 'Professional',
           filename: 'AWS_SAA_2026.pdf'
         },
         {
           name: 'AWS Certified Solutions Architect — Associate',
-          issuer: { en: 'Amazon Web Services · first certification · score 736/1000' },
+          issuer: {
+            en: 'Amazon Web Services · first certification · score 736/1000',
+            de: 'Amazon Web Services · Erstzertifizierung · Ergebnis 736/1000',
+            it: 'Amazon Web Services · prima certificazione · punteggio 736/1000'
+          },
           year: '2022',
           group: 'Professional',
           filename: 'AWS_SAA_2022.pdf'
@@ -116,29 +156,37 @@ export default {
           filename: 'Python_cert.pdf'
         },
         {
-          name: { en: 'Employment reference' },
+          name: { en: 'Employment reference', de: 'Arbeitszeugnis', it: 'Referenza di lavoro (Arbeitszeugnis)' },
           issuer: '3Points Software GmbH',
           year: '2018',
           group: 'Professional',
           filename: 'ArbeitsZeugnis.pdf'
         },
         {
-          name: { en: 'Fachinformatiker Anwendungsentwicklung' },
-          issuer: { en: 'IHK München · final grade 71/100' },
+          name: {
+            en: 'Fachinformatiker Anwendungsentwicklung',
+            de: 'Fachinformatiker für Anwendungsentwicklung',
+            it: 'Fachinformatiker für Anwendungsentwicklung'
+          },
+          issuer: { en: 'IHK München · final grade 71/100', de: 'IHK München · Abschlussnote 71/100', it: 'IHK München · voto finale 71/100' },
           year: '2013',
           group: 'Professional',
           filename: 'AUSB_IHK_Zeugnis.pdf'
         },
         {
-          name: { en: 'Apprenticeship reference' },
+          name: { en: 'Apprenticeship reference', de: 'Ausbildungszeugnis', it: 'Referenza di apprendistato (Ausbildungszeugnis)' },
           issuer: '3Points Software GmbH',
           year: '2013',
           group: 'Professional',
           filename: 'AUSB_3P_Zeugnis.pdf'
         },
         {
-          name: { en: 'Diploma di Liceo Scientifico' },
-          issuer: { en: 'Liceo Scientifico “Voltaire” · final grade 70/100' },
+          name: { en: 'Diploma di Liceo Scientifico', de: 'Diploma di Liceo Scientifico (italienische Hochschulreife)', it: 'Diploma di Liceo Scientifico' },
+          issuer: {
+            en: 'Liceo Scientifico “Voltaire” · final grade 70/100',
+            de: 'Liceo Scientifico „Voltaire“ · Abschlussnote 70/100',
+            it: 'Liceo Scientifico “Voltaire” · voto finale 70/100'
+          },
           year: '2011',
           group: 'Education',
           filename: 'ABI.pdf'
@@ -151,29 +199,29 @@ export default {
           filename: 'TESTDAF.pdf'
         },
         {
-          name: { en: 'German B1 — Zertifikat Deutsch' },
-          issuer: { en: 'Goethe-Institut Rome' },
+          name: { en: 'German B1 — Zertifikat Deutsch', de: 'Deutsch B1 — Zertifikat Deutsch', it: 'Tedesco B1 — Zertifikat Deutsch' },
+          issuer: { en: 'Goethe-Institut Rome', de: 'Goethe-Institut Rom', it: 'Goethe-Institut Roma' },
           year: '2004',
           group: 'Languages',
           filename: 'ZD.pdf'
         },
         {
-          name: { en: 'German A2 — Fit in Deutsch 2' },
-          issuer: { en: 'Goethe-Institut Rome' },
+          name: { en: 'German A2 — Fit in Deutsch 2', de: 'Deutsch A2 — Fit in Deutsch 2', it: 'Tedesco A2 — Fit in Deutsch 2' },
+          issuer: { en: 'Goethe-Institut Rome', de: 'Goethe-Institut Rom', it: 'Goethe-Institut Roma' },
           year: '2003',
           group: 'Languages',
           filename: 'FID2.pdf'
         },
         {
-          name: { en: 'English B1 — PET' },
-          issuer: { en: 'British Council Rome' },
+          name: { en: 'English B1 — PET', de: 'Englisch B1 — PET', it: 'Inglese B1 — PET' },
+          issuer: { en: 'British Council Rome', de: 'British Council Rom', it: 'British Council Roma' },
           year: '2005',
           group: 'Languages',
           filename: 'PET.pdf'
         },
         {
-          name: { en: 'English A2 — KET' },
-          issuer: { en: 'British Council Rome' },
+          name: { en: 'English A2 — KET', de: 'Englisch A2 — KET', it: 'Inglese A2 — KET' },
+          issuer: { en: 'British Council Rome', de: 'British Council Rom', it: 'British Council Roma' },
           year: '2004',
           group: 'Languages',
           filename: 'KET.pdf'

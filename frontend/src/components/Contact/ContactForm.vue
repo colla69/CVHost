@@ -58,6 +58,26 @@ const COPY = {
     cvHeading: 'Curriculum vitae',
     cvIntro: 'The same document in three languages. It carries the contact details kept off ' +
       'this public page — address, phone number and date of birth.'
+  },
+  de: {
+    eyebrow: 'Offen für Rollen als Tech Lead und Teamleiter',
+    heading: 'Kontakt aufnehmen',
+    intro: 'Per E-Mail erreichen Sie mich am schnellsten, und ich beantworte jede Nachricht, die ' +
+      'kein Massenversand ist. Wenn Sie eine Stelle besetzen, finden Sie im Lebenslauf unten die ' +
+      'Details, die diese Website nur zusammenfasst.',
+    cvHeading: 'Lebenslauf',
+    cvIntro: 'Dasselbe Dokument in drei Sprachen. Es enthält die Kontaktdaten, die auf dieser ' +
+      'öffentlichen Seite bewusst fehlen — Adresse, Telefonnummer und Geburtsdatum.'
+  },
+  it: {
+    eyebrow: 'Disponibile per ruoli da Tech Lead e Team Leader',
+    heading: 'Mi contatti',
+    intro: 'L’e-mail è il modo più rapido per raggiungermi, e rispondo a ogni messaggio che non ' +
+      'sia un invio di massa. Se sta assumendo, il CV qui sotto contiene i dettagli che questo ' +
+      'sito riassume.',
+    cvHeading: 'Curriculum vitae',
+    cvIntro: 'Lo stesso documento in tre lingue. Contiene i dati di contatto che restano fuori da ' +
+      'questa pagina pubblica — indirizzo, numero di telefono e data di nascita.'
   }
 }
 
@@ -68,7 +88,7 @@ export default {
       languages: LANGUAGES,
       channels: [
         {
-          label: { en: 'Email' },
+          label: { en: 'Email', de: 'E-Mail', it: 'E-mail' },
           value: 'a.colarietitosti@googlemail.com',
           href: 'mailto:a.colarietitosti@googlemail.com',
           icon: 'mdi-email-outline'

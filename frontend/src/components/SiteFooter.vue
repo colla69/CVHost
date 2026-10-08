@@ -56,6 +56,24 @@ const COPY = {
     curriculum: 'Curriculum',
     fine: 'Built with Vue and Vuetify. Photography credits in <code>public/img/CREDITS.md</code>. ' +
       'No trackers, no cookies, no third-party fonts.'
+  },
+  de: {
+    role: 'Senior IT Consultant · Tech Lead · München',
+    pages: 'Seiten',
+    elsewhere: 'Anderswo',
+    email: 'E-Mail',
+    curriculum: 'Lebenslauf',
+    fine: 'Gebaut mit Vue und Vuetify. Bildnachweise in <code>public/img/CREDITS.md</code>. ' +
+      'Keine Tracker, keine Cookies, keine Schriften von Drittanbietern.'
+  },
+  it: {
+    role: 'Senior IT Consultant · Tech Lead · Monaco di Baviera',
+    pages: 'Pagine',
+    elsewhere: 'Altrove',
+    email: 'E-mail',
+    curriculum: 'Curriculum',
+    fine: 'Realizzato con Vue e Vuetify. Crediti fotografici in <code>public/img/CREDITS.md</code>. ' +
+      'Nessun tracker, nessun cookie, nessun font di terze parti.'
   }
 }
 

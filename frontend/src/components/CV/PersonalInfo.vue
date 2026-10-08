@@ -28,6 +28,18 @@ const COPY = {
     noteBefore: 'Address, phone number and date of birth are in the ',
     noteLink: 'CV download',
     noteAfter: ' rather than on this public page.'
+  },
+  de: {
+    heading: 'Eckdaten',
+    noteBefore: 'Adresse, Telefonnummer und Geburtsdatum stehen im ',
+    noteLink: 'Lebenslauf zum Download',
+    noteAfter: ' und nicht auf dieser öffentlichen Seite.'
+  },
+  it: {
+    heading: 'Informazioni',
+    noteBefore: 'Indirizzo, numero di telefono e data di nascita sono nel ',
+    noteLink: 'CV da scaricare',
+    noteAfter: ' e non su questa pagina pubblica.'
   }
 }
 
@@ -37,11 +49,11 @@ export default {
     return {
       infos: [
         {
-          name: { en: 'Based in' },
-          value: { en: 'München, Germany' }
+          name: { en: 'Based in', de: 'Standort', it: 'Con base a' },
+          value: { en: 'München, Germany', de: 'München, Deutschland', it: 'Monaco di Baviera, Germania' }
         },
         {
-          name: { en: 'Email' },
+          name: { en: 'Email', de: 'E-Mail', it: 'E-mail' },
           value: 'a.colarietitosti@googlemail.com',
           href: 'mailto:a.colarietitosti@googlemail.com'
         },
@@ -58,8 +70,8 @@ export default {
           external: true
         },
         {
-          name: { en: 'Open to' },
-          value: { en: 'Tech lead and team lead roles' }
+          name: { en: 'Open to', de: 'Offen für', it: 'Disponibile per' },
+          value: { en: 'Tech lead and team lead roles', de: 'Rollen als Tech Lead und Teamleiter', it: 'Ruoli da Tech Lead e Team Leader' }
         }
       ]
     }

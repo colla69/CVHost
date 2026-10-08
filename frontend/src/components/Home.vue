@@ -147,6 +147,63 @@ const COPY = {
     closerHeading: 'Hiring for a tech lead role?',
     closerText: 'The full CV is one download, in English, German or Italian. Certificates and ' +
       'references are on the site as well.'
+  },
+  de: {
+    eyebrow: 'Senior IT Consultant · Tech Lead · München',
+    pitch: n => '<b>' + n + ' Jahre</b> Softwareentwicklung — und darunter fast immer dieselbe ' +
+      'Bewegung: ein System so weit durchdringen, dass seine Struktur sichtbar wird, und diese ' +
+      'Struktur einmal festschreiben, damit die Handarbeit — oder die Wachsamkeit — danach nicht ' +
+      'mehr nötig ist.',
+    agents: 'Aus von Hand zusammengestellten Releases wurde ein automatisiertes ' +
+      'Auslieferungssystem. Aus einer einmaligen Cloud-Migration wurde zusätzlich die ' +
+      'wiederverwendbare Vorlage für jede weitere. Aus wiederkehrender Entwicklungsarbeit wurden ' +
+      '<b>Agenten, die sie heute erledigen</b>.',
+    seeking: n => n + ' dieser Jahre als Consultant für Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones und den öffentlichen Sektor in Deutschland. Ich suche ' +
+      'Arbeit mit End-to-End-Verantwortung für ein System — wo diejenigen, die es entwerfen, es ' +
+      'auch behalten, und wo es zur Aufgabe gehört, das Richtige automatisch zu machen statt nebenbei.',
+    downloadCv: 'CV herunterladen',
+    getInTouch: 'Kontakt aufnehmen',
+    deliveredFor: 'Projekte für',
+    yearsEngineering: 'Jahre Entwicklung',
+    yearsConsulting: 'Jahre Beratung',
+    clientsAndTeams: 'Kunden & Teams',
+    awsArchitect: 'AWS-zertifizierter Architekt',
+    selectedWork: 'Ausgewählte Projekte',
+    allProjects: n => 'Alle ' + n + ' Projekte',
+    latestNotes: 'Neueste Notizen',
+    allNotes: 'Alle Notizen',
+    closerHeading: 'Sie suchen einen Tech Lead?',
+    closerText: 'Der vollständige Lebenslauf ist ein einziger Download, auf Englisch, Deutsch oder ' +
+      'Italienisch. Zeugnisse und Zertifikate finden Sie ebenfalls hier auf der Website.'
+  },
+  it: {
+    eyebrow: 'Senior IT Consultant · Tech Lead · Monaco di Baviera',
+    pitch: n => '<b>' + n + ' anni</b> di sviluppo software e, alla base di quasi tutto, la stessa ' +
+      'mossa: capire un sistema abbastanza a fondo da vederne la struttura, e poi scrivere quella ' +
+      'struttura una volta sola, così che il lavoro manuale — o l’attenzione costante — non serva più.',
+    agents: 'Da release assemblate a mano è nato un sistema di consegna automatico. Da una ' +
+      'migrazione cloud una tantum è nato anche il modello riutilizzabile per tutte quelle ' +
+      'successive. Dal lavoro di sviluppo ricorrente sono nati <b>agenti che oggi lo svolgono</b>.',
+    seeking: n => n + ' di quegli anni come consulente per Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones e il settore pubblico tedesco. Cerco lavoro con ' +
+      'responsabilità end-to-end su un sistema — dove chi lo progetta se lo tiene, e dove rendere ' +
+      'automatica la cosa giusta fa parte del mestiere invece di essere qualcosa fatto nei ritagli ' +
+      'di tempo.',
+    downloadCv: 'Scarica il CV',
+    getInTouch: 'Mi contatti',
+    deliveredFor: 'Progetti per',
+    yearsEngineering: 'Anni di sviluppo',
+    yearsConsulting: 'Anni di consulenza',
+    clientsAndTeams: 'Clienti e team',
+    awsArchitect: 'Architetto certificato AWS',
+    selectedWork: 'Progetti selezionati',
+    allProjects: n => 'Tutti i ' + n + ' progetti',
+    latestNotes: 'Note recenti',
+    allNotes: 'Tutte le note',
+    closerHeading: 'Sta cercando un Tech Lead?',
+    closerText: 'Il CV completo è un unico download, in inglese, tedesco o italiano. Sul sito trova ' +
+      'anche certificati e referenze.'
   }
 }
 
@@ -167,7 +224,7 @@ export default {
         'Techem',
         'Schwarz IT',
         'Pioneer Investments',
-        { en: 'Public sector · healthcare' }
+        { en: 'Public sector · healthcare', de: 'Öffentlicher Sektor · Gesundheitswesen', it: 'Settore pubblico · sanità' }
       ],
       // Slice before reverse: the JSON import is a shared module-level array.
       featured: projects
@@ -353,6 +410,8 @@ export default {
   text-transform: uppercase;
   color: var(--lg-faint);
   line-height: 1.5;
+  /* German compounds outgrow the narrow figure cells at 320px. */
+  hyphens: auto;
 }
 
 /* ── Bands ────────────────────────────────────────────────── */

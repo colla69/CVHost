@@ -87,6 +87,78 @@ const COPY = {
     bioOrigin: 'I was born in Rome and moved to Munich in 2008. Italian is my first language; ' +
       'I work in German and English every day.',
     skillsHeading: 'What I work with'
+  },
+  de: {
+    eyebrow: 'Rom → München',
+    heading: 'Über mich',
+    bioLead: 'Nach dreizehn Jahren läuft der Großteil meiner Arbeit auf dieselbe Bewegung hinaus: ' +
+      'ein System so weit durchdringen, dass seine Struktur sichtbar wird, und diese Struktur ' +
+      'einmal festschreiben, damit die Handarbeit — oder die Wachsamkeit — danach nicht mehr ' +
+      'nötig ist.',
+    bioHabit: 'Aus von Hand zusammengestellten Releases wurde ein automatisiertes ' +
+      'Auslieferungssystem. Aus einer einmaligen Cloud-Migration wurde zusätzlich die ' +
+      'wiederverwendbare Vorlage für jede weitere. Aus wiederkehrender Entwicklungsarbeit wurden ' +
+      'Agenten, die sie heute erledigen. In irgendeiner Form mache ich das, seit ich in PowerPoint ' +
+      'Animationspfade gezeichnet habe, weil es nach Programmieren aussah.',
+    bioClients: 'Fünf dieser Jahre als Consultant für Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones, einen europäischen Asset Manager und einen ' +
+      'öffentlichen Auftraggeber im Gesundheitswesen.',
+    bioStack: 'Ich arbeite über den gesamten Stack — von Java- und Jakarta-EE-Backends bis zu ' +
+      'Frontends mit React, Angular und TypeScript — und durchgehend mit AWS-Infrastruktur, ' +
+      'Terraform und CI/CD. Das meiste, was mir an der Arbeit Freude macht, liegt an der ' +
+      'Nahtstelle zwischen beidem: Anforderungen direkt mit dem Fachbereich aufnehmen und in ' +
+      'Prozesskonzeption, Schätzungen und Dokumentation überführen, die Entwickler tatsächlich ' +
+      'umsetzen können.',
+    bioAi: 'Seit 2025 ist KI-gestützte Entwicklung fester Bestandteil meiner Lieferung und kein ' +
+      'Experiment mehr: GitHub Copilot und Claude im täglichen Entwicklungsablauf, selbst gebaute ' +
+      'agentische Workflows für die Arbeit, die sich wiederholt, und die Befähigung eines ' +
+      'Projektteams, mit beidem produktiv zu arbeiten. Am weitesten getrieben habe ich das ' +
+      'außerhalb der Arbeitszeit — ' +
+      '<a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank" ' +
+      'rel="noopener noreferrer">PlayCryptoWithAI</a>, ein Handelssystem im Live-Betrieb, dessen ' +
+      'eigentliches Thema das Review-Gremium aus elf Agenten darum herum ist.',
+    bioLeading: 'Ich habe auf Berater- wie auf Kundenseite die fachliche Verantwortung für kleine ' +
+      'Teams getragen und auf beiden Seiten Juniorentwickler betreut. Was ich jetzt suche, ist ' +
+      'eine Rolle als Tech Lead mit End-to-End-Verantwortung für ein System und für das Team ' +
+      'darum, in einem Umfeld, in dem technische Entscheidungen nah am Fachbereich fallen.',
+    bioOrigin: 'Ich bin in Rom geboren und 2008 nach München gezogen. Italienisch ist meine ' +
+      'Muttersprache; auf Deutsch und Englisch arbeite ich jeden Tag.',
+    skillsHeading: 'Womit ich arbeite'
+  },
+  it: {
+    eyebrow: 'Roma → Monaco di Baviera',
+    heading: 'Chi sono',
+    bioLead: 'Dopo tredici anni, gran parte del mio lavoro torna alla stessa mossa: capire un ' +
+      'sistema abbastanza a fondo da vederne la struttura, e poi scrivere quella struttura una ' +
+      'volta sola, così che il lavoro manuale — o l’attenzione costante — non serva più.',
+    bioHabit: 'Da release assemblate a mano è nato un sistema di consegna automatico. Da una ' +
+      'migrazione cloud una tantum è nato anche il modello riutilizzabile per tutte quelle ' +
+      'successive. Dal lavoro di sviluppo ricorrente sono nati agenti che oggi lo svolgono. Faccio ' +
+      'una qualche versione di questo da quando disegnavo percorsi di animazione in PowerPoint ' +
+      'perché sembrava programmazione.',
+    bioClients: 'Cinque di quegli anni come consulente per Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones, un asset manager europeo e un committente pubblico ' +
+      'nella sanità.',
+    bioStack: 'Lavoro sull’intero stack — dai backend Java e Jakarta EE ai frontend in React, ' +
+      'Angular e TypeScript — con l’infrastruttura AWS, Terraform e CI/CD come costante. Gran ' +
+      'parte di ciò che mi piace di questo lavoro sta nel punto di giunzione tra le due cose: ' +
+      'raccogliere i requisiti direttamente dall’unità di business e tradurli in progettazione dei ' +
+      'processi, stime e documentazione su cui gli sviluppatori possano davvero costruire.',
+    bioAi: 'Dal 2025 lo sviluppo assistito dall’IA è una parte stabile del mio modo di consegnare, ' +
+      'non più un esperimento: GitHub Copilot e Claude nel flusso di sviluppo quotidiano, workflow ' +
+      'agentici costruiti da me per il lavoro che si ripete, e un team di progetto messo in ' +
+      'condizione di essere produttivo con entrambi. La versione più spinta è fuori dall’orario ' +
+      'di lavoro — ' +
+      '<a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank" ' +
+      'rel="noopener noreferrer">PlayCryptoWithAI</a>, un sistema di trading in esercizio il cui ' +
+      'vero tema è il comitato di revisione di undici agenti che lo circonda.',
+    bioLeading: 'Ho avuto responsabilità tecnica su piccoli team sia lato consulenza sia lato ' +
+      'cliente, e in entrambi ho affiancato sviluppatori junior. Ora cerco un ruolo da Tech Lead ' +
+      'con responsabilità end-to-end su un sistema e sul team che lo circonda, in un contesto dove ' +
+      'le decisioni tecniche si prendono vicino al business.',
+    bioOrigin: 'Sono nato a Roma e nel 2008 mi sono trasferito a Monaco di Baviera. L’italiano è ' +
+      'la mia lingua madre; lavoro ogni giorno in tedesco e in inglese.',
+    skillsHeading: 'Con cosa lavoro'
   }
 }
 
@@ -100,50 +172,62 @@ export default {
       // words in it is a { en, de, it } map.
       skills: [
         {
-          name: { en: 'Backend / JVM' },
+          name: { en: 'Backend / JVM', de: 'Backend / JVM', it: 'Backend / JVM' },
           items: 'Java · Spring · Spring Boot · Jakarta EE · Hibernate · WildFly · Payara'
         },
         {
-          name: { en: 'AI-assisted engineering' },
+          name: { en: 'AI-assisted engineering', de: 'KI-gestützte Entwicklung', it: 'Sviluppo assistito dall’IA' },
           items: {
             en: 'GitHub Copilot · Claude · agentic development workflows · prompt patterns · ' +
-              'tool-assisted refactoring and test generation · enabling a team to work this way'
+              'tool-assisted refactoring and test generation · enabling a team to work this way',
+            de: 'GitHub Copilot · Claude · agentische Entwicklungs-Workflows · Prompt-Patterns · ' +
+              'werkzeuggestütztes Refactoring und Testerstellung · Befähigung des Teams',
+            it: 'GitHub Copilot · Claude · workflow di sviluppo agentici · prompt pattern · ' +
+              'refactoring e generazione di test assistiti · affiancamento del team'
           }
         },
         {
-          name: { en: 'Frontend' },
+          name: { en: 'Frontend', de: 'Frontend', it: 'Frontend' },
           items: 'TypeScript · React · Angular · RxJS · Vue.js · Pinia · JSF 2.0 · Vaadin · Material UI'
         },
         {
-          name: { en: 'Node / APIs' },
-          items: { en: 'NestJS · Express · Prisma · REST · backend-for-frontend architectures' }
+          name: { en: 'Node / APIs', de: 'Node / APIs', it: 'Node / API' },
+          items: {
+            en: 'NestJS · Express · Prisma · REST · backend-for-frontend architectures',
+            de: 'NestJS · Express · Prisma · REST · Backend-for-Frontend-Architekturen',
+            it: 'NestJS · Express · Prisma · REST · architetture backend-for-frontend'
+          }
         },
         {
-          name: { en: 'Cloud & IaC' },
+          name: { en: 'Cloud & IaC', de: 'Cloud & IaC', it: 'Cloud & IaC' },
           items: 'AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, ' +
             'CodePipeline, CodeArtifact) · Terraform · AWS CDK · Azure AD / SAML'
         },
         {
-          name: { en: 'Containers & ops' },
+          name: { en: 'Containers & ops', de: 'Container & Betrieb', it: 'Container & operations' },
           items: 'Docker · Kubernetes · Linux · nginx'
         },
         {
-          name: { en: 'CI/CD' },
+          name: { en: 'CI/CD', de: 'CI/CD', it: 'CI/CD' },
           items: 'GitLab CI · Jenkins · Bamboo · Concourse CI · GitHub'
         },
         {
-          name: { en: 'Data & messaging' },
+          name: { en: 'Data & messaging', de: 'Daten & Messaging', it: 'Dati & messaging' },
           items: 'PostgreSQL · Oracle · MS SQL Server · DynamoDB · Kafka · SQL'
         },
         {
-          name: { en: 'Testing & quality' },
+          name: { en: 'Testing & quality', de: 'Test & Qualität', it: 'Test & qualità' },
           items: 'JUnit · Jest · Cypress · Supertest · Cucumber · Selenium · SonarQube · K6'
         },
         {
-          name: { en: 'Ways of working' },
+          name: { en: 'Ways of working', de: 'Arbeitsweise', it: 'Metodo di lavoro' },
           items: {
             en: 'Technical responsibility for teams of 2–3 · mentoring juniors · requirements ' +
-              'workshops · effort estimation · release planning · Scrum · DevSecOps'
+              'workshops · effort estimation · release planning · Scrum · DevSecOps',
+            de: 'Fachliche Verantwortung für Teams von 2–3 · Betreuung von Junioren · ' +
+              'Anforderungsworkshops · Aufwandsschätzung · Release-Planung · Scrum · DevSecOps',
+            it: 'Responsabilità tecnica su team di 2–3 persone · affiancamento di junior · workshop ' +
+              'sui requisiti · stime di effort · pianificazione delle release · Scrum · DevSecOps'
           }
         }
       ]

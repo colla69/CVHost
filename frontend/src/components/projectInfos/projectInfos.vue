@@ -78,6 +78,28 @@ const COPY = {
     dates: 'Dates',
     whatIDid: 'What I did',
     ongoing: start => start + ' — today'
+  },
+  de: {
+    eyebrow: n => n + ' Projekte · 2011 bis heute',
+    heading: 'Projekte',
+    intro: 'Alle Projekte, die ich umgesetzt habe, die neuesten zuerst — von einem Schachspiel in ' +
+      'Delphi aus der Ausbildungszeit bis zu Regulatorikplattformen und AWS-Umgebungen für Banken ' +
+      'und Hersteller.',
+    role: 'Rolle',
+    dates: 'Zeitraum',
+    whatIDid: 'Was ich gemacht habe',
+    ongoing: start => start + ' — heute'
+  },
+  it: {
+    eyebrow: n => n + ' progetti · dal 2011 a oggi',
+    heading: 'Progetti',
+    intro: 'Tutti i progetti che ho realizzato, dal più recente — da un gioco di scacchi in Delphi ' +
+      'scritto da apprendista fino a piattaforme regolamentari e ambienti AWS per banche e aziende ' +
+      'manifatturiere.',
+    role: 'Ruolo',
+    dates: 'Periodo',
+    whatIDid: 'Cosa ho fatto',
+    ongoing: start => start + ' — oggi'
   }
 }
 
