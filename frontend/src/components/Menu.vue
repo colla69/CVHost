@@ -129,7 +129,7 @@ const COPY = {
     mainNav: 'Hauptmenü',
     toLight: 'Zum hellen Design wechseln',
     toDark: 'Zum dunklen Design wechseln',
-    downloadCv: 'CV herunterladen',
+    downloadCv: 'Lebenslauf herunterladen',
     getInTouch: 'Kontakt aufnehmen',
     role: 'Senior IT Consultant'
   },

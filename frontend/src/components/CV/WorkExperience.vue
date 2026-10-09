@@ -115,12 +115,12 @@ export default {
           title: { en: 'Senior Application Developer', de: 'Senior Application Developer', it: 'Senior Application Developer' },
           company: '3Points Software GmbH',
           detail: {
-            en: 'Broadcasting rights management for Red Arrow International, and an automated ' +
+            en: 'Broadcasting rights management for Red Arrow Systems International, and an automated ' +
               'release system in Bamboo and Jira that replaced hand-assembled releases.',
-            de: 'Verwaltung von Ausstrahlungsrechten für Red Arrow International und ein ' +
+            de: 'Verwaltung von Ausstrahlungsrechten für Red Arrow Systems International und ein ' +
               'automatisiertes Release-System in Bamboo und Jira, das die von Hand ' +
               'zusammengestellten Releases ablöste.',
-            it: 'Gestione dei diritti di trasmissione per Red Arrow International e un sistema di ' +
+            it: 'Gestione dei diritti di trasmissione per Red Arrow Systems International e un sistema di ' +
               'release automatico in Bamboo e Jira che ha sostituito le release assemblate a mano.'
           }
         },

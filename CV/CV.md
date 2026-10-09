@@ -65,9 +65,9 @@ Replacing long-established Excel-based processes with a web application for a pu
 the German healthcare system. The system handles objection procedures (Widerspruchsverfahren) and
 claims for sonstige Schäden arising out of settlement. Spring Boot backend, Vue 3 front end with
 Pinia, the whole system running on Kubernetes. AI-assisted engineering is a standing part of delivery
-here: GitHub Copilot and Claude in the daily development loop, self-built agentic workflows for
+here: GitHub Copilot in the daily development loop, self-built agentic workflows for
 recurring engineering work, and hands-on enablement of the two junior developers on both.
-**Stack:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
+**Stack:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot
 
 **BSI CRM customer platforms** — BSI, end customer Techem · 06/2025 – 07/2025
 *Senior IT Consultant / Senior Developer · two-person teams*
@@ -85,8 +85,8 @@ documentation for both client and developers, and carried team responsibility fo
 
 **GitLab runner migration to AWS** — Internal, msg for banking · 05/2024 – 07/2024
 *Senior Developer · sole engineer*
-Migrated the company's two GitLab build agents into AWS against a fixed cut-over date, with four
-projects depending on them throughout. Aligned the setup with corporate security and compliance
+Migrated the company's GitLab build agents into AWS against a fixed cut-over date, with several
+teams depending on them throughout. Aligned the setup with corporate security and compliance
 standards and delivered a reusable Terraform template for future runners.
 **Stack:** Terraform, EKS, VPC, VPN, Route 53, AWS Cloud Services
 
@@ -169,7 +169,7 @@ Flyway and deployment on Payara Server, and built and maintained Jenkins pipelin
 
 *Software house for licence and rights management in the entertainment industry.*
 
-**Licence sales web portal** — Red Arrow International · 01/2019 – 04/2020
+**Licence sales web portal** — Red Arrow Systems International · 01/2019 – 04/2020
 *Developer · team of 4 · alongside the working-student role at msgGillardon*
 Web portal for fast lookup of available licences at trade fairs, with personalised flyer generation for
 visitors. Owned conception, realisation, deployment and ongoing maintenance of the portal.
@@ -183,7 +183,7 @@ recombined and packaged releases on its own, cutting manual release work and the
 from it.
 **Stack:** Bamboo configuration as code (Groovy DSL), Jira, Linux shell, PowerShell
 
-**Broadcasting rights management system** — Red Arrow International · 08/2013 – 12/2018
+**Broadcasting rights management system** — Red Arrow Systems International · 08/2013 – 12/2018
 *Junior to Senior Developer · team of 2*
 Ground-up rebuild of an ageing system for managing international film and television broadcasting rights
 on a modern stack, including database maintenance and data migration. Built the framework and the

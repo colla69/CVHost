@@ -65,10 +65,10 @@ Haltung außerhalb der Arbeitszeit — siehe PlayCryptoWithAI unten.
 Ablösung langjährig gewachsener Excel-Prozesse durch eine Webanwendung für einen öffentlichen
 Auftraggeber im Gesundheitswesen. Das System bearbeitet Widerspruchsverfahren sowie sonstige Schäden
 aus der Abrechnung. Spring-Boot-Backend, Vue-3-Frontend mit Pinia, Betrieb auf Kubernetes.
-KI-gestützte Entwicklung ist fester Bestandteil der Lieferung: GitHub Copilot und Claude im täglichen
+KI-gestützte Entwicklung ist fester Bestandteil der Lieferung: GitHub Copilot im täglichen
 Entwicklungsablauf, selbst gebaute agentische Workflows für wiederkehrende Aufgaben und praktische
 Befähigung der beiden Juniorentwickler.
-**Technologien:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
+**Technologien:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot
 
 **BSI-CRM-Kundenplattformen** — BSI, Endkunde Techem · 06/2025 – 07/2025
 *Senior IT Consultant / Senior Entwickler · Teams von je 2*
@@ -88,7 +88,7 @@ REST
 
 **Umzug der GitLab-Build-Runner in die AWS-Cloud** — intern, msg for banking · 05/2024 – 07/2024
 *Senior Entwickler · alleinverantwortlich*
-Migration der beiden Firmen-Build-Agents nach AWS gegen einen fixen Stichtag, während vier Projekte
+Migration der Firmen-Build-Agents nach AWS gegen einen fixen Stichtag, während mehrere Teams
 durchgehend auf sie angewiesen waren. Abstimmung auf die Sicherheits- und Compliance-Standards des
 Unternehmens sowie ein wiederverwendbares Terraform-Template für künftige Runner.
 **Technologien:** Terraform, EKS, VPC, VPN, Route 53, AWS Cloud Services
@@ -174,7 +174,7 @@ Schemaverwaltung mit Flyway, Deployment auf Payara Server und Aufbau der Jenkins
 
 *Softwarehaus für Lizenz- und Rechteverwaltung in der Entertainment-Branche.*
 
-**Webportal für den Lizenzvertrieb** — Red Arrow International · 01/2019 – 04/2020
+**Webportal für den Lizenzvertrieb** — Red Arrow Systems International · 01/2019 – 04/2020
 *Entwickler · Team von 4 · parallel zur Werkstudententätigkeit bei msgGillardon*
 Webportal für die schnelle Suche verfügbarer Lizenzen auf Messen, inklusive personalisierter
 Flyer-Erstellung für Besucher. Verantwortung für Konzeption, Realisierung, Deployment und die laufende
@@ -189,7 +189,7 @@ Bamboo und Jira, das Branches selbstständig anlegt, zum Release zusammenführt 
 Paket erzeugt — deutlich weniger manuelle Release-Arbeit und entsprechend weniger Hotfixes.
 **Technologien:** Bamboo Config as Code (Groovy-DSL), Jira, Linux-Shell, PowerShell
 
-**System für die Verwaltung von Ausstrahlungsrechten** — Red Arrow International · 08/2013 – 12/2018
+**System für die Verwaltung von Ausstrahlungsrechten** — Red Arrow Systems International · 08/2013 – 12/2018
 *Junior bis Senior Entwickler · Team von 2*
 Neuentwicklung eines gealterten Systems zur Verwaltung internationaler Film- und
 Fernsehausstrahlungsrechte auf einem modernen Stack, inklusive Datenbankpflege und Datenmigration.

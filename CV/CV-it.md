@@ -65,9 +65,9 @@ Sostituzione di processi Excel consolidati da anni con un'applicazione web per u
 del sistema sanitario tedesco. Il sistema gestisce i procedimenti di ricorso (Widerspruchsverfahren) e
 le richieste per i cosiddetti sonstige Schäden derivanti dalla liquidazione. Backend Spring Boot,
 frontend Vue 3 con Pinia, esecuzione su Kubernetes. Qui lo sviluppo assistito dall'IA è parte stabile
-della consegna: GitHub Copilot e Claude nel flusso quotidiano, workflow agentici costruiti
+della consegna: GitHub Copilot nel flusso quotidiano, workflow agentici costruiti
 internamente per le attività ricorrenti e affiancamento pratico dei due junior su entrambi.
-**Tecnologie:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot, Claude
+**Tecnologie:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot
 
 **Piattaforme CRM BSI** — BSI, cliente finale Techem · 06/2025 – 07/2025
 *Senior IT Consultant / Senior Developer · team di 2*
@@ -87,7 +87,7 @@ sviluppatori, e responsabilità di team su due sviluppatori junior.
 
 **Migrazione dei GitLab runner su AWS** — interno, msg for banking · 05/2024 – 07/2024
 *Senior Developer · unico ingegnere sul progetto*
-Migrazione dei due build agent aziendali su AWS con una data di cut-over fissa e quattro progetti
+Migrazione dei build agent aziendali su AWS con una data di cut-over fissa e diversi team
 dipendenti dai runner per tutta la durata. Allineamento agli standard aziendali di sicurezza e
 compliance e consegna di un template Terraform riutilizzabile per i runner futuri.
 **Tecnologie:** Terraform, EKS, VPC, VPN, Route 53, AWS Cloud Services
@@ -175,7 +175,7 @@ pipeline Jenkins.
 
 *Software house per la gestione di licenze e diritti nel settore dell'intrattenimento.*
 
-**Portale web per la vendita di licenze** — Red Arrow International · 01/2019 – 04/2020
+**Portale web per la vendita di licenze** — Red Arrow Systems International · 01/2019 – 04/2020
 *Developer · team di 4 · in parallelo al ruolo di studente lavoratore presso msgGillardon*
 Portale web per la ricerca rapida delle licenze disponibili in fiera, con generazione di volantini
 personalizzati per i visitatori. Responsabilità di ideazione, realizzazione, deployment e manutenzione
@@ -191,7 +191,7 @@ Jira, capace di creare i branch, ricomporli al momento della release e produrre 
 installabile — molto meno lavoro manuale di rilascio e altrettanti hotfix in meno.
 **Tecnologie:** Bamboo config as code (DSL Groovy), Jira, shell Linux, PowerShell
 
-**Sistema di gestione dei diritti di trasmissione** — Red Arrow International · 08/2013 – 12/2018
+**Sistema di gestione dei diritti di trasmissione** — Red Arrow Systems International · 08/2013 – 12/2018
 *da Junior a Senior Developer · team di 2*
 Ricostruzione da zero, su stack moderno, di un sistema datato per la gestione dei diritti internazionali
 di trasmissione cinematografica e televisiva, inclusi manutenzione del database e migrazione dei dati.

@@ -164,7 +164,7 @@ const COPY = {
       'Gesundheitswesen. Ich suche Arbeit mit End-to-End-Verantwortung für ein System — wo ' +
       'diejenigen, die es entwerfen, es auch behalten, und wo es zur Aufgabe gehört, das Richtige ' +
       'automatisch zu machen statt nebenbei.',
-    downloadCv: 'CV herunterladen',
+    downloadCv: 'Lebenslauf herunterladen',
     getInTouch: 'Kontakt aufnehmen',
     deliveredFor: 'Projekte für',
     yearsEngineering: 'Jahre Entwicklung',

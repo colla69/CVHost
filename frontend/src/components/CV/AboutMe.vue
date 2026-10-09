@@ -74,7 +74,7 @@ const COPY = {
       'engineering: taking requirements straight from a business department and turning them ' +
       'into process design, estimates and documentation that developers can actually build from.',
     bioAi: 'Since 2025, AI-assisted engineering has been a standing part of how I deliver rather ' +
-      'than an experiment: GitHub Copilot and Claude in the daily development loop, agentic ' +
+      'than an experiment: GitHub Copilot in the daily development loop, agentic ' +
       'workflows I built myself for the work that repeats, and getting a project team ' +
       'productive with both. The sharpest version of it is off the clock — ' +
       '<a href="https://github.com/colla69/PlayCryptoWithAI" target="_blank" ' +
@@ -110,7 +110,7 @@ const COPY = {
       'aufnehmen und in Prozesskonzeption, Schätzungen und Dokumentation überführen, die ' +
       'Entwickler tatsächlich umsetzen können.',
     bioAi: 'Seit 2025 ist KI-gestützte Entwicklung fester Bestandteil meiner Lieferung und kein ' +
-      'Experiment mehr: GitHub Copilot und Claude im täglichen Entwicklungsablauf, selbst gebaute ' +
+      'Experiment mehr: GitHub Copilot im täglichen Entwicklungsablauf, selbst gebaute ' +
       'agentische Workflows für die Arbeit, die sich wiederholt, und die Befähigung eines ' +
       'Projektteams, mit beidem produktiv zu arbeiten. Am weitesten getrieben habe ich das ' +
       'außerhalb der Arbeitszeit — ' +
@@ -145,7 +145,7 @@ const COPY = {
       'raccogliere i requisiti direttamente dall’unità di business e tradurli in progettazione dei ' +
       'processi, stime e documentazione su cui gli sviluppatori possano davvero costruire.',
     bioAi: 'Dal 2025 lo sviluppo assistito dall’IA è una parte stabile del mio modo di consegnare, ' +
-      'non più un esperimento: GitHub Copilot e Claude nel flusso di sviluppo quotidiano, workflow ' +
+      'non più un esperimento: GitHub Copilot nel flusso di sviluppo quotidiano, workflow ' +
       'agentici costruiti da me per il lavoro che si ripete, e un team di progetto messo in ' +
       'condizione di essere produttivo con entrambi. La versione più spinta è fuori dall’orario ' +
       'di lavoro — ' +
