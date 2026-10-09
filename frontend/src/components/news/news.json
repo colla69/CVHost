@@ -373,5 +373,20 @@
       "it": "Ho costruito <a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\" rel=\"noopener noreferrer\">PlayCryptoWithAI</a> per imparare come si deve l'architettura agentica. Fa trading su 37 coppie di Binance senza sorveglianza, in Docker, e funziona, cosa che ancora mi sorprende.<br><br>Il bot non è la parte interessante. Ha <b>undici agenti</b>, e i revisori tra loro — rischio, sicurezza, backtest, pre-commit, progetto — hanno regole scritte dai miei stessi incidenti. Quando un congelamento silenzioso del mark price e un bug con posizioni fantasma hanno falsato ciascuno la mia equity live, la correzione non è stata solo la patch: la causa di fondo è diventata una regola che da lì in poi viene verificata a ogni modifica. La patch corregge il caso singolo; la regola corregge l'intera classe.<br><br>Due cose che direi a chiunque metta degli agenti al lavoro su codice che conta. I revisori ricevono strumenti in <i>sola lettura</i> — un agente che può modificare è un agente che può far sparire un problema in silenzio invece di segnalarlo. E meglio numeri riproducibili che numeri impressionanti: ho cancellato un risultato di backtest più bello perché non riuscivo a riprodurlo esattamente, il che lo rendeva un aneddoto e non un risultato.<br><br>Il resoconto completo è in <code>writing/agentic-review-board.md</code>, e la directory <code>.claude/</code> è pubblica nel repo, se volete rubarci qualcosa."
     },
     "img_link": "/img/project-jacquard-loom.jpg"
+  },
+  {
+    "id": 26,
+    "title": {
+      "en": "Back to the digital euro",
+      "de": "Zurück beim digitalen Euro",
+      "it": "Di nuovo alle prese con l’euro digitale"
+    },
+    "release_date": "2026-10-09 10:00:00",
+    "description_text": {
+      "en": "My department will be helping <a href=\"https://www.ppi-group.eu/en/digital-euro.html\" target=\"_blank\" rel=\"noopener noreferrer\">PPI</a> with the development of the digital euro.<br> Next week I am travelling to Hamburg to learn about their system, TRAVIC. My second time around the digital euro, after last year's showcase application for Pioneer Investments.",
+      "de": "Meine Abteilung wird <a href=\"https://www.ppi-group.eu/en/digital-euro.html\" target=\"_blank\" rel=\"noopener noreferrer\">PPI</a> bei der Entwicklung des digitalen Euro unterstützen.<br> Nächste Woche fahre ich nach Hamburg, um ihr System TRAVIC kennenzulernen. Meine zweite Runde mit dem digitalen Euro, nach der Showcase-Anwendung für Pioneer Investments im letzten Jahr.",
+      "it": "Il mio reparto aiuterà <a href=\"https://www.ppi-group.eu/en/digital-euro.html\" target=\"_blank\" rel=\"noopener noreferrer\">PPI</a> nello sviluppo dell’euro digitale.<br> La settimana prossima vado ad Amburgo per conoscere il loro sistema, TRAVIC. Il mio secondo giro con l’euro digitale, dopo l’applicazione showcase per Pioneer Investments dell’anno scorso."
+    },
+    "img_link": "/img/project-financial-charts.jpg"
   }
 ]

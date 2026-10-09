@@ -55,10 +55,9 @@ stored locally, capped at 900px wide, JPEG q82. Two are **CC BY-SA 4.0** and one
 | `project-ledger-book.jpg` | project #24 - Objections and damages case platform | Paul Kammüller | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:1911-04-20_Illustrirte_Zeitung_S._0020_S._XX_Edler_%26_Krische_Hannover_Berlin,_EKHA_Lose-Bl%C3%A4tter-Gesch%C3%A4ftsbuch,_Paul_Kamm%C3%BCller_%28Ausschnitt%29.jpg) |
 | `project-voip-phone.jpg` | project #2 - Askozia VoIP server setup | Rakoon | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:20181025_162229_VoIP_telephone_in_Poland.jpg) |
 
-Three further entries reuse photos already listed above rather than adding near-duplicates:
-news #6 ("I am moving soon!") uses `news-shipping-containers.jpg`, project #15 (Krones remote
-service) uses `news-machine-panel.jpg`, and project #17 (Mobih, Porsche production) uses
-`project-conveyor.jpg`.
+Many notes and projects reuse a photo listed above rather than adding a near-duplicate — the
+digital euro notes and project, for example, all use `project-financial-charts.jpg`. Each file is
+credited once, in the table; the entry named beside it is only where it first appeared.
 
 `logo-personal.svg` and `logo-device-insight.svg` are hand-written monogram placeholders in the
 same spirit as the two above, replacing a hot-linked GitHub mark and a GitHub avatar. They are
