@@ -2,47 +2,44 @@
   <div class="lg-page">
     <div class="lg-inner">
       <header class="page-head">
-        <p class="lg-eyebrow">{{ info.length }} projects &middot; 2011 to today</p>
-        <h1 class="lg-heading page-title">Work</h1>
-        <p class="lg-prose page-intro">
-          Every project I have delivered, newest first &mdash; from a Delphi chess game written as an
-          apprentice to regulatory platforms and AWS estates for banks and manufacturers.
-        </p>
+        <p class="lg-eyebrow">{{ t.eyebrow(info.length) }}</p>
+        <h1 class="lg-heading page-title">{{ t.heading }}</h1>
+        <p class="lg-prose page-intro">{{ t.intro }}</p>
       </header>
 
       <div class="grid">
         <article v-for="item in info" :key="item.id" class="card">
           <v-img
             :src="item.image"
-            :alt="item.Name"
+            :alt="$tr(item.Name)"
             :aspect-ratio="16 / 10"
             cover
             class="card-img"
           ></v-img>
 
           <div class="card-body">
-            <p class="card-client">{{ item.client || item.company_name }}</p>
-            <h2 class="card-title">{{ item.Name }}</h2>
+            <p class="card-client">{{ $tr(item.client || item.company_name) }}</p>
+            <h2 class="card-title">{{ $tr(item.Name) }}</h2>
 
             <dl class="card-meta">
               <div>
-                <dt>Role</dt>
-                <dd>{{ item.role_name }}</dd>
+                <dt>{{ t.role }}</dt>
+                <dd>{{ $tr(item.role_name) }}</dd>
               </div>
               <div>
-                <dt>Dates</dt>
+                <dt>{{ t.dates }}</dt>
                 <dd class="lg-tnum">{{ span(item) }}</dd>
               </div>
             </dl>
 
-            <p class="card-stack">{{ item.lang }}</p>
+            <p class="card-stack">{{ $tr(item.lang) }}</p>
 
             <v-expansion-panels flat class="card-panels">
               <v-expansion-panel elevation="0">
-                <v-expansion-panel-title class="card-toggle">What I did</v-expansion-panel-title>
+                <v-expansion-panel-title class="card-toggle">{{ t.whatIDid }}</v-expansion-panel-title>
                 <v-expansion-panel-text>
                   <!-- Hand-authored copy from project_infos.json; never external input. -->
-                  <div class="card-desc lg-prose" v-html="item.description"></div>
+                  <div class="card-desc lg-prose" v-html="$tr(item.description)"></div>
                   <a
                     v-if="item.company_link"
                     :href="item.company_link"
@@ -50,7 +47,7 @@
                     rel="noopener noreferrer"
                     class="card-link"
                   >
-                    {{ item.company_name }}
+                    {{ $tr(item.company_name) }}
                     <v-icon icon="mdi-open-in-new" size="14"></v-icon>
                   </a>
                 </v-expansion-panel-text>
@@ -64,11 +61,52 @@
 </template>
 
 <script>
+import { pick } from '@/i18n'
 import data from './project_infos.json'
+
+// description and role_name are { en, de, it } maps, as are Name, client, lang
+// and company_name wherever they hold ordinary words; product and company names
+// stay plain strings. Render all six through $tr, which passes a plain string
+// through.
 
 // Copy before reversing: the JSON import is a module-level array shared with
 // every other component that imports it.
 const newestFirst = data.slice().reverse()
+
+const COPY = {
+  en: {
+    eyebrow: n => n + ' projects · 2011 to today',
+    heading: 'Work',
+    intro: 'Every project I have delivered, newest first — from a Delphi chess game written as ' +
+      'an apprentice to regulatory platforms and AWS estates for banks and manufacturers.',
+    role: 'Role',
+    dates: 'Dates',
+    whatIDid: 'What I did',
+    ongoing: start => start + ' — today'
+  },
+  de: {
+    eyebrow: n => n + ' Projekte · 2011 bis heute',
+    heading: 'Projekte',
+    intro: 'Alle Projekte, die ich umgesetzt habe, die neuesten zuerst — von einem Schachspiel in ' +
+      'Delphi aus der Ausbildungszeit bis zu Regulatorikplattformen und AWS-Umgebungen für Banken ' +
+      'und Hersteller.',
+    role: 'Rolle',
+    dates: 'Zeitraum',
+    whatIDid: 'Was ich gemacht habe',
+    ongoing: start => start + ' — heute'
+  },
+  it: {
+    eyebrow: n => n + ' progetti · dal 2011 a oggi',
+    heading: 'Progetti',
+    intro: 'Tutti i progetti che ho realizzato, dal più recente — da un gioco di scacchi in Delphi ' +
+      'scritto da apprendista fino a piattaforme regolamentari e ambienti AWS per banche e aziende ' +
+      'manifatturiere.',
+    role: 'Ruolo',
+    dates: 'Periodo',
+    whatIDid: 'Cosa ho fatto',
+    ongoing: start => start + ' — oggi'
+  }
+}
 
 export default {
   name: 'projectInfos',
@@ -77,10 +115,15 @@ export default {
       info: newestFirst
     }
   },
+  computed: {
+    t () {
+      return pick(COPY)
+    }
+  },
   methods: {
     span (item) {
       const start = new Date(item.start_date).getFullYear()
-      if (!item.end_date) return start + ' — today'
+      if (!item.end_date) return this.t.ongoing(start)
       const end = new Date(item.end_date).getFullYear()
       return start === end ? String(start) : start + ' — ' + end
     }

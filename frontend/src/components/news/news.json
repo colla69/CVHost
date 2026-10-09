@@ -1,177 +1,377 @@
 [
   {
     "id": 1,
-    "title": "I am proud to announce to you the News!",
+    "title": {
+      "en": "I am proud to announce to you the News!",
+      "de": "Stolz präsentiere ich euch: die News!",
+      "it": "Sono orgoglioso di presentarvi le News!"
+    },
     "release_date": "2018-08-02 16:45:59",
-    "description_text": "I am bored, so i started programming around and it struck me... I should have my own news ticker! I need to keep you informed about the newest developments in my professional life. I learning new things, and broadening my skills. In the end, I would like to keep track of my achievements in a less boring way. ;)  ",
+    "description_text": {
+      "en": "I am bored, so I started programming around and it struck me... I should have my own news ticker! I need to keep you informed about the newest developments in my professional life. I am learning new things, and broadening my skills. In the end, I would like to keep track of my achievements in a less boring way. ;)",
+      "de": "Mir ist langweilig, also habe ich ein bisschen herumprogrammiert, und da kam mir der Gedanke... ich sollte meinen eigenen News-Ticker haben! Ich muss euch ja über die neuesten Entwicklungen in meinem Berufsleben auf dem Laufenden halten. Ich lerne neue Dinge und erweitere meine Fähigkeiten. Und am Ende möchte ich meine Erfolge auf eine weniger langweilige Art festhalten. ;)",
+      "it": "Mi annoio, così mi sono messo a programmare un po' a caso e mi è venuta un'idea... dovrei avere un notiziario tutto mio! Devo tenervi aggiornati sulle ultime novità della mia vita professionale. Sto imparando cose nuove e ampliando le mie competenze. Alla fine, vorrei tenere traccia dei miei traguardi in un modo meno noioso. ;)"
+    },
     "img_link": "/img/news-press-room.jpg"
   },
   {
     "id": 2,
-    "title": "A new start, who let the snakes out!?",
+    "title": {
+      "en": "A new start, who let the snakes out!?",
+      "de": "Ein Neuanfang, who let the snakes out!?",
+      "it": "Un nuovo inizio, who let the snakes out!?"
+    },
     "release_date": "2018-08-10 17:17:32",
-    "description_text": "I have been looking for the perfect programming language for my personal needs for a very long time. I tried a lot but none had the versatility i wanted for my day to day programming.<br> At the same time I was looking for a way to teach my computer to react to speech commands and there it was the perfect opportunity to learn something new and realize my \"dream of the moment\" <a href=\"https://mycroft.ai/\" target=\"_blank\">Mycroft!</a><br> So it is official now, i am learning python!  ",
+    "description_text": {
+      "en": "I have been looking for the perfect programming language for my personal needs for a very long time. I tried a lot but none had the versatility I wanted for my day to day programming.<br> At the same time I was looking for a way to teach my computer to react to speech commands and there it was the perfect opportunity to learn something new and realize my \"dream of the moment\" <a href=\"https://mycroft.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft!</a><br> So it is official now, I am learning python!",
+      "de": "Ich suche schon sehr lange nach der perfekten Programmiersprache für meine persönlichen Bedürfnisse. Ich habe vieles ausprobiert, aber keine hatte die Vielseitigkeit, die ich mir für das Programmieren im Alltag gewünscht habe.<br> Gleichzeitig habe ich nach einer Möglichkeit gesucht, meinem Computer beizubringen, auf Sprachbefehle zu reagieren, und da war sie, die perfekte Gelegenheit, etwas Neues zu lernen und meinen „Traum des Moments“ zu verwirklichen: <a href=\"https://mycroft.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft!</a><br> Es ist also offiziell: Ich lerne python!",
+      "it": "Cerco da moltissimo tempo il linguaggio di programmazione perfetto per le mie esigenze personali. Ne ho provati tanti, ma nessuno aveva la versatilità che volevo per programmare tutti i giorni.<br> Nello stesso periodo cercavo un modo per insegnare al mio computer a reagire ai comandi vocali, ed ecco l'occasione perfetta per imparare qualcosa di nuovo e realizzare il mio “sogno del momento”: <a href=\"https://mycroft.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft!</a><br> Quindi ora è ufficiale: sto imparando python!"
+    },
     "img_link": "/img/news-ball-python.jpg"
   },
   {
     "id": 3,
-    "title": "Hey Mycroft, turn up the volume!",
+    "title": {
+      "en": "Hey Mycroft, turn up the volume!",
+      "de": "Hey Mycroft, mach lauter!",
+      "it": "Hey Mycroft, alza il volume!"
+    },
     "release_date": "2018-08-20 18:30:09",
-    "description_text": "I have to say it was a very rough ride, but i got something working! I can now tell my computer to increase or decrease the volume :) or change the configuration of my displays moving from the table to the couch. I found a new way to support my lazyness and am pretty proud about it .. i thought i should share. <br> <a href=\"https://github.com/colla69/ComputerHelperSkill\" target=\"_blank\">take a look at my ComputerHelperSkill</a>\n<br>All thanks to the Mycroft team keep up the good work!",
+    "description_text": {
+      "en": "I have to say it was a very rough ride, but I got something working! I can now tell my computer to increase or decrease the volume :) or change the configuration of my displays moving from the table to the couch. I found a new way to support my laziness and am pretty proud about it .. I thought I should share. <br> <a href=\"https://github.com/colla69/ComputerHelperSkill\" target=\"_blank\" rel=\"noopener noreferrer\">take a look at my ComputerHelperSkill</a>\n<br>All thanks to the Mycroft team keep up the good work!",
+      "de": "Ich muss sagen, es war ein ziemlich holpriger Weg, aber ich habe etwas zum Laufen gebracht! Ich kann meinem Computer jetzt sagen, er soll die Lautstärke erhöhen oder verringern :) oder die Konfiguration meiner Bildschirme ändern, wenn ich vom Tisch aufs Sofa wechsle. Ich habe einen neuen Weg gefunden, meine Faulheit zu unterstützen, und bin ziemlich stolz darauf .. dachte mir, das sollte ich teilen. <br> <a href=\"https://github.com/colla69/ComputerHelperSkill\" target=\"_blank\" rel=\"noopener noreferrer\">schaut euch meinen ComputerHelperSkill an</a>\n<br>Das verdanke ich alles dem Mycroft-Team, macht weiter so!",
+      "it": "Devo dire che è stato un percorso parecchio accidentato, ma ho fatto funzionare qualcosa! Ora posso dire al mio computer di alzare o abbassare il volume :) oppure di cambiare la configurazione dei miei schermi quando passo dal tavolo al divano. Ho trovato un nuovo modo per assecondare la mia pigrizia e ne sono piuttosto orgoglioso .. ho pensato di condividerlo. <br> <a href=\"https://github.com/colla69/ComputerHelperSkill\" target=\"_blank\" rel=\"noopener noreferrer\">date un'occhiata alla mia ComputerHelperSkill</a>\n<br>Tutto merito del team di Mycroft, continuate così!"
+    },
     "img_link": "/img/news-voice-assistant.jpg"
   },
   {
     "id": 4,
-    "title": "New skill unlocked! Wordpress administration ",
+    "title": {
+      "en": "New skill unlocked! Wordpress administration",
+      "de": "Neuer Skill freigeschaltet! Wordpress-Administration",
+      "it": "Nuova abilità sbloccata! Amministrazione di Wordpress"
+    },
     "release_date": "2018-09-13 18:41:40",
-    "description_text": "Yay PHP! -.-'<br>My girlfriend is opening a new Blog, we are going to host it on the same server as this webpage. Feel free to visit: <a href=\"https://www.giagii.com/\" target=\"_blank\">GiaGii</a> ",
+    "description_text": {
+      "en": "Yay PHP! -.-'<br>My girlfriend is opening a new Blog, we are going to host it on the same server as this webpage. Feel free to visit: <a href=\"https://www.giagii.com/\" target=\"_blank\" rel=\"noopener noreferrer\">GiaGii</a>",
+      "de": "Juhu, PHP! -.-'<br>Meine Freundin startet einen neuen Blog, wir hosten ihn auf demselben Server wie diese Webseite. Schaut gerne vorbei: <a href=\"https://www.giagii.com/\" target=\"_blank\" rel=\"noopener noreferrer\">GiaGii</a>",
+      "it": "Evviva, PHP! -.-'<br>La mia ragazza sta aprendo un nuovo blog, lo ospiteremo sullo stesso server di questa pagina web. Passate pure a dare un'occhiata: <a href=\"https://www.giagii.com/\" target=\"_blank\" rel=\"noopener noreferrer\">GiaGii</a>"
+    },
     "img_link": "/img/news-blogging-desk.jpg"
   },
   {
     "id": 5,
-    "title": "I am not that bad .. ",
+    "title": {
+      "en": "I am not that bad ..",
+      "de": "So schlecht bin ich gar nicht ..",
+      "it": "Non sono poi così male .."
+    },
     "release_date": "2019-02-15 19:18:13",
-    "description_text": "The semester is over. 3 exams out of 3 cleared! <br> My motivation is raising..",
+    "description_text": {
+      "en": "The semester is over. 3 exams out of 3 cleared! <br> My motivation is rising..",
+      "de": "Das Semester ist vorbei. 3 von 3 Prüfungen bestanden! <br> Meine Motivation steigt..",
+      "it": "Il semestre è finito. 3 esami su 3 superati! <br> La mia motivazione sale.."
+    },
     "img_link": "/img/news-students-studying.jpg"
   },
   {
     "id": 6,
-    "title": "I am moving soon! (Servers)",
+    "title": {
+      "en": "I am moving soon! (Servers)",
+      "de": "Ich ziehe bald um! (Server)",
+      "it": "Presto trasloco! (Server)"
+    },
     "release_date": "2019-03-03 19:19:56",
-    "description_text": "My contract is coming to an end. I am planning to get more power and storage to expand my world and learn new administration skills.<br> My new plans include packing all my software in docker containers to keep it simple. Gaining deeper knowledge of the reverse proxy nginx is also going to be a lot of fun. ",
+    "description_text": {
+      "en": "My contract is coming to an end. I am planning to get more power and storage to expand my world and learn new administration skills.<br> My new plans include packing all my software in docker containers to keep it simple. Gaining deeper knowledge of the reverse proxy nginx is also going to be a lot of fun.",
+      "de": "Mein Vertrag läuft bald aus. Ich plane, mir mehr Leistung und Speicher zu holen, um meine Welt zu erweitern und Neues in der Administration zu lernen.<br> Zu meinen neuen Plänen gehört, meine ganze Software in docker-Container zu packen, damit es einfach bleibt. Mich tiefer in den Reverse Proxy nginx einzuarbeiten, wird auch eine Menge Spaß machen.",
+      "it": "Il mio contratto sta per scadere. Ho in programma di prendere più potenza e più spazio per espandere il mio mondo e imparare nuove competenze di amministrazione.<br> Tra i miei nuovi piani c'è quello di impacchettare tutto il mio software in container docker, per mantenere le cose semplici. Approfondire il reverse proxy nginx sarà anche molto divertente."
+    },
     "img_link": "/img/news-shipping-containers.jpg"
   },
   {
     "id": 7,
-    "title": "The new plan is on fire!",
+    "title": {
+      "en": "The new plan is on fire!",
+      "de": "Der neue Plan zündet!",
+      "it": "Il nuovo piano decolla!"
+    },
     "release_date": "2019-03-20 19:26:14",
-    "description_text": "I feel like I am getting a new car :D <br> A V-Server just for me, 4 CPUs 6 GiB RAM and 500Gib SSD.<br> That's gonna be a lot of fun :)<br> I am ready for the release day, my docker images are warm and ready to start! <br> Visit my project: <a href=\"https://github.com/colla69/Dockerize\" target=\"_blank\">Dockerize !</a>",
+    "description_text": {
+      "en": "I feel like I am getting a new car :D <br> A V-Server just for me, 4 CPUs 6 GiB RAM and 500GiB SSD.<br> That's gonna be a lot of fun :)<br> I am ready for the release day, my docker images are warm and ready to start! <br> Visit my project: <a href=\"https://github.com/colla69/Dockerize\" target=\"_blank\" rel=\"noopener noreferrer\">Dockerize !</a>",
+      "de": "Ich fühle mich, als würde ich ein neues Auto bekommen :D <br> Ein V-Server nur für mich, 4 CPUs, 6 GiB RAM und 500GiB SSD.<br> Das wird ein Riesenspaß :)<br> Ich bin bereit für den Release-Tag, meine docker-Images sind vorgewärmt und startklar! <br> Schaut euch mein Projekt an: <a href=\"https://github.com/colla69/Dockerize\" target=\"_blank\" rel=\"noopener noreferrer\">Dockerize !</a>",
+      "it": "Mi sembra di ricevere una macchina nuova :D <br> Un V-Server tutto per me, 4 CPU, 6 GiB di RAM e 500GiB di SSD.<br> Sarà un gran divertimento :)<br> Sono pronto per il giorno del rilascio, le mie immagini docker sono calde e pronte a partire! <br> Visitate il mio progetto: <a href=\"https://github.com/colla69/Dockerize\" target=\"_blank\" rel=\"noopener noreferrer\">Dockerize !</a>"
+    },
     "img_link": "/img/news-server-cables.jpg"
   },
   {
     "id": 8,
-    "title": "Announcement! the new docker system is online!",
+    "title": {
+      "en": "Announcement! the new docker system is online!",
+      "de": "Ankündigung! Das neue docker-System ist online!",
+      "it": "Annuncio! Il nuovo sistema docker è online!"
+    },
     "release_date": "2019-03-20 19:35:22",
-    "description_text": "Docker is great, everything working like a charm.\n<br>Announcing the release of my new ecosystem :) <br> \nAdministration Tools: <a href=\"https://admin.colarietitosti.info/\" target=\"_blank\">Portainer</a><br> \nMedia Server: <a href=\"https://plex.colarietitosti.info/\" target=\"_blank\">Plex</a><br> \nCloud Storage: <a href=\"https://nextcloud.colarietitosti.info/\" target=\"_blank\">Nextcloud</a><br> \nCollabora backend for Nextcloud: <a href=\"https://www.collaboraoffice.com/\" target=\"_blank\">Collabora</a><br> ",
+    "description_text": {
+      "en": "Docker is great, everything working like a charm.\n<br>Announcing the release of my new ecosystem :) <br> \nAdministration Tools: <a href=\"https://admin.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Portainer</a><br> \nMedia Server: <a href=\"https://plex.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Plex</a><br> \nCloud Storage: <a href=\"https://nextcloud.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Nextcloud</a><br> \nCollabora backend for Nextcloud: <a href=\"https://www.collaboraoffice.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Collabora</a><br>",
+      "de": "Docker ist großartig, alles läuft wie geschmiert.\n<br>Hiermit verkünde ich den Release meines neuen Ökosystems :) <br> \nAdministrationstools: <a href=\"https://admin.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Portainer</a><br> \nMedienserver: <a href=\"https://plex.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Plex</a><br> \nCloud-Speicher: <a href=\"https://nextcloud.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Nextcloud</a><br> \nCollabora-Backend für Nextcloud: <a href=\"https://www.collaboraoffice.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Collabora</a><br>",
+      "it": "Docker è fantastico, tutto funziona a meraviglia.\n<br>Annuncio il rilascio del mio nuovo ecosistema :) <br> \nStrumenti di amministrazione: <a href=\"https://admin.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Portainer</a><br> \nMedia server: <a href=\"https://plex.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Plex</a><br> \nArchiviazione cloud: <a href=\"https://nextcloud.colarietitosti.info/\" target=\"_blank\" rel=\"noopener noreferrer\">Nextcloud</a><br> \nBackend Collabora per Nextcloud: <a href=\"https://www.collaboraoffice.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Collabora</a><br>"
+    },
     "img_link": "/img/news-shipping-containers.jpg"
   },
   {
     "id": 9,
-    "title": "Release: localMusicPlayerSkill for Mycroft AI!",
+    "title": {
+      "en": "Release: localMusicPlayerSkill for Mycroft AI!",
+      "de": "Release: localMusicPlayerSkill für Mycroft AI!",
+      "it": "Rilascio: localMusicPlayerSkill per Mycroft AI!"
+    },
     "release_date": "2019-04-08 19:52:42",
-    "description_text": "\n The tale of the voice commands continues, with the release of the new voice controlled music player for Mycroft! :) <br> \n <a href=\"https://community.mycroft.ai/t/localmusicplayerskill-feedback-and-help/6279\" target=\"_blank\">Official post on the Mycroft Community Forum</a><br> \n Read the code <a href=\"https://github.com/colla69/localMusicPlayer-skill\" target=\"_blank\">Code on GitHub</a><br>All thanks to the Mycroft team keep up the good work!\n",
+    "description_text": {
+      "en": "\n The tale of the voice commands continues, with the release of the new voice controlled music player for Mycroft! :) <br> \n <a href=\"https://community.mycroft.ai/t/localmusicplayerskill-feedback-and-help/6279\" target=\"_blank\" rel=\"noopener noreferrer\">Official post on the Mycroft Community Forum</a><br> \n Read the code <a href=\"https://github.com/colla69/localMusicPlayer-skill\" target=\"_blank\" rel=\"noopener noreferrer\">Code on GitHub</a><br>All thanks to the Mycroft team keep up the good work!\n",
+      "de": "\n Die Geschichte der Sprachbefehle geht weiter, mit dem Release des neuen sprachgesteuerten Musikplayers für Mycroft! :) <br> \n <a href=\"https://community.mycroft.ai/t/localmusicplayerskill-feedback-and-help/6279\" target=\"_blank\" rel=\"noopener noreferrer\">Offizieller Beitrag im Mycroft Community Forum</a><br> \n Lest den Code: <a href=\"https://github.com/colla69/localMusicPlayer-skill\" target=\"_blank\" rel=\"noopener noreferrer\">Code auf GitHub</a><br>Das verdanke ich alles dem Mycroft-Team, macht weiter so!\n",
+      "it": "\n La storia dei comandi vocali continua, con il rilascio del nuovo lettore musicale a comando vocale per Mycroft! :) <br> \n <a href=\"https://community.mycroft.ai/t/localmusicplayerskill-feedback-and-help/6279\" target=\"_blank\" rel=\"noopener noreferrer\">Post ufficiale sul Mycroft Community Forum</a><br> \n Leggete il codice: <a href=\"https://github.com/colla69/localMusicPlayer-skill\" target=\"_blank\" rel=\"noopener noreferrer\">Codice su GitHub</a><br>Tutto merito del team di Mycroft, continuate così!\n"
+    },
     "img_link": "/img/news-headphones.jpg"
   },
   {
     "id": 10,
-    "title": "User of the month!",
+    "title": {
+      "en": "User of the month!",
+      "de": "Nutzer des Monats!",
+      "it": "Utente del mese!"
+    },
     "release_date": "2019-04-21 21:17:23",
-    "description_text": "I was awarded a badge as new user of the month Apr '19! Thank you Steve Penrod and thank you <a href=\"https://mycroft.ai/\" target=\"_blank\">Mycroft AI</a><br><a href=\"https://community.mycroft.ai/badges/44/new-user-of-the-month?username=colla69\">My Badge :)</a> ",
+    "description_text": {
+      "en": "I was awarded a badge as new user of the month Apr '19! Thank you Steve Penrod and thank you <a href=\"https://mycroft.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft AI</a><br><a href=\"https://community.mycroft.ai/badges/44/new-user-of-the-month?username=colla69\">My Badge :)</a>",
+      "de": "Ich habe ein Badge als neuer Nutzer des Monats April '19 bekommen! Danke, Steve Penrod, und danke, <a href=\"https://mycroft.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft AI</a><br><a href=\"https://community.mycroft.ai/badges/44/new-user-of-the-month?username=colla69\">Mein Badge :)</a>",
+      "it": "Mi hanno assegnato il badge di nuovo utente del mese di aprile '19! Grazie Steve Penrod e grazie <a href=\"https://mycroft.ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft AI</a><br><a href=\"https://community.mycroft.ai/badges/44/new-user-of-the-month?username=colla69\">Il mio badge :)</a>"
+    },
     "img_link": "/img/news-gold-medal.jpg"
   },
   {
     "id": 11,
-    "title": "Django unchained",
+    "title": {
+      "en": "Django unchained",
+      "de": "Django unchained",
+      "it": "Django unchained"
+    },
     "release_date": "2019-05-15 21:22:45",
-    "description_text": "I am proud to announce you, I learned a new framework: Django! It have to say it really is awsome. Fast and easy the way i need it, and using python adds to the fun. <br> I tested the framework by developing a small webpage holding useful links for my private needs. I started my ultimate online sandbox :D <br> Visit: <a href=\"https://dash.colarietitosti.info\" target=\"_blank\">myDashboard</a> ",
+    "description_text": {
+      "en": "I am proud to announce to you, I learned a new framework: Django! I have to say it really is awesome. Fast and easy the way I need it, and using python adds to the fun. <br> I tested the framework by developing a small webpage holding useful links for my private needs. I started my ultimate online sandbox :D <br> Visit: <a href=\"https://dash.colarietitosti.info\" target=\"_blank\" rel=\"noopener noreferrer\">myDashboard</a>",
+      "de": "Stolz verkünde ich euch: Ich habe ein neues Framework gelernt, Django! Ich muss sagen, es ist echt klasse. Schnell und einfach, so wie ich es brauche, und mit python macht es gleich noch mehr Spaß. <br> Ich habe das Framework getestet, indem ich eine kleine Webseite mit nützlichen Links für meinen privaten Bedarf gebaut habe. Ich habe meine ultimative Online-Sandbox gestartet :D <br> Schaut vorbei: <a href=\"https://dash.colarietitosti.info\" target=\"_blank\" rel=\"noopener noreferrer\">myDashboard</a>",
+      "it": "Sono orgoglioso di annunciarvi che ho imparato un nuovo framework: Django! Devo dire che è davvero fantastico. Veloce e semplice come serve a me, e usare python rende tutto ancora più divertente. <br> Ho messo alla prova il framework sviluppando una piccola pagina web con dei link utili per le mie esigenze private. Ho avviato la mia sandbox online definitiva :D <br> Visitate: <a href=\"https://dash.colarietitosti.info\" target=\"_blank\" rel=\"noopener noreferrer\">myDashboard</a>"
+    },
     "img_link": "/img/news-source-code.jpg"
   },
   {
     "id": 12,
-    "title": "The Walking web",
+    "title": {
+      "en": "The Walking web",
+      "de": "The Walking web",
+      "it": "The Walking web"
+    },
     "release_date": "2019-05-30 21:22:45",
-    "description_text": "Crawling the web like a boss. <br> I finally can automate web searches the way i want to. The raise of the autobots is starting.. They see me crawling, they hating..  ",
+    "description_text": {
+      "en": "Crawling the web like a boss. <br> I finally can automate web searches the way I want to. The rise of the autobots is starting.. They see me crawling, they hating..",
+      "de": "Das Web crawlen wie ein Boss. <br> Endlich kann ich Websuchen so automatisieren, wie ich will. Der Aufstieg der Autobots beginnt.. They see me crawling, they hating..",
+      "it": "Faccio crawling sul web come un boss. <br> Finalmente posso automatizzare le ricerche sul web come voglio io. L'ascesa degli autobot sta iniziando.. They see me crawling, they hating.."
+    },
     "img_link": "/img/news-spider-web.jpg"
   },
   {
     "id": 13,
-    "title": "Plex Media Player Alpha release",
+    "title": {
+      "en": "Plex Media Player Alpha release",
+      "de": "Alpha-Release des Plex Media Player",
+      "it": "Rilascio alpha del Plex Media Player"
+    },
     "release_date": "2019-07-23 11:53:36",
-    "description_text": "A new skill was born! Finally, owners of a Plex Media Server will have the possibility to use it with speech commands.<br>\nWelcome to the future! <br>\nPlease Star or Contribute on <a href=\"https://github.com/colla69/plexmusic-skill\" target=\"_blank\">GitHub</a> or <br> \nFollow the release on the official <a href=\"https://community.mycroft.ai/t/plexmusic-skill-test-and-feedback/6973?u=colla69\" target=\"_blank\">Mycroft Community Forum</a>\n",
+    "description_text": {
+      "en": "A new skill was born! Finally, owners of a Plex Media Server will have the possibility to use it with speech commands.<br>\nWelcome to the future! <br>\nPlease Star or Contribute on <a href=\"https://github.com/colla69/plexmusic-skill\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a> or <br> \nFollow the release on the official <a href=\"https://community.mycroft.ai/t/plexmusic-skill-test-and-feedback/6973?u=colla69\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft Community Forum</a>\n",
+      "de": "Ein neuer Skill ist geboren! Endlich können Besitzer eines Plex Media Servers ihn per Sprachbefehl bedienen.<br>\nWillkommen in der Zukunft! <br>\nBitte gebt einen Star oder macht mit auf <a href=\"https://github.com/colla69/plexmusic-skill\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a> oder <br> \nverfolgt den Release im offiziellen <a href=\"https://community.mycroft.ai/t/plexmusic-skill-test-and-feedback/6973?u=colla69\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft Community Forum</a>\n",
+      "it": "È nata una nuova skill! Finalmente chi possiede un Plex Media Server potrà usarlo con i comandi vocali.<br>\nBenvenuti nel futuro! <br>\nPer favore lasciate una stella o contribuite su <a href=\"https://github.com/colla69/plexmusic-skill\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a> oppure <br> \nseguite il rilascio sul <a href=\"https://community.mycroft.ai/t/plexmusic-skill-test-and-feedback/6973?u=colla69\" target=\"_blank\" rel=\"noopener noreferrer\">Mycroft Community Forum</a> ufficiale\n"
+    },
     "img_link": "/img/news-home-cinema.jpg"
   },
   {
     "id": 14,
-    "title": "I am helping! ",
+    "title": {
+      "en": "I am helping!",
+      "de": "Ich helfe mit!",
+      "it": "Do una mano!"
+    },
     "release_date": "2019-08-13 12:02:39",
-    "description_text": "Today is a good day :)<br> I contributed something useful and got added to the contributors Page :)<br>\r\n<a href=\"https://github.com/MycroftAI/contributors/commit/f4b36d6ac43656e124ff086e8c6c225a20a83c2a\" target=\"_blank\">Go take a Look</a>",
+    "description_text": {
+      "en": "Today is a good day :)<br> I contributed something useful and got added to the contributors Page :)<br>\r\n<a href=\"https://github.com/MycroftAI/contributors/commit/f4b36d6ac43656e124ff086e8c6c225a20a83c2a\" target=\"_blank\" rel=\"noopener noreferrer\">Go take a Look</a>",
+      "de": "Heute ist ein guter Tag :)<br> Ich habe etwas Nützliches beigetragen und wurde auf der Contributors-Seite eingetragen :)<br>\r\n<a href=\"https://github.com/MycroftAI/contributors/commit/f4b36d6ac43656e124ff086e8c6c225a20a83c2a\" target=\"_blank\" rel=\"noopener noreferrer\">Schaut mal rein</a>",
+      "it": "Oggi è una bella giornata :)<br> Ho contribuito con qualcosa di utile e mi hanno aggiunto alla pagina dei contributori :)<br>\r\n<a href=\"https://github.com/MycroftAI/contributors/commit/f4b36d6ac43656e124ff086e8c6c225a20a83c2a\" target=\"_blank\" rel=\"noopener noreferrer\">Andate a dare un'occhiata</a>"
+    },
     "img_link": "/img/news-collaboration.jpg"
   },
   {
     "id": 15,
-    "title": "Let's begin a new adventure",
+    "title": {
+      "en": "Let's begin a new adventure",
+      "de": "Auf in ein neues Abenteuer",
+      "it": "Cominciamo una nuova avventura"
+    },
     "release_date": "2020-01-15 18:03:19",
-    "description_text": "A new first day at work! <br> Starting this new adventure at Device Insight got me quite exited, wish me luck!<br>",
+    "description_text": {
+      "en": "A new first day at work! <br> Starting this new adventure at Device Insight got me quite excited, wish me luck!<br>",
+      "de": "Ein neuer erster Arbeitstag! <br> Der Start in dieses neue Abenteuer bei Device Insight macht mich ganz schön aufgeregt, wünscht mir Glück!<br>",
+      "it": "Un nuovo primo giorno di lavoro! <br> Iniziare questa nuova avventura da Device Insight mi emoziona parecchio, auguratemi buona fortuna!<br>"
+    },
     "img_link": "/img/news-machine-panel.jpg"
   },
   {
     "id": 16,
-    "title": "A new adventure, and this time it is consulting",
+    "title": {
+      "en": "A new adventure, and this time it is consulting",
+      "de": "Ein neues Abenteuer, und diesmal in der Beratung",
+      "it": "Una nuova avventura, e questa volta è consulenza"
+    },
     "release_date": "2021-06-01 08:30:00",
-    "description_text": "First day at msgGillardonBSM AG in Ismaning, and my first day as a consultant.<br> The first engagement is already lined up: Mobih, a mobile maintenance application for Porsche AG that replaces paper-based processes in automobile production with an iOS app designed around the workflow people already have. Requirements come straight from the business department, which is exactly the part of this job I was hoping for.",
+    "description_text": {
+      "en": "First day at msgGillardonBSM AG in Ismaning, and my first day as a consultant.<br> The first engagement is already lined up: Mobih, a mobile maintenance application for Porsche AG that replaces paper-based processes in automobile production with an iOS app designed around the workflow people already have. Requirements come straight from the business department, which is exactly the part of this job I was hoping for.",
+      "de": "Erster Tag bei der msgGillardonBSM AG in Ismaning, und mein erster Tag als Consultant.<br> Das erste Projekt steht schon fest: Mobih, eine mobile Instandhaltungsanwendung für die Porsche AG, die papierbasierte Prozesse in der Automobilproduktion durch eine iOS-App ablöst, entworfen um den Arbeitsablauf herum, den die Leute schon haben. Die Anforderungen kommen direkt aus dem Fachbereich, und genau auf diesen Teil des Jobs hatte ich gehofft.",
+      "it": "Primo giorno da msgGillardonBSM AG a Ismaning, e il mio primo giorno da consulente.<br> Il primo incarico è già fissato: Mobih, un'applicazione mobile di manutenzione per Porsche AG che sostituisce i processi su carta nella produzione automobilistica con un'app iOS disegnata attorno al flusso di lavoro che le persone hanno già. I requisiti arrivano direttamente dall'unità di business, ed è proprio la parte di questo lavoro in cui speravo."
+    },
     "img_link": "/img/project-conveyor.jpg"
   },
   {
     "id": 17,
-    "title": "I am the architect",
+    "title": {
+      "en": "I am the architect",
+      "de": "Ich bin der Architekt",
+      "it": "Io sono l'architetto"
+    },
     "release_date": "2022-12-10 20:16:12",
-    "description_text": "I did it! I passed my exam! <br> Now I am officially qualified as \"AWS Solutions Architect\"!",
+    "description_text": {
+      "en": "I did it! I passed my exam! <br> Now I am officially qualified as \"AWS Solutions Architect\"!",
+      "de": "Ich hab's geschafft! Ich habe meine Prüfung bestanden! <br> Jetzt bin ich offiziell qualifiziert als „AWS Solutions Architect“!",
+      "it": "Ce l'ho fatta! Ho superato l'esame! <br> Ora sono ufficialmente qualificato come “AWS Solutions Architect”!"
+    },
     "img_link": "/img/news-server-room.jpg"
   },
   {
     "id": 18,
-    "title": "Sixty microservices and counting",
+    "title": {
+      "en": "Sixty microservices and counting",
+      "de": "Sechzig Microservices, Tendenz steigend",
+      "it": "Sessanta microservizi, e il conto sale"
+    },
     "release_date": "2023-01-16 19:20:00",
-    "description_text": "New project, and a different order of scale. I am operating and deploying more than 60 AWS backend microservices for Volkswagen Financial Services, integrating and calculating financing products inside the group cloud ecosystem.<br> Some of them I migrated off the old platform, some are new and mine from the first commit. TypeScript and NestJS in the services, Concourse CI on Fargate underneath, K6 when we need to know what actually breaks rather than what we assume will. The part I did not expect to enjoy is sitting with the business department and turning a requirement into an estimate somebody can plan against.",
+    "description_text": {
+      "en": "New project, and a different order of scale. I am operating and deploying more than 60 AWS backend microservices for Volkswagen Financial Services, integrating and calculating financing products inside the group cloud ecosystem.<br> Some of them I migrated off the old platform, some are new and mine from the first commit. TypeScript and NestJS in the services, Concourse CI on Fargate underneath, K6 when we need to know what actually breaks rather than what we assume will. The part I did not expect to enjoy is sitting with the business department and turning a requirement into an estimate somebody can plan against.",
+      "de": "Neues Projekt, und eine ganz andere Größenordnung. Ich betreibe und deploye mehr als 60 AWS-Backend-Microservices für Volkswagen Financial Services, zur Integration und Berechnung von Finanzierungsprodukten im Cloud-Ökosystem des Konzerns.<br> Einige davon habe ich von der alten Plattform migriert, andere sind neu und vom ersten Commit an meine. TypeScript und NestJS in den Services, Concourse CI auf Fargate darunter, K6, wenn wir wissen müssen, was wirklich kaputtgeht, und nicht, was wir nur vermuten. Was mir unerwartet Spaß macht: mit dem Fachbereich zusammenzusitzen und aus einer Anforderung eine Schätzung zu machen, mit der jemand planen kann.",
+      "it": "Nuovo progetto, e tutt'altro ordine di grandezza. Gestisco l'esercizio e il deployment di oltre 60 microservizi di backend su AWS per Volkswagen Financial Services, per l'integrazione e il calcolo di prodotti di finanziamento all'interno dell'ecosistema cloud del gruppo.<br> Alcuni li ho migrati dalla vecchia piattaforma, altri sono nuovi e miei dal primo commit. TypeScript e NestJS nei servizi, Concourse CI su Fargate sotto, K6 quando dobbiamo sapere cosa si rompe davvero e non cosa supponiamo che si romperà. La parte che non mi aspettavo di apprezzare è sedermi con l'unità di business e trasformare un requisito in una stima su cui qualcuno può pianificare."
+    },
     "img_link": "/img/project-network-closet.jpg"
   },
   {
     "id": 19,
-    "title": "Same desk, new name on the door",
+    "title": {
+      "en": "Same desk, new name on the door",
+      "de": "Gleicher Schreibtisch, neuer Name an der Tür",
+      "it": "Stessa scrivania, nuovo nome sulla porta"
+    },
     "release_date": "2024-01-08 18:10:00",
-    "description_text": "msgGillardonBSM has merged into msg for banking AG, so my employer changed name at the turn of the year while the work carried straight on. Senior IT Consultant now.<br> The new engagement is the IFRS 9 regulatory platform at Porsche Bank: a long-lived Java EE codebase to modernise &mdash; refactoring, security updates, dependencies that stopped being maintained years ago &mdash; along with the pipelines and DevOps processes around it, which are moving into AWS. Old code that a lot of people quietly depend on is its own kind of interesting.",
+    "description_text": {
+      "en": "msgGillardonBSM has merged into msg for banking AG, so my employer changed name at the turn of the year while the work carried straight on. Senior IT Consultant now.<br> The new engagement is the IFRS 9 regulatory platform at Porsche Bank: a long-lived Java EE codebase to modernise &mdash; refactoring, security updates, dependencies that stopped being maintained years ago &mdash; along with the pipelines and DevOps processes around it, which are moving into AWS. Old code that a lot of people quietly depend on is its own kind of interesting.",
+      "de": "msgGillardonBSM ist in die msg for banking AG übergegangen, mein Arbeitgeber hat also zum Jahreswechsel den Namen gewechselt, während die Arbeit nahtlos weiterlief. Jetzt als Senior IT Consultant.<br> Das neue Projekt ist die IFRS-9-Regulatorikplattform bei der Porsche Bank: ein langlebiger Java-EE-Codestand, der modernisiert werden soll &mdash; Refactoring, Sicherheitsupdates, Abhängigkeiten, die seit Jahren nicht mehr gepflegt werden &mdash; dazu die Pipelines und DevOps-Prozesse drumherum, die gerade nach AWS umziehen. Alter Code, auf den sich viele Leute stillschweigend verlassen, ist auf seine ganz eigene Art interessant.",
+      "it": "msgGillardonBSM è confluita in msg for banking AG, quindi con il nuovo anno il mio datore di lavoro ha cambiato nome, mentre il lavoro è andato avanti senza interruzioni. Ora sono Senior IT Consultant.<br> Il nuovo incarico è la piattaforma regolamentare IFRS 9 di Porsche Bank: un codebase Java EE di lunga vita da ammodernare &mdash; refactoring, aggiornamenti di sicurezza, dipendenze non più mantenute da anni &mdash; insieme alle pipeline e ai processi DevOps che gli stanno intorno, che si stanno spostando su AWS. Il codice vecchio su cui tante persone contano in silenzio è interessante a modo suo."
+    },
     "img_link": "/img/project-ledger-book.jpg"
   },
   {
     "id": 20,
-    "title": "Moving servers again, only this time they are not mine",
+    "title": {
+      "en": "Moving servers again, only this time they are not mine",
+      "de": "Wieder ein Server-Umzug, nur sind es diesmal nicht meine",
+      "it": "Di nuovo un trasloco di server, solo che stavolta non sono miei"
+    },
     "release_date": "2024-05-20 17:40:00",
-    "description_text": "Five years ago I moved my own servers and wrote about it here. This time it is the company's: both GitLab build agents into AWS, against a fixed cut-over date, with four projects building on them throughout.<br> The real constraint was corporate security and compliance &mdash; the setup has to satisfy them before it satisfies me. It went over on the date, and what came out of it is a reusable Terraform template the next runner can be built from, rather than a runbook nobody reads.",
+    "description_text": {
+      "en": "Five years ago I moved my own servers and wrote about it here. This time it is the company's: the GitLab build agents into AWS, against a fixed cut-over date, with several teams building on them throughout.<br> The real constraint was corporate security and compliance &mdash; the setup has to satisfy them before it satisfies me. It went over on the date, and what came out of it is a reusable Terraform template the next runner can be built from, rather than a runbook nobody reads.",
+      "de": "Vor fünf Jahren habe ich meine eigenen Server umgezogen und hier darüber geschrieben. Diesmal sind es die der Firma: die GitLab-Build-Agents nach AWS, gegen einen fixen Stichtag, während mehrere Teams die ganze Zeit darauf gebaut haben.<br> Die eigentliche Randbedingung waren die Sicherheits- und Compliance-Vorgaben des Unternehmens &mdash; das Setup muss erst sie zufriedenstellen, bevor es mich zufriedenstellt. Der Wechsel ging zum Stichtag über die Bühne, und herausgekommen ist ein wiederverwendbares Terraform-Template, aus dem sich der nächste Runner bauen lässt, statt eines Runbooks, das niemand liest.",
+      "it": "Cinque anni fa ho traslocato i miei server e ne ho scritto qui. Stavolta sono quelli dell'azienda: i build agent GitLab su AWS, con una data di cut-over fissa e diversi team che ci hanno fatto girare le build per tutto il tempo.<br> Il vero vincolo erano la sicurezza e la compliance aziendali &mdash; il setup deve soddisfare loro prima di soddisfare me. Il passaggio è avvenuto alla data prevista, e ne è uscito un template Terraform riutilizzabile da cui costruire il prossimo runner, invece di un runbook che nessuno legge."
+    },
     "img_link": "/img/news-shipping-containers.jpg"
   },
   {
     "id": 21,
-    "title": "Paying with a euro that does not exist yet",
+    "title": {
+      "en": "Paying with a euro that does not exist yet",
+      "de": "Bezahlen mit einem Euro, den es noch nicht gibt",
+      "it": "Pagare con un euro che non esiste ancora"
+    },
     "release_date": "2025-01-20 18:00:00",
-    "description_text": "New project: a showcase application for the digital euro at Pioneer Investments &mdash; a synchronised payment application, a companion mobile app, and a tested client for the ECB's REST APIs.<br> Team of six, and two junior developers are my responsibility this time, not someone else's. I ran the requirements gathering with the business department and owned the process design and documentation for both sides: the client, who has to recognise their own process in it, and the developers, who have to build from it.",
+    "description_text": {
+      "en": "New project: a showcase application for the digital euro at Pioneer Investments &mdash; a synchronised payment application, a companion mobile app, and a tested client for the ECB's REST APIs.<br> Team of six, and two junior developers are my responsibility this time, not someone else's. I ran the requirements gathering with the business department and owned the process design and documentation for both sides: the client, who has to recognise their own process in it, and the developers, who have to build from it.",
+      "de": "Neues Projekt: eine Showcase-Anwendung für den digitalen Euro bei Pioneer Investments &mdash; eine synchronisierte Bezahlanwendung, eine begleitende mobile App und ein getesteter Client für die REST-APIs der EZB.<br> Sechs Leute im Team, und zwei Juniorentwickler liegen diesmal in meiner Verantwortung, nicht in der von jemand anderem. Ich habe die Anforderungsaufnahme mit dem Fachbereich durchgeführt und war für Prozesskonzeption und Dokumentation für beide Seiten verantwortlich: für den Kunden, der seinen eigenen Prozess darin wiedererkennen muss, und für die Entwickler, die auf dieser Grundlage bauen müssen.",
+      "it": "Nuovo progetto: un'applicazione showcase per l'euro digitale presso Pioneer Investments &mdash; un'applicazione di pagamento sincronizzata, la relativa app mobile e un client testato per le API REST della BCE.<br> Team di sei persone, e stavolta due sviluppatori junior sono una mia responsabilità, non di qualcun altro. Ho condotto la raccolta dei requisiti con l'unità di business e avevo la responsabilità della progettazione dei processi e della documentazione per entrambe le parti: il cliente, che ci deve ritrovare il proprio processo, e gli sviluppatori, che devono costruire a partire da lì."
+    },
     "img_link": "/img/project-financial-charts.jpg"
   },
   {
     "id": 22,
-    "title": "Out of Excel, into production",
+    "title": {
+      "en": "Out of Excel, into production",
+      "de": "Raus aus Excel, rein in die Produktion",
+      "it": "Via da Excel, dritti in produzione"
+    },
     "release_date": "2025-08-18 19:30:00",
-    "description_text": "After two months on BSI's CRM customer platforms &mdash; Spring and Oracle behind an Angular front end, kept current in two-person teams &mdash; I am on something with a longer horizon.<br> A public-sector client in the German healthcare system is replacing long-established Excel-based processes with a real web application: objection procedures and claims for damages arising out of settlement. Spring Boot, Vue 3 with Pinia, the whole system on Kubernetes, in a team of four.<br><br>The part worth writing down is how it gets built. AI-assisted engineering is a standing part of delivery here rather than a side experiment: GitHub Copilot and Claude in the daily loop, agentic workflows I built for the work that keeps recurring, and &mdash; the bit I actually care about &mdash; getting the two junior developers genuinely good at both.",
+    "description_text": {
+      "en": "After two months on BSI's CRM customer platforms &mdash; Spring and Oracle behind an Angular front end, kept current in two-person teams &mdash; I am on something with a longer horizon.<br> A public-sector client in the German healthcare system is replacing long-established Excel-based processes with a real web application: objection procedures and claims for damages arising out of settlement. Spring Boot, Vue 3 with Pinia, the whole system on Kubernetes, in a team of four.<br><br>The part worth writing down is how it gets built. AI-assisted engineering is a standing part of delivery here rather than a side experiment: GitHub Copilot in the daily loop, agentic workflows I built for the work that keeps recurring, and &mdash; the bit I actually care about &mdash; getting the two junior developers genuinely good at both.",
+      "de": "Nach zwei Monaten an den BSI-CRM-Kundenplattformen &mdash; Spring und Oracle hinter einem Angular-Frontend, in Zweierteams aktuell gehalten &mdash; bin ich jetzt an etwas mit längerem Horizont dran.<br> Ein öffentlicher Auftraggeber im deutschen Gesundheitswesen löst langjährig gewachsene Excel-Prozesse durch eine echte Webanwendung ab: Widerspruchsverfahren und Ansprüche wegen sonstiger Schäden aus der Abrechnung. Spring Boot, Vue 3 mit Pinia, das ganze System auf Kubernetes, in einem Viererteam.<br><br>Was sich aufzuschreiben lohnt, ist, wie sie gebaut wird. KI-gestützte Entwicklung ist hier fester Bestandteil der Lieferung und kein Nebenexperiment: GitHub Copilot im täglichen Ablauf, agentische Workflows, die ich für die immer wiederkehrende Arbeit gebaut habe, und &mdash; der Teil, der mir wirklich wichtig ist &mdash; die beiden Juniorentwickler in beidem richtig fit zu machen.",
+      "it": "Dopo due mesi sulle piattaforme cliente CRM di BSI &mdash; Spring e Oracle dietro un frontend Angular, tenute aggiornate in team di due persone &mdash; sono su qualcosa con un orizzonte più lungo.<br> Un committente pubblico del sistema sanitario tedesco sta sostituendo processi Excel consolidati da anni con una vera applicazione web: procedimenti di ricorso e richieste di risarcimento per danni derivanti dalla liquidazione. Spring Boot, Vue 3 con Pinia, l'intero sistema su Kubernetes, in un team di quattro.<br><br>La parte che vale la pena mettere per iscritto è come viene costruita. Qui lo sviluppo assistito dall'IA è parte stabile della consegna, non un esperimento a margine: GitHub Copilot nel flusso quotidiano, workflow agentici che ho costruito per il lavoro che si ripete, e &mdash; la parte che mi sta davvero a cuore &mdash; far diventare i due sviluppatori junior davvero bravi in entrambe le cose."
+    },
     "img_link": "/img/project-invoice-form.jpg"
   },
   {
     "id": 23,
-    "title": "Still the architect",
+    "title": {
+      "en": "Still the architect",
+      "de": "Immer noch der Architekt",
+      "it": "Sempre l'architetto"
+    },
     "release_date": "2026-04-21 20:05:00",
-    "description_text": "Recertified: AWS Certified Solutions Architect &ndash; Associate, valid until April 2029.<br> Three years and change since the first badge, and the exam has aged better than I expected &mdash; most of what it asks about is what I have been doing since anyway: Lambda and DynamoDB, VPCs and Route 53, Fargate, and the pipelines that put things there. Good to have it in writing again.",
+    "description_text": {
+      "en": "Recertified: AWS Certified Solutions Architect &ndash; Associate, valid until April 2029.<br> Three years and change since the first badge, and the exam has aged better than I expected &mdash; most of what it asks about is what I have been doing since anyway: Lambda and DynamoDB, VPCs and Route 53, Fargate, and the pipelines that put things there. Good to have it in writing again.",
+      "de": "Rezertifiziert: AWS Certified Solutions Architect &ndash; Associate, gültig bis April 2029.<br> Gut drei Jahre seit dem ersten Badge, und die Prüfung ist besser gealtert, als ich erwartet hatte &mdash; das meiste, was sie abfragt, mache ich seitdem sowieso: Lambda und DynamoDB, VPCs und Route 53, Fargate und die Pipelines, die die Dinge dorthin bringen. Schön, das wieder schwarz auf weiß zu haben.",
+      "it": "Ricertificato: AWS Certified Solutions Architect &ndash; Associate, valido fino ad aprile 2029.<br> Poco più di tre anni dal primo badge, e l'esame è invecchiato meglio di quanto mi aspettassi &mdash; la maggior parte di ciò che chiede è roba che faccio comunque da allora: Lambda e DynamoDB, VPC e Route 53, Fargate e le pipeline che ci portano le cose. Bello riaverlo nero su bianco."
+    },
     "img_link": "/img/news-gold-medal.jpg"
   },
   {
     "id": 24,
-    "title": "Same story, told properly this time",
+    "title": {
+      "en": "Same story, told properly this time",
+      "de": "Dieselbe Geschichte, diesmal richtig erzählt",
+      "it": "Stessa storia, stavolta raccontata come si deve"
+    },
     "release_date": "2026-09-08 18:00:00",
-    "description_text": "My CV and this website had quietly drifted apart over the years &mdash; different dates, different job titles, even a different school. They now tell the same story, and the CV exists in English, German and Italian. <br> Thirteen years, from Delphi at 3Points to AWS, pipelines and leading developers at msg for banking. The project list on this site is finally up to date again as well.",
+    "description_text": {
+      "en": "My CV and this website had quietly drifted apart over the years &mdash; different dates, different job titles, even a different school. They now tell the same story, and the CV exists in English, German and Italian. <br> Thirteen years, from Delphi at 3Points to AWS, pipelines and leading developers at msg for banking. The project list on this site is finally up to date again as well.",
+      "de": "Mein Lebenslauf und diese Website hatten sich über die Jahre still und leise auseinanderentwickelt &mdash; andere Daten, andere Jobtitel, sogar eine andere Schule. Jetzt erzählen sie dieselbe Geschichte, und den Lebenslauf gibt es auf Englisch, Deutsch und Italienisch. <br> Dreizehn Jahre, von Delphi bei 3Points bis zu AWS, Pipelines und Teamverantwortung für Entwickler bei msg for banking. Die Projektliste auf dieser Seite ist endlich auch wieder aktuell.",
+      "it": "Il mio CV e questo sito si erano allontanati in silenzio nel corso degli anni &mdash; date diverse, job title diversi, perfino una scuola diversa. Ora raccontano la stessa storia, e il CV esiste in inglese, tedesco e italiano. <br> Tredici anni, da Delphi in 3Points ad AWS, pipeline e la guida di sviluppatori in msg for banking. Anche l'elenco dei progetti su questo sito è finalmente di nuovo aggiornato."
+    },
     "img_link": "/img/news-blogging-desk.jpg"
   },
   {
     "id": 25,
-    "title": "I gave my trading bot a review board",
+    "title": {
+      "en": "I gave my trading bot a review board",
+      "de": "Ich habe meinem Trading-Bot ein Review-Board verpasst",
+      "it": "Ho dato un comitato di revisione al mio bot di trading"
+    },
     "release_date": "2026-09-09 15:00:00",
-    "description_text": "I built <a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\">PlayCryptoWithAI</a> to learn agentic architecture properly. It trades 37 Binance pairs unattended in Docker, and it works, which still surprises me.<br><br>The bot isn't the interesting part. It has <b>eleven reviewing agents</b> — risk, security, backtest, pre-commit, project — and their rules were written by my own outages. When a silent price-mark freeze and a phantom-position bug each mis-stated my live equity, the fix wasn't only the patch: the root cause became a rule that gets checked on every change from then on. The patch fixes the instance; the rule fixes the class.<br><br>Two things I'd tell anyone pointing agents at code that matters. Reviewers get <i>read-only</i> tools — an agent that can edit is an agent that can quietly make a problem disappear instead of reporting it. And prefer reproducible numbers over impressive ones: I deleted a better-looking backtest result because I couldn't reproduce it exactly, which made it an anecdote rather than a result.<br><br>Written up in full in <code>writing/agentic-review-board.md</code>, and the <code>.claude/</code> directory is public in the repo if you want to steal from it.",
+    "description_text": {
+      "en": "I built <a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\" rel=\"noopener noreferrer\">PlayCryptoWithAI</a> to learn agentic architecture properly. It trades 37 Binance pairs unattended in Docker, and it works, which still surprises me.<br><br>The bot isn't the interesting part. It has <b>eleven agents</b>, and the reviewers among them — risk, security, backtest, pre-commit, project — have rules that were written by my own outages. When a silent price-mark freeze and a phantom-position bug each mis-stated my live equity, the fix wasn't only the patch: the root cause became a rule that gets checked on every change from then on. The patch fixes the instance; the rule fixes the class.<br><br>Two things I'd tell anyone pointing agents at code that matters. Reviewers get <i>read-only</i> tools — an agent that can edit is an agent that can quietly make a problem disappear instead of reporting it. And prefer reproducible numbers over impressive ones: I deleted a better-looking backtest result because I couldn't reproduce it exactly, which made it an anecdote rather than a result.<br><br>Written up in full in <code>writing/agentic-review-board.md</code>, and the <code>.claude/</code> directory is public in the repo if you want to steal from it.",
+      "de": "Ich habe <a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\" rel=\"noopener noreferrer\">PlayCryptoWithAI</a> gebaut, um agentische Architektur richtig zu lernen. Es handelt 37 Binance-Paare unbeaufsichtigt in Docker, und es funktioniert, was mich immer noch überrascht.<br><br>Der Bot ist nicht der interessante Teil. Er hat <b>elf Agenten</b>, und die Reviewer unter ihnen — Risiko, Security, Backtest, Pre-Commit, Projekt — haben Regeln, die meine eigenen Ausfälle geschrieben haben. Als ein stilles Einfrieren des Mark-Preises und ein Bug mit Phantom-Positionen jeweils meine Live-Equity falsch ausgewiesen haben, war der Fix nicht nur der Patch: Die eigentliche Ursache wurde zu einer Regel, die ab da bei jeder Änderung geprüft wird. Der Patch behebt den Einzelfall; die Regel behebt die ganze Klasse.<br><br>Zwei Dinge würde ich jedem sagen, der Agenten auf Code loslässt, auf den es ankommt. Reviewer bekommen Tools mit <i>reinen Leserechten</i> — ein Agent, der editieren kann, ist ein Agent, der ein Problem still und leise verschwinden lassen kann, statt es zu melden. Und lieber reproduzierbare Zahlen als beeindruckende: Ich habe ein besser aussehendes Backtest-Ergebnis gelöscht, weil ich es nicht exakt reproduzieren konnte, und damit war es eine Anekdote statt eines Ergebnisses.<br><br>Ausführlich aufgeschrieben in <code>writing/agentic-review-board.md</code>, und das Verzeichnis <code>.claude/</code> ist öffentlich im Repo, falls ihr euch daraus etwas klauen wollt.",
+      "it": "Ho costruito <a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\" rel=\"noopener noreferrer\">PlayCryptoWithAI</a> per imparare come si deve l'architettura agentica. Fa trading su 37 coppie di Binance senza sorveglianza, in Docker, e funziona, cosa che ancora mi sorprende.<br><br>Il bot non è la parte interessante. Ha <b>undici agenti</b>, e i revisori tra loro — rischio, sicurezza, backtest, pre-commit, progetto — hanno regole scritte dai miei stessi incidenti. Quando un congelamento silenzioso del mark price e un bug con posizioni fantasma hanno falsato ciascuno la mia equity live, la correzione non è stata solo la patch: la causa di fondo è diventata una regola che da lì in poi viene verificata a ogni modifica. La patch corregge il caso singolo; la regola corregge l'intera classe.<br><br>Due cose che direi a chiunque metta degli agenti al lavoro su codice che conta. I revisori ricevono strumenti in <i>sola lettura</i> — un agente che può modificare è un agente che può far sparire un problema in silenzio invece di segnalarlo. E meglio numeri riproducibili che numeri impressionanti: ho cancellato un risultato di backtest più bello perché non riuscivo a riprodurlo esattamente, il che lo rendeva un aneddoto e non un risultato.<br><br>Il resoconto completo è in <code>writing/agentic-review-board.md</code>, e la directory <code>.claude/</code> è pubblica nel repo, se volete rubarci qualcosa."
+    },
     "img_link": "/img/project-jacquard-loom.jpg"
   }
 ]

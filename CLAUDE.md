@@ -8,7 +8,9 @@ https://cv.colarietitosti.info/ and public at github.com/colla69/CVHost.
 - `frontend/` holds the entire application. Run npm from the repo root as
   `npm --prefix frontend run <script>` — no `cd` needed.
 - `frontend/src/components/` — one folder per page area: `CV/`, `news/`, `projectInfos/`, `Contact/`,
-  plus top-level `Home.vue`, `Menu.vue` (app bar + drawer) and `SiteFooter.vue`.
+  plus top-level `Home.vue`, `Menu.vue` (app bar, drawer, theme and language switch) and `SiteFooter.vue`.
+- `frontend/src/i18n.js` — the language module; see "Languages" below. `frontend/src/nav.js` — the page
+  list with its translated labels, shared by the app bar, drawer and footer.
 - `frontend/public/fonts/` — the three self-hosted variable typefaces. Never swap these for a Google
   Fonts CDN link: it would send every visitor's IP to Google, which this site deliberately avoids.
 - `frontend/public/data/` — CV PDFs, certificates and images, served as static files.
@@ -48,29 +50,57 @@ client — the backend was deleted in `8dd7cd4` and every byte the site serves s
 
 ## Where content lives
 
-Adding a news post or a project is a data edit, not a markup edit:
+Adding a news post or a project is a data edit, not a markup edit — and needs the text in all three
+languages (see "Languages"):
 
 - News → `src/components/news/news.json`. The component reverses the array, so entries render
-  newest-first; keep `id` ascending and unique. `description_text` renders through `v-html`.
-- Projects → `src/components/projectInfos/project_infos.json`. `client` is the end customer (distinct
-  from `company_name`, the employer) and is omitted where no source states it. `featured: true` puts an
-  entry in the "Selected work" table on the home page — that table is curated by this flag, not by date.
+  newest-first; keep `id` ascending and unique. `title` and `description_text` are `{ en, de, it }`
+  maps; `description_text` renders through `v-html`.
+- Projects → `src/components/projectInfos/project_infos.json`. `description` and `role_name` are
+  `{ en, de, it }` maps, as are `client`, `lang`, `Name` and `company_name` where they are words rather
+  than names.
+  `client` is the end customer (distinct from `company_name`, the employer) and is omitted where no
+  source states it. `featured: true` puts an entry in the "Selected work" table on the home page — that
+  table is curated by this flag, not by date.
 - Images → all local under `public/img/`, credited in `public/img/CREDITS.md`. Nothing is hot-linked;
   keep it that way, and add a CREDITS row for anything new.
 - Certificates → the `qualifications` array in `src/components/CV/Qualifications.vue`. Every entry needs
   `filename` (a PDF in `public/data/`) plus `issuer`, `year` and `group`, and a matching thumbnail at
   `public/img/certs/<name>.jpg`, rendered from the PDF with
   `magick -density 72 "data/X.pdf[0]" -background white -alpha remove -resize 520x -quality 76 img/certs/X.jpg`.
-  Verify both files exist — a typo renders a broken tile.
-- Bio, languages, work history → hardcoded in the matching `src/components/CV/*.vue`.
+  Verify both files exist — a typo renders a broken tile. `group` is an English filter key; only its
+  heading is translated.
+- Bio, languages, work history, education → the `COPY` blocks and lists in the matching
+  `src/components/CV/*.vue`.
 
-`CV/CV.md` (outside `frontend/`) is the master CV document, kept by hand. It tells the same story as the
-`CV/` components and `project_infos.json`, and the two drift apart — the site is years older. Lines
-starting with `>` in it are working notes, not CV content. Changing the story on one side means checking
-the other; `cv-strategist` owns that.
+`CV/CV.md` (outside `frontend/`) is the master CV document, kept by hand; `CV/CV-de.md` and
+`CV/CV-it.md` are derived from it and updated together. They tell the same story as the `CV/`
+components and `project_infos.json`, and the sides drift apart. Lines starting with `>` in the CV are
+working notes, not CV content. Changing the story on one side means checking the other; `cv-strategist`
+owns that.
 
 `v-html` on those strings is fine only because the owner authors them by hand. Never route anything from
 outside the repo into it.
+
+## Languages
+
+The site is in English, German and Italian. There is no `vue-i18n` — its message syntax treats `@ { } |`
+as special, which breaks prose and the email address — just `src/i18n.js`:
+
+- The language is an explicit choice from the switcher in `Menu.vue`, stored as `lg-lang` like the
+  theme's `lg-theme`; else the first supported entry of `navigator.languages`; else English. It is not
+  in the URL, so routes and CloudFront are unaffected, and crawlers and link previews see English.
+- Components read `this.$lang` (`code`, and `language` with its `cv` PDF and `dates` locale) and
+  `this.$tr`. Never hard-code a CV path or a date locale.
+- Page copy lives in a per-component `COPY = { en, de, it }` block, read through
+  `computed: { t () { return pick(COPY) } }`. Data lists and the content JSON keep one list and turn only
+  the language-dependent fields into `{ en, de, it }` maps, read with `$tr()`. `COPY` values stay flat
+  (strings and functions), and page names come only from `PAGES` in `src/nav.js`.
+- Missing translations — a whole block or a single key — fall back to English. Dev builds warn in the
+  console (`[i18n]`, once per message) on each fallback — that is the completeness check. Scoped CSS needs `:deep()` to reach `v-html` prose; a `<router-link>` never
+  goes inside `v-html`.
+- `vue-expert` builds structure and writes English; `cv-strategist` writes German and Italian, editing
+  text values only. `.claude/agents/vue-expert.md` has the full rules.
 
 ## Routing and hosting
 
@@ -139,7 +169,8 @@ Six specialists live in `.claude/agents/`, each carrying deeper context than thi
 - `unit-tester` — tests; knows no harness exists and must agree on one before installing anything
 - `code-quality-reviewer` — read-only review of a diff or branch; reports, does not edit
 - `aws-deployer` — hosting and deployment; confirms before any mutating AWS call
-- `cv-strategist` — the CV as a document: story, wording, recruiter/ATS keywords, and whether `CV/CV.md`
-  and the site still agree. Edits `CV/CV.md` only; site fixes go to `vue-expert`
+- `cv-strategist` — the CV as a document: story, wording, recruiter/ATS keywords, and whether the CV
+  and the site still agree, in all three languages. Edits the `CV/` markdown and writes the site's German
+  and Italian text (text values only); every other site fix goes to `vue-expert`
 - `job-scout` — finds and vets remote permanent and freelance roles, scores them against the CV, keeps
   the history in `jobs/`. Never applies or contacts anyone

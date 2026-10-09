@@ -4,27 +4,15 @@
     <!-- ── Hero ──────────────────────────────────────────────── -->
     <section class="hero lg-page">
       <div class="lg-inner">
-        <p class="lg-eyebrow">Senior IT Consultant &middot; Tech Lead &middot; München</p>
+        <p class="lg-eyebrow">{{ t.eyebrow }}</p>
         <h1 class="lg-display hero-name">Andrea Colarieti&nbsp;Tosti</h1>
-        <p class="lg-prose hero-pitch">
-          <b>{{ yearsEngineering }} years</b> building software, with one habit underneath most of it:
-          understand a system well enough to see its structure, then encode that structure once so the
-          manual work &mdash; or the vigilance &mdash; never has to happen again.
-        </p>
-        <p class="lg-prose hero-ai">
-          Hand-assembled releases became an automated delivery system. A one-off cloud migration also
-          produced the reusable template for every migration after it. Recurring engineering work
-          became <b>a set of agents that now do it</b>.
-        </p>
-        <p class="lg-prose hero-seeking">
-          {{ yearsConsulting }} years of that as a consultant for Porsche, BMW Financial Services,
-          Volkswagen Financial Services, Krones and the German public sector. Looking for work with
-          end-to-end ownership of a system &mdash; where whoever designs it keeps it, and where making
-          the right thing automatic is part of the job rather than something done in the gaps.
-        </p>
+        <!-- Hand-authored copy from COPY below; never external input. -->
+        <p class="lg-prose hero-pitch" v-html="t.pitch(yearsEngineering)"></p>
+        <p class="lg-prose hero-ai" v-html="t.agents"></p>
+        <p class="lg-prose hero-seeking">{{ t.seeking(yearsConsulting) }}</p>
         <div class="hero-cta">
-          <v-btn href="/data/CV_en.pdf" download size="large" variant="flat" color="primary">
-            Download CV
+          <v-btn :href="$lang.language.cv" download size="large" variant="flat" color="primary">
+            {{ t.downloadCv }}
           </v-btn>
           <v-btn
             href="mailto:a.colarietitosti@googlemail.com"
@@ -32,7 +20,7 @@
             variant="outlined"
             class="btn-quiet"
           >
-            Get in touch
+            {{ t.getInTouch }}
           </v-btn>
         </div>
       </div>
@@ -41,8 +29,8 @@
     <!-- ── Clients ───────────────────────────────────────────── -->
     <section class="strip lg-page">
       <div class="lg-inner strip-inner">
-        <span class="strip-label">Delivered for</span>
-        <span v-for="name in clients" :key="name" class="strip-item">{{ name }}</span>
+        <span class="strip-label">{{ t.deliveredFor }}</span>
+        <span v-for="client in clients" :key="$tr(client)" class="strip-item">{{ $tr(client) }}</span>
       </div>
     </section>
 
@@ -60,18 +48,18 @@
     <section class="band lg-page">
       <div class="lg-inner">
         <div class="band-head">
-          <h2 class="lg-heading">Selected work</h2>
+          <h2 class="lg-heading">{{ t.selectedWork }}</h2>
           <router-link to="/projectInfos" class="band-more">
-            All {{ projectCount }} projects
+            {{ t.allProjects(projectCount) }}
             <v-icon icon="mdi-arrow-right" size="16"></v-icon>
           </router-link>
         </div>
 
         <ul class="worklist">
           <li v-for="project in featured" :key="project.id" class="work">
-            <span class="work-title">{{ project.Name }}</span>
-            <span class="work-client">{{ project.client || project.company_name }}</span>
-            <span class="work-stack">{{ project.lang }}</span>
+            <span class="work-title">{{ $tr(project.Name) }}</span>
+            <span class="work-client">{{ $tr(project.client || project.company_name) }}</span>
+            <span class="work-stack">{{ $tr(project.lang) }}</span>
             <span class="work-years lg-tnum">{{ years(project) }}</span>
           </li>
         </ul>
@@ -82,18 +70,18 @@
     <section class="band lg-page">
       <div class="lg-inner">
         <div class="band-head">
-          <h2 class="lg-heading">Latest notes</h2>
+          <h2 class="lg-heading">{{ t.latestNotes }}</h2>
           <router-link to="/news" class="band-more">
-            All notes
+            {{ t.allNotes }}
             <v-icon icon="mdi-arrow-right" size="16"></v-icon>
           </router-link>
         </div>
 
         <div class="notes">
           <article v-for="item in latestNotes" :key="item.id" class="note">
-            <v-img :src="item.img_link" :alt="item.title" height="150" cover class="note-img"></v-img>
+            <v-img :src="item.img_link" :alt="$tr(item.title)" height="150" cover class="note-img"></v-img>
             <p class="note-date lg-tnum">{{ noteDate(item.release_date) }}</p>
-            <h3 class="note-title">{{ item.title }}</h3>
+            <h3 class="note-title">{{ $tr(item.title) }}</h3>
           </article>
         </div>
       </div>
@@ -103,18 +91,15 @@
     <section class="closer lg-page">
       <div class="lg-inner closer-inner">
         <div>
-          <h2 class="lg-heading">Hiring for a tech lead role?</h2>
-          <p class="lg-prose closer-text">
-            The full CV is one download, in English, German or Italian. Certificates and references
-            are on the site as well.
-          </p>
+          <h2 class="lg-heading">{{ t.closerHeading }}</h2>
+          <p class="lg-prose closer-text">{{ t.closerText }}</p>
         </div>
         <div class="hero-cta">
-          <v-btn href="/data/CV_en.pdf" download size="large" variant="flat" color="primary">
-            Download CV
+          <v-btn :href="$lang.language.cv" download size="large" variant="flat" color="primary">
+            {{ t.downloadCv }}
           </v-btn>
           <v-btn to="/contact" size="large" variant="outlined" class="btn-quiet">
-            Contact
+            {{ $tr(contactLabel) }}
           </v-btn>
         </div>
       </div>
@@ -124,6 +109,8 @@
 </template>
 
 <script>
+import { pick } from '@/i18n'
+import { pageLabel } from '@/nav'
 import projects from '@/components/projectInfos/project_infos.json'
 import news from '@/components/news/news.json'
 
@@ -131,6 +118,96 @@ import news from '@/components/news/news.json'
 // page from quietly going stale the way the old hardcoded copy did.
 const CAREER_START = 2013
 const CONSULTING_START = 2021
+
+// pitch and agents are HTML (rendered with v-html); the rest is plain text.
+const COPY = {
+  en: {
+    eyebrow: 'Senior IT Consultant · Tech Lead · München',
+    pitch: n => '<b>' + n + ' years</b> building software, with one habit underneath most of ' +
+      'it: understand a system well enough to see its structure, then encode that structure ' +
+      'once so the manual work — or the vigilance — never has to happen again.',
+    agents: 'Hand-assembled releases became an automated delivery system. A one-off cloud ' +
+      'migration also produced the reusable template for every migration after it. Recurring ' +
+      'engineering work became <b>a set of agents that now do it</b>.',
+    seeking: n => n + ' years of that as a consultant for Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones and a public-sector client in healthcare. Looking ' +
+      'for work with end-to-end ownership of a system — where whoever designs it keeps it, and ' +
+      'where making the right thing automatic is part of the job rather than something done in ' +
+      'the gaps.',
+    downloadCv: 'Download CV',
+    getInTouch: 'Get in touch',
+    deliveredFor: 'Delivered for',
+    yearsEngineering: 'Years engineering',
+    yearsConsulting: 'Years consulting',
+    clientsAndTeams: 'Clients & teams',
+    awsArchitect: 'AWS certified architect',
+    selectedWork: 'Selected work',
+    allProjects: n => 'All ' + n + ' projects',
+    latestNotes: 'Latest notes',
+    allNotes: 'All notes',
+    closerHeading: 'Hiring for a tech lead role?',
+    closerText: 'The full CV is one download, in English, German or Italian. Certificates and ' +
+      'references are on the site as well.'
+  },
+  de: {
+    eyebrow: 'Senior IT Consultant · Tech Lead · München',
+    pitch: n => '<b>' + n + ' Jahre</b> Softwareentwicklung — und darunter fast immer dieselbe ' +
+      'Bewegung: ein System so weit durchdringen, dass seine Struktur sichtbar wird, und diese ' +
+      'Struktur einmal festschreiben, damit die Handarbeit — oder die Wachsamkeit — danach nicht ' +
+      'mehr nötig ist.',
+    agents: 'Aus von Hand zusammengestellten Releases wurde ein automatisiertes ' +
+      'Auslieferungssystem. Aus einer einmaligen Cloud-Migration wurde zusätzlich die ' +
+      'wiederverwendbare Vorlage für jede weitere. Aus wiederkehrender Entwicklungsarbeit wurden ' +
+      '<b>Agenten, die sie heute erledigen</b>.',
+    seeking: n => n + ' dieser Jahre als Consultant für Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones und einen öffentlichen Auftraggeber im ' +
+      'Gesundheitswesen. Ich suche Arbeit mit End-to-End-Verantwortung für ein System — wo ' +
+      'diejenigen, die es entwerfen, es auch behalten, und wo es zur Aufgabe gehört, das Richtige ' +
+      'automatisch zu machen statt nebenbei.',
+    downloadCv: 'Lebenslauf herunterladen',
+    getInTouch: 'Kontakt aufnehmen',
+    deliveredFor: 'Projekte für',
+    yearsEngineering: 'Jahre Entwicklung',
+    yearsConsulting: 'Jahre Beratung',
+    clientsAndTeams: 'Kunden & Teams',
+    awsArchitect: 'AWS-zertifizierter Architekt',
+    selectedWork: 'Ausgewählte Projekte',
+    allProjects: n => 'Alle ' + n + ' Projekte',
+    latestNotes: 'Neueste Notizen',
+    allNotes: 'Alle Notizen',
+    closerHeading: 'Sie suchen einen Tech Lead?',
+    closerText: 'Der vollständige Lebenslauf ist ein einziger Download, auf Englisch, Deutsch oder ' +
+      'Italienisch. Zeugnisse und Zertifikate finden Sie ebenfalls hier auf der Website.'
+  },
+  it: {
+    eyebrow: 'Senior IT Consultant · Tech Lead · Monaco di Baviera',
+    pitch: n => '<b>' + n + ' anni</b> di sviluppo software e, alla base di quasi tutto, la stessa ' +
+      'mossa: capire un sistema abbastanza a fondo da vederne la struttura, e poi scrivere quella ' +
+      'struttura una volta sola, così che il lavoro manuale — o l’attenzione costante — non serva più.',
+    agents: 'Da release assemblate a mano è nato un sistema di consegna automatico. Da una ' +
+      'migrazione cloud una tantum è nato anche il modello riutilizzabile per tutte quelle ' +
+      'successive. Dal lavoro di sviluppo ricorrente sono nati <b>agenti che oggi lo svolgono</b>.',
+    seeking: n => n + ' di quegli anni come consulente per Porsche, BMW Financial Services, ' +
+      'Volkswagen Financial Services, Krones e un committente pubblico nella sanità. Cerco ' +
+      'lavoro con responsabilità end-to-end su un sistema — dove chi lo progetta se lo tiene, e ' +
+      'dove rendere automatica la cosa giusta fa parte del mestiere invece di essere qualcosa ' +
+      'fatto nei ritagli di tempo.',
+    downloadCv: 'Scarica il CV',
+    getInTouch: 'Mi contatti',
+    deliveredFor: 'Progetti per',
+    yearsEngineering: 'Anni di sviluppo',
+    yearsConsulting: 'Anni di consulenza',
+    clientsAndTeams: 'Clienti e team',
+    awsArchitect: 'Architetto certificato AWS',
+    selectedWork: 'Progetti selezionati',
+    allProjects: n => 'Tutti i ' + n + ' progetti',
+    latestNotes: 'Note recenti',
+    allNotes: 'Tutte le note',
+    closerHeading: 'Sta cercando un Tech Lead?',
+    closerText: 'Il CV completo è un unico download, in inglese, tedesco o italiano. Sul sito trova ' +
+      'anche certificati e referenze.'
+  }
+}
 
 export default {
   name: 'Home',
@@ -140,6 +217,7 @@ export default {
       yearsEngineering: thisYear - CAREER_START,
       yearsConsulting: thisYear - CONSULTING_START,
       projectCount: projects.length,
+      contactLabel: pageLabel('/contact'),
       clients: [
         'Porsche',
         'BMW Financial Services',
@@ -148,7 +226,7 @@ export default {
         'Techem',
         'Schwarz IT',
         'Pioneer Investments',
-        'Public sector · healthcare'
+        { en: 'Public sector · healthcare', de: 'Öffentlicher Sektor · Gesundheitswesen', it: 'Settore pubblico · sanità' }
       ],
       // Slice before reverse: the JSON import is a shared module-level array.
       featured: projects
@@ -159,12 +237,15 @@ export default {
     }
   },
   computed: {
+    t () {
+      return pick(COPY)
+    },
     figures () {
       return [
-        { value: this.yearsEngineering, label: 'Years engineering' },
-        { value: this.yearsConsulting, label: 'Years consulting' },
-        { value: '20+', label: 'Clients & teams' },
-        { value: 'SA–A', label: 'AWS certified architect' }
+        { value: this.yearsEngineering, label: this.t.yearsEngineering },
+        { value: this.yearsConsulting, label: this.t.yearsConsulting },
+        { value: '20+', label: this.t.clientsAndTeams },
+        { value: 'SA–A', label: this.t.awsArchitect }
       ]
     }
   },
@@ -176,7 +257,7 @@ export default {
       return start === end ? String(start) : start + '—' + String(end).slice(2)
     },
     noteDate (value) {
-      return new Date(value).toLocaleDateString('en-GB', { year: 'numeric', month: 'short' })
+      return new Date(value).toLocaleDateString(this.$lang.language.dates, { year: 'numeric', month: 'short' })
     }
   }
 }
@@ -201,7 +282,7 @@ export default {
   margin: 0 0 1rem;
 }
 
-.hero-pitch b {
+.hero-pitch :deep(b) {
   color: var(--lg-ink);
   font-weight: 600;
 }
@@ -211,7 +292,7 @@ export default {
   margin: 0 0 1.25rem;
 }
 
-.hero-ai b {
+.hero-ai :deep(b) {
   color: var(--lg-accent);
   font-weight: 600;
 }
@@ -331,6 +412,8 @@ export default {
   text-transform: uppercase;
   color: var(--lg-faint);
   line-height: 1.5;
+  /* German compounds outgrow the narrow figure cells at 320px. */
+  hyphens: auto;
 }
 
 /* ── Bands ────────────────────────────────────────────────── */

@@ -2,18 +2,18 @@
   <v-app-bar :elevation="0" height="68" class="lg-bar">
     <v-app-bar-nav-icon
       v-if="compact"
-      :aria-label="drawer ? 'Close menu' : 'Open menu'"
+      :aria-label="drawer ? t.closeMenu : t.openMenu"
       @click="drawer = !drawer"
     />
 
-    <router-link to="/" class="brand" aria-label="Home">
+    <router-link to="/" class="brand" :aria-label="$tr(homeLabel)">
       <span class="brand-mark">ACT</span>
       <span v-if="!compact" class="brand-name">Andrea Colarieti Tosti</span>
     </router-link>
 
     <v-spacer></v-spacer>
 
-    <nav v-if="!compact" class="links" aria-label="Main">
+    <nav v-if="!compact" class="links" :aria-label="t.mainNav">
       <router-link
         v-for="link in links"
         :key="link.to"
@@ -21,50 +21,76 @@
         class="link"
         exact-active-class="link--on"
       >
-        {{ link.label }}
+        {{ $tr(link.label) }}
       </router-link>
     </nav>
+
+    <v-menu location="bottom end">
+      <template #activator="{ props }">
+        <v-btn
+          id="lang-switch"
+          v-bind="props"
+          variant="text"
+          size="small"
+          class="lang-btn ml-2"
+          :aria-label="t.chooseLanguage + ' (' + $lang.code.toUpperCase() + ')'"
+        >
+          {{ $lang.code.toUpperCase() }}
+        </v-btn>
+      </template>
+      <v-list density="compact">
+        <v-list-item
+          v-for="language in languages"
+          :key="language.code"
+          :lang="language.code"
+          :title="language.name"
+          :active="language.code === $lang.code"
+          :aria-current="language.code === $lang.code ? 'true' : undefined"
+          @click="chooseLanguage(language.code)"
+        ></v-list-item>
+      </v-list>
+    </v-menu>
 
     <v-btn
       :icon="dark ? 'mdi-weather-sunny' : 'mdi-weather-night'"
       variant="text"
       size="small"
       class="ml-2"
-      :aria-label="dark ? 'Switch to light theme' : 'Switch to dark theme'"
+      :aria-label="dark ? t.toLight : t.toDark"
       @click="toggleTheme"
     ></v-btn>
 
     <v-btn
       v-if="!compact"
-      :href="cvFile"
+      :href="$lang.language.cv"
       download
       class="cta ml-3 mr-1"
       variant="flat"
       color="primary"
     >
-      Download CV
+      {{ t.downloadCv }}
     </v-btn>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" temporary location="start" width="272">
     <div class="drawer-head">
       <span class="brand-mark">ACT</span>
-      <p class="lg-eyebrow mt-2">Senior IT Consultant</p>
+      <p class="lg-eyebrow mt-2">{{ t.role }}</p>
     </div>
     <v-list nav density="comfortable">
       <v-list-item
         v-for="link in links"
         :key="link.to"
         :to="link.to"
-        :title="link.label"
+        :title="$tr(link.label)"
         :prepend-icon="link.icon"
         exact
       ></v-list-item>
     </v-list>
     <template #append>
       <div class="pa-4">
-        <v-btn :href="cvFile" download block variant="flat" color="primary" class="cta">
-          Download CV
+        <v-btn :href="$lang.language.cv" download block variant="flat" color="primary" class="cta">
+          {{ t.downloadCv }}
         </v-btn>
         <v-btn
           href="mailto:a.colarietitosti@googlemail.com"
@@ -72,7 +98,7 @@
           variant="outlined"
           class="mt-2 cta"
         >
-          Get in touch
+          {{ t.getInTouch }}
         </v-btn>
       </div>
     </template>
@@ -80,24 +106,60 @@
 </template>
 
 <script>
+import { LANGUAGES, pick, setLanguage } from '@/i18n'
+import { PAGES, pageLabel } from '@/nav'
+
+// Page names come from PAGES in src/nav.js, shared with the footer.
+const COPY = {
+  en: {
+    chooseLanguage: 'Choose language',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    mainNav: 'Main',
+    toLight: 'Switch to light theme',
+    toDark: 'Switch to dark theme',
+    downloadCv: 'Download CV',
+    getInTouch: 'Get in touch',
+    role: 'Senior IT Consultant'
+  },
+  de: {
+    chooseLanguage: 'Sprache wählen',
+    openMenu: 'Menü öffnen',
+    closeMenu: 'Menü schließen',
+    mainNav: 'Hauptmenü',
+    toLight: 'Zum hellen Design wechseln',
+    toDark: 'Zum dunklen Design wechseln',
+    downloadCv: 'Lebenslauf herunterladen',
+    getInTouch: 'Kontakt aufnehmen',
+    role: 'Senior IT Consultant'
+  },
+  it: {
+    chooseLanguage: 'Scegli la lingua',
+    openMenu: 'Apri il menu',
+    closeMenu: 'Chiudi il menu',
+    mainNav: 'Menu principale',
+    toLight: 'Passa al tema chiaro',
+    toDark: 'Passa al tema scuro',
+    downloadCv: 'Scarica il CV',
+    getInTouch: 'Mi contatti',
+    role: 'Senior IT Consultant'
+  }
+}
+
 export default {
   name: 'Menu',
   data () {
     return {
       drawer: false,
-      cvFile: '/data/CV_en.pdf',
-      links: [
-        { to: '/', label: 'Home', icon: 'mdi-home-outline' },
-        { to: '/projectInfos', label: 'Work', icon: 'mdi-briefcase-outline' },
-        { to: '/experience', label: 'Experience', icon: 'mdi-timeline-outline' },
-        { to: '/qualifications', label: 'Certificates', icon: 'mdi-certificate-outline' },
-        { to: '/news', label: 'Notes', icon: 'mdi-note-text-outline' },
-        { to: '/aboutMe', label: 'About', icon: 'mdi-account-outline' },
-        { to: '/contact', label: 'Contact', icon: 'mdi-email-outline' }
-      ]
+      languages: LANGUAGES,
+      links: PAGES,
+      homeLabel: pageLabel('/')
     }
   },
   computed: {
+    t () {
+      return pick(COPY)
+    },
     // Seven links plus the brand and CTA still fit at 1280px; below that the
     // bar crowds, so it collapses into the drawer.
     compact () {
@@ -108,6 +170,16 @@ export default {
     }
   },
   methods: {
+    chooseLanguage (code) {
+      setLanguage(code)
+      // The chosen item vanishes with the menu; hand keyboard focus back to the
+      // button instead of letting it fall to <body>. Found by id, because the
+      // activator props carry Vuetify's own ref and would override a template ref.
+      this.$nextTick(() => {
+        const button = document.getElementById('lang-switch')
+        if (button) button.focus()
+      })
+    },
     toggleTheme () {
       const next = this.dark ? 'ledgerLight' : 'ledgerDark'
       this.$vuetify.theme.change(next)
@@ -179,6 +251,10 @@ export default {
 
 .cta {
   font-weight: 600;
+}
+
+.lang-btn {
+  font-family: var(--lg-mono);
 }
 
 .drawer-head {
