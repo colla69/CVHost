@@ -132,6 +132,21 @@ Checked 2026-09-28 from this machine; every sweep also records per-source status
 | Freelance | freelancermap.de, GULP, freelance.de, Malt — public listings, via WebSearch or fetch | Not yet checked |
 | Language leverage | WebSearch with the terms above on LinkedIn job pages, StepStone, freelancermap and the employer boards (Greenhouse, Lever, Ashby, Personio, Workable, join.com); plus the description search in every feed | First run 2026-09-28: low yield everywhere; freelancermap found the only real Italian-language engineering project. Indeed returns listing pages only; InfoJobs.it has shut down |
 
+### Daily rotation
+
+Decided 2026-10-14, when the routine went daily. Every sweep:
+
+- **Feeds, every day:** Arbeitnow page 1, GermanTechJobs, Himalayas (2–3 lane queries), We Work Remotely
+  (both feeds) and the current HN *Who is hiring* thread: one call per source and query, filtered
+  locally, repeats skipped as the agent definition says.
+- **Mondays only:** Remotive (17 jobs, rarely changes) and Remote OK (untagged feed, titles filtered locally).
+- **WebSearch, 6–8 queries:** 2 on employer boards (Ashby, Lever, Greenhouse, Personio, join.com) for the
+  tech-lead and ai-eng lanes, 1–2 on freelancermap, GULP or freelance.de for freelance, 2 on language
+  leverage (rotate the English, German and Italian terms by day), 1 open query for whichever lane got
+  least today. Verify through the boards' public APIs (see the source notes) rather than their HTML.
+- **Retired**, since no posting came of them: Indeed (.de/.it), InfoJobs.it, StepStone and LinkedIn
+  aggregate pages through WebSearch. A LinkedIn `/jobs/view/…` link found some other way may still be opened.
+
 ### Source notes
 
 Kept by the agent: which sources stopped working, changed shape, or proved worthless — with the date.

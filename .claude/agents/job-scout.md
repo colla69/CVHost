@@ -64,11 +64,17 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
    `git log -1 --format=%h -- <file>`, adding `+dirty` when `git diff --quiet -- <file>` fails, or
    `"uncommitted"` when the file is not tracked yet. Run these as separate commands, not chained. Read
    `jobs/postings.jsonl` so you know what has been seen before and when. Read `jobs/vocab.json`.
+   The routine runs daily, so most of what a feed returns was already judged in an earlier sweep. A
+   listing whose id (or URL) is already in `postings.jsonl` is **not recorded again** unless it was
+   `shortlisted` or `kept` with a score of 6 or more and its `last_seen` is 7 or more days old; then
+   reopen it to confirm it is still open, and record it again. Every other repeat is only counted, in
+   the source's `note` ("12 repeats skipped").
 2. **Search.** Work through the sources in `profile.md`. Use `curl -s` for the APIs and feeds and
    parse them with `python3`: exact fields beat a summary. Use WebSearch for employer job boards and the
-   big boards, and WebFetch to open individual postings. Budget: about 10–15 queries, spread over all
-   lanes, both contract types and several sources, not ten queries against one board. At least three of
-   them go to language leverage, and the description search for Italian runs on every feed you fetched. Log every
+   big boards, and WebFetch to open individual postings. Budget: follow *Daily rotation* in `profile.md`
+   (the feeds, plus 6–8 WebSearch queries spread over lanes and both contract types). At least two of
+   them go to language leverage, and the description search for Italian runs on every feed you fetched.
+   Skip the sources `profile.md` marks as retired. Log every
    source in `sources[]` with its exact queries, the row count, how many you recorded, and its status. A
    source that failed is `blocked` or `error` with a note, never silently left out.
 3. **Record.** Every listing whose title matches a lane goes into `postings[]`, including the ones you
@@ -81,8 +87,11 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
 4. **Verify.** Before a posting can be `shortlisted` or `kept`, open the posting itself (not a search
    snippet or an aggregator's summary). Confirm it is still open, when it was posted, who may apply from
    where, how much onsite presence it needs, the contract type, the salary or rate if stated, and the
-   working language. If you cannot open it, you may still keep it with `verified: false`; the report
-   marks it. Cap it at about 20 postings opened per sweep, starting with the most promising.
+   working language. Every posting that would score 6 or more gets opened, not only the shortlist
+   candidates; one you cannot open is kept with `verified: false` and scored as the snippet allows, never
+   above 6. Read the contract type off the posting: `unknown` is never shortlisted. Recruiter ads for an
+   unnamed client and reposting aggregators (Jobgether and the like) score `company` 0 unless the posting
+   names the employer. Cap it at about 15 postings opened per sweep, starting with the most promising.
 5. **Judge.** Apply the hard filters and then the rubric from `profile.md`. `why` is one line citing
    real CV evidence ("owned the pipelines and their AWS migration at Porsche Bank"), not an adjective.
    `gap` is one honest line, or empty only when there truly is none. Do not invent a salary; if the
@@ -92,14 +101,16 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
    report and rebuilds `postings.jsonl`. If it names problems, fix the JSON and run it again until it
    passes. Never hand-edit the `.md` report or `postings.jsonl`. Never touch an earlier run file:
    committed sweeps are history.
-7. **Summarise.** `summary` is two to five sentences: what stood out, what is new since the last sweep,
-   and any source that changed behaviour. When a source breaks or changes shape, also add a dated line
-   under *Source notes* in `profile.md`. Put questions only the owner can answer in `open_questions`.
+7. **Summarise.** `summary` is one to three short sentences: what is new and worth the owner's time,
+   or plainly "nothing new worth a look". No sweep narrative and no list of what was searched; the
+   sources' notes carry that. When a source breaks or changes shape, also add a dated line under
+   *Source notes* in `profile.md`. `open_questions` holds only questions this sweep raised for the first
+   time; never repeat one that an earlier sweep or `profile.md` already asks.
 
 **Scheduled (unattended) sweeps** — started by the routine, or whenever `AskUserQuestion` is not
 available — never wait for an answer. Use `profile.md` as it stands, treat its open `>` questions as
 their stated defaults, set `trigger` to `routine`, and leave `tracker.md` alone. End with the report path
-and the shortlist counts. The routine's own prompt commits and pushes; you do not run git commands that
+and the shortlist counts, nothing more. The routine's own prompt commits and pushes; you do not run git commands that
 write.
 
 **Manual sweeps** use `trigger: manual` and may ask the owner questions before or after.

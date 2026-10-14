@@ -257,23 +257,22 @@ def language_leverage(p):
 
 
 DETAIL_MIN = 6
-DETAIL_HEAD = ['| Score | Role | Lane · level | Remote | Pay | Stack | Languages | Posted | Why it fits | Gap |',
-               '| ---: | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
 
 
 def render(run, first_seen):
+    """A short report: the shortlist and the near misses one line each, everything else as counts.
+
+    The sweep file keeps every detail; the report only answers "anything worth my time today?"."""
     postings = run['postings']
     counts = {v: sum(1 for p in postings if p['verdict'] == v) for v in VOCAB['verdict']}
+    new = sum(1 for p in postings if p['id'] not in first_seen)
     lines = [
         f'# Job sweep {run["run_id"]}',
         '',
-        f'`{run["trigger"]}` · {run["started_at"]} → {run["finished_at"]} · {len(postings)} evaluated · '
-        f'{counts["shortlisted"]} shortlisted · {counts["kept"]} kept · {counts["dropped"]} dropped',
+        f'`{run["trigger"]}` · {len(postings)} evaluated, {new} new · {counts["shortlisted"]} shortlisted · '
+        f'{counts["kept"]} kept · {counts["dropped"]} dropped',
         '',
         run['summary'].strip(),
-        '',
-        f'Tables list every role scoring {DETAIL_MIN} or more. A **bold** score is on the shortlist; the '
-        'small figures under it are stack · level · remote · domain · company, 0–2 each.',
         '',
     ]
 
@@ -284,74 +283,54 @@ def render(run, first_seen):
     def rank(p):
         return (-p['score']['total'], p['company'].lower())
 
-    def detail(p, with_contract):
+    def line(p):
         s = p['score']
         total = f'**{s["total"]}**' if p['verdict'] == 'shortlisted' else str(s['total'])
-        parts = '·'.join(str(s[k]) for k in SCORE_KEYS[:-1])
-        role = f'{link(p)}<br>{cell(p["company"])}<br><sub>{cell(p["source"])} · {seen(p)}</sub>'
+        facts = [cell(p['company']), p['contract'], cell(remote_text(p['remote']))]
+        if p['salary']['stated']:
+            facts.append(cell(salary_text(p['salary'])))
+        facts.append(seen(p))
         if not p['verified']:
-            role += '<br>*unverified*'
-        lane = f'{p["lane"]}<br>{p["seniority"]}' + (f'<br>{p["contract"]}' if with_contract else '')
-        return (f'| {total}<br><sub>{parts}</sub> | {role} | {lane} | {cell(remote_text(p["remote"]))} '
-                f'| {cell(salary_text(p["salary"]))} | {cell(", ".join(p["stack"][:6])) or "—"} '
-                f'| {", ".join(p["languages"]) or "—"} | {p["posted_at"] or "—"} '
-                f'| {cell(p["why"])} | {cell(p["gap"])} |')
+            facts.append('*unverified*')
+        return f'- {total} · {link(p)} — {" · ".join(facts)}'
 
-    listed = [p for p in postings if p['verdict'] != 'dropped']
-    leverage = sorted((p for p in listed if language_leverage(p)), key=rank)
-    lines += ['## Language leverage — roles that ask for Italian', '']
-    if leverage:
-        lines += ['Every contract type, every score: here the three languages are the edge.', '']
-        lines += DETAIL_HEAD + [detail(p, True) for p in leverage]
+    listed = sorted((p for p in postings if p['verdict'] != 'dropped'), key=rank)
+    shortlist = [p for p in listed if p['verdict'] == 'shortlisted']
+    lines += ['## Shortlist', '']
+    if shortlist:
+        for p in shortlist:
+            lines.append(line(p))
+            lines.append(f'  {cell(p["why"])}' + (f' *Gap:* {cell(p["gap"])}' if p['gap'] else ''))
     else:
-        lines += ['No role that passed the filters asked for Italian this time.']
+        lines.append('Nothing made the shortlist.')
     lines.append('')
-    missed = sorted((p for p in postings if p['verdict'] == 'dropped' and language_leverage(p)),
-                    key=lambda p: (-(p['score']['total'] if p['score'] else -1), p['company'].lower()))
-    if missed:
-        lines += ['### Asked for Italian, but dropped', '']
-        lines += [f'- {p["score"]["total"] if p["score"] else "–"} · {link(p)} — {cell(p["company"])} · '
-                  f'{p["contract"]} · **{p["drop_reason"]}** · {cell(remote_text(p["remote"]))}' for p in missed]
-        lines.append('')
 
-    others = [p for p in listed if not language_leverage(p)]
-    for contract in VOCAB['contract']:
-        rows = sorted((p for p in others if p['contract'] == contract and p['score']['total'] >= DETAIL_MIN),
-                      key=rank)
-        if not rows and contract == 'unknown':
-            continue
-        lines += [f'## {contract.capitalize()} — score {DETAIL_MIN} and up', '']
-        lines += DETAIL_HEAD + [detail(p, False) for p in rows] if rows else ['Nothing reached 6 this time.']
-        lines.append('')
+    leverage = [p for p in listed if p['verdict'] != 'shortlisted' and language_leverage(p)]
+    if leverage:
+        lines += ['## Asks for Italian', ''] + [line(p) for p in leverage] + ['']
 
-    below = sorted((p for p in others if p['score']['total'] < DETAIL_MIN), key=rank)
+    near = [p for p in listed if p['verdict'] == 'kept' and not language_leverage(p)
+            and p['score']['total'] >= DETAIL_MIN]
+    if near:
+        lines += [f'## Near misses (kept, {DETAIL_MIN}+)', ''] + [line(p) for p in near] + ['']
+
+    tail = []
+    below = sum(1 for p in listed if p['verdict'] == 'kept' and not language_leverage(p)
+                and p['score']['total'] < DETAIL_MIN)
     if below:
-        lines += [f'## Kept — score below {DETAIL_MIN}', '']
-        lines += [f'- {p["score"]["total"]} · {link(p)} — {cell(p["company"])} · {p["lane"]} · {p["contract"]} · '
-                  f'{remote_text(p["remote"])} · {seen(p)}' for p in below]
-        lines.append('')
-
+        tail.append(f'Kept below {DETAIL_MIN}: {below}.')
     dropped = [p for p in postings if p['verdict'] == 'dropped']
     if dropped:
-        lines += ['## Dropped', '', '| Reason | Count | Examples |', '| --- | ---: | --- |']
-        for reason in VOCAB['drop_reason']:
-            hits = [p for p in dropped if p['drop_reason'] == reason]
-            if hits:
-                companies = list(dict.fromkeys(cell(p['company']) for p in hits))
-                examples = ', '.join(companies[:4]) + (' …' if len(companies) > 4 else '')
-                lines.append(f'| {reason} | {len(hits)} | {examples} |')
-        lines.append('')
-
-    lines += ['## Sources', '', '| Source | Method | Status | Results | Evaluated | Note |',
-              '| --- | --- | --- | ---: | ---: | --- |']
-    lines += [f'| {cell(s["name"])} | {s["method"]} | {s["status"]} | {s["results"]} | {s["evaluated"]} '
-              f'| {cell(s["note"])} |' for s in run['sources']]
-    lines.append('')
+        reasons = [f'{r} {n}' for r in VOCAB['drop_reason']
+                   if (n := sum(1 for p in dropped if p['drop_reason'] == r))]
+        tail.append(f'Dropped: {", ".join(reasons)}.')
+    ok = sum(1 for s in run['sources'] if s['status'] == 'ok')
+    trouble = [f'{cell(s["name"])} {s["status"]}' for s in run['sources'] if s['status'] in ('blocked', 'error')]
+    tail.append(f'Sources: {ok} of {len(run["sources"])} ok' + (f'; {", ".join(trouble)}.' if trouble else '.'))
+    lines += [' '.join(tail), '']
 
     if run['open_questions']:
-        lines += ['## Open questions for the owner', '']
-        lines += [f'- {q}' for q in run['open_questions']]
-        lines.append('')
+        lines += ['## Open questions', ''] + [f'- {q}' for q in run['open_questions']] + ['']
     return '\n'.join(lines)
 
 
