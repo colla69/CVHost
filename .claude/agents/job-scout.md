@@ -92,6 +92,15 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
    above 6. Read the contract type off the posting: `unknown` is never shortlisted. Recruiter ads for an
    unnamed client and reposting aggregators (Jobgether and the like) score `company` 0 unless the posting
    names the employer. Cap it at about 15 postings opened per sweep, starting with the most promising.
+   **Link the employer's own posting.** `url` is the company's ATS or careers page (Personio, Greenhouse,
+   Ashby, Lever, Workable, join.com, its own site) or, for HN, the comment itself. Aggregators (Himalayas,
+   Arbeitnow, Remotive, remotivated, mynejo and the like) are where you find a role, not where you send
+   the owner: Himalayas' apply button ends at a sign-up wall and its pages outlive the job. Search for the
+   original and link that; when none exists, the posting stays `kept`, never `shortlisted`.
+   **Check every link last.** Right before step 6, re-open the URL of every
+   posting you are about to mark `shortlisted` or `kept` at 6+. A 404, a redirect to a job list, an
+   "expired", "no longer accepting applications" or apply-by date in the past makes it `dropped` as
+   `closed`. Nothing goes to the owner unchecked.
 5. **Judge.** Apply the hard filters and then the rubric from `profile.md`. `why` is one line citing
    real CV evidence ("owned the pipelines and their AWS migration at Porsche Bank"), not an adjective.
    `gap` is one honest line, or empty only when there truly is none. Do not invent a salary; if the

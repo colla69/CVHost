@@ -199,3 +199,13 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   hire engineers only in Milan. Aggregators: startup.jobs returns 403; freehire.me opens and links the original ad.
 - 2026-09-28 — **Himalayas** `q=italian&country=Germany` returns non-engineering rows only; in other queries "Italy"
   matches `locationRestrictions`, so run the Italian regex on descriptions, not on location lists.
+- 2026-10-14 (first daily sweep) — **curl refused**: every `curl -s` (Arbeitnow, GermanTechJobs, Himalayas, WWR, HN
+  Algolia, Lever, Workable, Greenhouse, Personio, freelancermap, Remotive) failed with CONNECT 403 from that session's
+  egress proxy. WebFetch reached all of them, but it reads only the first 100,000 characters: Arbeitnow page 1 gave 15
+  of ~300 rows and GermanTechJobs 16 of ~600, and its epoch-to-date conversion was wrong for Arbeitnow. Himalayas
+  (20 rows) and HN keyword searches (`query=europe`, `germany`, `lead remote`) fit. If curl stays blocked, query HN
+  by keyword rather than `hitsPerPage=1000`.
+- 2026-10-14 — **europelanguagejobs.com** ("jobs for English+German+Italian speakers", 669 listings): the first 20 are
+  all sales, customer service or support. Not worth a query.
+- 2026-10-14 — **WebSearch `site:jobs.ashbyhq.com`** returned no Ashby page, only copies on Arbeitnow, php-resource,
+  Remotive and freelancermap; `site:jobs.lever.co` + "AI Engineer" returned only Jobgether reposts.
