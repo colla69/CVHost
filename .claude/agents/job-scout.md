@@ -116,9 +116,14 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
    `page` check stays `kept`, never `shortlisted`; `ingest.py` enforces this. A 404, a redirect to a job
    list, an ATS list without the posting, "expired", "no longer accepting applications" or a past
    apply-by date is `result: dead` and the posting is `dropped` as `closed`.
-5. **Judge.** Apply the hard filters and then the rubric from `profile.md`. `why` is one line citing
-   real CV evidence ("owned the pipelines and their AWS migration at Porsche Bank"), not an adjective.
-   `gap` is one honest line, or empty only when there truly is none. Do not invent a salary; if the
+5. **Judge.** Apply the hard filters and then the rubric from `profile.md`. `why` is one line on what
+   the role is, from the posting: the product, who it serves and the stack ("monitoring-as-code SaaS for
+   developers; Vue, TypeScript, Node on AWS"). It makes **no claims about the owner**: the owner found the
+   CV-evidence lines unreliable and they are no longer shown (2026-10-14). `gap` lists the posting's own
+   hard requirements that could rule the owner out (years in a skill, a degree, direct reports, a
+   language, onsite days), in the posting's words, or is empty. `domain` is the industry of the
+   employer's product, not of the tech: it is what the report shows as the role's industry, so get it
+   right. Do not invent a salary; if the
    posting states none, `salary` is `{"stated": false}`. Then project the pay, as *Pay projection* in
    `profile.md` describes, for every posting that is not dropped: `pay_estimate` in EUR with `point`,
    `min`, `max`, `period`, `confidence` and a `basis` naming each source and its figure. A projection is

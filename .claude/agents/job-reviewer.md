@@ -37,9 +37,11 @@ Review every posting with verdict `shortlisted`, and every `kept` one scoring 6 
    used for a Germany role, or a range narrower than its sources justify gets corrected (widen it, lower
    the confidence, or replace it with what you found). A role whose pay ends up below the floor in
    `profile.md` is dropped as `low-pay`.
-5. **Why and gap.** Every claim in `why` must trace to `CV/CV.md`. A requirement the posting states and
-   the CV lacks belongs in `gap`. A role that misses a hard requirement (years in a skill, managed direct
-   reports, a degree the ad insists on) cannot stay shortlisted: demote it to `kept` and say why in `gap`.
+5. **Industry and requirements.** `domain` must be the industry of the employer's product, as its own
+   site describes it; correct it if not. `why` describes the role only and makes no claim about the owner.
+   `gap` must list the posting's hard requirements in its own words. A role whose hard requirement the CV
+   plainly does not meet (years in a skill, managed direct reports, a degree the ad insists on) cannot
+   stay shortlisted: demote it to `kept`.
 
 ## What you change
 

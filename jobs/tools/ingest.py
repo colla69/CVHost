@@ -378,7 +378,8 @@ def render(run, first_seen):
     def line(p):
         s = p['score']
         total = f'**{s["total"]}**' if p['verdict'] == 'shortlisted' else str(s['total'])
-        facts = [cell(p['company']), p['contract'], cell(remote_text(p['remote']))]
+        industry = ', '.join(p['domain']) or 'industry unknown'
+        facts = [cell(p['company']), f'*{cell(industry)}*', p['contract'], cell(remote_text(p['remote']))]
         if pay(p):
             facts.append(pay(p))
         facts.append(seen(p))
@@ -392,7 +393,6 @@ def render(run, first_seen):
     if shortlist:
         for p in shortlist:
             lines.append(line(p))
-            lines.append(f'  {cell(p["why"])}' + (f' *Gap:* {cell(p["gap"])}' if p['gap'] else ''))
             if p.get('pay_estimate') and not p['salary']['stated']:
                 lines.append(f'  *Pay basis:* {cell(p["pay_estimate"]["basis"])}')
     else:
