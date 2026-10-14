@@ -163,7 +163,7 @@ is public on purpose; `CV/additionalInfo.md` and the owner's contact details sti
 
 ## Agents
 
-Six specialists live in `.claude/agents/`, each carrying deeper context than this file:
+Seven specialists live in `.claude/agents/`, each carrying deeper context than this file:
 
 - `vue-expert` — feature work, fixes and refactors under `frontend/src/`
 - `unit-tester` — tests; knows no harness exists and must agree on one before installing anything
@@ -174,3 +174,5 @@ Six specialists live in `.claude/agents/`, each carrying deeper context than thi
   and Italian text (text values only); every other site fix goes to `vue-expert`
 - `job-scout` — finds and vets remote permanent and freelance roles, scores them against the CV, keeps
   the history in `jobs/`. Never applies or contacts anyone
+- `job-reviewer` — re-checks a new job-scout sweep before the owner reads it: live links, Germany, pay
+  projection and CV claims; demotes or corrects postings in that sweep only

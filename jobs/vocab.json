@@ -10,6 +10,7 @@
   "currency": ["EUR", "CHF", "GBP", "USD", "PLN", "SEK", "DKK", "NOK", "CZK"],
   "salary_period": ["year", "month", "day", "hour"],
   "verdict": ["shortlisted", "kept", "dropped"],
+  "confidence": ["high", "medium", "low"],
   "drop_reason": [
     "not-germany",
     "onsite",
@@ -21,6 +22,7 @@
     "closed",
     "stale",
     "excluded-company",
+    "low-pay",
     "low-score",
     "other"
   ],

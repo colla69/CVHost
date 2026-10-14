@@ -14,8 +14,8 @@ Decided with the owner on 2026-09-28.
   able to employ, or contract, someone living in Munich, Germany: a German entity, an employer of record,
   or an explicit "EU"/"Europe"/"CET" hiring region. "Remote (US only)" and its relatives are out.
 - **Lanes:**
-  1. `tech-lead` — tech lead / team lead / lead engineer, ideally at a product company, owning a system
-     end to end. The CV's profile closes on exactly this wish.
+  1. `tech-lead` — tech lead / team lead / lead engineer roles. **No preference over senior IC roles**
+     (decided 2026-10-14): a lead title neither adds nor costs points; the label only sorts roles.
   2. `fullstack` — senior full-stack engineer, Java/Spring (or Jakarta EE) plus TypeScript with React,
      Angular or Vue. The core of thirteen years.
   3. `ai-eng` — AI-assisted engineering: developer productivity, AI enablement, LLM application and
@@ -37,6 +37,33 @@ Decided with the owner on 2026-09-28.
 - **Supporting keywords, not a lane:** AWS (Solutions Architect – Associate, valid to 04/2029),
   Terraform/CDK, Kubernetes, CI/CD.
 - **Languages:** Italian (native), German, English — all three are working languages.
+- **Pay floor** (decided 2026-10-14): **EUR 60,000 a year gross**. A role whose stated or projected pay
+  tops out below that is dropped as `low-pay`, however well it fits. Freelance: a day rate that adds up to
+  less over 200 billable days, so under EUR 300 a day (EUR 38 an hour).
+- **Ranking** (decided 2026-10-14): by fit with the CV (the score), then by projected pay. Senior or lead
+  does not matter.
+
+## Pay projection
+
+Every posting that is not dropped gets a `pay_estimate`: one figure (`point`), a range, a confidence and
+the `basis` it rests on. It is a projection, never presented as a stated salary, and it is only as strong
+as its sources. In order of strength:
+
+1. **Stated in the posting** (salary range, "up to", the company's pay bands) → confidence `high`; `point`
+   is the midpoint unless the posting says where in the band a senior lands.
+2. **The same company's own figures:** its other postings with a stated range at the same level (Ashby
+   `includeCompensation=true`, join.com, Personio, GermanTechJobs), its public salary bands or calculator
+   (GitLab, Sourcegraph and others publish them), its kununu or Glassdoor salary page for the same title
+   in Germany → `medium`, or `high` for a published band.
+3. **The market for that role in Germany:** a published survey or salary report with its year (StepStone
+   Gehaltsreport, Glassdoor/kununu title averages for Germany, levels.fyi for Germany/Berlin/Munich, the
+   GermanTechJobs salary report), adjusted for company size and remote → `low`.
+
+`basis` names each source with its figure and date ("Checkly Germany tier 88–105k stated in the ad";
+"no range; kununu Senior Software Engineer at X, 12 entries, avg 74k, 2026"). Never average sources you did
+not read, never round a guess into a confident figure, and when the sources disagree, widen the range and
+lower the confidence instead of picking the flattering one. A USD, GBP or CHF figure is converted to EUR at
+the day's rate, and for a pay-by-location company the Germany tier is used, not the US one.
 
 ## Search terms
 
@@ -94,20 +121,21 @@ Then 0–2 on each criterion, total 0–10:
 | Criterion | 2 | 1 | 0 |
 | --- | --- | --- | --- |
 | stack | Java/Spring or TypeScript front end is the core | adjacent (Kotlin, Node-only, another JVM stack) | mostly foreign |
-| seniority | lead / ownership explicitly in the role | senior IC | seniority unclear |
+| seniority | senior, staff, lead or principal: all the same | level unclear | — (junior and mid are dropped) |
 | remote | fully remote from Germany, stated | remote-first with travel, or EU-wide but unconfirmed for DE | only implied |
 | domain | fintech, banking, regtech, leasing, automotive, health/public sector, industrial IoT — or needs Italian | general B2B SaaS / devtools | unrelated |
 | company | product company with an in-house team and visible engineering culture | unknown | body-leasing consultancy (permanent list only) |
 
 When the posting does not say, a criterion scores 1: "unknown" is neither evidence for nor against.
 
-**Shortlist** at 7 or more, **kept** at 4–6, the rest **dropped** as `low-score`. In the
+**Shortlist** at 7 or more, **kept** at 4–6, the rest **dropped** as `low-score`. Within a score, rank by
+projected pay. In the
 freelance list, agencies and consultancies are the normal channel and are not penalised.
 
 ## Open questions — asked at the intake, never guessed
 
-> Minimum salary (permanent)? The repo is public: the answer can also be recorded as "asked, not stored".
-> Minimum day rate (freelance)? Same choice.
+> Freelance floor: EUR 300 a day is the EUR 60k floor spread over 200 days; it ignores the cost a freelancer
+> carries themselves. Raise it? (Default: 300.)
 > Notice period at msg — when could a new role start?
 > Consultancies as a permanent employer: acceptable, or down-rank them? (Default: down-rank.)
 > Companies or industries to avoid?

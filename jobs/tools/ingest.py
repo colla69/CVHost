@@ -19,7 +19,8 @@ JOBS = Path(__file__).resolve().parent.parent
 RUNS = JOBS / 'runs'
 INDEX = JOBS / 'postings.jsonl'
 VOCAB = json.loads((JOBS / 'vocab.json').read_text())
-SCHEMA = 1
+SCHEMA = 2
+READABLE = (1, 2)
 
 RUN_ID = re.compile(r'^\d{4}-\d{2}-\d{2}T\d{4}Z$')
 COUNTRY = re.compile(r'^[A-Z]{2}$')
@@ -34,9 +35,14 @@ SOURCE_KEYS = ('name', 'method', 'queries', 'results', 'evaluated', 'status', 'n
 POSTING_KEYS = ('id', 'url', 'source', 'company', 'title', 'lane', 'contract', 'seniority', 'remote',
                 'salary', 'languages', 'stack', 'domain', 'posted_at', 'verified', 'verdict',
                 'drop_reason', 'score', 'why', 'gap')
+POSTING_KEYS_V2 = POSTING_KEYS + ('pay_estimate',)
 REMOTE_KEYS = ('type', 'countries', 'timezone', 'onsite_days_per_quarter', 'eor')
 SALARY_KEYS = ('stated', 'min', 'max', 'currency', 'period')
 SCORE_KEYS = ('stack', 'seniority', 'remote', 'domain', 'company', 'total')
+ESTIMATE_KEYS = ('point', 'min', 'max', 'currency', 'period', 'confidence', 'basis')
+# The owner's floor (profile.md, decided 2026-10-14): EUR 60k a year, or a freelance rate that adds up to it
+# over 200 billable days. Anything projected to pay less is dropped as low-pay, never kept.
+PAY_FLOOR = {'year': 60000, 'month': 5000, 'day': 300, 'hour': 38}
 GERMANY_OK = {'DE', 'EU', 'EEA', 'EUROPE', 'DACH', 'EMEA', 'WORLDWIDE'}
 
 
@@ -58,6 +64,10 @@ def ordered(obj, keys):
     return {**{k: obj[k] for k in keys if k in obj}, **{k: v for k, v in obj.items() if k not in keys}}
 
 
+def posting_keys(run):
+    return POSTING_KEYS_V2 if run.get('schema', SCHEMA) >= 2 else POSTING_KEYS
+
+
 def normalise(run):
     for posting in run.get('postings', []):
         if isinstance(posting.get('company'), str) and isinstance(posting.get('title'), str):
@@ -65,8 +75,9 @@ def normalise(run):
     run['sources'] = [ordered(s, SOURCE_KEYS) for s in run.get('sources', [])]
     postings = []
     for posting in run.get('postings', []):
-        posting = ordered(posting, POSTING_KEYS)
-        for key, keys in (('remote', REMOTE_KEYS), ('salary', SALARY_KEYS), ('score', SCORE_KEYS)):
+        posting = ordered(posting, posting_keys(run))
+        for key, keys in (('remote', REMOTE_KEYS), ('salary', SALARY_KEYS), ('score', SCORE_KEYS),
+                          ('pay_estimate', ESTIMATE_KEYS)):
             if isinstance(posting.get(key), dict):
                 posting[key] = ordered(posting[key], keys)
         postings.append(posting)
@@ -95,8 +106,9 @@ def check(run, name):
 
     if not keys(run, RUN_KEYS, 'run'):
         return errors
-    if run['schema'] != SCHEMA:
-        err(f'schema is {run["schema"]!r}, this script reads {SCHEMA}')
+    if run['schema'] not in READABLE:
+        err(f'schema is {run["schema"]!r}, this script reads {", ".join(map(str, READABLE))}')
+        return errors
     if not RUN_ID.match(str(run['run_id'])):
         err(f'run_id {run["run_id"]!r} is not YYYY-MM-DDTHHMMZ')
     if name != run['run_id']:
@@ -122,7 +134,7 @@ def check(run, name):
     seen = set()
     for i, p in enumerate(run['postings']):
         where = f'postings[{i}] {p.get("company")} / {p.get("title")}'
-        if not keys(p, POSTING_KEYS, where):
+        if not keys(p, posting_keys(run), where):
             continue
         if p['id'] in seen:
             err(f'{where}: duplicate id {p["id"]} in this run; merge the two entries')
@@ -172,6 +184,8 @@ def check(run, name):
                 err(f'{where}: an unverified posting can be kept, not shortlisted')
             if isinstance(remote, dict) and not GERMANY_OK & set(remote.get('countries') or []):
                 err(f'{where}: shortlisted, but remote.countries does not show it is open to Germany')
+        if run['schema'] >= 2:
+            errors += check_estimate(p, where, name)
         if p['verdict'] == 'dropped':
             enum(p['drop_reason'], 'drop_reason', where)
         elif p['drop_reason'] is not None:
@@ -188,6 +202,33 @@ def check(run, name):
                 err(f'{where}: score total {score["total"]} is not the sum {sum(parts)}')
         elif not isinstance(score, dict):
             err(f'{where}: score must be an object or null')
+    return errors
+
+
+def check_estimate(p, where, name):
+    """Schema 2: every posting that is not dropped carries a sourced pay projection in EUR, at or above the floor."""
+    errors = []
+    est = p['pay_estimate']
+    if est is None:
+        if p['verdict'] != 'dropped':
+            errors.append(f'{name}: {where}: a {p["verdict"]} posting needs a pay_estimate')
+        return errors
+    if not isinstance(est, dict) or set(est) != set(ESTIMATE_KEYS):
+        return [f'{name}: {where}: pay_estimate needs exactly {", ".join(ESTIMATE_KEYS)}']
+    nums = [est['point'], est['min'], est['max']]
+    if any(not isinstance(v, (int, float)) for v in nums) or not est['min'] <= est['point'] <= est['max']:
+        errors.append(f'{name}: {where}: pay_estimate needs numbers with min <= point <= max')
+    if est['currency'] != 'EUR':
+        errors.append(f'{name}: {where}: pay_estimate is projected in EUR; convert it')
+    if est['period'] not in PAY_FLOOR:
+        errors.append(f'{name}: {where}: pay_estimate period {est["period"]!r} is not one of {", ".join(PAY_FLOOR)}')
+    if est['confidence'] not in VOCAB['confidence']:
+        errors.append(f'{name}: {where}: confidence {est["confidence"]!r} is not in vocab.json "confidence"')
+    if not isinstance(est['basis'], str) or len(est['basis'].strip()) < 10:
+        errors.append(f'{name}: {where}: pay_estimate.basis must name where the figure comes from')
+    if (not errors and p['verdict'] != 'dropped' and est['max'] < PAY_FLOOR[est['period']]):
+        errors.append(f'{name}: {where}: projected at most {est["max"]:g} EUR/{est["period"]}, under the floor; '
+                      'drop it as low-pay')
     return errors
 
 
@@ -281,14 +322,26 @@ def render(run, first_seen):
         return 'new' if earlier is None else f'seen since {earlier[:10]}'
 
     def rank(p):
-        return (-p['score']['total'], p['company'].lower())
+        est = p.get('pay_estimate') or {}
+        return (-p['score']['total'], -(est.get('point') or 0), p['company'].lower())
+
+    def pay(p):
+        est = p.get('pay_estimate')
+        if not est:
+            return cell(salary_text(p['salary'])) if p['salary']['stated'] else None
+        k = 1000 if est['period'] in ('year', 'month') else 1
+        unit = 'k' if k == 1000 else ''
+        figure = f'€{est["point"] / k:g}{unit}/{est["period"]}'
+        if p['salary']['stated']:
+            return f'{figure} (stated {cell(salary_text(p["salary"]))})'
+        return f'≈{figure} (est. {est["min"] / k:g}–{est["max"] / k:g}{unit}, {est["confidence"]})'
 
     def line(p):
         s = p['score']
         total = f'**{s["total"]}**' if p['verdict'] == 'shortlisted' else str(s['total'])
         facts = [cell(p['company']), p['contract'], cell(remote_text(p['remote']))]
-        if p['salary']['stated']:
-            facts.append(cell(salary_text(p['salary'])))
+        if pay(p):
+            facts.append(pay(p))
         facts.append(seen(p))
         if not p['verified']:
             facts.append('*unverified*')
@@ -301,6 +354,8 @@ def render(run, first_seen):
         for p in shortlist:
             lines.append(line(p))
             lines.append(f'  {cell(p["why"])}' + (f' *Gap:* {cell(p["gap"])}' if p['gap'] else ''))
+            if p.get('pay_estimate') and not p['salary']['stated']:
+                lines.append(f'  *Pay basis:* {cell(p["pay_estimate"]["basis"])}')
     else:
         lines.append('Nothing made the shortlist.')
     lines.append('')
