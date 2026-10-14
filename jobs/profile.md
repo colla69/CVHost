@@ -175,6 +175,11 @@ Decided 2026-10-14, when the routine went daily. Every sweep:
   tech-lead and ai-eng lanes, 1–2 on freelancermap, GULP or freelance.de for freelance, 2 on language
   leverage (rotate the English, German and Italian terms by day), 1 open query for whichever lane got
   least today. Verify through the boards' public APIs (see the source notes) rather than their HTML.
+- **Google Jobs, 7 queries:** through `python3 jobs/tools/google_jobs.py` (SerpApi; key in `SERPAPI_KEY`).
+  This is the route to LinkedIn, StepStone, XING and Indeed ads, which Google Jobs indexes. One query per
+  lane plus language leverage, each with a remote term; rotate the wording by day. 7 a night stays inside
+  the free plan's 250 searches a month, and the script refuses to go past 240. Log it as source
+  `google-jobs`, method `api`, one entry in `queries` per search spent.
 - **Retired**, since no posting came of them: Indeed (.de/.it), InfoJobs.it, StepStone and LinkedIn
   aggregate pages through WebSearch. A LinkedIn `/jobs/view/…` link found some other way may still be opened.
 
