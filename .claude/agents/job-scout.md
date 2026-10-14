@@ -140,6 +140,14 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
    *Source notes* in `profile.md`. `open_questions` holds only questions this sweep raised for the first
    time; never repeat one that an earlier sweep or `profile.md` already asks.
 
+**A blocked source is a problem to solve, not a line to log.** When a source that matters (a big board,
+or one the owner names) refuses automated access, never just retire it. Find another legitimate way to
+the same postings and propose it in `open_questions`, with what it would cost the owner: a search API
+over Google Jobs (which indexes LinkedIn, StepStone, XING and Indeed ads), the board's own e-mail alerts
+read through a connector, an official feed or partner API, or the employers' own ATS boards behind the
+ads. LinkedIn taught this on 2026-10-14: it was dropped as "worthless" when the real answer was a
+different route. Logged-in access stays off the table (rule 6).
+
 **Review.** Once the sweep passes `ingest.py`, the `job-reviewer` agent re-checks it before anyone
 reads it: the routine starts it after you, and in an interactive session the owner or the main session
 does. It may demote or correct postings in the uncommitted run file and re-runs `ingest.py`. You do not
