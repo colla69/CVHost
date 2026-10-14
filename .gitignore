@@ -13,3 +13,6 @@ CV/.build/
 
 # Python bytecode (jobs/tools/ingest.py)
 __pycache__/
+
+# Local secrets (SERPAPI_KEY for job-scout). Never committed: this repo is public.
+.env
