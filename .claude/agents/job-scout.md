@@ -77,6 +77,14 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
    big boards, and WebFetch to open individual postings. Budget: follow *Daily rotation* in `profile.md`
    (the feeds, plus 6–8 WebSearch queries spread over lanes and both contract types). At least two of
    them go to language leverage, and the description search for Italian runs on every feed you fetched.
+   **Google Jobs** goes through `python3 jobs/tools/google_jobs.py`: run it with `--check` first, then
+   once with all of tonight's queries as arguments. It reads `SERPAPI_KEY` itself and never prints it;
+   never echo, log or write the key anywhere. A missing key or an exhausted budget is that source
+   `blocked` with the script's message as its note, and the sweep goes on. For each hit, `apply` lists
+   where the ad is posted (LinkedIn, the employer, StepStone…): take the employer's own link when one is
+   there or can be found, as for any aggregator. A role found only on LinkedIn keeps its
+   `linkedin.com/jobs/view/…` link and stays `kept`, because LinkedIn answers automated checks with a
+   login wall, so its link cannot be proven live.
    Skip the sources `profile.md` marks as retired. Log every
    source in `sources[]` with its exact queries, the row count, how many you recorded, and its status. A
    source that failed is `blocked` or `error` with a note, never silently left out.

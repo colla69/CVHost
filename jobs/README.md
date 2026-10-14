@@ -13,6 +13,7 @@ can be analysed later.
 | `runs/<run_id>.json` | agent, once | One sweep, complete. **Immutable once committed** |
 | `runs/<run_id>.md` | `tools/ingest.py` | The same sweep as a readable report — generated, never hand-edited |
 | `postings.jsonl` | `tools/ingest.py` | One line per unique posting ever seen — derived from `runs/`, rebuilt on every ingest |
+| `tools/google_jobs.py` | owner + agent | Google Jobs search through SerpApi (reaches LinkedIn ads); reads `SERPAPI_KEY` |
 | `tracker.md` | owner + agent, interactive only | The owner's pipeline: shortlisted → applied → interview → … |
 | `leads/<id>.md` | agent, on request | Deep dive on one posting |
 | `applications/<id>/` | agent / cv-strategist, on request | Cover letter, outreach message, tailored CV |
@@ -36,7 +37,10 @@ take effect without touching it. It runs every day at **02:07 Europe/Berlin** (d
 Berlin time, so it does not drift with daylight saving). The time is
 deliberate: a run draws on the owner's subscription limits, and the five-hour usage window it opens has
 closed by about 07:00, before the working day. It runs in a cloud environment with **Full** network
-access (the default "Trusted" allowlist blocks job boards). Its prompt, kept here so the repo shows what
+access (the default "Trusted" allowlist blocks job boards), and that environment holds `SERPAPI_KEY`
+for the Google Jobs source. Locally, `export SERPAPI_KEY=…` or a line `SERPAPI_KEY=…` in the repo-root
+`.env` (gitignored, never committed: this repo is public) does the same. All runs share the free plan's
+250 searches a month; `python3 jobs/tools/google_jobs.py --check` shows what is left. Its prompt, kept here so the repo shows what
 it does (editing this copy does not change the routine):
 
 > Use the job-scout agent (`.claude/agents/job-scout.md`) to run a scheduled sweep exactly as its
