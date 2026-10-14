@@ -19,8 +19,8 @@ JOBS = Path(__file__).resolve().parent.parent
 RUNS = JOBS / 'runs'
 INDEX = JOBS / 'postings.jsonl'
 VOCAB = json.loads((JOBS / 'vocab.json').read_text())
-SCHEMA = 2
-READABLE = (1, 2)
+SCHEMA = 3
+READABLE = (1, 2, 3)
 
 RUN_ID = re.compile(r'^\d{4}-\d{2}-\d{2}T\d{4}Z$')
 COUNTRY = re.compile(r'^[A-Z]{2}$')
@@ -36,6 +36,12 @@ POSTING_KEYS = ('id', 'url', 'source', 'company', 'title', 'lane', 'contract', '
                 'salary', 'languages', 'stack', 'domain', 'posted_at', 'verified', 'verdict',
                 'drop_reason', 'score', 'why', 'gap')
 POSTING_KEYS_V2 = POSTING_KEYS + ('pay_estimate',)
+POSTING_KEYS_V3 = POSTING_KEYS_V2 + ('link_check',)
+LINK_CHECK_KEYS = ('checked_at', 'method', 'result', 'evidence')
+# A link counts as checked only through a live answer: the HTTP status itself, or the employer's ATS
+# listing or API showing the posting as published. A fetched page (WebFetch) can be a stale cached copy:
+# on 2026-10-14 it showed Recare's role as open while the real page was a 404.
+SHORTLIST_CHECKS = ('http', 'api')
 REMOTE_KEYS = ('type', 'countries', 'timezone', 'onsite_days_per_quarter', 'eor')
 SALARY_KEYS = ('stated', 'min', 'max', 'currency', 'period')
 SCORE_KEYS = ('stack', 'seniority', 'remote', 'domain', 'company', 'total')
@@ -65,7 +71,8 @@ def ordered(obj, keys):
 
 
 def posting_keys(run):
-    return POSTING_KEYS_V2 if run.get('schema', SCHEMA) >= 2 else POSTING_KEYS
+    schema = run.get('schema', SCHEMA)
+    return POSTING_KEYS_V3 if schema >= 3 else POSTING_KEYS_V2 if schema >= 2 else POSTING_KEYS
 
 
 def normalise(run):
@@ -77,7 +84,7 @@ def normalise(run):
     for posting in run.get('postings', []):
         posting = ordered(posting, posting_keys(run))
         for key, keys in (('remote', REMOTE_KEYS), ('salary', SALARY_KEYS), ('score', SCORE_KEYS),
-                          ('pay_estimate', ESTIMATE_KEYS)):
+                          ('pay_estimate', ESTIMATE_KEYS), ('link_check', LINK_CHECK_KEYS)):
             if isinstance(posting.get(key), dict):
                 posting[key] = ordered(posting[key], keys)
         postings.append(posting)
@@ -186,6 +193,8 @@ def check(run, name):
                 err(f'{where}: shortlisted, but remote.countries does not show it is open to Germany')
         if run['schema'] >= 2:
             errors += check_estimate(p, where, name)
+        if run['schema'] >= 3:
+            errors += check_link(p, where, name, run)
         if p['verdict'] == 'dropped':
             enum(p['drop_reason'], 'drop_reason', where)
         elif p['drop_reason'] is not None:
@@ -202,6 +211,36 @@ def check(run, name):
                 err(f'{where}: score total {score["total"]} is not the sum {sum(parts)}')
         elif not isinstance(score, dict):
             err(f'{where}: score must be an object or null')
+    return errors
+
+
+def check_link(p, where, name, run):
+    """Schema 3: a shortlisted posting carries proof, from this sweep, that its link is live."""
+    lc = p['link_check']
+    if lc is None:
+        if p['verdict'] == 'shortlisted':
+            return [f'{name}: {where}: shortlisted without a link_check']
+        return []
+    if not isinstance(lc, dict) or set(lc) != set(LINK_CHECK_KEYS):
+        return [f'{name}: {where}: link_check needs exactly {", ".join(LINK_CHECK_KEYS)}']
+    errors = []
+    if lc['method'] not in VOCAB['link_check_method']:
+        errors.append(f'{name}: {where}: link_check.method {lc["method"]!r} is not in vocab.json')
+    if lc['result'] not in VOCAB['link_check_result']:
+        errors.append(f'{name}: {where}: link_check.result {lc["result"]!r} is not in vocab.json')
+    if not isinstance(lc['evidence'], str) or len(lc['evidence'].strip()) < 5:
+        errors.append(f'{name}: {where}: link_check.evidence must quote what the check returned')
+    if not str(lc['checked_at']).startswith(run['finished_at'][:10]) and \
+            not str(lc['checked_at']).startswith(run['started_at'][:10]):
+        errors.append(f'{name}: {where}: link_check.checked_at is not from this sweep')
+    if p['verdict'] == 'shortlisted':
+        if lc['result'] != 'live':
+            errors.append(f'{name}: {where}: shortlisted, but its link check says {lc["result"]}')
+        if lc['method'] not in SHORTLIST_CHECKS:
+            errors.append(f'{name}: {where}: shortlisted on a {lc["method"]!r} check; only '
+                          f'{" or ".join(SHORTLIST_CHECKS)} prove a link is live')
+    if p['verdict'] != 'dropped' and lc['result'] == 'dead':
+        errors.append(f'{name}: {where}: its link is dead; drop it as closed')
     return errors
 
 

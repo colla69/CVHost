@@ -20,10 +20,14 @@ sweep is committed, there is nothing to review: say so and stop. Read `jobs/prof
 
 Review every posting with verdict `shortlisted`, and every `kept` one scoring 6 or more. For each:
 
-1. **The link.** Open `url` yourself. It must be the employer's own posting (ATS, careers page) or an HN
-   comment, and live: no 404, no redirect to a job list, no "expired", "no longer accepting
+1. **The link.** Check it again yourself, independently of job-scout's `link_check`, with one of the two
+   methods `.claude/agents/job-scout.md` accepts as proof (`http` status or the ATS `api` listing), and
+   overwrite `link_check` with your own result. Never accept a WebFetch page view as proof: it can be a
+   cached copy of a job that is already gone. It must be the employer's own posting (ATS, careers page)
+   or an HN comment, and live: no 404, no redirect to a job list, no "expired", "no longer accepting
    applications" or past apply-by date. An aggregator page (Himalayas, Arbeitnow, remotivated, mynejo …)
-   is not acceptable on the shortlist: find the original or demote it to `kept`.
+   is not acceptable on the shortlist: find the original or demote it to `kept`. If neither method works
+   for a posting, it cannot stay shortlisted.
 2. **Germany.** The posting itself must let someone living in Munich work remotely: Germany, DACH,
    EU/EEA/Europe/EMEA or worldwide in its own location list, with onsite presence within the profile's
    ceiling. `remote.countries` must match what the posting says, not what the title suggests.

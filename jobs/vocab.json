@@ -11,6 +11,8 @@
   "salary_period": ["year", "month", "day", "hour"],
   "verdict": ["shortlisted", "kept", "dropped"],
   "confidence": ["high", "medium", "low"],
+  "link_check_method": ["http", "api", "page"],
+  "link_check_result": ["live", "dead"],
   "drop_reason": [
     "not-germany",
     "onsite",

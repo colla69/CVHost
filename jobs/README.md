@@ -52,7 +52,7 @@ it does (editing this copy does not change the routine):
 Manage it with `/schedule list`, `/schedule run` (a sweep now) and `/schedule update`, or at
 claude.ai/code/routines.
 
-## A sweep: `runs/<run_id>.json`, schema 2
+## A sweep: `runs/<run_id>.json`, schema 3
 
 `run_id` is the UTC start time as `YYYY-MM-DDTHHMMZ`, so file names sort chronologically. After writing a
 new sweep, run
@@ -68,7 +68,7 @@ anything. It refuses to rewrite a sweep that is already committed.
 
 ```jsonc
 {
-  "schema": 2,
+  "schema": 3,
   "run_id": "2026-10-01T0507Z",
   "started_at": "2026-10-01T05:07:00Z",
   "finished_at": "2026-10-01T05:41:00Z",
@@ -122,6 +122,13 @@ anything. It refuses to rewrite a sweep that is already committed.
       "currency": "EUR", "period": "year",          // period: year, month, day or hour
       "confidence": "medium",           // vocab: confidence. high = stated or a published band
       "basis": "Each source with its figure and date."   // see profile.md, Pay projection
+    },
+    "link_check": {                     // schema 3; required when shortlisted, else optional (null)
+      "checked_at": "2026-10-14T10:05:00Z",
+      "method": "api",                  // vocab: link_check_method. http = real status code,
+                                        // api = the ATS lists it as published, page = a fetched page
+      "result": "live",                 // vocab: link_check_result
+      "evidence": "Ashby board: isListed true, publishedAt 2026-09-10"
     }
   }]
 }
@@ -164,6 +171,10 @@ When a posting genuinely needs a new tag, the vocabulary is extended in the same
 summary says so. Never rename or remove a value: older sweeps use it.
 
 ## Changing the schema
+
+- **Schema 3** (2026-10-14) adds `link_check`. `ingest.py` refuses a shortlisted posting without one from
+  the same day, or whose check is only a fetched `page`: a fetched page can be a cached copy of a job that
+  is already gone.
 
 - **Schema 2** (2026-10-14) adds `pay_estimate` to every posting, and `ingest.py` refuses a posting that is
   not dropped when its projection is missing, unsourced, not in EUR, or tops out below the owner's floor
