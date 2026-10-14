@@ -312,10 +312,10 @@ def remote_text(remote):
     if remote['countries']:
         parts.append(', '.join(remote['countries']))
     if remote['onsite_days_per_quarter']:
-        parts.append(f'{remote["onsite_days_per_quarter"]:g} d/qtr onsite')
+        parts.append(f'{remote["onsite_days_per_quarter"]:g} days a quarter onsite')
     if remote['eor']:
-        parts.append('EOR')
-    return ' · '.join(parts)
+        parts.append('through an employer of record')
+    return ', '.join(parts)
 
 
 def salary_text(salary):
@@ -340,7 +340,7 @@ DETAIL_MIN = 6
 
 
 def render(run, first_seen):
-    """A short report: the shortlist and the near misses one line each, everything else as counts.
+    """A short report: the shortlist and the near misses as one card each, everything else as counts.
 
     The sweep file keeps every detail; the report only answers "anything worth my time today?"."""
     postings = run['postings']
@@ -349,8 +349,10 @@ def render(run, first_seen):
     lines = [
         f'# Job sweep {run["run_id"]}',
         '',
-        f'`{run["trigger"]}` · {len(postings)} evaluated, {new} new · {counts["shortlisted"]} shortlisted · '
-        f'{counts["kept"]} kept · {counts["dropped"]} dropped',
+        f'- **Shortlisted:** {counts["shortlisted"]}',
+        f'- **Kept:** {counts["kept"]}',
+        f'- **Dropped:** {counts["dropped"]}',
+        f'- **Evaluated:** {len(postings)}, {new} new ({run["trigger"]} sweep)',
         '',
         run['summary'].strip(),
         '',
@@ -358,7 +360,7 @@ def render(run, first_seen):
 
     def seen(p):
         earlier = first_seen.get(p['id'])
-        return 'new' if earlier is None else f'seen since {earlier[:10]}'
+        return 'new in this sweep' if earlier is None else earlier[:10]
 
     def rank(p):
         est = p.get('pay_estimate') or {}
@@ -375,38 +377,40 @@ def render(run, first_seen):
             return f'{figure} (stated {cell(salary_text(p["salary"]))})'
         return f'≈{figure} (est. {est["min"] / k:g}–{est["max"] / k:g}{unit}, {est["confidence"]})'
 
-    def line(p):
+    def block(p):
+        """One job as a short card: a heading, then one fact per line."""
         s = p['score']
-        total = f'**{s["total"]}**' if p['verdict'] == 'shortlisted' else str(s['total'])
-        industry = ', '.join(p['domain']) or 'industry unknown'
-        facts = [cell(p['company']), f'*{cell(industry)}*', p['contract'], cell(remote_text(p['remote']))]
+        tag = 'shortlisted' if p['verdict'] == 'shortlisted' else 'kept'
+        out = [f'### {link(p)}', '',
+               f'- **Score:** {s["total"]} of 10 ({tag})',
+               f'- **Company:** {cell(p["company"])}',
+               f'- **Industry:** {cell(", ".join(p["domain"])) or "unknown"}',
+               f'- **Contract:** {p["contract"]}',
+               f'- **Remote:** {cell(remote_text(p["remote"]))}']
         if pay(p):
-            facts.append(pay(p))
-        facts.append(seen(p))
-        if not p['verified']:
-            facts.append('*unverified*')
-        return f'- {total} · {link(p)} — {" · ".join(facts)}'
+            out.append(f'- **Pay:** {pay(p)}')
+            if p.get('pay_estimate') and not p['salary']['stated']:
+                out.append(f'- **Pay basis:** {cell(p["pay_estimate"]["basis"])}')
+        out.append(f'- **First seen:** {seen(p)}' + ('' if p['verified'] else ' (posting not opened)'))
+        return out + ['']
 
     listed = sorted((p for p in postings if p['verdict'] != 'dropped'), key=rank)
     shortlist = [p for p in listed if p['verdict'] == 'shortlisted']
     lines += ['## Shortlist', '']
     if shortlist:
         for p in shortlist:
-            lines.append(line(p))
-            if p.get('pay_estimate') and not p['salary']['stated']:
-                lines.append(f'  *Pay basis:* {cell(p["pay_estimate"]["basis"])}')
+            lines += block(p)
     else:
-        lines.append('Nothing made the shortlist.')
-    lines.append('')
+        lines += ['Nothing made the shortlist.', '']
 
     leverage = [p for p in listed if p['verdict'] != 'shortlisted' and language_leverage(p)]
     if leverage:
-        lines += ['## Asks for Italian', ''] + [line(p) for p in leverage] + ['']
+        lines += ['## Asks for Italian', ''] + [x for p in leverage for x in block(p)]
 
     near = [p for p in listed if p['verdict'] == 'kept' and not language_leverage(p)
             and p['score']['total'] >= DETAIL_MIN]
     if near:
-        lines += [f'## Near misses (kept, {DETAIL_MIN}+)', ''] + [line(p) for p in near] + ['']
+        lines += [f'## Near misses (kept, {DETAIL_MIN}+)', ''] + [x for p in near for x in block(p)]
 
     tail = []
     below = sum(1 for p in listed if p['verdict'] == 'kept' and not language_leverage(p)
@@ -421,7 +425,7 @@ def render(run, first_seen):
     ok = sum(1 for s in run['sources'] if s['status'] == 'ok')
     trouble = [f'{cell(s["name"])} {s["status"]}' for s in run['sources'] if s['status'] in ('blocked', 'error')]
     tail.append(f'Sources: {ok} of {len(run["sources"])} ok' + (f'; {", ".join(trouble)}.' if trouble else '.'))
-    lines += [' '.join(tail), '']
+    lines += ['## Everything else', ''] + [f'- {t}' for t in tail] + ['']
 
     if run['open_questions']:
         lines += ['## Open questions', ''] + [f'- {q}' for q in run['open_questions']] + ['']
