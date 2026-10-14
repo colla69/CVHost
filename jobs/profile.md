@@ -235,5 +235,9 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   by keyword rather than `hitsPerPage=1000`.
 - 2026-10-14 — **europelanguagejobs.com** ("jobs for English+German+Italian speakers", 669 listings): the first 20 are
   all sales, customer service or support. Not worth a query.
+- 2026-10-14 (second sweep) — **news.ycombinator.com** item pages fail through WebFetch; `hn.algolia.com/api/v1/items/<id>`
+  confirms a comment is still live. **Ashby** job pages render only with JavaScript, so check them through the board API.
+  **remotely.de** surfaces German remote roles that other sources miss (Europace) and links the employer's softgarden page;
+  its "nicht mehr verfügbar" flag does not always match the employer's board.
 - 2026-10-14 — **WebSearch `site:jobs.ashbyhq.com`** returned no Ashby page, only copies on Arbeitnow, php-resource,
   Remotive and freelancermap; `site:jobs.lever.co` + "AI Engineer" returned only Jobgether reposts.
