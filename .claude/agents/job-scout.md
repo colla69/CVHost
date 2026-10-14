@@ -100,10 +100,22 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
    Arbeitnow, Remotive, remotivated, mynejo and the like) are where you find a role, not where you send
    the owner: Himalayas' apply button ends at a sign-up wall and its pages outlive the job. Search for the
    original and link that; when none exists, the posting stays `kept`, never `shortlisted`.
-   **Check every link last.** Right before step 6, re-open the URL of every
-   posting you are about to mark `shortlisted` or `kept` at 6+. A 404, a redirect to a job list, an
-   "expired", "no longer accepting applications" or apply-by date in the past makes it `dropped` as
-   `closed`. Nothing goes to the owner unchecked.
+   **Check every link last, and record the proof.** Right before step 6, check the URL of every posting
+   you are about to mark `shortlisted` or `kept` at 6+, and write the result into its `link_check`
+   (`checked_at`, `method`, `result`, `evidence`). Only two methods prove a link is live:
+   - `http`: `curl -sS -o /dev/null -L -w '%{http_code} %{url_effective}' -A '<browser UA>' <url>` returns
+     200 and does not land on a job list or an error page. `evidence` is that output.
+   - `api`: the employer's ATS lists the posting as published right now: Greenhouse
+     `boards-api.greenhouse.io/v1/boards/<board>/jobs/<id>`, Lever `api.lever.co/v0/postings/<acct>/<id>`,
+     Ashby `api.ashbyhq.com/posting-api/job-board/<board>` (`isListed: true`), Personio
+     `<company>.jobs.personio.de/xml`, Recruitee `<careers-host>/api/offers/`, Workable
+     `apply.workable.com/api/v1/widget/accounts/<acct>`, an HN comment through
+     `hn.algolia.com/api/v1/items/<id>`. `evidence` quotes the entry.
+   A page read through WebFetch is `page`, and it is **not proof**: WebFetch can serve a cached copy, and
+   on 2026-10-14 it showed Recare's role as open while the real link was a 404. A posting with only a
+   `page` check stays `kept`, never `shortlisted`; `ingest.py` enforces this. A 404, a redirect to a job
+   list, an ATS list without the posting, "expired", "no longer accepting applications" or a past
+   apply-by date is `result: dead` and the posting is `dropped` as `closed`.
 5. **Judge.** Apply the hard filters and then the rubric from `profile.md`. `why` is one line citing
    real CV evidence ("owned the pipelines and their AWS migration at Porsche Bank"), not an adjective.
    `gap` is one honest line, or empty only when there truly is none. Do not invent a salary; if the
