@@ -25,6 +25,7 @@ RUNS = ROOT / 'jobs' / 'runs'
 SOURCE = 'google-jobs'
 MONTHLY_BUDGET = 240  # of the free plan's 250, leaving room for manual tests
 ENDPOINT = 'https://serpapi.com/search.json'
+TIMEOUT = 120  # seconds; 4 of 8 searches hit the old 60 s limit on 2026-10-15
 
 
 def api_key():
@@ -60,9 +61,12 @@ def used_this_month():
 
 
 def search(key, query):
-    params = {'engine': 'google_jobs', 'q': query, 'gl': 'de', 'hl': 'en', 'api_key': key}
+    # Without `location` SerpApi may search from its proxy's location, which does not match gl=de;
+    # on 2026-10-15 that returned nothing for every query.
+    params = {'engine': 'google_jobs', 'q': query, 'location': 'Germany', 'gl': 'de', 'hl': 'en',
+              'api_key': key}
     try:
-        with urllib.request.urlopen(f'{ENDPOINT}?{urllib.parse.urlencode(params)}', timeout=60) as r:
+        with urllib.request.urlopen(f'{ENDPOINT}?{urllib.parse.urlencode(params)}', timeout=TIMEOUT) as r:
             data = json.load(r)
     except urllib.error.HTTPError as e:
         return {'query': query, 'error': f'HTTP {e.code}'}
