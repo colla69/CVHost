@@ -182,8 +182,10 @@ depends on how it was made. Claude can only edit a scheduled task that the same 
   only the owner at claude.ai/code/routines or Claude Code on their computer (`/schedule update`) can.
   On 2026-10-15 it was off, still on its old Mon/Thu schedule and prompt.
 - **`job-scout daily sweep`** (`trig_01Go9nbvEsAdDwfBmSRrQfGL`) was created on 2026-10-15 by a cloud
-  thread in the owner's claude.ai project, so cloud sessions can edit it. It runs in that project's cloud
-  environment, which is where `SERPAPI_KEY` has to be set for it.
+  thread in the owner's claude.ai project. Because each run starts a new project thread, a cloud
+  session can only switch it off or run it as it is; any other change (schedule, prompt, name) means
+  deleting it and creating it again. It runs in that project's cloud environment, which is where
+  `SERPAPI_KEY` has to be set for it.
 
 Whether a task is on, its schedule and its environment are live state that no file here can show: check
 with the scheduled-task tools before saying a run will happen.
