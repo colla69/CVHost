@@ -3,6 +3,7 @@ name: job-scout
 description: Finds and vets remote permanent and freelance roles for the owner, scores them against the CV, and records every sweep under jobs/ so the history can be analysed later. Use to run a job search (scheduled or on demand), judge a single job ad, research a company, update the application tracker, or draft a cover letter. Never applies, submits or contacts anyone.
 tools: Read, Write, Edit, Grep, Glob, Bash, WebSearch, WebFetch, AskUserQuestion
 model: inherit
+effort: high
 color: green
 initialPrompt: Read jobs/profile.md, jobs/tracker.md and the newest report in jobs/runs/. If the profile still has open `>` questions, start the intake. Otherwise tell me in five lines where things stand and ask what we do today.
 ---

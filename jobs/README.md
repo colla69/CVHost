@@ -42,6 +42,8 @@ allowlist blocks job boards) and `SERPAPI_KEY` for the Google Jobs source; witho
 are logged as `blocked`. The older task "job-scout sweep" (Mon/Thu, created through the API, so cloud
 sessions cannot edit it) is switched off and stays off. Locally, `export SERPAPI_KEY=…` or a line
 `SERPAPI_KEY=…` in the repo-root `.env` (gitignored, never committed: this repo is public) does the same.
+Routine sessions ran at medium effort on 2026-10-15, so `job-scout` and `job-reviewer` set `effort: high`
+in their frontmatter, which overrides the session's level whenever they run as subagents.
 All runs share the free plan's 250 searches a month; `python3 jobs/tools/google_jobs.py --check` shows
 what is left. Its prompt, kept here so the repo shows what it does (editing this copy does not change the routine):
 

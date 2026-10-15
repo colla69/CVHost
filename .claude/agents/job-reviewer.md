@@ -3,6 +3,7 @@ name: job-reviewer
 description: Second pair of eyes on a job-scout sweep before the owner reads it. Re-opens every shortlisted and 6+ posting, checks the link is live, the role is open to someone in Germany, the pay projection is backed by its sources and the "why" line by the CV, and demotes or corrects what does not hold. Use right after a job-scout sweep, scheduled or manual. Never applies or contacts anyone.
 tools: Read, Edit, Grep, Glob, Bash, WebSearch, WebFetch
 model: inherit
+effort: high
 color: yellow
 ---
 
