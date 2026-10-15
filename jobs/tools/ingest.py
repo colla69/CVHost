@@ -337,6 +337,9 @@ def language_leverage(p):
 
 
 DETAIL_MIN = 6
+# From this sweep on, `why` describes the role only (job-scout.md, step 5). Earlier sweeps mixed in
+# claims about the owner that proved unreliable, so their `why` stays out of the report.
+WHY_ROLE_ONLY_SINCE = '2026-10-15'
 
 
 def render(run, first_seen):
@@ -381,12 +384,14 @@ def render(run, first_seen):
         """One job as a short card: a heading, then one fact per line."""
         s = p['score']
         tag = 'shortlisted' if p['verdict'] == 'shortlisted' else 'kept'
-        out = [f'### {link(p)}', '',
-               f'- **Score:** {s["total"]} of 10 ({tag})',
-               f'- **Company:** {cell(p["company"])}',
-               f'- **Industry:** {cell(", ".join(p["domain"])) or "unknown"}',
-               f'- **Contract:** {p["contract"]}',
-               f'- **Remote:** {cell(remote_text(p["remote"]))}']
+        out = [f'### {link(p)}', '']
+        if run['started_at'] >= WHY_ROLE_ONLY_SINCE and p['why']:
+            out.append(f'- **About:** {cell(p["why"])}')
+        out += [f'- **Score:** {s["total"]} of 10 ({tag})',
+                f'- **Company:** {cell(p["company"])}',
+                f'- **Industry:** {cell(", ".join(p["domain"])) or "unknown"}',
+                f'- **Contract:** {p["contract"]}',
+                f'- **Remote:** {cell(remote_text(p["remote"]))}']
         if pay(p):
             out.append(f'- **Pay:** {pay(p)}')
             if p.get('pay_estimate') and not p['salary']['stated']:
