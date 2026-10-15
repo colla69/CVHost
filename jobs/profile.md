@@ -249,3 +249,14 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   its "nicht mehr verfügbar" flag does not always match the employer's board.
 - 2026-10-14 — **WebSearch `site:jobs.ashbyhq.com`** returned no Ashby page, only copies on Arbeitnow, php-resource,
   Remotive and freelancermap; `site:jobs.lever.co` + "AI Engineer" returned only Jobgether reposts.
+- 2026-10-15 — **curl works again** from this session's network. **GermanTechJobs** now answers a Cloudflare challenge
+  (403) to a browser User-Agent but serves the RSS to curl's default one. Its ad pages are a JavaScript shell that answers
+  200 for any path, so an http check proves nothing; whether the RSS still lists the ad is the usable check.
+- 2026-10-15 — **Himalayas** and **We Work Remotely** posting pages answer 403 (Cloudflare challenge) to curl with any
+  User-Agent; their search API and RSS still answer. Their links cannot get an http check.
+- 2026-10-15 — **Google Jobs** (SerpApi), first night: of 8 searches, 4 timed out at `google_jobs.py`'s 60 s limit and 4
+  returned "Google hasn't returned any results for this query", including the generic "Tech Lead Java Homeoffice".
+  The script sends `gl=de`, `hl=en` and no `location`.
+- 2026-10-15 — **HN October thread** read whole (`hitsPerPage=1000`) for the first time: it held roles the keyword-only
+  reads of 2026-10-14 had missed (LiveKit, Mastra, GiveDirectly). Read it whole whenever curl works.
+- 2026-10-15 — `watu.global/careers` redirects to an unrelated `.ru.com` domain; do not follow it.
