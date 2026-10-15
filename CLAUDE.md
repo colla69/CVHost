@@ -20,6 +20,11 @@ one, cloud project threads included. So:
 - **The repo states intent, not live state.** Scheduled tasks, cloud environments, secrets and GitHub
   access are settings on the owner's account. Check them with a tool before promising anything that
   depends on them, and never write a planned change into a doc as done before it is.
+- **Check before you claim, in every answer.** A time, a count, a status, a cause or a limit you tell the
+  owner is either checked first (say what you checked) or plainly marked as a guess. Limits you set
+  yourself (search budgets, caps) are your choices, not facts: say so, and fit them to what the owner
+  asked for. The owner asked for this on 2026-10-15 after a made-up run time and a promised nightly run
+  that was switched off.
 
 ## Layout
 
