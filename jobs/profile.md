@@ -260,3 +260,12 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
 - 2026-10-15 — **HN October thread** read whole (`hitsPerPage=1000`) for the first time: it held roles the keyword-only
   reads of 2026-10-14 had missed (LiveKit, Mastra, GiveDirectly). Read it whole whenever curl works.
 - 2026-10-15 — `watu.global/careers` redirects to an unrelated `.ru.com` domain; do not follow it.
+- 2026-10-16 — **Google Jobs** with `location=Germany`: 1 of 7 searches returned results (10 jobs, for the short
+  "Lead Software Engineer remote Deutschland"); the 6 longer ones, and all three language-leverage ones, got "Google hasn't
+  returned any results for this query". Keep queries short. Hits link to aggregators (Zuhausejobs, JobLeads, Talent.com,
+  remotely.de); the employer's Personio XML (`<company>.jobs.personio.de/xml`) was the way to the original ad, and it lists
+  the employer's other open roles too (1KOMMA5°, Checkmk). zuhausejobs.com answers 403 to curl.
+- 2026-10-16 — **Personio** job pages carry a JSON-LD `datePosted` that can be later than the XML's `createdAt`
+  (1KOMMA5°: created 2026-02-27, datePosted 2026-08-19); record `datePosted` as `posted_at` and quote both in the evidence.
+- 2026-10-16 — **Arbeitnow** pages of removed ads answer 410; **join.com** pages of removed ads answer 410 with
+  `"status":"OFFLINE"`. Both are usable dead-link checks. Teamtailor boards expose `careers.<company>/jobs.rss`.
