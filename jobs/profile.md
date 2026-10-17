@@ -269,3 +269,8 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   (1KOMMA5°: created 2026-02-27, datePosted 2026-08-19); record `datePosted` as `posted_at` and quote both in the evidence.
 - 2026-10-16 — **Arbeitnow** pages of removed ads answer 410; **join.com** pages of removed ads answer 410 with
   `"status":"OFFLINE"`. Both are usable dead-link checks. Teamtailor boards expose `careers.<company>/jobs.rss`.
+- 2026-10-17 — **Google Jobs** again answered 1 of 7 searches (10 jobs, "AI Engineer remote Deutschland"); "Tech Lead remote
+  Germany" and five other short queries got "no results". The only two queries that have returned anything (2026-10-16 and
+  2026-10-17) both end in "remote Deutschland"; worth trying that wording for every lane (a guess from two data points).
+  **Recruitee** boards on a custom host (primion: `jobs.primion.eu`) answer `/api/offers/` with `published_at`, remote flags and
+  salary. **Workable** (`apply.workable.com/fuseenergy` and its widget API) answered 429 / Cloudflare 1015 all night.
