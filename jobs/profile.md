@@ -274,3 +274,12 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   2026-10-17) both end in "remote Deutschland"; worth trying that wording for every lane (a guess from two data points).
   **Recruitee** boards on a custom host (primion: `jobs.primion.eu`) answer `/api/offers/` with `published_at`, remote flags and
   salary. **Workable** (`apply.workable.com/fuseenergy` and its widget API) answered 429 / Cloudflare 1015 all night.
+- 2026-10-19 — **Google Jobs**: with every query ending in "remote Deutschland", 4 of 5 lane searches returned 10 jobs and the
+  freelance one 2 (52 in all); both language-leverage searches still got "no results". **Hypoport's softgarden board**
+  (`hypoport.softgarden.io/en/vacancies`, one page, ~280 ids) lists every Hypoport network company (Europace, Europace Ratenkredit,
+  Value AG, Smart InsurTech, Dr. Klein Wowi, Hypoport Sofia); a re-published ad keeps its job id but gets a new `jobDbPVId` and
+  JSON-LD `datePosted`. **freelancermap** project pages carry `"isArchived":true` / `"active":false` in the page JSON even when
+  nothing on the page says so, and old `/projektboerse/…` URLs redirect to `/projekt/<slug>`: a usable dead check. **join.com**
+  redirects an older ad id to the newest repost, and its JSON-LD `datePosted` keeps the first creation date (wealthAPI:
+  2022-06-10). **Recruitee** `careers_url` on a custom domain can 404 while `<account>.recruitee.com/o/<slug>` works (Makersite).
+  Workable (`fuseenergy`) still answers 429.
