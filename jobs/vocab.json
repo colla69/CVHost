@@ -33,7 +33,7 @@
     "spring", "spring-boot", "jakarta-ee", "quarkus", "micronaut", "hibernate",
     "typescript", "javascript", "node", "nestjs", "express",
     "react", "angular", "vue", "svelte", "nextjs",
-    "python", "go", "rust", "csharp", "dotnet", "php", "ruby", "elixir", "cpp",
+    "python", "go", "rust", "csharp", "dotnet", "php", "ruby", "elixir", "cpp", "delphi",
     "ios", "android", "flutter", "react-native",
     "aws", "azure", "gcp",
     "terraform", "cdk", "pulumi", "kubernetes", "docker", "helm", "linux",

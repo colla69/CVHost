@@ -274,3 +274,12 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   2026-10-17) both end in "remote Deutschland"; worth trying that wording for every lane (a guess from two data points).
   **Recruitee** boards on a custom host (primion: `jobs.primion.eu`) answer `/api/offers/` with `published_at`, remote flags and
   salary. **Workable** (`apply.workable.com/fuseenergy` and its widget API) answered 429 / Cloudflare 1015 all night.
+- 2026-10-18 — **Google Jobs**: with every query ending in "remote Deutschland", 5 of 7 searches returned results (4 x 10 jobs, 1 x 1);
+  both language-leverage queries still got "no results". Keep that wording.
+- 2026-10-18 — **SmartRecruiters** (Haufe Group) has a public API: `api.smartrecruiters.com/v1/companies/<company>/postings`
+  (`?q=` filters, `limit=100`) and `…/postings/<id>` with `active`, `releasedDate`, `location.remote`/`hybrid` and the full ad. It works
+  as an `api` link check.
+- 2026-10-18 — **remotely.de**: a closed copy shows "Diese Stelle ist nicht mehr verfügbar" right under the job title; the same phrase
+  also appears in the sidebar of every page, so read the title block, not the whole page.
+- 2026-10-19 — **join.com** re-publishes ads under new ids and redirects the old id (pathway 16793888 -> 16844394 overnight; wealthAPI's
+  ad still carries datePosted 2022-06-10). Read `datePosted` on the page, not the id.
