@@ -292,3 +292,8 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   redirects an older ad id to the newest repost, and its JSON-LD `datePosted` keeps the first creation date (wealthAPI:
   2022-06-10). **Recruitee** `careers_url` on a custom domain can 404 while `<account>.recruitee.com/o/<slug>` works (Makersite).
   Workable (`fuseenergy`) still answers 429.
+- 2026-10-20 — **join.com** does not always redirect a re-published ad: pathway's 16844394 stayed at 200 with `"status":"OFFLINE"` while a
+  re-titled ad (16846306) went up the same minute. Read `status` on the page, and look at the company page for a successor.
+  **Caspar Health** hires through the Personio account `goreha` (`goreha.jobs.personio.de/xml`). **Learn4Good**, **JobLeads** and
+  **jobboerse.de** answer 403 to curl, like zuhausejobs; Google Jobs hits that link only there cannot be opened. **Google Jobs**: 4 of 7
+  searches returned results; "Vue TypeScript Entwickler remote Deutschland" and both language-leverage searches got "no results".
