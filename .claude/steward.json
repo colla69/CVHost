@@ -1,0 +1,98 @@
+{
+  "steward": "83beb1e36db6",
+  "files": {
+    "frontend/CLAUDE.md": {
+      "sha256": "b0b287fa5c746917a9f6883bf383fe7f42336242925f69b252b7cb626d816664"
+    },
+    "infra/CLAUDE.md": {
+      "sha256": "0bc7c08a1629cc4fb5219849eca05fb3e3f9d8a1932ff15bfb50552f90c16bca"
+    },
+    "CV/CLAUDE.md": {
+      "sha256": "393bcb1fd37fa548d1462d95c850e4b44869b9e447fc76f9496fb69d652cc39e"
+    },
+    "jobs/CLAUDE.md": {
+      "sha256": "d522733b62d7598c1615ea8d6e3b9e85b5e11c0c08fb38964bd9a5dfa47898c4"
+    },
+    ".claude/rules/trilingual-site.md": {
+      "sha256": "7d4a8a6ff465546c4afffb2ab8ab9e9b8aae1ad3789cd8a48144d6c8fd4be788"
+    },
+    ".claude/rules/translating-de-it.md": {
+      "sha256": "ce5d1a69f98ca3611f8c7ef49f1108a5a03a933cad60c9d47c45b767ee67f7b3"
+    },
+    ".claude/agents/change-plan.md": {
+      "from": "roles/plan.md",
+      "template": "bbcd7cfea893e2f936b2e43a7abdd920657f74af8dee2879259b85faf9ee5ea4",
+      "fill": {
+        "TASK": "change",
+        "WHAT_THE_TASK_DOES": "a change to the site under `frontend/` (a feature, a fix, a content edit, styling or build config)",
+        "skills": [
+          "craft-development:development-standards",
+          "language-simple-english:simple-english"
+        ],
+        "model": "opus",
+        "effort": "high"
+      },
+      "sha256": "484fb6995218786971f6041e40e527f4fccf6f4bbdf02bdf90711e08f594e89e"
+    },
+    ".claude/agents/change-do.md": {
+      "from": "roles/do.md",
+      "template": "b5074e2cca99bf009a17461d841ad31be25da3b6476f59e235492fd71debe7ee",
+      "fill": {
+        "TASK": "change",
+        "WHAT_THE_TASK_DOES": "a change to the site under `frontend/` (a feature, a fix, a content edit, styling or build config)",
+        "skills": [
+          "universal-work-discipline:work-discipline",
+          "craft-development:development-standards",
+          "universal-clean-code:clean-code",
+          "language-simple-english:simple-english"
+        ],
+        "model": "opus",
+        "effort": "medium",
+        "TEST_PARAGRAPH": "removed: the task does not write tests"
+      },
+      "sha256": "524020d9da8a47ae6464900514875bb549f6f86b804ce5236b62bc4afea4f78e"
+    },
+    ".claude/agents/change-check.md": {
+      "from": "roles/check.md",
+      "template": "0f2e72a70bcd1f417be1c3863e0ef5595cedf66dbb644a6692090b79efe8f2a1",
+      "fill": {
+        "TASK": "change",
+        "WHAT_THE_TASK_DOES": "a change to the site under `frontend/` (a feature, a fix, a content edit, styling or build config)",
+        "skills": [
+          "craft-review:review-work",
+          "craft-code-review:review-changes",
+          "universal-clean-code:clean-code",
+          "language-simple-english:simple-english"
+        ],
+        "model": "opus",
+        "effort": "medium"
+      },
+      "sha256": "ae6c3cb6f85c9306278da0c92eaaac059ce2ff8fd1ea49abb472c1369d338404"
+    },
+    ".claude/skills/change/SKILL.md": {
+      "from": "roles/run.md",
+      "template": "3213eef965ebcc5ed8dc77e8fd85f6f7bde9bdc85e4de655266a6feffa9532c2",
+      "fill": {
+        "TASK": "change",
+        "WHAT_THE_TASK_DOES": "a change to the site under `frontend/` (a feature, a fix, a content edit, styling or build config)",
+        "THE_PHRASES_PEOPLE_USE_FOR_THIS_TASK": "add or change a page, a component, a news post, a project entry or a certificate, fix a bug on the site, or change its styling or layout",
+        "THE_NON_OBVIOUS_SECOND_TRIGGER": "for a small copy or data edit, since every site text exists in three languages and the change leaves German and Italian text to hand to `cv-strategist`"
+      },
+      "sha256": "44f3c56101a46f0bf8ed41d245ce0529f52c01e17d555f0cd9e5a1f1b505387c"
+    }
+  },
+  "plugins": [
+    "craft-development@personal-claude-plugin-marketplace",
+    "craft-code-review@personal-claude-plugin-marketplace",
+    "craft-review@personal-claude-plugin-marketplace",
+    "universal-work-discipline@personal-claude-plugin-marketplace",
+    "universal-clean-code@personal-claude-plugin-marketplace",
+    "language-simple-english@personal-claude-plugin-marketplace",
+    "craft-unit-testing@personal-claude-plugin-marketplace",
+    "craft-cv-writing@personal-claude-plugin-marketplace",
+    "tools-aws-static-hosting@personal-claude-plugin-marketplace"
+  ],
+  "context": "CLAUDE.md",
+  "declined": [],
+  "pending": []
+}

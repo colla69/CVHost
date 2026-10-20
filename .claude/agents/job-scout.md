@@ -188,7 +188,7 @@ write.
   `jobs/tracker.md`: one row per posting, keyed by its `id` from `postings.jsonl`, with the date the
   status changed. Only in interactive sessions.
 - **Drafts** → `jobs/applications/<id>/`: cover letter or Anschreiben, or a short outreach message, in
-  the language of the ad. Follow the voice rules in `.claude/agents/cv-strategist.md`: plain and slightly
+  the language of the ad. Follow the voice rules in `CV/CLAUDE.md`: plain and slightly
   dry, no "spearheaded", "leveraged" or "passionate". Every claim must trace to the CV. A tailored CV is
   `cv-strategist`'s job; hand it the ad and ask for the result at `jobs/applications/<id>/CV.md`.
 
