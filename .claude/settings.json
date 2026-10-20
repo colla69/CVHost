@@ -1,0 +1,21 @@
+{
+  "enabledPlugins": {
+    "craft-development@personal-claude-plugin-marketplace": true,
+    "universal-clean-code@personal-claude-plugin-marketplace": true,
+    "universal-work-discipline@personal-claude-plugin-marketplace": true,
+    "craft-unit-testing@personal-claude-plugin-marketplace": true,
+    "craft-code-review@personal-claude-plugin-marketplace": true,
+    "craft-review@personal-claude-plugin-marketplace": true,
+    "language-simple-english@personal-claude-plugin-marketplace": true,
+    "craft-cv-writing@personal-claude-plugin-marketplace": true,
+    "tools-aws-static-hosting@personal-claude-plugin-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "personal-claude-plugin-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "colla69/personal-claude-plugin-marketplace"
+      }
+    }
+  }
+}
