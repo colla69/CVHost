@@ -21,8 +21,12 @@ nobody agreed to, and Check checks against it.
    their answer amends the accepted plan, and Do runs again.
 4. **Check.** Hand `change-check` the accepted plan and Do's report.
 5. **Back to Do, if needed.** When Check says "back to Do", hand Do the plan and
-   Check's list, then check again. After two rounds that still don't match, stop and
-   show the user both reports rather than starting a third.
+   Check's list. Then hand Check its own list and Do's new report, and tell it to cover
+   only the items sent back and what the fix touched: checking the rest again repeats
+   the first round at full cost. If the only gaps are wording or layout that change no
+   plan item's meaning, Do fixes them and the run ends without another check; the
+   report says which fixes nobody checked. After two rounds that still don't match,
+   stop and show the user both reports rather than starting a third.
 
 ## Report
 
@@ -31,7 +35,8 @@ nobody agreed to, and Check checks against it.
 
 **Plan:** <accepted, with the user's changes if any>
 **Done:** <Do's plan items, one line each>
-**Check:** <matches the plan / the gaps still open after two rounds>
+**Check:** <matches the plan / matches, with cosmetic fixes not re-checked / the gaps
+still open after two rounds>
 
 ### Outside the plan
 <What Check found that the plan never covered, for the next plan.>
