@@ -59,7 +59,7 @@ build wrapper pinned to node v12. Its stale `target/` output and the unused Dock
 - The site is in English, German and Italian. Every user-visible string exists in all three: see
   `.claude/rules/trilingual-site.md`.
 - Two-space indent, single quotes, no semicolons. eslint enforces it in `frontend/`; by habit it holds in
-  `infra/` and `functions/spa-fallback.js` too, where nothing enforces it.
+  `infra/` and `infra/functions/spa-fallback.js` too, where nothing enforces it.
 - Comments say why, and often record the dated incident behind a rule ("on 2026-10-14 …"). Match that.
 - Branch name `feature/aws` is left over from abandoned infrastructure attempts (`DEPLOYMENT.md`, History).
 
@@ -92,6 +92,11 @@ start one, cloud project threads included. So:
 
 - **Before working in an agent's area, read its file yourself** even if you won't start it: job search →
   `job-scout.md` and `jobs/README.md`; hosting → `aws-deployer.md`; CV text → `cv-strategist.md`.
+- **Cloud project threads load only this file and the root `.claude/rules/` without `paths:`.** Per the
+  docs checked on 2026-10-23, they skip `.claude/settings.json` (plugins, hooks, permissions),
+  `.claude/agents/`, `.claude/skills/` and the `CLAUDE.md` files in subfolders. A thread on 2026-10-23
+  started with no plugins installed. Plugins reach threads only through the project's settings
+  (Plugins); local sessions on the owner's machine get the full setup.
 - **The repo is the only memory every session shares.** Claude memory may be off and chat history does
   not reach new sessions. When you learn a fact a later session would otherwise have to rediscover (how
   something outside the repo was set up, who can change it, why a step failed), write it into the file

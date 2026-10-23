@@ -1,5 +1,5 @@
 {
-  "steward": "83beb1e36db6",
+  "steward": "6baaa28df7e8",
   "files": {
     "frontend/CLAUDE.md": {
       "sha256": "b0b287fa5c746917a9f6883bf383fe7f42336242925f69b252b7cb626d816664"
@@ -21,7 +21,7 @@
     },
     ".claude/agents/change-plan.md": {
       "from": "roles/plan.md",
-      "template": "bbcd7cfea893e2f936b2e43a7abdd920657f74af8dee2879259b85faf9ee5ea4",
+      "template": "d6bb237d4e0809e690ea94224a4f5f4369ca91a78a6fa0747bb9e405b9172854",
       "fill": {
         "TASK": "change",
         "WHAT_THE_TASK_DOES": "a change to the site under `frontend/` (a feature, a fix, a content edit, styling or build config)",
@@ -32,7 +32,7 @@
         "model": "opus",
         "effort": "high"
       },
-      "sha256": "484fb6995218786971f6041e40e527f4fccf6f4bbdf02bdf90711e08f594e89e"
+      "sha256": "de815d6b64a6bbd489041c39bb734b436f0e075b184839791bd595f1754d42ac"
     },
     ".claude/agents/change-do.md": {
       "from": "roles/do.md",
@@ -54,7 +54,7 @@
     },
     ".claude/agents/change-check.md": {
       "from": "roles/check.md",
-      "template": "0f2e72a70bcd1f417be1c3863e0ef5595cedf66dbb644a6692090b79efe8f2a1",
+      "template": "fd060222292452794ad4cd8b62d826bf9e253d7e9b307396139046e63c9739cd",
       "fill": {
         "TASK": "change",
         "WHAT_THE_TASK_DOES": "a change to the site under `frontend/` (a feature, a fix, a content edit, styling or build config)",
@@ -67,18 +67,18 @@
         "model": "opus",
         "effort": "medium"
       },
-      "sha256": "ae6c3cb6f85c9306278da0c92eaaac059ce2ff8fd1ea49abb472c1369d338404"
+      "sha256": "be4eee2d75d155d0c3722753d4078502030bd7310a670ab051ec0628654d15ac"
     },
     ".claude/skills/change/SKILL.md": {
       "from": "roles/run.md",
-      "template": "3213eef965ebcc5ed8dc77e8fd85f6f7bde9bdc85e4de655266a6feffa9532c2",
+      "template": "719e9c44d8b8dd90cd15349d16bdfe4001fb26b03536adf84403df1c10d65352",
       "fill": {
         "TASK": "change",
         "WHAT_THE_TASK_DOES": "a change to the site under `frontend/` (a feature, a fix, a content edit, styling or build config)",
         "THE_PHRASES_PEOPLE_USE_FOR_THIS_TASK": "add or change a page, a component, a news post, a project entry or a certificate, fix a bug on the site, or change its styling or layout",
         "THE_NON_OBVIOUS_SECOND_TRIGGER": "for a small copy or data edit, since every site text exists in three languages and the change leaves German and Italian text to hand to `cv-strategist`"
       },
-      "sha256": "44f3c56101a46f0bf8ed41d245ce0529f52c01e17d555f0cd9e5a1f1b505387c"
+      "sha256": "893c4707910ff1eba0148881a881f144f71805c63f8b6ac1d667801a4d1aa90e"
     }
   },
   "plugins": [

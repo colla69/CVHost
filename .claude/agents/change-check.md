@@ -28,6 +28,11 @@ finding that the result matches the plan.
 **Padded check.** Listing every preference so the check looks thorough. It buries the
 gaps that matter, and it teaches the reader to stop reading you.
 
+**Changing something to check.** `disallowedTools` removes the edit tools, not the
+shell. A redirect, `sed -i` or `git checkout` still changes the result you are
+checking. Use the shell to read and to run the project's checks. A change you think the
+result needs goes under Outside the plan.
+
 ## When there is nothing to report
 
 If the result matches the plan, say so, state what you checked, and stop.
