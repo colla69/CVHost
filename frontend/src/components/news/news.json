@@ -388,5 +388,20 @@
       "it": "Il mio reparto aiuterà <a href=\"https://www.ppi-group.eu/en/digital-euro.html\" target=\"_blank\" rel=\"noopener noreferrer\">PPI</a> nello sviluppo dell’euro digitale.<br> La settimana prossima vado ad Amburgo per conoscere il loro sistema, TRAVIC. Il mio secondo giro con l’euro digitale, dopo l’applicazione showcase per Pioneer Investments dell’anno scorso."
     },
     "img_link": "/img/project-financial-charts.jpg"
+  },
+  {
+    "id": 27,
+    "title": {
+      "en": "Every project should start from what the last one learned",
+      "de": "Jedes Projekt sollte auf dem aufbauen, was das letzte gelernt hat",
+      "it": "Ogni progetto dovrebbe partire da ciò che ha imparato il precedente"
+    },
+    "release_date": "2026-10-23 17:05:00",
+    "description_text": {
+      "en": "I've just released my <a href=\"https://github.com/colla69/personal-claude-plugin-marketplace\" target=\"_blank\" rel=\"noopener noreferrer\">personal plugin marketplace</a> for Claude Code: standards written once and reused in every project, plus a steward that sets a repo up, builds its Plan, Do, Check workflow, and turns what the project learns into pull requests back to the marketplace.",
+      "de": "Ich habe gerade meinen <a href=\"https://github.com/colla69/personal-claude-plugin-marketplace\" target=\"_blank\" rel=\"noopener noreferrer\">persönlichen Plugin-Marketplace</a> für Claude Code veröffentlicht: Standards, die einmal geschrieben und in jedem Projekt wiederverwendet werden, dazu ein Steward, der ein Repo einrichtet, dessen Workflow Plan, Do, Check aufbaut und aus dem, was das Projekt lernt, Pull Requests zurück an den Marketplace macht.",
+      "it": "Ho appena rilasciato il mio <a href=\"https://github.com/colla69/personal-claude-plugin-marketplace\" target=\"_blank\" rel=\"noopener noreferrer\">plugin marketplace personale</a> per Claude Code: standard scritti una sola volta e riutilizzati in ogni progetto, più uno steward che configura un repo, ne costruisce il workflow Plan, Do, Check e trasforma ciò che il progetto impara in pull request che tornano al marketplace."
+    },
+    "img_link": "/img/project-card-catalog.jpg"
   }
 ]

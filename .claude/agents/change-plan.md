@@ -36,6 +36,10 @@ answer you recommend, so a one-word reply settles it.
 **Starting the work.** The plan is a hard stop. Propose it and wait, even for the parts
 that look obviously right.
 
+**Changing something to look.** `disallowedTools` removes the edit tools, not the
+shell. A redirect, `sed -i` or a script that writes still changes the project. Use the
+shell to read, and when looking needs a change, ask for it under Questions.
+
 ## When there is nothing to do
 
 If the task needs no work, say so and stop. A plan for work nobody needs still costs
