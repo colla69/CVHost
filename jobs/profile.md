@@ -297,3 +297,9 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   **Caspar Health** hires through the Personio account `goreha` (`goreha.jobs.personio.de/xml`). **Learn4Good**, **JobLeads** and
   **jobboerse.de** answer 403 to curl, like zuhausejobs; Google Jobs hits that link only there cannot be opened. **Google Jobs**: 4 of 7
   searches returned results; "Vue TypeScript Entwickler remote Deutschland" and both language-leverage searches got "no results".
+- 2026-10-28 — **Arbeitnow** pages, **Remotive**, **StudySmarter Talents** and **Himalayas** copies of ads answer 410 once removed, so the Google Jobs and
+  WebSearch hits that surface them are mostly dead (Nearshorefriends, ]init[, it-novum, Scalable Capital all 410). **Recruitee**: Powerprozesse re-posts
+  the same role per country (the Germany ad is gone, the copy is hired in Romania). **Hypoport's softgarden board** (`hypoport.softgarden.io/en/vacancies`)
+  lists only ids; the title is in each posting's JSON-LD, so it takes one request per id. **Google Jobs**: SerpApi answered HTTP 503 for 2 of 7 searches;
+  2 returned jobs, 3 got "no results" (all ending "remote Deutschland"). **Rockstardevelopers GmbH** advertises only on Arbeitnow (a software house placing
+  developers in client teams, so company 0). **GermanTechJobs** shows "Homeoffice" in many descriptions that are really hybrid; read the sentence, not the keyword.
