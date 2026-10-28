@@ -39,7 +39,8 @@ Review every posting with verdict `shortlisted`, and every `kept` one scoring 6 
    the confidence, or replace it with what you found). A role whose pay ends up below the floor in
    `profile.md` is dropped as `low-pay`.
 5. **Industry and requirements.** `domain` must be the industry of the employer's product, as its own
-   site describes it; correct it if not. `why` describes the role only and makes no claim about the owner.
+   site describes it; correct it if not, and re-score or drop as `banking` per `profile.md` if the correction
+   makes it finance. `why` describes the role only and makes no claim about the owner.
    `gap` must list the posting's hard requirements in its own words. A role whose hard requirement the CV
    plainly does not meet (years in a skill, managed direct reports, a degree the ad insists on) cannot
    stay shortlisted: demote it to `kept`.
