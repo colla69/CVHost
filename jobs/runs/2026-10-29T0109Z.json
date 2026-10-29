@@ -1,0 +1,3864 @@
+{
+  "schema": 3,
+  "run_id": "2026-10-29T0109Z",
+  "started_at": "2026-10-29T01:09:16Z",
+  "finished_at": "2026-10-29T01:25:36Z",
+  "trigger": "routine",
+  "agent_sha": "7aff98d",
+  "profile_sha": "7d57638",
+  "summary": "Three new roles reach the shortlist, all permanent: Ampeers Energy's FullStack / AI Engineer (Munich energy-renovation software, TypeScript/React, Claude Code skills and sub-agents, remote in Germany, Personio), MOBIKO's Senior Full Stack (TypeScript/Vue/NestJS, \"Remote (within Germany)\", Personio; datePosted 2025-07-30 but re-advertised on Himalayas on 10-05 and 10-08) and JetBrains' Team Lead Kotlin Infrastructure (Greenhouse, \"Remote, Germany\"). No freelance project is live (every freelancermap hit is archived, smarterinterim's are 2022-2024) and nothing open asks for Italian. Of 49 older shortlisted/kept 6+ ads reopened, 19 are closed (including NotarPartner, JUPUS x2, eventfirst, CEEZER, Grafana) and 12 are confirmed live; profile.md changed only by a source note since the last sweep, so yesterday's shortlist was not re-judged. Review: 3 shortlisted links re-proven (Personio XML, Greenhouse API), 2 pay projections widened and lowered toward the StepStone figure and 1 re-based on the levels.fyi copy read; 24 kept postings at 6+ rechecked and left kept.",
+  "open_questions": [
+    "The sandbox refused a curl with a spoofed browser User-Agent on 2026-10-29, so http link checks ran with curl's default User-Agent (they worked for Personio, join.com, Arbeitnow, 9am.works and freelancermap). Should the agent definition's browser-UA http check stay, or should it say \"curl default UA\"?",
+    "Clera (getclera.com) is an AI recruiting marketplace whose Ashby board lists about 300 roles for unnamed clients, many fullstack and AI roles in Munich and Berlin. Treat them as recruiter ads (company 0, kept at best) as done here, or leave Clera out of the search?"
+  ],
+  "sources": [
+    {
+      "name": "arbeitnow",
+      "method": "api",
+      "queries": [
+        "https://www.arbeitnow.com/api/job-board-api?page=1"
+      ],
+      "results": 300,
+      "evaluated": 2,
+      "status": "ok",
+      "note": "Rows created 2026-10-27 18:40 to 2026-10-28 23:20 UTC; 22 remote rows. Lane-titled and new: Nexoya Backend Engineer (Node/TS, mid level, Berlin) and Codat Senior Software Engineer AI/Data (UK, banking), both dropped. Italian regex over all descriptions: only Paris, Swiss and sales rows."
+    },
+    {
+      "name": "germantechjobs",
+      "method": "feed",
+      "queries": [
+        "https://germantechjobs.de/rss"
+      ],
+      "results": 679,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "lastBuildDate 2026-10-28 20:59; 19 lane-titled items with a remote word in the description, all hybrid, onsite or training roles; OnlineDoctor AI Enablement (CH, EUR 65-75k) is a repeat of 2026-09-28 (kept 5). Italian regex: one electrical HV Engineer, off-lane."
+    },
+    {
+      "name": "himalayas",
+      "method": "api",
+      "queries": [
+        "q=tech lead&country=Germany",
+        "q=senior java&country=Germany",
+        "q=ai engineer&country=Germany",
+        "q=full stack typescript&country=Germany",
+        "q=developer experience&country=Germany"
+      ],
+      "results": 100,
+      "evaluated": 12,
+      "status": "ok",
+      "note": "100 unique rows. New in lane: Ampeers Energy (shortlisted; employer Personio link found through ampeersenergy.de/karriere), MOBIKO (shortlisted; Personio), JetBrains Team Lead Kotlin Infrastructure (shortlisted; Greenhouse), m2TALENTS, Clera, yannick.digital (kept), HappyOps (French C1), INFINNI, mittwald, Nortal, two PowerUs reposts (dropped). Employer-posted ads are re-posted on Himalayas under new pubDates (MOBIKO twice), which is how a 2025 Personio ad counts as re-advertised. Italian regex over all 100 descriptions: none."
+    },
+    {
+      "name": "weworkremotely",
+      "method": "feed",
+      "queries": [
+        "remote-full-stack-programming-jobs.rss",
+        "remote-back-end-programming-jobs.rss"
+      ],
+      "results": 92,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "85 + 7 items; nothing dated after the last sweep (2026-10-28 01:09 UTC) in a lane and open to Germany (Vested, Tebra, Oportun are US; PlanetScale is Postgres control-plane engineering; Toptal EMEA role is onsite in Riyadh). Italian regex: none. WWR pages answer 403 to curl."
+    },
+    {
+      "name": "hn-whoishiring",
+      "method": "api",
+      "queries": [
+        "search?tags=comment,story_49922569&hitsPerPage=1000",
+        "search_by_date?tags=comment,story_49922569",
+        "search_by_date?tags=story,author_whoishiring"
+      ],
+      "results": 262,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "October thread (49922569): 392 comments, 262 top-level, newest top-level 2026-10-15 15:30 UTC; nothing new since the last sweep. No November thread yet. Algolia returned only 200 of the 392 comments for hitsPerPage=1000 (page 0), the rest through search_by_date."
+    },
+    {
+      "name": "google-jobs",
+      "method": "api",
+      "queries": [
+        "Tech Lead Java remote Deutschland",
+        "Senior Fullstack Java Angular remote Deutschland",
+        "Senior Software Engineer TypeScript remote Deutschland",
+        "AI Engineer LLM remote Deutschland",
+        "Developer Productivity Engineer remote Deutschland",
+        "Freelance Java Entwickler remote Deutschland",
+        "Softwareentwickler Italienisch remote Deutschland"
+      ],
+      "results": 17,
+      "evaluated": 8,
+      "status": "ok",
+      "note": "3 of 7 searches returned jobs (4, 5 and 8), 3 got \"no results\" and the Italian one HTTP 503. The Europace Ratenkredit and Dexter Health hits are known (Europace Tech Lead copies are StudySmarter/BeBee mirrors, mostly dead). The freelance search returned only smarterinterim.com copies, six of them 2022-2024 projects, recorded as stale. The call ran for more than the shell's 120 s limit and was finished in the background. The script reports 50 searches used this month before tonight (57 with these 7)."
+    },
+    {
+      "name": "employer-boards",
+      "method": "websearch",
+      "queries": [
+        "Tech Lead remote Germany EU jobs.ashbyhq.com OR boards.greenhouse.io OR jobs.lever.co",
+        "AI Engineer agentic developer tools remote EU Germany jobs.personio.de OR join.com"
+      ],
+      "results": 19,
+      "evaluated": 3,
+      "status": "ok",
+      "note": "No Ashby, Lever, Personio or join.com page again; results were Arbeitnow copies (WorkMotion, paiqo, Bjak all 410), Jobgether reposts and Greenhouse boards (eyeo: empty board; Localyze: board API 404)."
+    },
+    {
+      "name": "freelance",
+      "method": "websearch",
+      "queries": [
+        "freelancermap Java Spring Angular Projekt 100% remote Freiberufler Oktober 2026",
+        "freelance.de OR GULP Projekt Senior Java Developer Spring Boot React 100% remote Deutschland neu",
+        "Freelance KI Entwickler LLM Agenten Projekt remote Deutschland freelancermap 2026"
+      ],
+      "results": 29,
+      "evaluated": 3,
+      "status": "ok",
+      "note": "Every freelancermap project the searches returned is archived (page JSON isArchived true: Nemensis 36-month Spring/Angular, Montash Karlsruhe, a 90%-remote Stuttgart project); cogify on builtin.com was removed in 2025. No live freelance project this sweep."
+    },
+    {
+      "name": "language-leverage",
+      "method": "websearch",
+      "queries": [
+        "Entwickler Deutsch und Italienisch Softwareentwickler Java remote Homeoffice Stellenangebot",
+        "\"Italian speaking\" OR \"German and Italian\" software engineer OR \"technical consultant\" remote Germany DACH Italy",
+        "sviluppatore senior full remote Germania tedesco inglese software engineer lavoro da remoto dalla Germania"
+      ],
+      "results": 29,
+      "evaluated": 1,
+      "status": "ok",
+      "note": "No engineering or implementation role asking for Italian next to German. English query: Axelera AI DACH Field Application Engineer (Munich/Milan, hardware pre-sales, not opened), 360Learning Solutions Engineer DACH (pre-sales, Germany/France/UK/Spain only). The Italian query returned German-market remote ads (Jobgether, WorkMotion, BP3 Global, all closed or reposts). The description search for Italian over Arbeitnow, GermanTechJobs, WWR and Himalayas found nothing usable."
+    },
+    {
+      "name": "employer-lookup",
+      "method": "websearch",
+      "queries": [
+        "Ampeers Energy FullStack AI Engineer (m/w/d) Stellenangebot",
+        "MOBIKO Senior Full Stack Developer (m/w/d) München Jobs",
+        "HappyOps Senior Full Stack Softwareentwickler Deutsch Französisch C1 remote",
+        "Clera Senior Fullstack Engineer voice AI TypeScript NestJS React careers",
+        "yannick.digital GmbH Senior Full-Stack Developer TypeScript Next.js remote Stellenangebot",
+        "INFINNI Senior Backend Java Engineer remote Europe creator economy CRM",
+        "SEDIWORK Lead Software Engineer Karriere sediwork.de jobs",
+        "NotarPartner GmbH Engineering Lead TypeScript React Next.js Karriere jobs",
+        "Senior Fullstack Developer Gehalt Deutschland 2026 Durchschnitt TypeScript React Gehaltsreport",
+        "Ampeers Energy Gehalt kununu OR glassdoor Software Engineer"
+      ],
+      "results": 90,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "Used to find employer postings and a pay benchmark. Clera (getclera.com) is an AI recruiting marketplace: its Ashby board (api.ashbyhq.com/posting-api/job-board/clera, 308 entries) holds client roles in Berlin, Munich, Cologne and elsewhere under no employer name, so its ads are recruiter ads (company 0). Only JobRise (a career blog) was readable as a salary source; levels.fyi, Glassdoor and kununu gave nothing for Ampeers."
+    },
+    {
+      "name": "employer-ats",
+      "method": "api",
+      "queries": [
+        "ampeers-energy-gmbh.jobs.personio.de/xml",
+        "mobiko.jobs.personio.de/xml",
+        "boards-api.greenhouse.io/v1/boards/jetbrains/jobs/4937064101",
+        "boards-api.greenhouse.io/v1/boards/infinniinnovationssa/jobs/4964370101",
+        "join.com/companies/happyops",
+        "api.ashbyhq.com/posting-api/job-board/clera",
+        "job-boards.eu.greenhouse.io/localyze"
+      ],
+      "results": 6,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "Personio XML and page, Greenhouse and join.com answered; infinniinnovationssa and localyze boards 404 on boards-api.greenhouse.io and boards-api.eu.greenhouse.io is refused by the egress proxy (502), so EU-hosted Greenhouse boards cannot be read through the API from this session."
+    },
+    {
+      "name": "recheck",
+      "method": "api",
+      "queries": [
+        "postings.jsonl: shortlisted or kept at 6+ with last_seen before 2026-10-22 (49 postings): Personio XML, Ashby board, Greenhouse and Lever job APIs, HN Algolia items, Himalayas search by title and company, http/410/archived checks"
+      ],
+      "results": 49,
+      "evaluated": 40,
+      "status": "ok",
+      "note": "Profile.md changed since the last sweep only by the 2026-10-28 source note, not by criteria, so the last sweep's shortlist was not re-judged. The 49 older shortlisted/kept 6+ postings (last seen 2026-09-28 to 2026-10-20) were reopened: 19 are closed and dropped (Personio, Greenhouse, Lever, Ashby, HN, Arbeitnow, freelancermap and Himalayas checks), 12 are live and re-recorded, 9 aggregator copies (learn4good, zuhausejobs, indeed, jooble, womenforhire) answer 403 and are re-recorded as not reopened. Not re-recorded, because their schema-1 entries have no pay projection: QAVION Senior Fullstack, SIDESTREAM Senior TypeScript, Lemon.io Senior Java & React, Track it Forward, Trafilea (2); Modash (Workable answers 429 / Cloudflare 1015); ~7 older entries with a score under 6 that were not in scope. Twikey is closed by its apply-by date (2026-10-17), not by a dead page."
+    }
+  ],
+  "postings": [
+    {
+      "id": "ampeers-energy--fullstack-ai-engineer",
+      "url": "https://ampeers-energy-gmbh.jobs.personio.de/job/2651965",
+      "source": "himalayas",
+      "company": "Ampeers Energy GmbH",
+      "title": "FullStack / AI Engineer (m/w/d)",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": false
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "typescript",
+        "react",
+        "node",
+        "python",
+        "postgresql",
+        "graphql",
+        "rest",
+        "llm",
+        "agents",
+        "azure",
+        "kubernetes",
+        "docker",
+        "argocd"
+      ],
+      "domain": [
+        "energy",
+        "climate",
+        "saas"
+      ],
+      "posted_at": "2026-06-03",
+      "verified": true,
+      "verdict": "shortlisted",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 2,
+        "company": 2,
+        "total": 10
+      },
+      "why": "Software for planning and managing the energy renovation of housing portfolios (Munich, remote since the start); end-to-end fullstack in TypeScript/React/Node with Python, and Claude Code skills, hooks, sub-agents and eval setups as the standard way of working.",
+      "gap": "Asks 5+ years fullstack at senior-to-principal level, expert TypeScript, React and Node.js, hands-on building with Claude Code or similar agent tools (own skills, hooks, sub-agents, evals), German C1 or native (all communication in German), Python and PostgreSQL familiarity; energy or real-estate domain and React Router 7 are a plus. Personio datePosted is 2026-06-03; re-advertised on Himalayas 2026-10-02 with an apply-by of 2026-12-07; no pay stated.",
+      "pay_estimate": {
+        "point": 78000,
+        "min": 60000,
+        "max": 100000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the Personio ad. Market only, and the sources disagree: JobRise career blog (read 2026-10-29, estimates, not a survey) senior fullstack Frankfurt EUR 80-100k and React+TypeScript senior EUR 78-95k; StepStone salary page (read 2026-10-29, undated, no sample size) Senior Full Stack Developer Germany/Munich median EUR 54.7k, range 46.7-65.2k. Munich start-up, fully remote and AI-first: point between the two, range widened down to the floor."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:27:00Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Personio XML ampeers-energy-gmbh.jobs.personio.de/xml lists id 2651965 \"FullStack / AI Engineer (m/w/d)\", office \"Remote\", permanent; job page curl -L 200, JSON-LD datePosted 2026-06-03; Himalayas search API lists the employer copy with pubDate 2026-10-08."
+      }
+    },
+    {
+      "id": "mobiko--senior-full-stack-developer",
+      "url": "https://mobiko.jobs.personio.de/job/859796",
+      "source": "himalayas",
+      "company": "MOBIKO",
+      "title": "Senior Full Stack Developer (m/w/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": false
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [
+        "typescript",
+        "vue",
+        "react",
+        "node",
+        "nestjs",
+        "postgresql",
+        "docker",
+        "kubernetes",
+        "azure",
+        "terraform",
+        "helm",
+        "argocd"
+      ],
+      "domain": [
+        "mobility",
+        "saas"
+      ],
+      "posted_at": "2025-07-30",
+      "verified": true,
+      "verdict": "shortlisted",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 2,
+        "total": 9
+      },
+      "why": "B2B SaaS platform for company mobility management from a ~30-person Munich start-up; TypeScript with Vue/React front end and NestJS back end on Kubernetes (Azure), continuous deployment.",
+      "gap": "Asks 3+ years of TypeScript, solid Vue or React and Node.js, Docker basics, very good German and English; NestJS and Kubernetes are a plus. The Personio office reads \"Remote (within Germany)\" but the benefits say \"Home Office / Hybrid / im Büro\"; onsite days not stated. Personio datePosted is 2025-07-30; the company re-advertised the role on Himalayas on 2026-10-05 and 2026-10-08; no pay stated (\"marktübliche Vergütung\").",
+      "pay_estimate": {
+        "point": 72000,
+        "min": 56000,
+        "max": 88000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad (\"marktübliche Vergütung\"). Market only, and the sources disagree: JobRise career blog (read 2026-10-29, estimates, not a survey) senior fullstack Frankfurt EUR 80-100k and React+TypeScript senior EUR 78-95k; StepStone salary page (read 2026-10-29, undated, no sample size) Senior Full Stack Developer Germany/Munich median EUR 54.7k, range 46.7-65.2k. A ~30-person start-up, so the point sits in the lower half of the JobRise senior range and the range reaches down toward StepStone."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:27:00Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Personio XML mobiko.jobs.personio.de/xml lists id 859796 \"Senior Full Stack Developer (m/w/d)\", office \"Remote (within Germany)\", permanent; job page curl -L 200, JSON-LD datePosted 2025-07-30; Himalayas search API lists employer copies with pubDate 2026-10-05 and 2026-10-08."
+      }
+    },
+    {
+      "id": "jetbrains--team-lead-kotlin-infrastructure",
+      "url": "https://job-boards.eu.greenhouse.io/jetbrains/jobs/4937064101",
+      "source": "himalayas",
+      "company": "JetBrains",
+      "title": "Team Lead Kotlin Infrastructure",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE",
+          "NL",
+          "PL",
+          "RS",
+          "CY",
+          "CZ"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "ci-cd",
+        "kotlin"
+      ],
+      "domain": [
+        "devtools"
+      ],
+      "posted_at": "2026-09-21",
+      "verified": true,
+      "verdict": "shortlisted",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 2,
+        "total": 8
+      },
+      "why": "Leads the team that runs build, CI/CD, release and developer-experience infrastructure for the Kotlin repository at JetBrains, the maker of developer tools.",
+      "gap": "Asks \"experience leading engineering teams and large technical initiatives\" (the CV shows technical responsibility for 2-3 developers, no people management), experience with developer infrastructure, build systems, CI/CD or internal engineering platforms, and strong communication across stakeholders; TeamCity, Gradle, Kotlin/JVM and monorepos are nice to have. The location list names \"Remote, Germany\" but not the employing entity; no pay stated.",
+      "pay_estimate": {
+        "point": 108000,
+        "min": 88000,
+        "max": 140000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the Greenhouse ad (\"strong base salary\"). levels.fyi JetBrains Software Engineer, Germany (search-index copy updated 2026-07-02, read 2026-10-29): median total EUR 107k, L2 67.4k to L5 137k; the 2026-10-28 sweep recorded median 113.9k, p10 99.0k, p90 145.0k, which could not be reopened (levels.fyi page blocked to fetch). Software Engineer data, not a team-lead title and total compensation, so the range is wide."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:27:00Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "boards-api.greenhouse.io/v1/boards/jetbrains/jobs/4937064101: 200, \"Team Lead Kotlin Infrastructure\", locations include \"Remote, Germany\", first_published 2026-09-21; job-boards.eu.greenhouse.io page curl -L 200."
+      }
+    },
+    {
+      "id": "m2talents-unnamed-client--senior-typescript-developer",
+      "url": "https://himalayas.app/companies/m2talents/jobs/senior-typescript-developer",
+      "source": "himalayas",
+      "company": "m2TALENTS (unnamed client)",
+      "title": "Senior TypeScript Developer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "CET",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "typescript",
+        "java",
+        "jakarta-ee",
+        "quarkus"
+      ],
+      "domain": [
+        "health",
+        "saas"
+      ],
+      "posted_at": "2026-10-20",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 2,
+        "company": 0,
+        "total": 8
+      },
+      "why": "Frontend-leaning TypeScript role in a remote-first healthtech SaaS team (therapy providers, Gematik specifications), advertised by a recruiter for an unnamed client.",
+      "gap": "Client not named and the apply button ends at a Himalayas sign-up wall, so no employer posting; German C1+ required; asks 3+ years, plain TypeScript (not framework-bound); occasional in-person events in Northern Germany; Java (Jakarta EE, Quarkus) backend only a plus; no pay stated.",
+      "pay_estimate": {
+        "point": 75000,
+        "min": 62000,
+        "max": 88000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad. Market only: JobRise (career blog, read 2026-10-29, estimates not a survey): senior fullstack Frankfurt EUR 80-100k, React+TypeScript senior EUR 78-95k, mid-level fullstack Germany EUR 58-78k; one Hamburg senior React/TypeScript ad EUR 75-100k. Healthtech SaaS reached through a recruiter."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "page",
+        "result": "live",
+        "evidence": "Himalayas page read through WebFetch 2026-10-29: posted 2026-10-20, apply by 2026-12-19, Germany only. A fetched page is not proof."
+      }
+    },
+    {
+      "id": "clera-unnamed-client--senior-fullstack-engineer",
+      "url": "https://himalayas.app/companies/clera/jobs/senior-fullstack-engineer-7360174590",
+      "source": "himalayas",
+      "company": "Clera (unnamed client)",
+      "title": "Senior Fullstack Engineer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "CET",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 80000,
+        "max": 120000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [
+        "typescript",
+        "react",
+        "node",
+        "nestjs",
+        "llm"
+      ],
+      "domain": [
+        "saas",
+        "ai"
+      ],
+      "posted_at": "2026-10-22",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 7
+      },
+      "why": "Customer-facing voice-AI SaaS for European businesses, fullstack in TypeScript, NestJS, Node.js and React with product ownership from discovery to release; advertised by Clera, an AI recruiting marketplace, for a client it does not name.",
+      "gap": "Native German proficiency is required (Himalayas text: \"Native German proficiency and fluent English\"); 5+ years fullstack SaaS; customer discovery and prioritisation; the employer is not named and Clera places candidates for clients, so no employer posting; visa sponsorship not offered.",
+      "pay_estimate": {
+        "point": 100000,
+        "min": 80000,
+        "max": 120000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "high",
+        "basis": "Stated in the ad as read on the Himalayas page 2026-10-29: base salary EUR 80,000 to EUR 120,000 a year; point at the midpoint."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "page",
+        "result": "live",
+        "evidence": "Himalayas page read through WebFetch 2026-10-29: posted 2026-10-22, apply by 2026-12-21, \"Remote within Germany\". A fetched page is not proof."
+      }
+    },
+    {
+      "id": "yannick-digital--senior-full-stack-developer-typescript-next-js",
+      "url": "https://www.arbeitnow.com/jobs/companies/yannickdigital-gmbh/senior-full-stack-developer-typescript-nextjs-berlin-101785",
+      "source": "himalayas",
+      "company": "yannick.digital GmbH",
+      "title": "Senior Full-Stack Developer (m/w/d) - TypeScript / Next.js",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "typescript",
+        "react",
+        "nextjs",
+        "postgresql",
+        "llm",
+        "ci-cd"
+      ],
+      "domain": [
+        "saas",
+        "ai"
+      ],
+      "posted_at": "2026-10-23",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 7
+      },
+      "why": "Early-phase B2B SaaS product (stealth) built with Next.js, React, TypeScript, PostgreSQL, Prisma and tRPC, with AI features and AI-assisted development, working directly with the founder.",
+      "gap": "Asks several years building web apps or SaaS, TypeScript/React/Next.js, auth concepts, CI/CD and a product mindset; the product and customers are not named; the Arbeitnow copy shows \"Berlin | Remote\" and Himalayas limits it to Germany, but the ad itself does not say how many days onsite; no pay stated; Arbeitnow is an aggregator and no employer posting was found.",
+      "pay_estimate": {
+        "point": 75000,
+        "min": 62000,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad. Market only: JobRise (career blog, read 2026-10-29, estimates not a survey): senior fullstack Frankfurt EUR 80-100k, React+TypeScript senior EUR 78-95k, mid-level fullstack Germany EUR 58-78k; one Hamburg senior React/TypeScript ad EUR 75-100k. Early-stage start-up in Berlin."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L on the Arbeitnow copy answered 200 on 2026-10-29 and the page shows the ad (\"Berlin Remote ... 2 weeks\"); the employer posting was not found."
+      }
+    },
+    {
+      "id": "happyops--senior-full-stack-softwareentwickler-in-deutsch-franzosisch-c1",
+      "url": "https://join.com/companies/happyops/16831470-senior-full-stack-softwareentwickler-in-f-m-d-oder-deutsch-und-franzoesisch-c1",
+      "source": "himalayas",
+      "company": "HappyOps",
+      "title": "Senior Full Stack Softwareentwickler*in (f/m/d) | Deutsch & Französisch (C1+)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "fr"
+      ],
+      "stack": [
+        "typescript",
+        "react",
+        "express",
+        "node"
+      ],
+      "domain": [
+        "manufacturing",
+        "saas"
+      ],
+      "posted_at": "2023-11-13",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "language",
+      "score": null,
+      "why": "Software for mid-sized European factories (glass, metal, plastics, machinery) from a small self-financed company with a fully remote team; TypeScript, React, ExpressJS, NodeJS.",
+      "gap": "Requires negotiation-level German and French, at least C1 in both; EUR 70-100k stated; remote worldwide.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "join.com page answers 200 with \"status\":\"ONLINE\" after redirecting the old ids to 16831470; datePosted 2023-11-13 is the first creation date."
+      }
+    },
+    {
+      "id": "infinni--senior-backend-java-engineer",
+      "url": "https://himalayas.app/companies/infinni/jobs/senior-backend-java-engineer",
+      "source": "himalayas",
+      "company": "INFINNI",
+      "title": "Senior Backend Java Engineer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java",
+        "spring"
+      ],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": "2026-10-28",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Backend systems for a creator-economy CRM and AI products (Java, Spring ecosystem, event-driven services) at a 180-person company.",
+      "gap": "The employer ad was found on Greenhouse listed in Tenerife with \"remote restrictions apply\"; Himalayas lists no country restriction; Germany is not confirmed. Not opened.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "mittwald--tech-lead",
+      "url": "https://himalayas.app/companies/mittwald/jobs/tech-lead-m-w-d",
+      "source": "himalayas",
+      "company": "mittwald",
+      "title": "Tech Lead (m/w/d)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "kubernetes",
+        "go",
+        "linux",
+        "grpc"
+      ],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": "2026-10-23",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "stack-mismatch",
+      "score": null,
+      "why": "Technical lead of a hosting platform team at a German hosting provider: Kubernetes-native and bare-metal infrastructure in Go.",
+      "gap": "Stack is Linux internals, Kubernetes operators, BGP, ZFS and Go; not read in full, remote terms not checked.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "nortal--1425-lead-frontend-javascript-typescript-react-engineer-work-from-home",
+      "url": "https://himalayas.app/companies/nortal/jobs/1425-lead-frontend-javascript-typescript-react-engineer-work-from-home",
+      "source": "himalayas",
+      "company": "Nortal",
+      "title": "(1425) Lead Frontend (JavaScript/TypeScript & React) Engineer - Work from Home",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "typescript",
+        "react"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-10-23",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Lead frontend engineer role in Nortal's remote LATAM team.",
+      "gap": "The ad text describes a LATAM remote team; no Germany hiring stated. Not opened.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "nexoya--backend-engineer-node-js-typescript",
+      "url": "https://www.arbeitnow.com/jobs/companies/nexoya/backend-engineer-nodejs-typescript-berlin-291955",
+      "source": "arbeitnow",
+      "company": "Nexoya",
+      "title": "Backend Engineer (Node.js / TypeScript)",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "mid",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en",
+        "de"
+      ],
+      "stack": [
+        "node",
+        "typescript",
+        "graphql",
+        "mysql",
+        "rabbitmq",
+        "kubernetes",
+        "azure",
+        "llm"
+      ],
+      "domain": [
+        "saas",
+        "ai"
+      ],
+      "posted_at": "2026-10-28",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "too-junior",
+      "score": null,
+      "why": "Node.js/TypeScript services (GraphQL API, ad-channel integrations, LLM and agent features) for a marketing-attribution SaaS on Kubernetes/Azure.",
+      "gap": "Asks 3+ years as a backend engineer (mid level), based in Berlin with an onsite interview; the Arbeitnow tags mix remote and freelance.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "codat--senior-software-engineer-ai-data",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/codat/remote-senior-software-engineer-ai-data-92284",
+      "source": "arbeitnow",
+      "company": "Codat",
+      "title": "Senior Software Engineer (AI/Data)",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "GB"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "python",
+        "csharp",
+        "azure",
+        "agents",
+        "llm"
+      ],
+      "domain": [
+        "banking",
+        "fintech"
+      ],
+      "posted_at": "2026-10-28",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "not-germany",
+      "score": null,
+      "why": "Advisory intelligence platform for commercial banks: semantic and signal layers, MCP servers and agents behind a banker-facing assistant (C#/Python, Azure).",
+      "gap": "UK company paying GBP 90-110k; the ad says hybrid or fully remote but names no German hiring; the product is for banks.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "jobs-for-humanity-for-powerus--senior-fullstack-developer-devops-for-powerus",
+      "url": "https://himalayas.app/companies/jobs-for-humanity/jobs/senior-fullstack-developer-devops-for-powerus",
+      "source": "himalayas",
+      "company": "Jobs for Humanity (for PowerUs)",
+      "title": "Senior FullStack Developer / DevOps for PowerUs",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "typescript",
+        "nestjs",
+        "mongodb",
+        "docker",
+        "ci-cd"
+      ],
+      "domain": [
+        "hr"
+      ],
+      "posted_at": "2026-10-05",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "low-score",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 0,
+        "domain": 1,
+        "company": 0,
+        "total": 4
+      },
+      "why": "Fullstack and CI work (Angular, Nest, TypeScript, MongoDB, Docker) on PowerUs, a career platform for skilled trades, reposted by an aggregator.",
+      "gap": "Reposted by Jobs for Humanity; the ad states no remote terms, asks 3+ years, a degree in computer science or related, fluent English; not opened.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "jobs-for-humanity-for-powerus--fullstack-developer-for-powerus",
+      "url": "https://himalayas.app/companies/jobs-for-humanity/jobs/fullstack-developer-for-powerus",
+      "source": "himalayas",
+      "company": "Jobs for Humanity (for PowerUs)",
+      "title": "Fullstack Developer for PowerUs",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "typescript",
+        "nestjs",
+        "mongodb",
+        "docker",
+        "ci-cd"
+      ],
+      "domain": [
+        "hr"
+      ],
+      "posted_at": "2026-10-06",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "low-score",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 0,
+        "domain": 1,
+        "company": 0,
+        "total": 4
+      },
+      "why": "Fullstack role (Angular, Nest, TypeScript) on PowerUs, a career platform for skilled trades, reposted by an aggregator.",
+      "gap": "Level and remote terms not stated, 3+ years and a degree asked; not opened.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "here-technologies--senior-lead-software-engineer-java-geospatial",
+      "url": "https://talents.studysmarter.de/companies/here-technologies/senior-lead-software-engineer-java-geospatial",
+      "source": "google-jobs",
+      "company": "HERE Technologies",
+      "title": "Senior/ Lead Software Engineer (JAVA/ GeoSpatial) (m/f/x)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "onsite",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "Java and geospatial engineering at a mapping-data company, Schwalbach am Taunus.",
+      "gap": "Google Jobs lists it in Schwalbach am Taunus without a remote flag; only a StudySmarter copy was found, not opened.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "iits-consulting--werkstudent-ai-engineer-llms-ki-agenten-100-remote",
+      "url": "https://www.jobleads.com/de/job/werkstudent-ai-engineer-llms-ki-agenten-all-genders-100-remote",
+      "source": "google-jobs",
+      "company": "iits-consulting",
+      "title": "Werkstudent AI Engineer - LLMs & KI-Agenten (all genders) - 100 % Remote",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "junior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "llm",
+        "agents"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "too-junior",
+      "score": null,
+      "why": "Working-student role on LLMs and AI agents at a cloud consultancy.",
+      "gap": "Working-student level; the JobLeads copy was not opened.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "alten--senior-fullstack-developer-remote",
+      "url": "https://smarterinterim.de/job/senior-fullstack-developer-m-f-d-remote",
+      "source": "google-jobs",
+      "company": "ALTEN GmbH",
+      "title": "Senior Fullstack Developer (m/f/d) - remote",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2022-09-01",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Freelance project listing on the smarter interim aggregator, found through Google Jobs.",
+      "gap": "The page's JSON-LD datePosted is 2022-09-01, years old; the aggregator keeps old projects online.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L answered 200 on 2026-10-29, but datePosted 2022-09-01 and \"Posted ... years ago\" on the page."
+      }
+    },
+    {
+      "id": "sapres-technologies--java-developer-wanted-cologne-remote",
+      "url": "https://smarterinterim.com/job/java-developer-wanted-cologne-remote",
+      "source": "google-jobs",
+      "company": "Sapres Technologies GmbH",
+      "title": "Java Developer wanted | Cologne/ Remote",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2022-09-07",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Freelance project listing on the smarter interim aggregator, found through Google Jobs.",
+      "gap": "The page's JSON-LD datePosted is 2022-09-07, years old; the aggregator keeps old projects online.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L answered 200 on 2026-10-29, but datePosted 2022-09-07 and \"Posted ... years ago\" on the page."
+      }
+    },
+    {
+      "id": "sintec-informatik--senior-java-entwickler-offentliche-verwaltung-bis-zu-100-remote-moglich",
+      "url": "https://smarterinterim.com/job/senior-java-entwickler-m-w-d-offentliche-verwaltung-bis-zu-100-remote-moglich",
+      "source": "google-jobs",
+      "company": "SINTEC Informatik GmbH",
+      "title": "Senior Java Entwickler (m/w/d) - öffentliche Verwaltung - bis zu 100% Remote möglich",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2024-01-31",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Freelance project listing on the smarter interim aggregator, found through Google Jobs.",
+      "gap": "The page's JSON-LD datePosted is 2024-01-31, years old; the aggregator keeps old projects online.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L answered 200 on 2026-10-29, but datePosted 2024-01-31 and \"Posted ... years ago\" on the page."
+      }
+    },
+    {
+      "id": "optimus-search--fullstack-developer-java-spring-angular-camunda-ab-sofort-remote",
+      "url": "https://smarterinterim.com/job/fullstack-developer-java-spring-angular-camunda-ab-sofort-remote",
+      "source": "google-jobs",
+      "company": "Optimus Search GmbH",
+      "title": "FullStack Developer- Java, Spring, Angular, CAMUNDA- ab sofort - remote",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2024-03-11",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Freelance project listing on the smarter interim aggregator, found through Google Jobs.",
+      "gap": "The page's JSON-LD datePosted is 2024-03-11, years old; the aggregator keeps old projects online.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L answered 200 on 2026-10-29, but datePosted 2024-03-11 and \"Posted ... years ago\" on the page."
+      }
+    },
+    {
+      "id": "knieper-consulting--backend-developer-in-siegen-remote",
+      "url": "https://smarterinterim.com/job/backend-developer-m-w-d-in-siegen-remote",
+      "source": "google-jobs",
+      "company": "Knieper Consulting GmbH",
+      "title": "Backend Developer (m/w/d) in Siegen/Remote",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2024-03-21",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Freelance project listing on the smarter interim aggregator, found through Google Jobs.",
+      "gap": "The page's JSON-LD datePosted is 2024-03-21, years old; the aggregator keeps old projects online.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L answered 200 on 2026-10-29, but datePosted 2024-03-21 and \"Posted ... years ago\" on the page."
+      }
+    },
+    {
+      "id": "protip-projektservice--ku-41173-application-developer-kotlin-java-mainly-wanted-to-hamburg",
+      "url": "https://smarterinterim.com/job/ku-41173-application-developer-kotlin-java-mainly-wanted-to-hamburg",
+      "source": "google-jobs",
+      "company": "ProTIP ProjektService AG",
+      "title": "KU 41173 Application Developer (Kotlin & Java) mainly wanted to Hamburg",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2022-09-01",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stale",
+      "score": null,
+      "why": "Freelance project listing on the smarter interim aggregator, found through Google Jobs.",
+      "gap": "The page's JSON-LD datePosted is 2022-09-01, years old; the aggregator keeps old projects online.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L answered 200 on 2026-10-29, but datePosted 2022-09-01 and \"Posted ... years ago\" on the page."
+      }
+    },
+    {
+      "id": "workmotion--senior-software-engineer-remote-germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/workmotion/remote-senior-software-engineer-germany-225652",
+      "source": "employer-boards",
+      "company": "WorkMotion",
+      "title": "Senior Software Engineer (remote, Germany)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Role found through a WebSearch snippet that pointed at an Arbeitnow copy.",
+      "gap": "The copy is gone (HTTP 410).",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "curl -L: Arbeitnow page answers 410 on 2026-10-29."
+      }
+    },
+    {
+      "id": "paiqo--senior-ai-engineer-agentic-ai-platform",
+      "url": "https://www.arbeitnow.com/jobs/companies/paiqo/remote-senior-ai-engineer-agentic-ai-platform-paderborn-382850",
+      "source": "employer-boards",
+      "company": "paiqo GmbH",
+      "title": "Senior AI Engineer - Agentic AI Platform",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Role found through a WebSearch snippet that pointed at an Arbeitnow copy.",
+      "gap": "The copy is gone (HTTP 410).",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "curl -L: Arbeitnow page answers 410 on 2026-10-29."
+      }
+    },
+    {
+      "id": "bjak--technical-lead-germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/bjak/technical-lead-germany-364345",
+      "source": "employer-boards",
+      "company": "Bjak",
+      "title": "Technical Lead (Germany)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Role found through a WebSearch snippet that pointed at an Arbeitnow copy.",
+      "gap": "The copy is gone (HTTP 410).",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "curl -L: Arbeitnow page answers 410 on 2026-10-29."
+      }
+    },
+    {
+      "id": "acto--ai-engineer-agentic-systems-voice",
+      "url": "https://www.arbeitnow.com/jobs/companies/acto/remote-ai-engineer-agentic-systems-voice-190415",
+      "source": "language-leverage",
+      "company": "Acto",
+      "title": "AI Engineer - Agentic Systems (Voice)",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Role found through a WebSearch snippet that pointed at an Arbeitnow copy.",
+      "gap": "The copy is gone (HTTP 410).",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "curl -L: Arbeitnow page answers 410 on 2026-10-29."
+      }
+    },
+    {
+      "id": "nemensis-ag-freelancermap--full-stack-developer-spring-angular",
+      "url": "https://www.freelancermap.de/projekt/full-stack-developer-m-f-d-spring-angular",
+      "source": "freelance",
+      "company": "Nemensis AG (freelancermap)",
+      "title": "Full-Stack Developer (m/f/d) Spring / Angular",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring",
+        "angular"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Freelance fullstack project (Java/Spring with Angular or React), remote.",
+      "gap": "Archived or removed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "Page JSON \"isArchived\":true, \"active\":false, though the page still shows an apply button (read 2026-10-29)."
+      }
+    },
+    {
+      "id": "montash-gmbh-freelancermap--fullstack-engineer-remote-possible",
+      "url": "https://www.freelancermap.de/projekt/fullstack-engineer-remote-possible-1951214",
+      "source": "freelance",
+      "company": "Montash GmbH (freelancermap)",
+      "title": "Fullstack Engineer (Remote Possible)",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java",
+        "spring",
+        "react"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Freelance fullstack project (Java/Spring with Angular or React), remote.",
+      "gap": "Archived or removed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "Page JSON \"isArchived\":true, \"active\":false, created 2020-07-29 (read 2026-10-29)."
+      }
+    },
+    {
+      "id": "cogify--senior-spring-boot-react-engineer-eu-efta-only",
+      "url": "https://builtin.com/job/senior-spring-boot-react-engineer-euefta-only/4705681",
+      "source": "freelance",
+      "company": "cogify AG",
+      "title": "Senior Spring Boot + React Engineer (EU/EFTA only)",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java",
+        "spring",
+        "react"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Freelance fullstack project (Java/Spring with Angular or React), remote.",
+      "gap": "Archived or removed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "page",
+        "result": "dead",
+        "evidence": "Page reads \"this job was removed ... May 15, 2025\" (read 2026-10-29)."
+      }
+    },
+    {
+      "id": "ceezer--tech-lead",
+      "url": "https://ceezer.jobs.personio.de/job/2434779",
+      "source": "recheck",
+      "company": "CEEZER",
+      "title": "Tech Lead (f/d/m)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "PT"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": false
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "typescript",
+        "node",
+        "nextjs",
+        "react",
+        "rest",
+        "postgresql",
+        "aws",
+        "microservices"
+      ],
+      "domain": [
+        "climate",
+        "saas"
+      ],
+      "posted_at": "2026-08-22",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 0,
+        "domain": 1,
+        "company": 2,
+        "total": 7
+      },
+      "why": "Tech lead on a TypeScript/React/Node/Postgres product on AWS at a climate-finance start-up; remote offered in Portugal, Berlin office.",
+      "gap": "Review 10-14: demoted. The Personio ad lists \"Berlin\" and \"Remote, Portugal (Home Office)\": remote is offered only in Portugal, Germany only as the Berlin office (a German or Portuguese work permit required), so remote from Munich is not stated; ask before applying. 5+ years incl. 2 as a lead asked; carbon-credit markets are a new domain; salary not stated. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "curl -L https://ceezer.jobs.personio.de/job/2434779 answered 404 on 2026-10-29; the Personio XML for the account is 404 too."
+      }
+    },
+    {
+      "id": "crewfare--full-stack-typescript-developer",
+      "url": "https://himalayas.app/companies/crewfare/jobs/full-stack-typescript-developer",
+      "source": "recheck",
+      "company": "Crewfare",
+      "title": "Full Stack TypeScript Developer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "typescript"
+      ],
+      "domain": [],
+      "posted_at": "2026-09-20",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Full-stack TypeScript (React, Express, Prisma) at a travel-tech company.",
+      "gap": "Not opened: product, pay and time zone unknown. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=Crewfare (2 rows, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "easysoftgroup--tech-lead-senior-node-js-backend-engineer-infrastructure-high-load-systems",
+      "url": "https://himalayas.app/companies/easysoftgroup/jobs/tech-lead-senior-node-js-backend-engineer-infrastructure-high-load-systems",
+      "source": "recheck",
+      "company": "EasySoftGroup",
+      "title": "Tech Lead/Senior Node.js Backend Engineer (Infrastructure & High-Load Systems)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "node"
+      ],
+      "domain": [],
+      "posted_at": "2026-08-15",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Node.js backend lead role (NestJS/Express services on AWS).",
+      "gap": "Not opened: employer type, product and pay unknown. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=EasySoftGroup (1 row, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "evb--backend-java-developer",
+      "url": "https://himalayas.app/companies/evb/jobs/backend-java-developer",
+      "source": "recheck",
+      "company": "EVB",
+      "title": "Backend Java Developer",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [],
+      "posted_at": "2026-08-23",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Backend Java developer role on contract.",
+      "gap": "Not opened: client, rate and duration unknown. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=EVB (10 rows, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "gravity9--java-developer",
+      "url": "https://himalayas.app/companies/gravity9/jobs/java-developer",
+      "source": "recheck",
+      "company": "gravity9",
+      "title": "Java Developer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-08-29",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 5
+      },
+      "why": "Talent-pool ad of a UK boutique IT consultancy (\"future opportunities\"); Java.",
+      "gap": "Not a specific opening; consultancy placement; remote terms not stated. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=gravity9 (5 rows, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "hyphen-solutions--senior-java-architect",
+      "url": "https://himalayas.app/companies/hyphen-solutions/jobs/senior-java-architect",
+      "source": "recheck",
+      "company": "Hyphen Solutions",
+      "title": "Senior Java Architect",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java",
+        "spring-boot",
+        "mysql",
+        "aws",
+        "azure",
+        "kubernetes",
+        "docker",
+        "microservices",
+        "rest",
+        "ci-cd"
+      ],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": "2026-08-23",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Homebuilder supply-chain network software; hands-on architect on Java 21+, Spring Boot/MVC/Security, MySQL/Aurora, AWS or Azure.",
+      "gap": "8+ years of Java with architectural responsibility; no location or country list; read only through Himalayas, no employer page found, so company scored 0 for now. Himalayas page answers 403 in review, so the link is not provable. On 2026-10-19 the Himalayas search API no longer returned it (q=Senior Java Architect, q=hyphen solutions); it may be gone. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=Hyphen Solutions (1 row, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "sidestream--sidebase-open-source-contributor-senior-ts-dev",
+      "url": "https://himalayas.app/companies/sidestream/jobs/sidebase-open-source-contributor-senior-ts-dev-f-m-d",
+      "source": "recheck",
+      "company": "SIDESTREAM",
+      "title": "Sidebase Open-Source Contributor & Senior TS Dev (f/m/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "typescript",
+        "vue"
+      ],
+      "domain": [
+        "devtools"
+      ],
+      "posted_at": "2026-09-07",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Senior TypeScript on an open-source Nuxt/Vue toolkit: Vue 3/Pinia on the healthcare platform.",
+      "gap": "Not opened: remote terms and pay unchecked; the CV shows no open-source maintainer work. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=SIDESTREAM (1 row, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "stellar-tech--backend-lead-hands-on-tech-lead",
+      "url": "https://himalayas.app/companies/stellar-tech/jobs/backend-lead-hands-on-tech-lead",
+      "source": "recheck",
+      "company": "Stellar Tech",
+      "title": "Backend Lead - Hands-on Tech Lead",
+      "lane": "tech-lead",
+      "contract": "freelance",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": "compatible time zone",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "python"
+      ],
+      "domain": [
+        "education"
+      ],
+      "posted_at": "2026-09-27",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 0,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 5
+      },
+      "why": "Player-coach backend lead at an EdTech product company: Python/FastAPI, event-driven workflows, AI-assisted development across the team. Reopened: last recorded 2026-09-28.",
+      "gap": "7+ years of backend, 2+ years as a lead, strong recent Python (ideally 5+ years) with FastAPI. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=Stellar Tech (2 rows, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "fuse-energy--senior-lead-backend-engineer",
+      "url": "https://himalayas.app/companies/fuse-energy/jobs/senior-lead-backend-engineer-2763649120",
+      "source": "recheck",
+      "company": "Fuse Energy",
+      "title": "Senior/Lead Backend Engineer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "CA",
+          "DE",
+          "NL",
+          "PL",
+          "CH",
+          "US"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "aws",
+        "cdk"
+      ],
+      "domain": [
+        "energy"
+      ],
+      "posted_at": "2026-09-21",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 2,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Back end of a renewable energy supplier: real-time digital twin of generation and demand, provider messaging, consumption pipelines, the customer app's back end.",
+      "gap": "\"Ideally 2+ years experience\"; infrastructure as code (AWS CDK) and energy-sector experience as a plus; stack not named. Germany appears only in Himalayas' location list; Fuse's Workable board (apply.workable.com/fuseenergy) answered 429 twice, so not opened. Workable answered 429 (Cloudflare 1015) again on 2026-10-19; Himalayas lists it with expiry 2026-10-21. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Himalayas search q=Fuse Energy (16 rows, complete): the job's guid is absent."
+      }
+    },
+    {
+      "id": "grafana-labs--principal-backend-engineer-grafana-remote-germany",
+      "url": "https://boards.greenhouse.io/grafanalabs/jobs/5239833004",
+      "source": "recheck",
+      "company": "Grafana Labs",
+      "title": "Principal Backend Engineer, Grafana (Remote, Germany)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "principal",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [],
+      "domain": [
+        "devtools"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 0,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 2,
+        "total": 6
+      },
+      "why": "Principal backend role on an open-source observability product, remote in Germany per the title.",
+      "gap": "Not opened; Grafana's backend is Go (its public repository), which the CV lacks; the job id may be old. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "boards-api.greenhouse.io/v1/boards/grafanalabs/jobs/5239833004 answered 404 on 2026-10-29."
+      }
+    },
+    {
+      "id": "jobgether--lead-applied-ai-engineer-europe-remote",
+      "url": "https://jobs.lever.co/jobgether/b946a68c-dddb-4498-a2df-444f47ac8af6",
+      "source": "recheck",
+      "company": "Jobgether",
+      "title": "Lead Applied AI Engineer, Europe Remote",
+      "lane": "ai-eng",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EUROPE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "llm"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Lead applied-AI role, remote across Europe, advertised by the Jobgether aggregator.",
+      "gap": "Jobgether reposts ads for unnamed partner companies, so the employer is unknown; not opened. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "api.lever.co/v0/postings/jobgether/b946a68c-dddb-4498-a2df-444f47ac8af6 answered 404 on 2026-10-29."
+      }
+    },
+    {
+      "id": "vesterling--senior-software-entwickler-java-fullstack-100-remote-moglich-bis-90-000-euro-mwd",
+      "url": "https://www.vesterling.com/job/22020-senior-software-entwickler-java-fullstack-deutschland-100-koeln-bis-100/",
+      "source": "recheck",
+      "company": "VESTERLING",
+      "title": "Senior Software Entwickler JAVA | Fullstack | 100% remote möglich, bis 90.000 Euro (mwd)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": null,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Senior Java full stack with architecture responsibility at a SaaS company, 100% remote possible, placed by Vesterling.",
+      "gap": "Recruiter ad for an unnamed client (the URL mentions Koeln); pay cap from the title; not opened. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "curl -L on the vesterling.com job page answered 404 on 2026-10-29."
+      }
+    },
+    {
+      "id": "unnamed-freelancermap--freelance-senior-java-entwickler-gesucht-langlaufer-95-remote-spannendes-umfeld",
+      "url": "https://www.freelancermap.de/projekt/freelance-senior-java-entwickler-gesucht-m-w-d-langlaeufer-95-prozent-remote-spannendes-umfeld",
+      "source": "recheck",
+      "company": "unnamed (freelancermap)",
+      "title": "FREELANCE // Senior Java Entwickler gesucht (m/w/d) // Langläufer // 95% remote // Spannendes Umfeld",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote-first",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Long-running senior Java project, 95% remote, on freelancermap for an unnamed client.",
+      "gap": "The snippet asks 8+ years of Java; the CV's Java starts late 2018, just under 8 years (the years before were Delphi). Not opened: poster, end customer, rate and date unknown; quarterly travel to Dresden. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "freelancermap page answers 200 but its JSON says \"isArchived\":true, \"active\":false (2026-10-29)."
+      }
+    },
+    {
+      "id": "eventfirst--senior-full-stack-engineer-typescript-ai",
+      "url": "https://eventfirst.jobs.personio.com/job/2821432",
+      "source": "recheck",
+      "company": "eventfirst",
+      "title": "Senior Full-Stack Engineer (TypeScript, AI)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "substantial overlap with Berlin hours",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "typescript",
+        "react",
+        "nextjs",
+        "node",
+        "postgresql",
+        "redis",
+        "llm"
+      ],
+      "domain": [
+        "ai",
+        "saas"
+      ],
+      "posted_at": "2026-10-02",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 1,
+        "total": 8
+      },
+      "why": "Fully remote TypeScript/React/Node with AI features for a Berlin start-up.",
+      "gap": "Review 10-14: demoted, likely closed. The Personio posting (2821432) would not open and eventfirst's Personio board now lists only an Event Sales Manager; the HN comment (item 49930919, Berlin / REMOTE (CET) / full-time) is still up but links to that posting. Next.js, tRPC, Drizzle, Vercel AI SDK and Trigger.dev are not on the CV; salary not stated. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "curl -L https://eventfirst.jobs.personio.com/job/2821432 answered 404 on 2026-10-29; the account XML is 404."
+      }
+    },
+    {
+      "id": "jupus--ai-lead",
+      "url": "https://jobs.ashbyhq.com/jupus/68bd1799-78a2-484a-af22-584b6fdbeb07",
+      "source": "recheck",
+      "company": "JUPUS",
+      "title": "AI Lead",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE",
+          "GB",
+          "ES",
+          "PT"
+        ],
+        "timezone": "CET +/-2",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "python",
+        "llm",
+        "agents",
+        "rag",
+        "observability"
+      ],
+      "domain": [
+        "ai",
+        "saas"
+      ],
+      "posted_at": "2026-10-12",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 0,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 2,
+        "total": 7
+      },
+      "why": "Leads and builds (about 40% hands-on) the agentic/RAG systems of a German legal-tech product, fully remote in CET +/-2.",
+      "gap": "Review 10-14: demoted on a hard requirement. The ad asks 5-6 years of building and shipping applied AI systems in production and strong Python; the CV has about a year of agentic work and Python only from 2018/19. Salary not stated. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Ashby board API api.ashbyhq.com/posting-api/job-board/jupus no longer lists the id (2026-10-29)."
+      }
+    },
+    {
+      "id": "jupus--engineering-manager-applied-ai",
+      "url": "https://jobs.ashbyhq.com/jupus/a40c4367-20c9-4afe-9b6c-bdc8608c6677",
+      "source": "recheck",
+      "company": "JUPUS",
+      "title": "Engineering Manager, Applied AI",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE",
+          "GB",
+          "ES",
+          "PT",
+          "RO"
+        ],
+        "timezone": "CET +/-2",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": null,
+        "max": 160000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "llm",
+        "agents",
+        "rag"
+      ],
+      "domain": [
+        "ai",
+        "saas"
+      ],
+      "posted_at": "2026-09-18",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 2,
+        "total": 8
+      },
+      "why": "Leads the applied-AI team of a German legal-tech product, fully remote with Germany as the primary location.",
+      "gap": "Review 10-14: demoted on a hard requirement. The Ashby ad asks for direct reports (\"specific examples of people who levelled up under you\") and at least 3 years at a company where generative or agentic AI is central; the CV has responsibility for juniors but no direct reports, and neither. The role ships no features itself. 'Up to EUR 160k base' is from the HN post (item 49931051); the Ashby ad shows no pay. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "Ashby board API api.ashbyhq.com/posting-api/job-board/jupus no longer lists the id (2026-10-29)."
+      }
+    },
+    {
+      "id": "pagnos--cloud-engineer-aws-serverless-typescript-node-js",
+      "url": "https://news.ycombinator.com/item?id=49922616",
+      "source": "recheck",
+      "company": "PAGNOS GmbH",
+      "title": "Cloud Engineer, AWS Serverless (TypeScript/Node.js)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": false
+      },
+      "salary": {
+        "stated": true,
+        "min": 75000,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [
+        "typescript",
+        "node",
+        "aws",
+        "cdk",
+        "dynamodb",
+        "ci-cd",
+        "react",
+        "nextjs"
+      ],
+      "domain": [
+        "saas",
+        "consulting"
+      ],
+      "posted_at": "2026-10-01",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 2,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "AWS serverless in TypeScript with CDK, must live in Germany.",
+      "gap": "Back-end/cloud only, no lead role; builds partly for clients, partly own SaaS; EUR 75-80k is at the low end; occasional meet-ups in Cologne, Austria or Mallorca. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "dead",
+        "evidence": "hn.algolia.com/api/v1/items/49922616 answered 404 {\"error\":\"Not Found\"} on 2026-10-29."
+      }
+    },
+    {
+      "id": "notarpartner--engineering-lead-ts-react-next-js-ai-100-remote",
+      "url": "https://himalayas.app/companies/notarpartner-gmbh/jobs/engineering-lead-m-w-d-ts-react-next-js-ai-100-remote",
+      "source": "recheck",
+      "company": "NotarPartner GmbH",
+      "title": "Engineering Lead (m/w/d) TS, React, Next.js & AI 100% Remote",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "Germany",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "typescript",
+        "react",
+        "nextjs",
+        "node",
+        "postgresql",
+        "agents"
+      ],
+      "domain": [
+        "regtech",
+        "saas"
+      ],
+      "posted_at": "2026-10-11",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 2,
+        "total": 9
+      },
+      "why": "Leads a three-engineer team, hands-on, and owns the architecture of a multi-tenant legal-tech product for notaries; TS, React, Next.js, AI tooling.",
+      "gap": "Kept, not shortlisted: no employer posting found, and remotely.de marks its copy \"no longer available\" while Himalayas shows it posted 10-11, apply by 12-10; asks native-level German (C2) and 2+ years leading 3-8 engineers; Next.js and Supabase not on the CV; salary not stated, VSOP offered. Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "The Arbeitnow copy of the ad answered 410 on 2026-10-29 (curl -L); remotely.de already marked its copy unavailable on 2026-10-14."
+      }
+    },
+    {
+      "id": "twikey--senior-java-developer",
+      "url": "https://weworkremotely.com/remote-jobs/twikey-senior-java-developer",
+      "source": "recheck",
+      "company": "Twikey",
+      "title": "Senior Java Developer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE",
+          "EUROPE"
+        ],
+        "timezone": "within one hour of CET",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "payments",
+        "fintech"
+      ],
+      "posted_at": "2026-09-17",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 1,
+        "total": 8
+      },
+      "why": "Senior Java at a direct-debit and payments platform (Belgium), via We Work Remotely.",
+      "gap": "Review 10-14: the WWR page opened: full-time, geo-locked to about 40 European countries including Germany, within one hour of CET, apply by 2026-10-17. Still kept: WWR is an aggregator (apply needs a WWR account) and no Twikey careers page was found. Go is also asked; salary not disclosed (\"tailored to your experience\"). Reopened 2026-10-29: closed.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "page",
+        "result": "dead",
+        "evidence": "The WWR page read in review on 2026-10-14 gave an apply-by of 2026-10-17, now past; WWR answers 403 to curl so it could not be reopened."
+      }
+    },
+    {
+      "id": "albert--principal-distinguished-engineer",
+      "url": "https://news.ycombinator.com/item?id=49964448",
+      "source": "recheck",
+      "company": "Albert",
+      "title": "Principal / Distinguished Engineer",
+      "lane": "tech-lead",
+      "contract": "unknown",
+      "seniority": "principal",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": "reasonable time-zone overlap",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": null,
+        "max": 750000,
+        "currency": "USD",
+        "period": "year"
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "python",
+        "postgresql",
+        "react",
+        "react-native",
+        "llm"
+      ],
+      "domain": [
+        "fintech"
+      ],
+      "posted_at": "2026-10-05",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 2,
+        "company": 2,
+        "total": 8
+      },
+      "why": "Consumer fintech building new products from zero (HN comment), React front ends, a Python backend and LLM features; pay stated only as a cap.",
+      "gap": "Contract type still not stated and the benefits (Blue Shield PPO, 401(k) match) point to US employment, which keeps it off the shortlist; principal/distinguished bar above the CV's senior-consultant scope; Python backend. Re-checked 2026-10-14 through the HN API: comment live. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 85000,
+        "min": 85000,
+        "max": 669500,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "Only a cap is stated: \"up to ~$750k\" in the HN post (2026-10-05) = EUR 669.5k; USD converted at EUR/USD 1.1202 (close 2026-10-14). Nothing says what a hire in Germany would get, so the point is set at the floor of the market, levels.fyi Software Engineer Germany median total comp EUR 84.8k (3,010 submissions, updated 2026-10-13), and the range runs to the cap."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "hn.algolia.com/api/v1/items/49964448: 200, comment text present, created 2026-10-05."
+      }
+    },
+    {
+      "id": "zollsoft--senior-softwareentwickler-in-kotlin-java-full-remote",
+      "url": "https://zollsoft.jobs.personio.de/job/2380025?language=de",
+      "source": "recheck",
+      "company": "zollsoft GmbH",
+      "title": "Senior Softwareentwickler:in Kotlin/Java (full remote)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "CET",
+        "onsite_days_per_quarter": 0,
+        "eor": false
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "kotlin",
+        "java",
+        "postgresql",
+        "docker"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 2,
+        "company": 1,
+        "total": 8
+      },
+      "why": "Fully remote from anywhere in Germany on tomedo, a practice-management product for doctors: Kotlin and Java backends with PostgreSQL and Docker.",
+      "gap": "Review 10-14: demoted. The ad requires a completed natural-science degree (\"Du hast erfolgreich ein naturwissenschaftliches Studium abgeschlossen\", no equivalent named); the CV has an IHK Ausbildung and no degree. Kotlin leads the stack and is not on the CV; German C1 mandatory; senior IC, not a lead role; the tomedo client is Apple-based; no pay or posting date stated. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 72000,
+        "min": 62000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the Personio ad. Market: Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30); jobvector Softwareentwickler Germany avg EUR 65.0k, with experience 70.4k (p25 53k, p75 76.5k; 2,413 entries, updated 2026-10-14). Thuringian medical-software company, senior IC: the senior Java average rather than the lead quartiles."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Personio XML zollsoft.jobs.personio.de/xml lists id 2380025 \"Senior Softwareentwickler:in Kotlin/Java (full remote)\" (2026-10-29)."
+      }
+    },
+    {
+      "id": "bbht--senior-java-entwickler-in-java-developer-backend",
+      "url": "https://himalayas.app/companies/bbht/jobs/senior-java-entwickler-in-java-developer-backend-w-m-d",
+      "source": "recheck",
+      "company": "BBHT",
+      "title": "Senior Java Entwickler:in / Java Developer Backend (w/m/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "Germany",
+        "onsite_days_per_quarter": 0,
+        "eor": false
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "microservices",
+        "rest",
+        "ci-cd",
+        "docker"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-10-08",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 7
+      },
+      "why": "Fully remote senior Java/Spring Boot microservices in Germany at an IT and management consultancy (11-50 people), AI coding tools part of the work.",
+      "gap": "BBHT is an IT and management consultancy (11-50 people), so this is consulting again, the thing being left; German C1 required; no salary; no employer posting found, only Himalayas and Arbeitnow copies, so it stays kept. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 70000,
+        "min": 60000,
+        "max": 82000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad. Market: Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30); jobvector Softwareentwickler Germany avg EUR 65.0k, with experience 70.4k (p25 53k, p75 76.5k; 2,413 entries, updated 2026-10-14)."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Himalayas search q=Senior Java Entwickler:in: the job's guid is in the 5 rows returned (2026-10-29)."
+      }
+    },
+    {
+      "id": "bex-technologies--tech-lead",
+      "url": "https://himalayas.app/companies/bex-technologies-gmbh/jobs/tech-lead-m-w-d",
+      "source": "recheck",
+      "company": "bex technologies GmbH",
+      "title": "Tech Lead (m/w/d)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "Germany",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "kotlin",
+        "postgresql",
+        "docker",
+        "kubernetes",
+        "gcp",
+        "angular",
+        "ci-cd"
+      ],
+      "domain": [
+        "logistics"
+      ],
+      "posted_at": "2026-10-02",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 2,
+        "total": 7
+      },
+      "why": "Tech lead owning the architecture and stack of a B2B construction-materials delivery platform; Kotlin and Google Cloud lead the stack.",
+      "gap": "Kotlin and Google Cloud lead the stack; apply by e-mail or WhatsApp to the CEO, and bex's own Personio board lists no open positions (2026-10-14), so it may already be filled; no salary. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 80000,
+        "min": 70000,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad. Market: jobvector Gehaltsanalyse 2026: Tech Lead Germany avg EUR 83.1k (p25 75.3k, p75 90.2k), updated 2026-10-13. Small logistics start-up."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Himalayas search q=Tech Lead (m/w/d): the job's guid is in the 12 rows returned (2026-10-29)."
+      }
+    },
+    {
+      "id": "chrona--senior-java-developer-german-speaking",
+      "url": "https://himalayas.app/companies/chrona/jobs/senior-java-developer-german-speaking",
+      "source": "recheck",
+      "company": "Chrona",
+      "title": "Senior Java Developer (German-speaking)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE",
+          "EU"
+        ],
+        "timezone": "Germany",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "rest",
+        "microservices",
+        "postgresql",
+        "oracle",
+        "helm",
+        "ci-cd",
+        "typescript",
+        "react"
+      ],
+      "domain": [
+        "fintech",
+        "staffing"
+      ],
+      "posted_at": "2026-10-01",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 2,
+        "company": 0,
+        "total": 7
+      },
+      "why": "Senior Java/Spring Boot on a long-term fintech project with some React and DevOps, placed by an agency on an unnamed client.",
+      "gap": "Chrona (chrona.agency) places people on an unnamed client's project; the ad says both \"Germany only\" and \"remote within the EU\"; no salary; no employer posting beyond Himalayas, so it stays kept. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 70000,
+        "min": 60000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad. Market: Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30); levels.fyi Software Engineer Germany median total comp EUR 84.8k (3,010 submissions, updated 2026-10-13)."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Himalayas search q=Senior Java Developer (German-speaking): the job's guid is in the 1 row returned (2026-10-29)."
+      }
+    },
+    {
+      "id": "mtr-legal-rechtsanwalte--tech-lead-solution-architect-backend-workflow-engine-sso-observability-q",
+      "url": "https://himalayas.app/companies/mtr-legal-rechtsanwalte/jobs/tech-lead-solution-architect-backend-workflow-engine-sso-observability-q",
+      "source": "recheck",
+      "company": "MTR Legal Rechtsanwälte",
+      "title": "Tech Lead / Solution Architect - Backend, Workflow Engine, SSO, Observability, Q",
+      "lane": "tech-lead",
+      "contract": "freelance",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": "CET/Europe preferred",
+        "onsite_days_per_quarter": 0,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "python",
+        "postgresql",
+        "kafka",
+        "rabbitmq",
+        "docker",
+        "observability",
+        "security"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2026-10-03",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 0,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Contract tech lead for the backend, workflow engine, SSO and observability of a law firm's own platform; Python/FastAPI core.",
+      "gap": "Python/FastAPI is the core, which the CV barely has; a law firm building its own platform; no rate; no employer posting beyond Himalayas. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 720,
+        "min": 600,
+        "max": 840,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate stated. Market: freelancermap Freelancer-Kompass 2026 (press release 2026-07-23): software & web development median EUR 90/h, DACH, respondent count for that field not given; freelancermap profile data (Sept 2026, 2,337 DACH profiles): software developers median EUR 90/h, about half between EUR 80 and 100/h, i.e. ~EUR 720/day at 8 h; range EUR 75-105/h."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Himalayas search q=Tech Lead / Solution Architect: the job's guid is in the 1 row returned (2026-10-29)."
+      }
+    },
+    {
+      "id": "codeblick--senior-fullstack-entwickler-technical-lead-digitale-okosysteme-web",
+      "url": "https://himalayas.app/companies/codeblick/jobs/senior-fullstack-entwickler-technical-lead-m-w-d-digitale-okosysteme-web",
+      "source": "recheck",
+      "company": "codeblick",
+      "title": "Senior Fullstack Entwickler / Technical Lead (m/w/d) - Digitale Ökosysteme & Web",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "Germany",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "vue",
+        "node",
+        "typescript",
+        "php",
+        "graphql",
+        "rest",
+        "llm",
+        "rag"
+      ],
+      "domain": [
+        "ecommerce",
+        "manufacturing"
+      ],
+      "posted_at": "2026-10-02",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 1,
+        "total": 8
+      },
+      "why": "Technical lead on client projects in Vue/Nuxt and Node/TypeScript for Mittelstand manufacturers at a digital agency.",
+      "gap": "A digital agency, so client work again; PHP and headless CMS/PIM systems not on the CV; German C1; no employer posting found beyond Himalayas; no salary. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 68000,
+        "min": 58000,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Market: jobvector Softwareentwickler Germany avg EUR 65.0k, with experience 70.4k (p25 53k, p75 76.5k; 2,413 entries, updated 2026-10-14); Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30). Augsburg agency of 11-50 people."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Himalayas search q=Senior Fullstack Entwickler: the job's guid is in the 1 row returned (2026-10-29)."
+      }
+    },
+    {
+      "id": "the-agile-monkeys--senior-fullstack-engineer-with-react-team-lead",
+      "url": "https://himalayas.app/companies/the-agile-monkeys/jobs/senior-fullstack-engineer-with-react-team-lead",
+      "source": "recheck",
+      "company": "The Agile Monkeys",
+      "title": "Senior Fullstack Engineer with React & Team Lead",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "WORLDWIDE"
+        ],
+        "timezone": "GMT-7 to GMT+2",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "react",
+        "typescript",
+        "java",
+        "postgresql",
+        "docker",
+        "kubernetes"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-10-12",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 7
+      },
+      "why": "React/TypeScript lead over a Java (Struts 2/JSP) backend for a client of a consultancy.",
+      "gap": "Contract type not stated (six-month initial term \"based on client needs\"), so not shortlistable; Struts is legacy the CV has not used; a consultancy placing on client work; no salary. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 75000,
+        "min": 60000,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure and contract unclear. Market: Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30); levels.fyi Software Engineer Germany median total comp EUR 84.8k (3,010 submissions, updated 2026-10-13)."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Himalayas search q=Senior Fullstack Engineer with: the job's guid is in the 1 row returned (2026-10-29)."
+      }
+    },
+    {
+      "id": "gravity9--senior-java-developer",
+      "url": "https://himalayas.app/companies/gravity9/jobs/senior-java-developer",
+      "source": "recheck",
+      "company": "gravity9",
+      "title": "Senior Java Developer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-09-22",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Talent-pool ad of a UK boutique IT consultancy (\"future opportunities\"); senior Java.",
+      "gap": "Not a specific opening; consultancy placement; remote terms not stated. Still listed by the Himalayas search API on 2026-10-19 (expiry 2026-11-21). Review: countries cleared; WORLDWIDE was read off an empty Himalayas locationRestrictions list, not off the posting. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 75000,
+        "min": 60000,
+        "max": 87000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Market: Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z)."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "api",
+        "result": "live",
+        "evidence": "Himalayas search q=gravity9: the job's guid is in the 5 rows returned (2026-10-29)."
+      }
+    },
+    {
+      "id": "techbiz-global--senior-leading-software-engineer-fintech",
+      "url": "https://www.arbeitnow.com/jobs/companies/techbiz-global-gmbh/remote-senior-leading-software-engineer-fintech-berlin-481208",
+      "source": "recheck",
+      "company": "TechBiz Global GmbH",
+      "title": "Senior/Leading Software Engineer (fintech)",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "go",
+        "node",
+        "typescript",
+        "react",
+        "angular",
+        "aws",
+        "grpc",
+        "microservices",
+        "docker",
+        "jenkins",
+        "mysql",
+        "postgresql"
+      ],
+      "domain": [
+        "fintech",
+        "staffing"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 2,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Lead engineer in fintech with TypeScript, React/Angular and AWS containers, advertised by a recruiter.",
+      "gap": "TechBiz Global recruits for an unnamed client; Go or Node on the backend; Berlin tagged remote with no country list; no salary. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 80000,
+        "min": 70000,
+        "max": 95000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad. Market: levels.fyi Software Engineer Germany median total comp EUR 84.8k (3,010 submissions, updated 2026-10-13); jobvector Gehaltsanalyse 2026: Tech Lead Germany avg EUR 83.1k (p25 75.3k, p75 90.2k), updated 2026-10-13."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L on the Arbeitnow copy answered 200 on 2026-10-29."
+      }
+    },
+    {
+      "id": "geco-deutschland--lead-entwickler-java-backend-remote-und-nurnberg-zwsc238375",
+      "url": "https://app.9am.works/job/35a6590c-52f1-4c99-adcd-aba2be0395c6",
+      "source": "recheck",
+      "company": "GECO Deutschland GmbH",
+      "title": "Lead-Entwickler Java Backend (m/w/d) Remote und Nürnberg / ZWSC238375",
+      "lane": "tech-lead",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring",
+        "kubernetes"
+      ],
+      "domain": [
+        "public-sector"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Java back-end lead for a Nuremberg project, remote with presence in Nuremberg; posted by a staffing firm.",
+      "gap": "Not opened: 9am.works renders only with JavaScript. The same project title from virtual7 (Arbeitnow 414025 and 492640) answers 410, and one virtual7 version asked for security clearance (SÜ2); contract unknown. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 80000,
+        "min": 65000,
+        "max": 95000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Market: jobvector Tech Lead Germany avg EUR 83.1k (p25 75.3k, p75 90.2k, updated 2026-10-13; as cited in sweep 2026-10-15T0811Z, not re-read); Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z)."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L https://app.9am.works/job/35a6590c-... answered 200 on 2026-10-29."
+      }
+    },
+    {
+      "id": "sediwork--lead-software-engineer-fluent-native-german-speaker",
+      "url": "https://www.arbeitnow.com/jobs/companies/sediwork/lead-engineer-leipzig-1901",
+      "source": "recheck",
+      "company": "SEDIWORK",
+      "title": "Lead Software Engineer - Fluent/Native German Speaker",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": "Germany",
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "typescript",
+        "vue",
+        "node",
+        "postgresql",
+        "docker"
+      ],
+      "domain": [
+        "health",
+        "saas"
+      ],
+      "posted_at": "2026-10-06",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 2,
+        "company": 2,
+        "total": 10
+      },
+      "why": "Hands-on technical lead on TypeScript, Vue and Node for software that plans medical teams, remote in Germany.",
+      "gap": "Kept, not shortlisted: no posting on SEDIWORK's own site was found, only Himalayas, mynejo and remotejobs.org copies; optimisation for planning problems is outside the CV; salary expectation asked, none stated. Also offered part-time or freelance. Re-seen live 2026-10-29.",
+      "pay_estimate": {
+        "point": 80000,
+        "min": 70000,
+        "max": 92000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Market: jobvector Gehaltsanalyse 2026: Tech Lead Germany avg EUR 83.1k (p25 75.3k, p75 90.2k), updated 2026-10-13; small health-software company."
+      },
+      "link_check": {
+        "checked_at": "2026-10-29T01:25:36Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "curl -L on the Arbeitnow copy https://www.arbeitnow.com/jobs/companies/sediwork/lead-engineer-leipzig-1901 answered 200 on 2026-10-29; no SEDIWORK-own posting found (join.com/companies/sediwork 404)."
+      }
+    },
+    {
+      "id": "horseanalytics--senior-java-developer-remote",
+      "url": "https://de.indeed.com/viewjob?jk=9d76c75fb44757f9",
+      "source": "recheck",
+      "company": "HorseAnalytics GmbH",
+      "title": "Senior Java Developer (Remote)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 0,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Senior Java developer, remote, at a small company building analytics for the equestrian world.",
+      "gap": "Stack beyond Java, pay and remote terms not read. Not opened (open-cap reached; Indeed and Glassdoor copies only), so capped at 6 and kept. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 70000,
+        "min": 60000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure stated. Market: levels.fyi Software Engineer Germany median total comp EUR 84.8k, p25 70.5k, p75 102k, p90 125k (3,004 submissions, updated 2026-10-19, read today); Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z, not re-read). Small company, so the point sits under the median."
+      },
+      "link_check": null
+    },
+    {
+      "id": "huxley-associates--technical-lead-ai-platforms-100-remote",
+      "url": "https://de.jooble.org/jdp/4898735696618563276/Technical-Lead-AI-%26-Platforms-(100%25-remote)-Deutschland",
+      "source": "recheck",
+      "company": "Huxley Associates",
+      "title": "Technical Lead AI & Platforms (100% remote)",
+      "lane": "tech-lead",
+      "contract": "unknown",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "llm"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Recruiter ad for an unnamed client: technical lead for AI and platforms, 100% remote in Germany.",
+      "gap": "Not opened: Jooble copy only (403 to curl); recruiter for an unnamed client, so company 0; contract unknown. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 85000,
+        "min": 70000,
+        "max": 100000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Market: jobvector Tech Lead Germany avg EUR 83.1k (p25 75.3k, p75 90.2k, updated 2026-10-13; as cited in sweep 2026-10-15T0811Z, not re-read). Review 2026-10-19: jobvector answered 403 again; levels.fyi Software Engineer Germany p25 EUR 70.5k, median 84.8k, p75 102k (3,004 submissions, read 2026-10-19) supports the range."
+      },
+      "link_check": null
+    },
+    {
+      "id": "deichmann--senior-java-developer-springboot",
+      "url": "https://www.learn4good.com/jobs/bremen/deutschland/software_entwicklung/5546907279/g/",
+      "source": "recheck",
+      "company": "Deichmann",
+      "title": "Senior Java Developer (SpringBoot) (m/w/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java",
+        "spring-boot"
+      ],
+      "domain": [
+        "retail",
+        "ecommerce"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 0,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Senior Java/Spring Boot developer for a European shoe retailer with a large online shop.",
+      "gap": "Remote terms, location and pay not read. Not opened (open-cap reached; Learn4Good copy of a remotely.de listing only), so capped at 6 and kept. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 72000,
+        "min": 62000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure stated. Market: levels.fyi Software Engineer Germany median total comp EUR 84.8k, p25 70.5k, p75 102k, p90 125k (3,004 submissions, updated 2026-10-19, read today); Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z, not re-read)."
+      },
+      "link_check": null
+    },
+    {
+      "id": "majori--senior-software-entwickler-in-angular-m-w-d-bis-zu-80-000-jahresbrutto",
+      "url": "https://jobs.womenforhire.com/job/germany/koln-nw/senior-software-entwickler-in-angular-m-w-d-bis-zu-80-000eur-jahresbrutto-639760/",
+      "source": "recheck",
+      "company": "Majori GmbH",
+      "title": "Senior-Software-Entwickler/in Angular m/w/d (bis zu 80.000€ Jahresbrutto!)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "unknown",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": null,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "angular",
+        "typescript"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 0,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Senior Angular developer in Cologne, pay \"bis zu 80.000 EUR Jahresbrutto\" in the title.",
+      "gap": "Remote terms, employer type and product not read; listed in Cologne. Not opened (open-cap reached; Women For Hire job-board copy only), so capped at 6 and kept. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 72000,
+        "min": 60000,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "medium",
+        "basis": "The title states \"bis zu 80.000€ Jahresbrutto\"; no lower bound, so the range runs from the owner's floor to the stated cap; Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z, not re-read)."
+      },
+      "link_check": null
+    },
+    {
+      "id": "metafinanz-informationssysteme--remote-full-stack-architect-angular-node-js",
+      "url": "https://www.learn4good.com/jobs/online/software_entwicklung/5547891856/g/",
+      "source": "recheck",
+      "company": "metafinanz-Informationssysteme GmbH",
+      "title": "Remote Full-Stack Architect: Angular & Node.js",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "angular",
+        "typescript",
+        "node"
+      ],
+      "domain": [
+        "insurance",
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Full-stack architect (Angular and Node.js) at an IT consultancy of the Allianz group.",
+      "gap": "Consultancy, so company scores 0; contract, level and onsite share not read. Not opened (open-cap reached; Learn4Good copy only), so capped at 6 and kept. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 80000,
+        "min": 68000,
+        "max": 95000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure stated. Market: levels.fyi Software Engineer Germany median total comp EUR 84.8k, p25 70.5k, p75 102k, p90 125k (3,004 submissions, updated 2026-10-19, read today); Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z, not re-read)."
+      },
+      "link_check": null
+    },
+    {
+      "id": "redcare-pharmacy--remote-staff-software-engineer-react-java",
+      "url": "https://zuhausejobs.com/job/2399544-remote-staff-software-engineer-react-java",
+      "source": "recheck",
+      "company": "Redcare Pharmacy",
+      "title": "Remote Staff Software Engineer - React / Java (m/f/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "staff",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "react",
+        "java"
+      ],
+      "domain": [
+        "health",
+        "ecommerce"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 0,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Staff engineer for the checkout capabilities of a large European online pharmacy, leading architecture across transaction systems; React and Java.",
+      "gap": "Seen only as a zuhausejobs.com summary (\"100% Remote oder Berlin und Köln\", \"Wohnsitz in Deutschland\"); Redcare's other staff ads mention \"occasional on-site collaboration\" in Berlin or Cologne and its AI role office-based home office. Not opened (open-cap reached; no Redcare ATS page found), so capped at 6 and kept. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 95000,
+        "min": 80000,
+        "max": 115000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure stated. Market: levels.fyi Software Engineer Germany median total comp EUR 84.8k, p25 70.5k, p75 102k, p90 125k (3,004 submissions, updated 2026-10-19, read today); Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z, not re-read). Staff level, so the point sits near p75."
+      },
+      "link_check": null
+    },
+    {
+      "id": "sifamo--softwareentwickler-mit-bis-zu-95-remote-deutschlandweit-angular-spring-boot-ai-development",
+      "url": "https://www.learn4good.com/jobs/online/software_entwicklung/5547885765/g/",
+      "source": "recheck",
+      "company": "sifamo GmbH",
+      "title": "Softwareentwickler (m/w/d) mit bis zu 95% remote deutschlandweit! Angular, Spring Boot, AI Development",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "angular",
+        "spring-boot",
+        "llm"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Software developer combining Angular and Spring Boot with AI features; Berlin, Frankfurt or up to 95% remote.",
+      "gap": "Level, products and pay not read. Not opened (open-cap reached; Learn4Good copy only), so capped at 6 and kept. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 68000,
+        "min": 60000,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure stated. Market: levels.fyi Software Engineer Germany median total comp EUR 84.8k, p25 70.5k, p75 102k, p90 125k (3,004 submissions, updated 2026-10-19, read today); Payscale Senior Java Developer Germany avg EUR 70.4k (p10 50k, p90 87k; 83 profiles, updated 2025-03-30; as cited in sweep 2026-10-14T0927Z, not re-read)."
+      },
+      "link_check": null
+    },
+    {
+      "id": "toptal--senior-java-developer-microservices-remote",
+      "url": "https://www.learn4good.com/jobs/online/software_entwicklung/5548036006/g/",
+      "source": "recheck",
+      "company": "Toptal",
+      "title": "Senior Java Developer - Microservices Remote",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "java",
+        "spring",
+        "microservices"
+      ],
+      "domain": [
+        "staffing"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 0,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "Freelance-network ad for a senior Java/Spring microservices developer for an unnamed client.",
+      "gap": "Client, rate, duration and allowed countries unknown; Toptal's WWR ads were US- or North-America-only. Not opened (open-cap reached; Learn4Good copy only), so capped at 6 and kept. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 640,
+        "min": 480,
+        "max": 800,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate. Market: freelancermap Freelancer-Kompass 2026 and profile data (Sept 2026, 2,337 DACH profiles): software developers median EUR 90/h, about half between EUR 80 and 100/h (as cited in sweep 2026-10-14T0927Z, not re-read), i.e. EUR 720 a day at 8 h; a marketplace sets the rate, so the point sits below the median."
+      },
+      "link_check": null
+    },
+    {
+      "id": "qavion-group--senior-ai-ml-engineer-remote-nlp-llm-rag",
+      "url": "https://www.learn4good.com/jobs/online/software_entwicklung/5546924214/g/",
+      "source": "recheck",
+      "company": "QAVION GROUP",
+      "title": "Senior AI/ML Engineer — Remote, NLP/LLM, RAG",
+      "lane": "ai-eng",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "llm",
+        "rag",
+        "ml"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 6
+      },
+      "why": "AI/ML engineer on NLP, LLM and retrieval-augmented generation work, remote, listed in Leipzig.",
+      "gap": "Not opened: Learn4Good answers 403 to curl and QAVION's Personio board does not exist (404); \"AI/ML Engineer\" may mean model work (ML research is out of scope); contract unknown. Not reopenable 2026-10-29: the aggregator answers HTTP 403 to curl.",
+      "pay_estimate": {
+        "point": 75000,
+        "min": 60000,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Market: levels.fyi Software Engineer Germany median total comp EUR 84.8k, p25 70.5k, p75 102k (3,004 submissions, updated 2026-10-19; as read in sweep 2026-10-19T0403Z)."
+      },
+      "link_check": null
+    }
+  ]
+}
