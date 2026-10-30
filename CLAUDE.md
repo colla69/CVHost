@@ -113,15 +113,18 @@ task meant to run every night at 02:07 Berlin time. The rules for `jobs/` are in
 The scheduled tasks live on the owner's claude.ai account, not in this repo, and who can change one
 depends on how it was made. Claude can only edit a scheduled task that the same kind of tool created:
 
-- **`job-scout sweep`** (`trig_01QJBZG6WBiStVKEjUzcj3EF`) was created on 2026-09-28 by Claude Code on the
-  owner's computer, with `/schedule`, through the API. A cloud session cannot edit, enable or run it;
-  only the owner at claude.ai/code/routines or Claude Code on their computer (`/schedule update`) can.
-  On 2026-10-15 it was off, still on its old Mon/Thu schedule and prompt.
-- **`job-scout daily sweep`** (`trig_01Go9nbvEsAdDwfBmSRrQfGL`) was created on 2026-10-15 by a cloud
-  thread in the owner's claude.ai project. Because each run starts a new project thread, a cloud
-  session can only switch it off or run it as it is; any other change (schedule, prompt, name) means
-  deleting it and creating it again. It runs in that project's cloud environment, which is where
-  `SERPAPI_KEY` has to be set for it.
+- **`job-scout daily sweep`** (`trig_01QPAgZ4cJdDiWQdW3HHCrK3`) is the current one. It was created on
+  2026-10-27 on the routines page (claude.ai/code/routines), driven by a cloud thread through the owner's
+  browser, so that it could run on `claude-sonnet-5-5`: CVHost repo, the `MyEnvJobSearch` environment, no
+  connectors, no notifications. Each run is a plain cloud session, not a project thread. A cloud session
+  cannot edit it (`update_trigger` refuses tasks created through the web page); change it on that page.
+  It was created switched off.
+- The earlier **`job-scout daily sweep`** (`trig_01Go9nbvEsAdDwfBmSRrQfGL`, created 2026-10-15 by a project
+  thread) was deleted on 2026-10-27. A task a project thread creates starts a new project thread per run,
+  and neither `create_trigger` nor `update_trigger` can set its model, so it could not be moved to Sonnet.
+  Don't recreate the sweep from a project thread if the model matters.
+- The older **`job-scout sweep`** (`trig_01QJBZG6WBiStVKEjUzcj3EF`, Mon/Thu, created 2026-09-28 through the
+  API from the owner's computer) read as not found on 2026-10-27.
 
 Whether a task is on, its schedule and its environment are live state that no file here can show: check
 with the scheduled-task tools before saying a run will happen.
