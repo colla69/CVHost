@@ -311,3 +311,10 @@ Kept by the agent: which sources stopped working, changed shape, or proved worth
   **freelancermap** hits from WebSearch were all archived (`"isArchived":true`). **EU-hosted Greenhouse** (`boards-api.eu.greenhouse.io`) is refused by the
   egress proxy (502) and some EU boards answer 404 on `boards-api.greenhouse.io`. The sandbox refused a `curl` with a spoofed browser User-Agent; default-UA
   curl worked for Personio, join.com, Arbeitnow, freelancermap and 9am.works. A long `google_jobs.py` run (7 queries) exceeds the shell's 120 s: start it in the background.
+- 2026-10-30 — **Employer link from Arbeitnow**: `curl -sI <arbeitnow job url>/apply` answers 302 to the employer's own join.com ad (Infinos), the quickest way
+  from an Arbeitnow or Google Jobs hit to the original. **Ledgy's Greenhouse ad** was dead on 10-20 and listed again on 10-30 (first_published 2026-10-16): re-check dropped
+  `closed` ads that Himalayas re-advertises. **Redcare** posts one SmartRecruiters ad per city (`api.smartrecruiters.com/v1/companies/Redcare-Pharmacy/postings?q=<term>&limit=100`).
+  **MoneyGram** (`careers.moneygram.com` -> `jobs.dayforcehcm.com/moneygram/candidateportal`) is a JavaScript-only Dayforce portal: no http or api check, so its roles stay `kept`.
+  **levels.fyi** pages return nothing to WebFetch; use the search snippet for city medians. FX: `open.er-api.com/v6/latest/USD` answers (frankfurter.app answers 301).
+  **Tether** (`tether.recruitee.com/api/offers/`) posts one ad per country and none for Germany. Running `nohup python3 jobs/tools/google_jobs.py … &` inside the
+  shell tool dies at once; run the script itself with `run_in_background`. Google Jobs: 4 of 7 searches returned jobs; the TypeScript/Vue, Java/Angular and Italian ones got "no results".
