@@ -24,6 +24,7 @@
     "closed",
     "stale",
     "excluded-company",
+    "banking",
     "low-pay",
     "low-score",
     "other"

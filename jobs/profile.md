@@ -40,9 +40,13 @@ Decided with the owner on 2026-09-28.
 - **Pay floor** (decided 2026-10-14): **EUR 60,000 a year gross**. A role whose stated or projected pay
   tops out below that is dropped as `low-pay`, however well it fits. Freelance: a day rate that adds up to
   less over 200 billable days, so under EUR 300 a day (EUR 38 an hour).
-- **Changing industry** (decided 2026-10-14): the owner wants out of banking. Banks, leasing and
-  bank-owned finance score 0 on domain; the CV's banking years still count as evidence of skills, never as
-  a reason a role fits.
+- **Changing industry** (decided 2026-10-14, tightened 2026-10-28): the owner wants out of banking, and
+  fintech is close to the same world (same regulators, same compliance work, often banks as customers).
+  Banks, leasing, bank-owned finance and platforms whose customers are banks are dropped as `banking`.
+  Fintech, payments, insurance, regtech and crypto score 0 on domain. The CV's banking years still count
+  as evidence of skills, never as a reason a role fits. On 2026-10-28 about half of each nightly shortlist
+  was finance (5 of 10 that night, 12 of 32 roles ever shortlisted), because a remote Java/Spring finance
+  role scored 8 even with 0 on domain.
 - **Ranking** (decided 2026-10-14): by fit with the CV (the score), then by projected pay. Senior or lead
   does not matter.
 
@@ -114,6 +118,8 @@ Hard filters first — any one drops the posting, with its `drop_reason`:
   still in the future, or a re-advertisement by the company itself within the last 30 days (for example in
   this month's HN thread), makes it current again.
 - `excluded-company` — on the avoid list.
+- `banking` — a bank, leasing company or bank-owned finance arm, or a platform sold to banks (Europace and
+  the other Hypoport network companies). Fintech that is not a bank is scored, not dropped.
 
 **A shortlisted posting must be verified and explicitly open to Germany.** `ingest.py` refuses a
 shortlist entry with `verified: false` or with no `DE`, EU/EEA/Europe/DACH/EMEA or worldwide in
@@ -126,7 +132,7 @@ Then 0–2 on each criterion, total 0–10:
 | stack | Java/Spring or TypeScript front end is the core | adjacent (Kotlin, Node-only, another JVM stack) | mostly foreign |
 | seniority | senior, staff, lead or principal: all the same | level unclear | — (junior and mid are dropped) |
 | remote | fully remote from Germany, stated | remote-first with travel, or EU-wide but unconfirmed for DE | only implied |
-| domain | health, public sector, industrial IoT, automotive (not its finance arm), energy/climate — or needs Italian | general B2B SaaS, devtools, AI, e-commerce; fintech, payments or regtech that is not a bank | **banking**, leasing and bank-owned finance (devalued 2026-10-14: the owner wants to change industry); unrelated |
+| domain | health, public sector, industrial IoT, automotive (not its finance arm), energy/climate — or needs Italian | general B2B SaaS, devtools, AI, e-commerce | **fintech, payments, insurance, regtech, crypto** (devalued 2026-10-28: the owner wants out of finance; banks are dropped); unrelated |
 | company | product company with an in-house team and visible engineering culture | unknown | body-leasing consultancy (permanent list only) |
 
 When the posting does not say, a criterion scores 1: "unknown" is neither evidence for nor against.
