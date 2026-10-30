@@ -36,11 +36,11 @@ its schedule, prompt and model live there, and each run clones `master`, so chan
 profile take effect without touching it. It runs every day at **02:07 Europe/Berlin** (written in Berlin
 time, so it does not drift with daylight saving). The time is deliberate: a run draws on the owner's
 subscription limits, and the five-hour usage window it opens has closed by about 07:00, before the
-working day. Created 2026-10-15 from this project; each run starts a new thread in the project and uses
-the project's cloud environment. That environment needs **Full** network access (the default "Trusted"
-allowlist blocks job boards) and `SERPAPI_KEY` for the Google Jobs source; without them those sources
-are logged as `blocked`. The older task "job-scout sweep" (Mon/Thu, created through the API, so cloud
-sessions cannot edit it) is switched off and stays off. Locally, `export SERPAPI_KEY=…` or a line
+working day. Recreated on 2026-10-27 on the routines page so it runs on **Sonnet** (`claude-sonnet-5-5`); each run
+is a plain cloud session in the **MyEnvJobSearch** environment with the CVHost repo and no connectors.
+That environment needs **Full** network access (the default "Trusted" allowlist blocks job boards) and
+`SERPAPI_KEY` for the Google Jobs source; without them those sources are logged as `blocked`. Its
+history is in this repo; ids and who can edit it are in the root `CLAUDE.md`. Locally, `export SERPAPI_KEY=…` or a line
 `SERPAPI_KEY=…` in the repo-root `.env` (gitignored, never committed: this repo is public) does the same.
 Routine sessions ran at medium effort on 2026-10-15, so `job-scout` and `job-reviewer` set `effort: high`
 in their frontmatter, which overrides the session's level whenever they run as subagents.
