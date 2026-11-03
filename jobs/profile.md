@@ -26,7 +26,7 @@ Decided with the owner on 2026-09-28.
      its product out at customers in Germany, Italy or Switzerland, integration lead, technical project
      lead. Close to the consulting years, but on the vendor's side. **Only in scope with language
      leverage** (below); without it, it is `off-lane`.
-- **Language leverage** (decided 2026-09-28): native Italian plus fluent German and English is an edge
+- **Language leverage** (decided 2026-09-28): native Italian and native-level German plus fluent English is an edge
   few candidates have, so it is searched for on purpose, not just noticed. A posting has it when it asks
   for Italian, as a requirement or a plus; `languages` then contains `it`. Three kinds count:
   engineering roles at companies whose customers, teams or offices span DACH and Italy (lanes 1–3 as
@@ -36,7 +36,7 @@ Decided with the owner on 2026-09-28.
   their contract or score.
 - **Supporting keywords, not a lane:** AWS (Solutions Architect – Associate, valid to 04/2029),
   Terraform/CDK, Kubernetes, CI/CD.
-- **Languages:** Italian (native), German, English — all three are working languages.
+- **Languages:** Italian (native), German (native-level, confirmed by the owner 2026-11-03: "Deutsch auf Muttersprachenniveau" is not a gap), English — all three are working languages.
 - **Pay floor** (decided 2026-10-14): **EUR 60,000 a year gross**. A role whose stated or projected pay
   tops out below that is dropped as `low-pay`, however well it fits. Freelance: a day rate that adds up to
   less over 200 billable days, so under EUR 300 a day (EUR 38 an hour).

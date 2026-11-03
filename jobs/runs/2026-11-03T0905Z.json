@@ -6,7 +6,7 @@
   "trigger": "routine",
   "agent_sha": "7aff98d",
   "profile_sha": "37d11b7",
-  "summary": "Five roles reach the shortlist, four permanent and one freelance: voize's freelance Senior Backend Engineer in Kotlin (health-tech, remote from Germany, on the employer's own Ashby board), Scento's Staff Full-Stack Engineer (Next.js/Medusa, remote in the EU, EUR 140-185k stated), eventfirst's Senior Full-Stack Engineer (TypeScript, AI; its earlier ad died, this is a new one), HeroSoftware's Senior Full Stack (EUR 50-80k, German at native level) and Cito's full-stack role (Django and React with LLM agents, remote DACH). Nothing asks for Italian again; Modash's EUR 80-110k role is re-advertised but stays kept because its Workable location list excluded Germany. The profile changed only by a source note since the last sweep, so the six roles shortlisted on 2026-10-28 to 10-30 were not re-judged; JetBrains' and Haufe's are still live and come up for re-checking tomorrow. Review: 4 shortlisted roles demoted to kept (voize: Kotlin required, none on the CV; Scento: several years at staff or principal level; HeroSoftware: native-level German; Cito: Python/Django required, none on the CV), 5 pay projections re-based on JobRise pages re-read (voize widened, eventfirst, Cito, ElevenLabs and Valsoft), voize gap corrected (3-month minimum is in the Ashby ad), link checks redone for 7 postings; eventfirst remains the only shortlisted role.",
+  "summary": "Five roles reach the shortlist, four permanent and one freelance: voize's freelance Senior Backend Engineer in Kotlin (health-tech, remote from Germany, on the employer's own Ashby board), Scento's Staff Full-Stack Engineer (Next.js/Medusa, remote in the EU, EUR 140-185k stated), eventfirst's Senior Full-Stack Engineer (TypeScript, AI; its earlier ad died, this is a new one), HeroSoftware's Senior Full Stack (EUR 50-80k, German at native level) and Cito's full-stack role (Django and React with LLM agents, remote DACH). Nothing asks for Italian again; Modash's EUR 80-110k role is re-advertised but stays kept because its Workable location list excluded Germany. The profile changed only by a source note since the last sweep, so the six roles shortlisted on 2026-10-28 to 10-30 were not re-judged; JetBrains' and Haufe's are still live and come up for re-checking tomorrow. Review: 4 shortlisted roles demoted to kept (voize: Kotlin required, none on the CV; Scento: several years at staff or principal level; HeroSoftware: native-level German; Cito: Python/Django required, none on the CV), 5 pay projections re-based on JobRise pages re-read (voize widened, eventfirst, Cito, ElevenLabs and Valsoft), voize gap corrected (3-month minimum is in the Ashby ad), link checks redone for 7 postings; eventfirst remains the only shortlisted role. Correction 2026-11-03 (owner): German is native-level, so HeroSoftware is back on the shortlist; 2 shortlisted in total.",
   "open_questions": [
     "Several good postings ask for German \"auf Muttersprachenniveau\" (HeroSoftware) or C1/C2 (voize, Haufe Lexware): is that a gap to flag and still shortlist, or should native-level German be a drop reason?",
     "Recruiter ads that re-publish the same role for a year (IESF: datePosted 2025-08-29, new join.com id every few weeks) look current on any date check: should they count as `stale`, as this sweep did?"
@@ -353,7 +353,7 @@
       ],
       "posted_at": "2026-04-13",
       "verified": true,
-      "verdict": "kept",
+      "verdict": "shortlisted",
       "drop_reason": null,
       "score": {
         "stack": 2,
@@ -364,7 +364,7 @@
         "total": 8
       },
       "why": "Publisher of Shopify apps used by thousands of merchants (AddressHero, PaymentHero and others): full-stack work with React, Next.js, Node, Express and TypeScript, REST and GraphQL integrations, CI/CD, mentoring of junior developers; 100% remote for applicants in Germany.",
-      "gap": "\"Deutsch auf Muttersprachenniveau + gutes Englisch in Wort & Schrift\": native-level German is a hard requirement and the CV says fluent, not native; \"Mindestens 5 Jahre Erfahrung in der Full-Stack-Entwicklung\" (met); \"Eine echte Hunter-Mentalität\"; salary is \"Fixgehalt + leistungsabhängige Provision\" (EUR 50-80k fixed); Shopify app development is optional and not on the CV. Age: createdAt 2026-04-13, the company re-publishes the ad under new join.com ids (updatedAt 2026-10-22), so it is counted as current.",
+      "gap": "\"Deutsch auf Muttersprachenniveau + gutes Englisch in Wort & Schrift\": native-level German is required and the owner has it (confirmed by the owner 2026-11-03; the CV only says fluent); \"Mindestens 5 Jahre Erfahrung in der Full-Stack-Entwicklung\" (met); \"Eine echte Hunter-Mentalität\"; salary is \"Fixgehalt + leistungsabhängige Provision\" (EUR 50-80k fixed); Shopify app development is optional and not on the CV. Age: createdAt 2026-04-13, the company re-publishes the ad under new join.com ids (updatedAt 2026-10-22), so it is counted as current.",
       "pay_estimate": {
         "point": 65000,
         "min": 50000,
