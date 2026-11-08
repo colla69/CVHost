@@ -82,6 +82,23 @@ Combine a lane term with a remote term. German postings say "remote" in many way
 | fullstack | Senior Full Stack Engineer Java, Senior Software Engineer Java TypeScript, Senior Java Developer React/Angular/Vue | Senior Fullstack Entwickler Java, Senior Java Entwickler, Softwareentwickler Java Angular |
 | ai-eng | Developer Productivity Engineer, AI Enablement, AI Engineer (LLM applications), Applied AI Engineer, Developer Experience AI, Agentic workflows | KI Engineer, AI Engineer (LLM), Entwickler KI-Anwendungen |
 
+### Vibe coding / AI-native engineering
+
+Added at the owner's request on 2026-11-08. Roles and freelance projects built around coding with AI
+agents (Claude Code, Codex, Cursor): they belong to the `ai-eng` lane, or to `fullstack` when the AI part is
+only the way of working. A one-off search that day found that "vibe coding" as a title is mostly junior,
+US-only or AI-training gigs (Mindrift-style trainer work at EUR 184–240 a day, below the floor); the real
+offers say "AI-native", "AI-first development" or "agentic engineering", and name Claude Code or Codex.
+Search those words, not just "vibe coding".
+
+| | Terms |
+| --- | --- |
+| English | `AI-native` engineer / fullstack; `AI-first development`; `agentic engineer`; `"Claude Code"` + engineer; `vibe coding` engineer |
+| German | `AI-Native` Softwareentwickler; `KI-gestützte Entwicklung`; `Agentic Engineer` Freelance; `"Claude Code"` Entwickler / Projekt |
+
+Training and data-labelling gigs ("AI trainer for vibe coding", Mindrift, Outlier and the like) are not
+delivery work: record them as `off-lane` when they match a title.
+
 Remote terms: `remote`, `fully remote`, `remote-first`, `remote Germany`, `remote EU`, `100% remote`,
 `Remote in Deutschland`, `deutschlandweit remote`, `mobiles Arbeiten 100%`, `Homeoffice 100%`.
 
@@ -179,8 +196,9 @@ Decided 2026-10-14, when the routine went daily. Every sweep:
 - **Mondays only:** Remotive (17 jobs, rarely changes) and Remote OK (untagged feed, titles filtered locally).
 - **WebSearch, 6–8 queries:** 2 on employer boards (Ashby, Lever, Greenhouse, Personio, join.com) for the
   tech-lead and ai-eng lanes, 1–2 on freelancermap, GULP or freelance.de for freelance, 2 on language
-  leverage (rotate the English, German and Italian terms by day), 1 open query for whichever lane got
-  least today. Verify through the boards' public APIs (see the source notes) rather than their HTML.
+  leverage (rotate the English, German and Italian terms by day), 1 on vibe coding / AI-native
+  engineering (terms above; alternate permanent and freelance by day, added 2026-11-08), 1 open query
+  for whichever lane got least today. Verify through the boards' public APIs (see the source notes) rather than their HTML.
 - **Google Jobs, 7 queries:** through `python3 jobs/tools/google_jobs.py` (SerpApi; key in `SERPAPI_KEY`).
   This is the route to LinkedIn, StepStone, XING and Indeed ads, which Google Jobs indexes. One query per
   lane plus language leverage, each with a remote term; rotate the wording by day. 7 a night stays inside
