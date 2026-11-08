@@ -85,6 +85,15 @@ Combine a lane term with a remote term. German postings say "remote" in many way
 | fullstack | Senior Full Stack Engineer Java, Senior Software Engineer Java TypeScript, Senior Java Developer React/Angular/Vue | Senior Fullstack Entwickler Java, Senior Java Entwickler, Softwareentwickler Java Angular |
 | ai-eng | Developer Productivity Engineer, AI Enablement, AI Engineer (LLM applications), Applied AI Engineer, Developer Experience AI, Agentic workflows; Vibe Coding, Vibe Coder, AI-native Engineer, AI-assisted development (Cursor / Claude Code), vibe-coded prototype to production | KI Engineer, AI Engineer (LLM), Entwickler KI-Anwendungen; Vibe Coding, KI-gestützte Softwareentwicklung, Entwickler mit Cursor / Claude Code |
 
+### Vibe coding: what the ads actually say
+
+Found by a one-off search on 2026-11-08: "vibe coding" as a title is mostly junior, US-only or
+AI-training gigs (Mindrift-style trainer work at EUR 184–240 a day, below the floor). The real offers say
+`AI-native`, `AI-first development` or `agentic engineer(ing)` and name Claude Code or Codex, so the
+vibe-coding query rotates through those words too, not only "vibe coding". Training and data-labelling
+gigs ("AI trainer for vibe coding", Mindrift, Outlier and the like) are not delivery work: record them as
+`off-lane` when they match a title.
+
 Remote terms: `remote`, `fully remote`, `remote-first`, `remote Germany`, `remote EU`, `100% remote`,
 `Remote in Deutschland`, `deutschlandweit remote`, `mobiles Arbeiten 100%`, `Homeoffice 100%`.
 
@@ -183,8 +192,9 @@ Decided 2026-10-14, when the routine went daily. Every sweep:
 - **WebSearch, 7–9 queries:** 2 on employer boards (Ashby, Lever, Greenhouse, Personio, join.com) for the
   tech-lead and ai-eng lanes, 1–2 on freelancermap, GULP or freelance.de for freelance, 2 on language
   leverage (rotate the English, German and Italian terms by day), 1 on vibe coding (added 2026-11-08:
-  alternate permanent and freelance by day, using the vibe-coding terms of the ai-eng row; freelance
-  also on Malt and Upwork's public listings), 1 open query for whichever lane got least today.
+  alternate permanent and freelance by day, using the vibe-coding terms of the ai-eng row and the note
+  under *Search terms*; freelance also on Malt and Upwork's public listings), 1 open query for whichever
+  lane got least today.
   Verify through the boards' public APIs (see the source notes) rather than their HTML.
 - **Google Jobs, 7 queries:** through `python3 jobs/tools/google_jobs.py` (SerpApi; key in `SERPAPI_KEY`).
   This is the route to LinkedIn, StepStone, XING and Indeed ads, which Google Jobs indexes. One query per
