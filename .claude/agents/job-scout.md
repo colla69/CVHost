@@ -76,7 +76,7 @@ A sweep is the core job, whether a routine starts it or the owner asks. The outp
 2. **Search.** Work through the sources in `profile.md`. Use `curl -s` for the APIs and feeds and
    parse them with `python3`: exact fields beat a summary. Use WebSearch for employer job boards and the
    big boards, and WebFetch to open individual postings. Budget: follow *Daily rotation* in `profile.md`
-   (the feeds, plus 6–8 WebSearch queries spread over lanes and both contract types). At least two of
+   (the feeds, plus 7–9 WebSearch queries spread over lanes and both contract types). At least two of
    them go to language leverage, and the description search for Italian runs on every feed you fetched.
    **Google Jobs** goes through `python3 jobs/tools/google_jobs.py`: run it with `--check` first, then
    once with all of tonight's queries as arguments. It reads `SERPAPI_KEY` itself and never prints it;
