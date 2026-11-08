@@ -21,7 +21,10 @@ Decided with the owner on 2026-09-28.
   3. `ai-eng` — AI-assisted engineering: developer productivity, AI enablement, LLM application and
      agentic tooling. Evidence: the eleven-agent review board around PlayCryptoWithAI
      (`writing/agentic-review-board.md`) and Copilot/Claude as a standing part of client delivery. Not
-     ML research, not model training.
+     ML research, not model training. **Vibe coding is part of this lane** (added 2026-11-08 at the
+     owner's request): permanent roles and freelance gigs that build software mainly by prompting coding
+     agents (Cursor, Claude Code, Copilot, Lovable, Bolt), "AI-native" engineer roles, and gigs that take
+     over or clean up a vibe-coded prototype. The usual filters still hold: pay floor, Germany, seniority.
   4. `implementation` — implementation, integration or technical consulting at a product company: rolling
      its product out at customers in Germany, Italy or Switzerland, integration lead, technical project
      lead. Close to the consulting years, but on the vendor's side. **Only in scope with language
@@ -80,7 +83,7 @@ Combine a lane term with a remote term. German postings say "remote" in many way
 | --- | --- | --- |
 | tech-lead | Tech Lead, Lead Software Engineer, Lead Developer, Engineering Lead, Team Lead Software | Teamleiter Softwareentwicklung, Technischer Teamleiter, Lead Entwickler, Tech Lead |
 | fullstack | Senior Full Stack Engineer Java, Senior Software Engineer Java TypeScript, Senior Java Developer React/Angular/Vue | Senior Fullstack Entwickler Java, Senior Java Entwickler, Softwareentwickler Java Angular |
-| ai-eng | Developer Productivity Engineer, AI Enablement, AI Engineer (LLM applications), Applied AI Engineer, Developer Experience AI, Agentic workflows | KI Engineer, AI Engineer (LLM), Entwickler KI-Anwendungen |
+| ai-eng | Developer Productivity Engineer, AI Enablement, AI Engineer (LLM applications), Applied AI Engineer, Developer Experience AI, Agentic workflows; Vibe Coding, Vibe Coder, AI-native Engineer, AI-assisted development (Cursor / Claude Code), vibe-coded prototype to production | KI Engineer, AI Engineer (LLM), Entwickler KI-Anwendungen; Vibe Coding, KI-gestützte Softwareentwicklung, Entwickler mit Cursor / Claude Code |
 
 Remote terms: `remote`, `fully remote`, `remote-first`, `remote Germany`, `remote EU`, `100% remote`,
 `Remote in Deutschland`, `deutschlandweit remote`, `mobiles Arbeiten 100%`, `Homeoffice 100%`.
@@ -177,13 +180,17 @@ Decided 2026-10-14, when the routine went daily. Every sweep:
   (both feeds) and the current HN *Who is hiring* thread: one call per source and query, filtered
   locally, repeats skipped as the agent definition says.
 - **Mondays only:** Remotive (17 jobs, rarely changes) and Remote OK (untagged feed, titles filtered locally).
-- **WebSearch, 6–8 queries:** 2 on employer boards (Ashby, Lever, Greenhouse, Personio, join.com) for the
+- **WebSearch, 7–9 queries:** 2 on employer boards (Ashby, Lever, Greenhouse, Personio, join.com) for the
   tech-lead and ai-eng lanes, 1–2 on freelancermap, GULP or freelance.de for freelance, 2 on language
-  leverage (rotate the English, German and Italian terms by day), 1 open query for whichever lane got
-  least today. Verify through the boards' public APIs (see the source notes) rather than their HTML.
+  leverage (rotate the English, German and Italian terms by day), 1 on vibe coding (added 2026-11-08:
+  alternate permanent and freelance by day, using the vibe-coding terms of the ai-eng row; freelance
+  also on Malt and Upwork's public listings), 1 open query for whichever lane got least today.
+  Verify through the boards' public APIs (see the source notes) rather than their HTML.
 - **Google Jobs, 7 queries:** through `python3 jobs/tools/google_jobs.py` (SerpApi; key in `SERPAPI_KEY`).
   This is the route to LinkedIn, StepStone, XING and Indeed ads, which Google Jobs indexes. One query per
-  lane plus language leverage, each with a remote term; rotate the wording by day. 7 a night stays inside
+  lane plus language leverage, each with a remote term; rotate the wording by day. On even dates the
+  ai-eng query uses the vibe-coding wording ("vibe coding remote Germany" and the like), with no extra
+  search spent. 7 a night stays inside
   the free plan's 250 searches a month, and the script refuses to go past 240. Log it as source
   `google-jobs`, method `api`, one entry in `queries` per search spent.
 - **Retired**, since no posting came of them: Indeed (.de/.it), InfoJobs.it, StepStone and LinkedIn
