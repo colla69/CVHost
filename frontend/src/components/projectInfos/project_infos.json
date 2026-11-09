@@ -782,5 +782,40 @@
     "company_logo": "/img/logo-personal.svg",
     "company_name": "freunde-sag.org",
     "company_link": "https://freunde-sag.org/"
+  },
+  {
+    "id": 28,
+    "Name": {
+      "en": "BabyToy — a fullscreen keyboard toy",
+      "de": "BabyToy — ein Tastaturspielzeug im Vollbild",
+      "it": "BabyToy — un giocattolo da tastiera a schermo intero"
+    },
+    "client": {
+      "en": "Personal project",
+      "de": "Privates Projekt",
+      "it": "Progetto personale"
+    },
+    "start_date": "2026-10-22",
+    "end_date": null,
+    "description": {
+      "en": "<p>A native macOS app I built for my child, who sits on my lap and smashes the keyboard. Keys and the mouse make fire, water, explosions and drops across the full screen, with a soft tone, so my child sees and hears what their hands do.</p>\n<p>The harder half is the kiosk. An event tap blocks the system keys, including volume, Spotlight and app switching, so mashing the keys cannot close the toy or leave it. Only a deliberate combination lets an adult out: hold three modifier keys and type B, Y, E. The drawing and key logic sit in a separate core library with its own tests, and frames can be rendered to PNG files without opening a window.</p>\n<p>Used Technologies:<br>- Swift 6 / Swift Package Manager<br>- AppKit / Core Graphics<br>- AVAudioEngine, tones synthesised at start<br>- Swift Testing</p>",
+      "de": "<p>Eine native macOS-App, die ich für mein Kind gebaut habe, das auf meinem Schoß sitzt und auf die Tastatur haut. Tasten und Maus erzeugen Feuer, Wasser, Explosionen und Tropfen über den ganzen Bildschirm, dazu ein sanfter Ton, sodass mein Kind sieht und hört, was seine Hände tun.</p>\n<p>Die schwierigere Hälfte ist der Kiosk-Modus. Ein Event Tap blockiert die Systemtasten, darunter Lautstärke, Spotlight und App-Wechsel, sodass wildes Tastendrücken das Spielzeug weder schließen noch verlassen kann. Nur eine bewusste Tastenkombination lässt einen Erwachsenen wieder hinaus: drei Modifier-Tasten gedrückt halten und B, Y, E tippen. Die Zeichen- und Tastenlogik liegt in einer separaten Core-Bibliothek mit eigenen Tests, und Frames lassen sich als PNG-Dateien rendern, ohne ein Fenster zu öffnen.</p>\n<p>Eingesetzte Technologien:<br>- Swift 6 / Swift Package Manager<br>- AppKit / Core Graphics<br>- AVAudioEngine, beim Start synthetisierte Töne<br>- Swift Testing</p>",
+      "it": "<p>Un’app nativa per macOS che ho costruito per il mio bambino, che mi si siede in braccio e pesta sulla tastiera. I tasti e il mouse producono fuoco, acqua, esplosioni e gocce su tutto lo schermo, con un suono dolce, così il mio bambino vede e sente quello che fanno le sue mani.</p>\n<p>La metà più difficile è la modalità kiosk. Un event tap blocca i tasti di sistema, tra cui volume, Spotlight e cambio app, così pestare sui tasti non può chiudere il giocattolo né uscirne. Solo una combinazione intenzionale fa uscire un adulto: tenere premuti tre tasti modificatori e digitare B, Y, E. La logica di disegno e dei tasti sta in una libreria core separata con i propri test, e i frame si possono renderizzare in file PNG senza aprire una finestra.</p>\n<p>Tecnologie utilizzate:<br>- Swift 6 / Swift Package Manager<br>- AppKit / Core Graphics<br>- AVAudioEngine, suoni sintetizzati all’avvio<br>- Swift Testing</p>"
+    },
+    "role_name": {
+      "en": "Sole author",
+      "de": "Alleiniger Autor",
+      "it": "Autore unico"
+    },
+    "lang": {
+      "en": "Swift 6 / macOS / Core Graphics / AVAudioEngine",
+      "de": "Swift 6 / macOS / Core Graphics / AVAudioEngine",
+      "it": "Swift 6 / macOS / Core Graphics / AVAudioEngine"
+    },
+    "company": "<a href=\"https://github.com/colla69/BabyToy\">GitHub</a>",
+    "image": "/img/project-chess.jpg",
+    "company_logo": "/img/logo-personal.svg",
+    "company_name": "github.com/colla69",
+    "company_link": "https://github.com/colla69/BabyToy"
   }
 ]

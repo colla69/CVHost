@@ -448,5 +448,20 @@
       "it": "Nel tempo libero ho aiutato degli amici modernizzando <a href=\"https://freunde-sag.org/\" target=\"_blank\" rel=\"noopener noreferrer\">freunde-sag.org</a>, il sito dell’associazione che sostiene la scuola St.-Anna-Gymnasium di Monaco di Baviera. La vecchia pagina era un export di Adobe Muse a larghezza fissa che un telefono non riusciva davvero a visualizzare.<br><br>L’ho fatto riscrivere in Vue 3. Il design e ogni parola dei contenuti sono rimasti, ora funziona da 390px in su, i vecchi URL restano validi e il primo caricamento su telefono è passato da circa 1,4 MB a circa 161 KB."
     },
     "img_link": "/img/news-students-studying.jpg"
+  },
+  {
+    "id": 31,
+    "title": {
+      "en": "A keyboard toy for very small hands",
+      "de": "Ein Tastaturspielzeug für ganz kleine Hände",
+      "it": "Un giocattolo da tastiera per mani piccolissime"
+    },
+    "release_date": "2026-11-09 10:15:00",
+    "description_text": {
+      "en": "<a href=\"https://github.com/colla69/BabyToy\" target=\"_blank\" rel=\"noopener noreferrer\">BabyToy</a> is a small native macOS app I built for my child, who sits on my lap and smashes the keyboard. I am a proud father, and this is what that looks like in Swift. Keys and the mouse make fire, water, explosions and drops across the full screen, with a soft tone.<br><br>The real requirement is the opposite of the effects: mashing the keys must not close the toy or switch to another app. It blocks the system keys, and only a deliberate combination lets an adult out: hold three modifier keys and type B, Y, E. It is written in Swift 6 with Core Graphics, and the tones are synthesised at start, so there are no audio files.",
+      "de": "<a href=\"https://github.com/colla69/BabyToy\" target=\"_blank\" rel=\"noopener noreferrer\">BabyToy</a> ist eine kleine native macOS-App, die ich für mein Kind gebaut habe, das auf meinem Schoß sitzt und auf die Tastatur haut. Ich bin ein stolzer Vater, und so sieht das in Swift aus. Tasten und Maus erzeugen Feuer, Wasser, Explosionen und Tropfen über den ganzen Bildschirm, dazu ein sanfter Ton.<br><br>Die eigentliche Anforderung ist das Gegenteil der Effekte: Wildes Tastendrücken darf weder das Spielzeug schließen noch zu einer anderen App wechseln. Es blockiert die Systemtasten, und nur eine bewusste Tastenkombination lässt einen Erwachsenen wieder hinaus: drei Modifier-Tasten gedrückt halten und B, Y, E tippen. Geschrieben ist es in Swift 6 mit Core Graphics, und die Töne werden beim Start synthetisiert, es gibt also keine Audiodateien.",
+      "it": "<a href=\"https://github.com/colla69/BabyToy\" target=\"_blank\" rel=\"noopener noreferrer\">BabyToy</a> è una piccola app nativa per macOS che ho costruito per il mio bambino, che mi si siede in braccio e pesta sulla tastiera. Sono un padre orgoglioso, e in Swift ha questo aspetto. I tasti e il mouse producono fuoco, acqua, esplosioni e gocce su tutto lo schermo, con un suono dolce.<br><br>Il vero requisito è l’opposto degli effetti: pestare sui tasti non deve chiudere il giocattolo né passare a un’altra app. Blocca i tasti di sistema, e solo una combinazione intenzionale fa uscire un adulto: tenere premuti tre tasti modificatori e digitare B, Y, E. È scritto in Swift 6 con Core Graphics, e i suoni sono sintetizzati all’avvio, quindi non ci sono file audio."
+    },
+    "img_link": "/img/project-chess.jpg"
   }
 ]
