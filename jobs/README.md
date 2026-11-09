@@ -42,8 +42,9 @@ That environment needs **Full** network access (the default "Trusted" allowlist 
 `SERPAPI_KEY` for the Google Jobs source; without them those sources are logged as `blocked`. Its
 history is in this repo; ids and who can edit it are in the root `CLAUDE.md`. Locally, `export SERPAPI_KEY=…` or a line
 `SERPAPI_KEY=…` in the repo-root `.env` (gitignored, never committed: this repo is public) does the same.
-Routine sessions ran at medium effort on 2026-10-15, so `job-scout` and `job-reviewer` set `effort: high`
-in their frontmatter, which overrides the session's level whenever they run as subagents.
+`job-scout` and `job-reviewer` set `model: opus` and `effort: medium` in their frontmatter, which overrides
+the session's level whenever they run as subagents (the owner's choice on 2026-11-09; effort was `high` from
+2026-10-15).
 All runs share the free plan's 250 searches a month; `python3 jobs/tools/google_jobs.py --check` shows
 what is left. Its prompt, kept here so the repo shows what it does (editing this copy does not change the routine):
 

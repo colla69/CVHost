@@ -1,14 +1,18 @@
 {
+  "env": {
+    "STEWARD_CHECK": "npm --prefix frontend run lint -- --no-fix && npm --prefix frontend run build && npx --prefix infra tsc --noEmit -p infra",
+    "STEWARD_CHECK_PATHS": "frontend/**,infra/**"
+  },
+  "model": "opus",
   "enabledPlugins": {
     "craft-development@personal-claude-plugin-marketplace": true,
     "universal-clean-code@personal-claude-plugin-marketplace": true,
     "universal-work-discipline@personal-claude-plugin-marketplace": true,
-    "craft-unit-testing@personal-claude-plugin-marketplace": true,
     "craft-code-review@personal-claude-plugin-marketplace": true,
-    "craft-review@personal-claude-plugin-marketplace": true,
     "language-simple-english@personal-claude-plugin-marketplace": true,
-    "craft-cv-writing@personal-claude-plugin-marketplace": true,
-    "tools-aws-static-hosting@personal-claude-plugin-marketplace": true
+    "marketplace-base@personal-claude-plugin-marketplace": true,
+    "language-conventional-commits@personal-claude-plugin-marketplace": true,
+    "craft-shipping@personal-claude-plugin-marketplace": true
   },
   "extraKnownMarketplaces": {
     "personal-claude-plugin-marketplace": {
@@ -17,5 +21,7 @@
         "repo": "colla69/personal-claude-plugin-marketplace"
       }
     }
-  }
+  },
+  "effortLevel": "medium",
+  "autoCompactWindow": 180000
 }
