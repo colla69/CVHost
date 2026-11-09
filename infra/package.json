@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "CDK app that provisions the AWS hosting for cv.colarietitosti.info",
-  "bin": { "cvhost-infra": "bin/cvhost.js" },
+  "bin": {
+    "cvhost-infra": "bin/cvhost.js"
+  },
   "scripts": {
     "build": "tsc",
     "synth": "cdk synth",
@@ -14,12 +16,12 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "aws-cdk": "^2.1027.0",
+    "aws-cdk": "^2.1148.0",
     "ts-node": "^10.9.2",
     "typescript": "~5.7.2"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.269.0",
+    "aws-cdk-lib": "2.275.0",
     "constructs": "^10.4.2"
   }
 }
