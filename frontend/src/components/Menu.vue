@@ -166,7 +166,7 @@ export default {
       return this.$vuetify.display.mdAndDown
     },
     dark () {
-      return this.$vuetify.theme.name.value === 'ledgerDark'
+      return this.$vuetify.theme.name === 'ledgerDark'
     }
   },
   methods: {
