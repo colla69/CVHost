@@ -25,8 +25,8 @@ Fachbereich auf und überführt sie in Prozesskonzeption, Schätzungen und Dokum
 für Juniorentwickler auf Berater- wie auf Kundenseite. AWS Certified Solutions Architect – Associate.
 Muttersprache Italienisch, verhandlungssicher in Deutsch und Englisch.
 
-Gesucht wird Arbeit mit End-to-End-Verantwortung für ein System: wo diejenigen, die es entwerfen, es
-auch behalten, und wo es zur Aufgabe gehört, das Richtige automatisch zu machen statt nebenbei. Dieselbe
+Gesucht wird Arbeit mit End-to-End-Verantwortung für ein System: wo, wer es entwirft, dafür zuständig
+bleibt, und wo es zur Aufgabe gehört, das Richtige automatisch zu machen statt nebenbei. Dieselbe
 Haltung außerhalb der Arbeitszeit — siehe PlayCryptoWithAI unten.
 
 ---
@@ -35,7 +35,7 @@ Haltung außerhalb der Arbeitszeit — siehe PlayCryptoWithAI unten.
 
 - **Backend / JVM** — Java, Spring, Spring Boot, Jakarta EE (Java EE / J2EE), Hibernate, WildFly, Payara
 - **KI-gestützte Entwicklung** — GitHub Copilot, Claude, agentische Entwicklungs-Workflows,
-  Prompt-Patterns, werkzeuggestütztes Refactoring und Testerstellung, Befähigung des Teams
+  Prompt-Patterns, werkzeuggestütztes Refactoring und Testerstellung, Anleitung des Teams
 - **Frontend** — TypeScript, React, Angular, RxJS, Vue.js, Pinia, JSF 2.0, Vaadin, Material UI
 - **Node / APIs** — NestJS, Express, Prisma, REST, Backend-for-Frontend-Architekturen
 - **Cloud & IaC** — AWS (Lambda, DynamoDB, SNS, SQS, EKS, Fargate, Cognito, VPC, Route 53, CodePipeline,
@@ -65,9 +65,9 @@ Haltung außerhalb der Arbeitszeit — siehe PlayCryptoWithAI unten.
 Ablösung langjährig gewachsener Excel-Prozesse durch eine Webanwendung für einen öffentlichen
 Auftraggeber im Gesundheitswesen. Das System bearbeitet Widerspruchsverfahren sowie sonstige Schäden
 aus der Abrechnung. Spring-Boot-Backend, Vue-3-Frontend mit Pinia, Betrieb auf Kubernetes.
-KI-gestützte Entwicklung ist fester Bestandteil der Lieferung: GitHub Copilot im täglichen
+KI-gestützte Entwicklung ist fester Bestandteil der Arbeit: GitHub Copilot im täglichen
 Entwicklungsablauf, selbst gebaute agentische Workflows für wiederkehrende Aufgaben und praktische
-Befähigung der beiden Juniorentwickler.
+Anleitung der beiden Juniorentwickler.
 **Technologien:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot
 
 **BSI-CRM-Kundenplattformen** — BSI, Endkunde Techem · 06/2025 – 07/2025

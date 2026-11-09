@@ -96,7 +96,7 @@ const COPY = {
     openInNewTab: 'In neuem Tab öffnen',
     download: 'Herunterladen',
     zipNote: 'Lieber alles in einer Datei? Die ' +
-      '<a href="/data/CV_Docs.zip" download>vollständigen Unterlagen</a> gibt es als einen einzigen Download.'
+      '<a href="/data/CV_Docs.zip" download>vollständigen Unterlagen</a> können Sie gesammelt herunterladen.'
   },
   it: {
     eyebrow: n => n + ' documenti',
@@ -111,8 +111,8 @@ const COPY = {
     close: 'Chiudi',
     openInNewTab: 'Apri in una nuova scheda',
     download: 'Scarica',
-    zipNote: 'Preferisce avere tutto in un unico file? La ' +
-      '<a href="/data/CV_Docs.zip" download>documentazione completa</a> si scarica in una volta sola.'
+    zipNote: 'Preferisce avere tutto in un unico file? Può scaricare la ' +
+      '<a href="/data/CV_Docs.zip" download>documentazione completa</a> in una volta sola.'
   }
 }
 

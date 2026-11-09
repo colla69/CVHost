@@ -48,8 +48,8 @@ const COPY = {
   de: {
     eyebrow: '2013 bis heute',
     heading: 'Werdegang',
-    introBefore: 'Wo ich gearbeitet habe und wo ich ausgebildet wurde. Die Details zu jedem ' +
-      'einzelnen Projekt finden Sie unter ',
+    introBefore: 'Wo ich gearbeitet und gelernt habe. Die Details zu jedem einzelnen Projekt ' +
+      'finden Sie unter ',
     introAfter: '.',
     certHeading: 'Zertifikate',
     certDetail: 'Erstzertifiziert im Dezember 2022, rezertifiziert im April 2026, gültig bis ' +

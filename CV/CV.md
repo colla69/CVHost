@@ -24,7 +24,7 @@ design, estimates and documentation; has carried responsibility for junior devel
 consultancy and the client side. AWS Certified Solutions Architect – Associate. Native Italian, fluent
 German and English.
 
-Interested in work with end-to-end ownership of a system: where whoever designs it keeps it, and where
+Interested in work with end-to-end ownership of a system: where whoever designs it stays responsible for it, and where
 making the right thing automatic counts as part of the job rather than something done in the gaps. The
 same instinct runs off the clock — see PlayCryptoWithAI below.
 
@@ -64,9 +64,9 @@ same instinct runs off the clock — see PlayCryptoWithAI below.
 Replacing long-established Excel-based processes with a web application for a public-sector client in
 the German healthcare system. The system handles objection procedures (Widerspruchsverfahren) and
 claims for sonstige Schäden arising out of settlement. Spring Boot backend, Vue 3 front end with
-Pinia, the whole system running on Kubernetes. AI-assisted engineering is a standing part of delivery
+Pinia, the whole system running on Kubernetes. AI-assisted engineering is a regular part of the work
 here: GitHub Copilot in the daily development loop, self-built agentic workflows for
-recurring engineering work, and hands-on enablement of the two junior developers on both.
+recurring engineering work, and hands-on coaching of the two junior developers on both.
 **Stack:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot
 
 **BSI CRM customer platforms** — BSI, end customer Techem · 06/2025 – 07/2025

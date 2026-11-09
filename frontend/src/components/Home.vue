@@ -123,17 +123,17 @@ const CONSULTING_START = 2021
 const COPY = {
   en: {
     eyebrow: 'Senior IT Consultant · Tech Lead · München',
-    pitch: n => '<b>' + n + ' years</b> building software, with one habit underneath most of ' +
-      'it: understand a system well enough to see its structure, then encode that structure ' +
-      'once so the manual work — or the vigilance — never has to happen again.',
-    agents: 'Hand-assembled releases became an automated delivery system. A one-off cloud ' +
-      'migration also produced the reusable template for every migration after it. Recurring ' +
-      'engineering work became <b>a set of agents that now do it</b>.',
-    seeking: n => n + ' years of that as a consultant for Porsche, BMW Financial Services, ' +
-      'Volkswagen Financial Services, Krones and a public-sector client in healthcare. Looking ' +
-      'for work with end-to-end ownership of a system — where whoever designs it keeps it, and ' +
-      'where making the right thing automatic is part of the job rather than something done in ' +
-      'the gaps.',
+    pitch: n => '<b>' + n + ' years</b> building software, and most of it comes down to one ' +
+      'habit: I learn a system well enough to see its structure, then encode that structure ' +
+      'once, so nobody has to do the manual work or keep watch over it again.',
+    agents: 'I replaced hand-assembled releases with an automated delivery system. A one-off ' +
+      'cloud migration also gave me a reusable template for every migration after it. I handed ' +
+      'recurring engineering work to <b>a set of agents that now do it</b>.',
+    seeking: n => 'I have spent ' + n + ' of those years as a consultant for Porsche, BMW ' +
+      'Financial Services, Volkswagen Financial Services, Krones and a public-sector client in ' +
+      'healthcare. Now I am looking for work with end-to-end ownership of a system, where ' +
+      'whoever designs it stays responsible for it, and where making the right thing automatic is part of the ' +
+      'job rather than something done in the gaps.',
     downloadCv: 'Download CV',
     getInTouch: 'Get in touch',
     deliveredFor: 'Delivered for',
@@ -151,19 +151,19 @@ const COPY = {
   },
   de: {
     eyebrow: 'Senior IT Consultant · Tech Lead · München',
-    pitch: n => '<b>' + n + ' Jahre</b> Softwareentwicklung — und darunter fast immer dieselbe ' +
-      'Bewegung: ein System so weit durchdringen, dass seine Struktur sichtbar wird, und diese ' +
-      'Struktur einmal festschreiben, damit die Handarbeit — oder die Wachsamkeit — danach nicht ' +
-      'mehr nötig ist.',
-    agents: 'Aus von Hand zusammengestellten Releases wurde ein automatisiertes ' +
-      'Auslieferungssystem. Aus einer einmaligen Cloud-Migration wurde zusätzlich die ' +
-      'wiederverwendbare Vorlage für jede weitere. Aus wiederkehrender Entwicklungsarbeit wurden ' +
-      '<b>Agenten, die sie heute erledigen</b>.',
-    seeking: n => n + ' dieser Jahre als Consultant für Porsche, BMW Financial Services, ' +
+    pitch: n => '<b>' + n + ' Jahre</b> Softwareentwicklung, und fast immer läuft es auf ' +
+      'dieselbe Gewohnheit hinaus: Ich arbeite mich so weit in ein System ein, dass ich seine ' +
+      'Struktur sehe, und schreibe sie einmal fest, damit danach niemand mehr von Hand arbeiten ' +
+      'oder aufpassen muss.',
+    agents: 'Von Hand zusammengestellte Releases habe ich durch ein automatisiertes ' +
+      'Auslieferungssystem ersetzt. Aus einer einmaligen Cloud-Migration habe ich zusätzlich ' +
+      'eine wiederverwendbare Vorlage für jede weitere gewonnen. Wiederkehrende ' +
+      'Entwicklungsarbeit habe ich <b>Agenten übergeben, die sie heute erledigen</b>.',
+    seeking: n => n + ' dieser Jahre war ich Consultant für Porsche, BMW Financial Services, ' +
       'Volkswagen Financial Services, Krones und einen öffentlichen Auftraggeber im ' +
-      'Gesundheitswesen. Ich suche Arbeit mit End-to-End-Verantwortung für ein System — wo ' +
-      'diejenigen, die es entwerfen, es auch behalten, und wo es zur Aufgabe gehört, das Richtige ' +
-      'automatisch zu machen statt nebenbei.',
+      'Gesundheitswesen. Jetzt suche ich Arbeit mit End-to-End-Verantwortung für ein System: Wer ' +
+      'es entwirft, bleibt dafür zuständig, und dafür zu sorgen, dass das Richtige automatisch ' +
+      'passiert, gehört zur Aufgabe und läuft nicht nebenbei.',
     downloadCv: 'Lebenslauf herunterladen',
     getInTouch: 'Kontakt aufnehmen',
     deliveredFor: 'Projekte für',
@@ -176,22 +176,23 @@ const COPY = {
     latestNotes: 'Neueste Notizen',
     allNotes: 'Alle Notizen',
     closerHeading: 'Sie suchen einen Tech Lead?',
-    closerText: 'Der vollständige Lebenslauf ist ein einziger Download, auf Englisch, Deutsch oder ' +
-      'Italienisch. Zeugnisse und Zertifikate finden Sie ebenfalls hier auf der Website.'
+    closerText: 'Den vollständigen Lebenslauf können Sie mit einem Klick auf Englisch, Deutsch oder Italienisch ' +
+      'herunterladen. Zeugnisse und Zertifikate finden Sie ebenfalls hier auf der Website.'
   },
   it: {
     eyebrow: 'Senior IT Consultant · Tech Lead · Monaco di Baviera',
-    pitch: n => '<b>' + n + ' anni</b> di sviluppo software e, alla base di quasi tutto, la stessa ' +
-      'mossa: capire un sistema abbastanza a fondo da vederne la struttura, e poi scrivere quella ' +
-      'struttura una volta sola, così che il lavoro manuale — o l’attenzione costante — non serva più.',
-    agents: 'Da release assemblate a mano è nato un sistema di consegna automatico. Da una ' +
-      'migrazione cloud una tantum è nato anche il modello riutilizzabile per tutte quelle ' +
-      'successive. Dal lavoro di sviluppo ricorrente sono nati <b>agenti che oggi lo svolgono</b>.',
-    seeking: n => n + ' di quegli anni come consulente per Porsche, BMW Financial Services, ' +
-      'Volkswagen Financial Services, Krones e un committente pubblico nella sanità. Cerco ' +
-      'lavoro con responsabilità end-to-end su un sistema — dove chi lo progetta se lo tiene, e ' +
-      'dove rendere automatica la cosa giusta fa parte del mestiere invece di essere qualcosa ' +
-      'fatto nei ritagli di tempo.',
+    pitch: n => '<b>' + n + ' anni</b> di sviluppo software e quasi sempre la stessa abitudine: ' +
+      'capisco un sistema abbastanza a fondo da vederne la struttura, poi la scrivo una volta ' +
+      'sola, così nessuno deve più lavorare a mano o restare di guardia.',
+    agents: 'Ho sostituito le release assemblate a mano con un sistema di consegna automatico. ' +
+      'Da una migrazione cloud una tantum ho ricavato anche un modello riutilizzabile per tutte ' +
+      'quelle successive. Il lavoro di sviluppo ricorrente l’ho affidato ad <b>agenti che oggi ' +
+      'lo svolgono</b>.',
+    seeking: n => 'Per ' + n + ' di quegli anni ho lavorato come consulente per Porsche, BMW ' +
+      'Financial Services, Volkswagen Financial Services, Krones e un committente pubblico nella ' +
+      'sanità. Ora cerco lavoro con responsabilità end-to-end su un sistema: chi lo progetta ' +
+      'continua a occuparsene, e fare in modo che la cosa giusta avvenga in automatico fa parte ' +
+      'del mestiere, non dei ritagli di tempo.',
     downloadCv: 'Scarica il CV',
     getInTouch: 'Mi contatti',
     deliveredFor: 'Progetti per',
@@ -204,7 +205,7 @@ const COPY = {
     latestNotes: 'Note recenti',
     allNotes: 'Tutte le note',
     closerHeading: 'Sta cercando un Tech Lead?',
-    closerText: 'Il CV completo è un unico download, in inglese, tedesco o italiano. Sul sito trova ' +
+    closerText: 'Può scaricare il CV completo con un clic in inglese, tedesco o italiano. Sul sito trova ' +
       'anche certificati e referenze.'
   }
 }

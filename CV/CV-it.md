@@ -24,7 +24,7 @@ in progettazione dei processi, stime e documentazione; ha avuto responsabilità 
 junior sia lato consulenza sia lato cliente. AWS Certified Solutions Architect – Associate. Madrelingua
 italiano, tedesco e inglese fluenti.
 
-Cerca lavoro con responsabilità end-to-end su un sistema: dove chi lo progetta se lo tiene, e dove
+Cerca lavoro con responsabilità end-to-end su un sistema: dove chi lo progetta continua a occuparsene, e dove
 rendere automatica la cosa giusta fa parte del mestiere invece di essere qualcosa fatto nei ritagli. Lo
 stesso istinto fuori dall'orario — vedi PlayCryptoWithAI più sotto.
 
@@ -65,7 +65,7 @@ Sostituzione di processi Excel consolidati da anni con un'applicazione web per u
 del sistema sanitario tedesco. Il sistema gestisce i procedimenti di ricorso (Widerspruchsverfahren) e
 le richieste per i cosiddetti sonstige Schäden derivanti dalla liquidazione. Backend Spring Boot,
 frontend Vue 3 con Pinia, esecuzione su Kubernetes. Qui lo sviluppo assistito dall'IA è parte stabile
-della consegna: GitHub Copilot nel flusso quotidiano, workflow agentici costruiti
+del lavoro: GitHub Copilot nel flusso quotidiano, workflow agentici costruiti
 internamente per le attività ricorrenti e affiancamento pratico dei due junior su entrambi.
 **Tecnologie:** Java, Spring Boot, Vue 3, Pinia, TypeScript, Kubernetes, GitHub Copilot
 
