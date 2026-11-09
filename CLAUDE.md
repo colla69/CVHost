@@ -16,7 +16,7 @@ Components have their own `CLAUDE.md`, which loads when a file in that folder is
 - npm, with the lockfile in `frontend/`. No Node version is pinned: no `.nvmrc`, no `engines` field.
 - Infra: AWS CDK v2 in TypeScript (`infra/`). Two stacks, both in `us-east-1`.
 - Python 3, standard library only, for `jobs/tools/` and `CV/md2typst.py`. The CV PDFs render with typst.
-- **No test suite** (no runner, no `test` script, no test files) and **no CI**. Deploys are run by hand.
+- Playwright browser tests in `frontend/tests/e2e/`, and no unit tests. CI (`.github/workflows/test.yml`) runs lint, the build and the browser tests on every PR and push to `master`. Deploys are run by hand.
 
 ## Commands
 
@@ -28,12 +28,13 @@ Run npm from the repo root as `npm --prefix frontend run <script>`. No `cd` need
 | Build into `frontend/dist/` (the gitignored, deployable artifact) | `npm --prefix frontend run build` |
 | Lint, report only | `npm --prefix frontend run lint -- --no-fix` |
 | Lint and **auto-fix** (the default) | `npm --prefix frontend run lint` |
+| Browser tests (starts the dev server itself) | `npm --prefix frontend test`; once per machine: `npx --prefix frontend playwright install chromium` |
 | Type-check the CDK code | `npx --prefix infra tsc --noEmit -p infra` (no infra lint exists) |
 | Publish content to production | `scripts/deploy.sh --apply`; see `infra/CLAUDE.md` |
 | Render the three CV PDFs | `CV/build-pdf.sh`; it **writes into `frontend/public/data/`** |
 | Validate job data, rebuild its index | `python3 jobs/tools/ingest.py`; it **writes in place**, with no check-only mode |
 
-Verification is lint clean, a successful build, and looking at the affected page in a browser. Say what
+Verification is lint clean, a successful build, the browser tests, and looking at the affected page in a browser. Say what
 you ran. Don't claim more than you checked.
 
 A long check runs through the `marketplace-base:test-runner` agent, which runs it on Haiku and reports only
@@ -131,7 +132,7 @@ with the scheduled-task tools before saying a run will happen.
 Changes to the site itself (features, fixes, styling) are made in the main session. Five specialists live in
 `.claude/agents/`, each carrying deeper context than this file:
 
-- `unit-tester` — tests; knows no harness exists and must agree on one before installing anything
+- `unit-tester` — the Playwright browser tests; must agree on any other test tool before installing it
 - `aws-deployer` — hosting and deployment; confirms before any mutating AWS call
 - `cv-strategist` — the CV as a document: story, wording, recruiter/ATS keywords, and whether the CV
   and the site still agree, in all three languages. Edits the `CV/` markdown and writes the site's German
