@@ -59,7 +59,7 @@ Adding a news post or a project is a data edit, and needs all three languages.
 
 ## Verifying
 
-Run `lint -- --no-fix`, and `build` for any change to config, imports, the router or `i18n.js`. The build
+Run `lint -- --no-fix` and `npm --prefix frontend test`, and `build` for any change to config, imports, the router or `i18n.js`. The build
 lints in production mode, where `no-console` and `no-debugger` are warnings: read its eslint output too.
 For a visible change, look at the page in **all three languages**, German at 320, 390 and 1280px (it runs
 longest), with no `[i18n]` fallback warning in the dev console.

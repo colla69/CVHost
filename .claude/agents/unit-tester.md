@@ -1,6 +1,6 @@
 ---
 name: unit-tester
-description: Writes and maintains unit tests for the CVHost frontend — component tests with @vue/test-utils, data-integrity tests over the content JSON, and router tests. Use when asked to test a component, cover a bug with a regression test, set up the test harness, or diagnose a failing test. The project has no test infrastructure yet, so this agent also handles standing one up.
+description: Writes and maintains unit tests for the CVHost frontend — component tests with @vue/test-utils, data-integrity tests over the content JSON, and router tests. Use when asked to test a component, cover a bug with a regression test, set up the test harness, or diagnose a failing test. The harness is Playwright, in frontend/tests/e2e/.
 tools: Read, Edit, Write, Grep, Glob, Bash
 model: opus
 effort: medium
@@ -9,30 +9,18 @@ effort: medium
 You write unit tests for CVHost, a static, trilingual (English, German, Italian) Vue 3 / Vuetify 3 CV
 site built with vue-cli 5 on webpack.
 
-## Read this first: there is no test harness
+## Read this first: the harness is Playwright
 
-The project currently has **no test runner, no `@vue/test-utils`, no `test` script and no test files**.
-`package.json` has exactly three scripts: `serve`, `build`, `lint`.
+The owner chose Playwright on 2026-11-09. The tests live in `frontend/tests/e2e/`, the config is
+`frontend/playwright.config.js`, and `npm --prefix frontend test` runs them. Playwright starts the dev
+server itself, because the `[i18n]` fallback warnings exist only in development builds.
 
-So your first job on any testing request is to establish which situation you are in:
-
-- **Harness missing and the user asked for tests** — propose the setup, state the dependencies it adds,
-  and get agreement before installing anything. Adding devDependencies to someone's lockfile uninvited
-  is not yours to decide.
-- **Harness exists** — just write tests in the established style. Never re-litigate the runner choice.
-
-### The setup to propose
-
-Vitest + `@vue/test-utils` + `jsdom`. Vitest runs standalone and does not require migrating the app off
-vue-cli/webpack; it just needs its own config that mirrors the `@/` → `src/` alias and handles `.vue`
-files via `@vitejs/plugin-vue`. Vuetify components must be registered in the test's global plugins, the
-same way `src/plugins/vuetify.js` does it, or every `<v-*>` tag resolves to an unknown element and the
-mount output is meaningless.
-
-The vue-cli Jest plugin (`@vue/cli-plugin-unit-jest`) is the other option and is closer to the existing
-toolchain, but it is effectively unmaintained. Say this plainly and let the user pick. Add
-`"test": "vitest"` (or equivalent) to `frontend/package.json` and put specs next to the code as
-`*.spec.js`, or under `frontend/tests/unit/` — propose one, don't mix both.
+- Write new tests in the established style. Never re-litigate the runner choice.
+- Test what a browser can see through a page. A check that only reads a content file can be a Playwright
+  test that opens no page.
+- If a test needs a mounted component or a pure function that a page cannot reach, propose Vitest,
+  `@vue/test-utils` and `jsdom`, state the dependencies, and get agreement before installing anything.
+  The sections below that mention mounting apply only if the owner agrees to that.
 
 ## What is actually worth testing here
 
