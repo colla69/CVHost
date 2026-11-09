@@ -349,6 +349,7 @@ def render(run, first_seen):
     postings = run['postings']
     counts = {v: sum(1 for p in postings if p['verdict'] == v) for v in VOCAB['verdict']}
     new = sum(1 for p in postings if p['id'] not in first_seen)
+    ai_count = sum(1 for p in postings if p['lane'] == 'ai-eng' and p['verdict'] != 'dropped')
     lines = [
         f'# Job sweep {run["run_id"]}',
         '',
@@ -356,6 +357,7 @@ def render(run, first_seen):
         f'- **Kept:** {counts["kept"]}',
         f'- **Dropped:** {counts["dropped"]}',
         f'- **Evaluated:** {len(postings)}, {new} new ({run["trigger"]} sweep)',
+        f'- **AI and vibe coding:** {ai_count} of the shortlisted and kept, in their own section',
         '',
         run['summary'].strip(),
         '',
@@ -399,7 +401,11 @@ def render(run, first_seen):
         out.append(f'- **First seen:** {seen(p)}' + ('' if p['verified'] else ' (posting not opened)'))
         return out + ['']
 
-    listed = sorted((p for p in postings if p['verdict'] != 'dropped'), key=rank)
+    # The owner asked on 2026-11-09 for AI and vibe-coding roles in a list of their own, apart from the
+    # rest. The `ai-eng` lane is that list: profile.md files vibe coding under it (since 2026-11-08).
+    every = sorted((p for p in postings if p['verdict'] != 'dropped'), key=rank)
+    ai = [p for p in every if p['lane'] == 'ai-eng']
+    listed = [p for p in every if p['lane'] != 'ai-eng']
     shortlist = [p for p in listed if p['verdict'] == 'shortlisted']
     lines += ['## Shortlist', '']
     if shortlist:
@@ -416,6 +422,14 @@ def render(run, first_seen):
             and p['score']['total'] >= DETAIL_MIN]
     if near:
         lines += [f'## Near misses (kept, {DETAIL_MIN}+)', ''] + [x for p in near for x in block(p)]
+
+    if ai:
+        ai_detail = [p for p in ai if p['verdict'] == 'shortlisted'] + [
+            p for p in ai if p['verdict'] == 'kept' and p['score']['total'] >= DETAIL_MIN]
+        lines += ['## AI and vibe coding', '']
+        lines += [x for p in ai_detail for x in block(p)] or ['Nothing scored 6 or more.', '']
+        if len(ai) > len(ai_detail):
+            lines += [f'Kept below {DETAIL_MIN}: {len(ai) - len(ai_detail)}.', '']
 
     tail = []
     below = sum(1 for p in listed if p['verdict'] == 'kept' and not language_leverage(p)

@@ -165,8 +165,11 @@ detail, the report only answers "anything worth my time today?". From top to bot
    Pay reads `€78k/year (stated 70k–85k EUR/year)` or `≈€78k/year (est. 70–88k, medium)`.
 2. **Asks for Italian:** every other role that passed the filters and asks for Italian, one card each.
 3. **Near misses:** kept roles scoring 6 or more, one card each, marked when the posting was not opened.
-4. **Everything else:** counts of kept below 6, dropped by reason, sources ok and any blocked or failing.
-5. **Open questions** raised by this sweep.
+4. **AI and vibe coding:** every role in the `ai-eng` lane, apart from the rest (the owner asked for its
+   own list on 2026-11-09): shortlisted first, then kept 6+, one card each, then a count of kept below 6.
+   Sections 1–3 and the counts in 5 leave these roles out; the header still counts every role.
+5. **Everything else:** counts of kept below 6, dropped by reason, sources ok and any blocked or failing.
+6. **Open questions** raised by this sweep.
 
 ## `postings.jsonl`
 
