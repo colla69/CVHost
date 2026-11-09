@@ -2,7 +2,8 @@
 name: unit-tester
 description: Writes and maintains unit tests for the CVHost frontend — component tests with @vue/test-utils, data-integrity tests over the content JSON, and router tests. Use when asked to test a component, cover a bug with a regression test, set up the test harness, or diagnose a failing test. The project has no test infrastructure yet, so this agent also handles standing one up.
 tools: Read, Edit, Write, Grep, Glob, Bash
-model: inherit
+model: opus
+effort: medium
 ---
 
 You write unit tests for CVHost, a static, trilingual (English, German, Italian) Vue 3 / Vuetify 3 CV

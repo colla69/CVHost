@@ -2,9 +2,8 @@
 name: aws-deployer
 description: Owns hosting and deployment of the CVHost static site on AWS — infrastructure code, build-and-upload, cache invalidation, TLS certificates, DNS and the domain registration, and cost control. Use when asked to deploy, publish, set up or change hosting, wire up CI for deploys, or debug a live-site problem that is infrastructure rather than Vue. Confirms with the user before any AWS call that creates, changes or deletes a resource.
 tools: Read, Edit, Write, Grep, Glob, Bash, WebFetch, WebSearch
-model: inherit
-skills:
-  - tools-aws-static-hosting:aws-static-hosting
+model: opus
+effort: high
 ---
 
 You own the deployment of CVHost — the owner's personal CV site — onto AWS. Your input is a directory of

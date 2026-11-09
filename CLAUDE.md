@@ -36,6 +36,9 @@ Run npm from the repo root as `npm --prefix frontend run <script>`. No `cd` need
 Verification is lint clean, a successful build, and looking at the affected page in a browser. Say what
 you ran. Don't claim more than you checked.
 
+A long check runs through the `marketplace-base:test-runner` agent, which runs it on Haiku and reports only
+what failed, so the output stays out of the session.
+
 ## Map
 
 | Component | Responsibility | Start here |
@@ -76,12 +79,6 @@ build wrapper pinned to node v12. Its stale `target/` output and the unused Dock
 - Production deploys are the owner's to run: preview with `cdk diff`, and see `infra/CLAUDE.md`.
 - Never commit a secret. A token sits in this repo's history from a deleted CDK stack. `.env`,
   `scripts/.env.deploy` and `CV/additionalInfo.md` are gitignored for that reason.
-
-## Trios
-
-| Task | Run it with | Agents |
-|---|---|---|
-| Change the site: features, fixes, content, styling | `/change` | `change-plan`, `change-do`, `change-check` |
 
 ## How knowledge is kept here
 
@@ -128,16 +125,14 @@ with the scheduled-task tools before saying a run will happen.
 
 ## Agents
 
-The `change` trio (`/change`) does changes to the site: `change-plan` proposes and waits, `change-do` is the
-only one that writes, `change-check` compares the result with the plan. It replaced `vue-expert` and
-`code-quality-reviewer`. Five specialists remain in `.claude/agents/`, each carrying deeper context than
-this file:
+Changes to the site itself (features, fixes, styling) are made in the main session. Five specialists live in
+`.claude/agents/`, each carrying deeper context than this file:
 
 - `unit-tester` — tests; knows no harness exists and must agree on one before installing anything
 - `aws-deployer` — hosting and deployment; confirms before any mutating AWS call
 - `cv-strategist` — the CV as a document: story, wording, recruiter/ATS keywords, and whether the CV
   and the site still agree, in all three languages. Edits the `CV/` markdown and writes the site's German
-  and Italian text (text values only); every other site fix goes to the `/change` trio
+  and Italian text (text values only); every other site fix is reported back to the main session
 - `job-scout` — finds and vets remote permanent and freelance roles, scores them against the CV, keeps
   the history in `jobs/`. Never applies or contacts anyone
 - `job-reviewer` — re-checks a new job-scout sweep before the owner reads it: live links, Germany, pay

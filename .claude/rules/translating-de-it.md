@@ -13,7 +13,7 @@ Edit **text values only**: the `de` and `it` blocks of a `COPY`, and the `de` an
 `{ "en", "de", "it" }` map in a component's data list, in `src/nav.js`, in `project_infos.json` and in
 `news.json`. Never touch markup, bindings, keys, ids, dates, file names, links, function parameters, or any
 line outside those blocks and maps. If the English is wrong or the structure needs a new key, report it:
-that is the `change` trio's work. Inside an HTML string, translate the text nodes only. Tags, attributes
+that is the main session's work. Inside an HTML string, translate the text nodes only. Tags, attributes
 and `href`s stay byte-identical.
 
 ## The shape

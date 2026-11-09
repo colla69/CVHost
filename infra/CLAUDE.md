@@ -45,10 +45,6 @@ www.colarietitosti.info ┘                             └─ CloudFront Functi
 
 ## Gotchas
 
-The general rules for this hosting, such as the certificate region, deep links, cache tiers, private
-bucket access and checks after a deploy, are in the `aws-static-hosting` skill. What is true of this
-project:
-
 - This account defaults to `eu-central-1`, but both stacks are pinned to `us-east-1`, so the bucket is
   there too, although `deploy.sh`'s `AWS_REGION` defaults to `eu-central-1`.
 - `createWebHistory` makes `/news` a real URL that must return `index.html`. That is

@@ -65,7 +65,7 @@ An HTML string in the copy (a `<b>`, a link inside a paragraph) renders with `v-
 
 ## Who writes which words
 
-The `change` trio builds structure and writes the English. `cv-strategist` writes the German and Italian,
+The main session builds structure and writes the English. `cv-strategist` writes the German and Italian,
 editing text values only (see `.claude/rules/translating-de-it.md`). So when you add or change text:
 
 - Write the `en` side only: a new `COPY.en` key, or a map holding just `{ "en": "…" }`. Leave `de` and
