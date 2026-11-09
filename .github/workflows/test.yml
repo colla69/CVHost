@@ -1,0 +1,31 @@
+# Checks only: production deploys stay manual and belong to the owner.
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # The repo pins no Node version; this is the one the suite was run on.
+          node-version: 26
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint -- --no-fix
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
