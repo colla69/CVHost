@@ -403,5 +403,50 @@
       "it": "Ho appena rilasciato il mio <a href=\"https://github.com/colla69/personal-claude-plugin-marketplace\" target=\"_blank\" rel=\"noopener noreferrer\">plugin marketplace personale</a> per Claude Code: standard scritti una sola volta e riutilizzati in ogni progetto, più uno steward che configura un repo, ne costruisce il workflow Plan, Do, Check e trasforma ciò che il progetto impara in pull request che tornano al marketplace."
     },
     "img_link": "/img/project-card-catalog.jpg"
+  },
+  {
+    "id": 28,
+    "title": {
+      "en": "My marketplace taught me to benchmark",
+      "de": "Mein Marketplace hat mir das Benchmarking beigebracht",
+      "it": "Il mio marketplace mi ha insegnato a fare benchmark"
+    },
+    "release_date": "2026-11-09 10:00:00",
+    "description_text": {
+      "en": "Since announcing my <a href=\"https://github.com/colla69/personal-claude-plugin-marketplace\" target=\"_blank\" rel=\"noopener noreferrer\">plugin marketplace</a> I have completely changed how it works, and it opened up a world I hadn't touched before: benchmarking. A rule now has to prove itself. The same test cases run with the skill and without it, and the skill stays only if the difference is above the noise.<br><br>The results were humbling. My Java skill showed <b>no lift at all</b>: the model passed every case without it, and on plain prompts the skill loaded in 0 of 25 runs. The Java, JavaScript, TypeScript and Swift skills are gone. Clean code shrank to the one rule that changed the outcome on its test case: 0.50 without it, 1.00 with it.<br><br>What is left is smaller, and in real use: CVHost, PlayCryptoWithAI and makeMyTaxes are all docked to it now.",
+      "de": "Seit ich meinen <a href=\"https://github.com/colla69/personal-claude-plugin-marketplace\" target=\"_blank\" rel=\"noopener noreferrer\">Plugin-Marketplace</a> angekündigt habe, habe ich komplett umgebaut, wie er funktioniert, und das hat mir eine Welt eröffnet, mit der ich vorher nichts zu tun hatte: Benchmarking. Eine Regel muss sich jetzt beweisen. Dieselben Testfälle laufen mit dem Skill und ohne ihn, und der Skill bleibt nur, wenn der Unterschied über dem Rauschen liegt.<br><br>Die Ergebnisse waren ernüchternd. Mein Java-Skill brachte <b>überhaupt keinen Zugewinn</b>: Das Modell hat ohne ihn jeden Fall bestanden, und bei normalen Prompts wurde der Skill in 0 von 25 Läufen geladen. Die Skills für Java, JavaScript, TypeScript und Swift sind weg. Clean Code ist auf die eine Regel geschrumpft, die bei ihrem Testfall das Ergebnis verändert hat: 0,50 ohne sie, 1,00 mit ihr.<br><br>Was übrig ist, ist kleiner und im echten Einsatz: CVHost, PlayCryptoWithAI und makeMyTaxes sind jetzt alle daran angedockt.",
+      "it": "Da quando ho annunciato il mio <a href=\"https://github.com/colla69/personal-claude-plugin-marketplace\" target=\"_blank\" rel=\"noopener noreferrer\">plugin marketplace</a> ne ho cambiato completamente il funzionamento, e questo mi ha aperto un mondo che non avevo mai toccato: il benchmarking. Ora una regola deve dimostrare che serve. Gli stessi casi di test girano con la skill e senza, e la skill resta solo se la differenza supera il rumore.<br><br>I risultati sono stati una lezione di umiltà. La mia skill Java non ha portato <b>alcun miglioramento</b>: il modello ha superato ogni caso anche senza, e con prompt normali la skill si è caricata in 0 esecuzioni su 25. Le skill per Java, JavaScript, TypeScript e Swift non ci sono più. Clean code si è ridotto all’unica regola che ha cambiato l’esito sul suo caso di test: 0,50 senza, 1,00 con.<br><br>Quello che resta è più piccolo, e in uso reale: CVHost, PlayCryptoWithAI e makeMyTaxes ora sono tutti agganciati al marketplace."
+    },
+    "img_link": "/img/news-machine-panel.jpg"
+  },
+  {
+    "id": 29,
+    "title": {
+      "en": "makeMyTaxes: from issue to merge, with agents",
+      "de": "makeMyTaxes: vom Issue bis zum Merge, mit Agenten",
+      "it": "makeMyTaxes: dall’issue al merge, con gli agenti"
+    },
+    "release_date": "2026-11-09 10:05:00",
+    "description_text": {
+      "en": "<a href=\"https://github.com/colla69/makeMyTaxes\" target=\"_blank\" rel=\"noopener noreferrer\">makeMyTaxes</a> is my newest project, a local app that prepares my own German tax return. It is also where I took the leap to a <b>fully automated agentic workflow</b>.<br><br>I write an issue and label it. A worker agent writes the change and its tests and opens a pull request. A review agent in a fresh session checks it, a fix agent answers the findings, and once the exact commit is approved a script merges it into <code>dev</code>. I stay the product owner: I try <code>dev</code>, and only I merge into <code>main</code>. The loop stops and asks me after ten rounds, on a privacy-scan finding, or when a change touches its own guards.<br><br>Next up is a RAG agent, as a helper in a chat and as part of an expenses feature.",
+      "de": "<a href=\"https://github.com/colla69/makeMyTaxes\" target=\"_blank\" rel=\"noopener noreferrer\">makeMyTaxes</a> ist mein neuestes Projekt, eine lokale App, die meine eigene deutsche Steuererklärung vorbereitet. Hier habe ich auch den Sprung zu einem <b>vollständig automatisierten agentischen Workflow</b> gewagt.<br><br>Ich schreibe ein Issue und versehe es mit einem Label. Ein Worker-Agent schreibt die Änderung und ihre Tests und öffnet einen Pull Request. Ein Review-Agent in einer frischen Session prüft ihn, ein Fix-Agent antwortet auf die Befunde, und sobald genau dieser Commit freigegeben ist, merged ein Skript ihn nach <code>dev</code>. Ich bleibe der Product Owner: Ich probiere <code>dev</code> aus, und nur ich merge nach <code>main</code>. Die Schleife hält an und fragt mich nach zehn Runden, bei einem Treffer des Privacy-Scans oder wenn eine Änderung ihre eigenen Schutzmechanismen anfasst.<br><br>Als Nächstes kommt ein RAG-Agent, als Helfer in einem Chat und als Teil einer Ausgaben-Funktion.",
+      "it": "<a href=\"https://github.com/colla69/makeMyTaxes\" target=\"_blank\" rel=\"noopener noreferrer\">makeMyTaxes</a> è il mio progetto più recente, un’app locale che prepara la mia dichiarazione dei redditi tedesca. È anche il progetto con cui ho fatto il salto verso un <b>workflow agentico completamente automatizzato</b>.<br><br>Scrivo una issue e le assegno un’etichetta. Un agente worker scrive la modifica e i relativi test e apre una pull request. Un agente di revisione in una sessione nuova la controlla, un agente di correzione risponde ai rilievi e, una volta approvato esattamente quel commit, uno script fa il merge in <code>dev</code>. Io resto il product owner: provo <code>dev</code>, e il merge in <code>main</code> lo faccio solo io. Il ciclo si ferma e mi interpella dopo dieci round, in caso di segnalazione della scansione privacy o quando una modifica tocca le sue stesse protezioni.<br><br>Il prossimo passo è un agente RAG, come aiutante in una chat e come parte di una funzione per le spese."
+    },
+    "img_link": "/img/project-invoice-form.jpg"
+  },
+  {
+    "id": 30,
+    "title": {
+      "en": "A website for friends, now usable on a phone",
+      "de": "Eine Website für Freunde, jetzt auf dem Handy benutzbar",
+      "it": "Un sito per degli amici, ora usabile da telefono"
+    },
+    "release_date": "2026-11-09 10:10:00",
+    "description_text": {
+      "en": "In my free time I helped some friends and modernised <a href=\"https://freunde-sag.org/\" target=\"_blank\" rel=\"noopener noreferrer\">freunde-sag.org</a>, the website of the association supporting the St.-Anna-Gymnasium in Munich. The old page was a fixed-width Adobe Muse export that a phone could not really display.<br><br>I had it rewritten in Vue 3. The design and every word of the content stayed, it now works from 390px up, the old URLs still resolve, and the first load on a phone went from about 1.4 MB to about 161 KB.",
+      "de": "In meiner Freizeit habe ich Freunden geholfen und <a href=\"https://freunde-sag.org/\" target=\"_blank\" rel=\"noopener noreferrer\">freunde-sag.org</a> modernisiert, die Website des Vereins, der das St.-Anna-Gymnasium in München unterstützt. Die alte Seite war ein Adobe-Muse-Export mit fester Breite, den ein Handy nicht wirklich darstellen konnte.<br><br>Ich habe sie in Vue 3 neu schreiben lassen. Das Design und jedes Wort des Inhalts sind geblieben, sie funktioniert jetzt ab 390px, die alten URLs führen weiterhin zum Ziel, und der erste Ladevorgang auf dem Handy ist von etwa 1,4 MB auf etwa 161 KB gesunken.",
+      "it": "Nel tempo libero ho aiutato degli amici modernizzando <a href=\"https://freunde-sag.org/\" target=\"_blank\" rel=\"noopener noreferrer\">freunde-sag.org</a>, il sito dell’associazione che sostiene la scuola St.-Anna-Gymnasium di Monaco di Baviera. La vecchia pagina era un export di Adobe Muse a larghezza fissa che un telefono non riusciva davvero a visualizzare.<br><br>L’ho fatto riscrivere in Vue 3. Il design e ogni parola dei contenuti sono rimasti, ora funziona da 390px in su, i vecchi URL restano validi e il primo caricamento su telefono è passato da circa 1,4 MB a circa 161 KB."
+    },
+    "img_link": "/img/news-students-studying.jpg"
   }
 ]

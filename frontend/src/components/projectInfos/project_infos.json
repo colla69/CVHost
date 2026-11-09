@@ -711,5 +711,76 @@
     "company_logo": "/img/logo-personal.svg",
     "company_name": "github.com/colla69",
     "company_link": "https://github.com/colla69/PlayCryptoWithAI"
+  },
+  {
+    "id": 26,
+    "Name": {
+      "en": "makeMyTaxes — full agentic development, end to end",
+      "de": "makeMyTaxes — vollständig agentische Entwicklung, von Anfang bis Ende",
+      "it": "makeMyTaxes — sviluppo interamente agentico, dall’inizio alla fine"
+    },
+    "client": {
+      "en": "Personal project",
+      "de": "Privates Projekt",
+      "it": "Progetto personale"
+    },
+    "featured": true,
+    "start_date": "2026-11-05",
+    "end_date": null,
+    "description": {
+      "en": "<p>A local app that prepares my own German income tax return: expenses with their receipts, form modules that show each value with its line and evidence for entry in Mein ELSTER, and pinned per-year versions of the tax laws so each rule can cite the right wording. It binds to localhost, keeps its data in an encrypted SQLite database, and a commit hook stops personal data before it enters the public history.</p>\n<p>The app is also the showcase. Agents do the work <b>from issue to merge</b>: a worker writes the change and its tests, a review agent in a fresh session checks it, a fix agent answers the findings, and a script merges into <code>dev</code> once the exact commit is approved. I act as product owner: I write the issues, try <code>dev</code>, and am the only one who merges into <code>main</code>. The loop stops for a person after ten rounds, on a scan finding, or when a change touches its own guards.</p>\n<p>Planned next: a RAG agent, as a helper in a chat and as part of an expenses feature.</p>\n<p>Used Technologies:<br>- Java 25 / Spring Boot<br>- Thymeleaf / htmx<br>- Encrypted SQLite / Flyway<br>- Playwright<br>- Claude agents and skills / GitHub Actions</p>",
+      "de": "<p>Eine lokale App, die meine eigene deutsche Einkommensteuererklärung vorbereitet: Ausgaben mit ihren Belegen, Formularmodule, die jeden Wert mit seiner Zeile und seinem Nachweis für die Eingabe in Mein ELSTER anzeigen, und fest hinterlegte Fassungen der Steuergesetze je Jahr, damit jede Regel den richtigen Wortlaut zitieren kann. Sie bindet an localhost, hält ihre Daten in einer verschlüsselten SQLite-Datenbank, und ein Commit-Hook stoppt personenbezogene Daten, bevor sie in die öffentliche Historie gelangen.</p>\n<p>Die App ist zugleich der Showcase. Agenten erledigen die Arbeit <b>vom Issue bis zum Merge</b>: Ein Worker schreibt die Änderung und ihre Tests, ein Review-Agent in einer frischen Session prüft sie, ein Fix-Agent antwortet auf die Befunde, und ein Skript merged nach <code>dev</code>, sobald genau dieser Commit freigegeben ist. Ich agiere als Product Owner: Ich schreibe die Issues, probiere <code>dev</code> aus und bin der Einzige, der nach <code>main</code> merged. Nach zehn Runden, bei einem Scan-Treffer oder wenn eine Änderung ihre eigenen Schutzmechanismen anfasst, hält die Schleife für einen Menschen an.</p>\n<p>Als Nächstes geplant: ein RAG-Agent, als Helfer in einem Chat und als Teil einer Ausgaben-Funktion.</p>\n<p>Eingesetzte Technologien:<br>- Java 25 / Spring Boot<br>- Thymeleaf / htmx<br>- Verschlüsseltes SQLite / Flyway<br>- Playwright<br>- Claude-Agenten und Skills / GitHub Actions</p>",
+      "it": "<p>Un’app locale che prepara la mia dichiarazione dei redditi tedesca: spese con le relative ricevute, moduli che mostrano ogni valore con la sua riga e la relativa documentazione per l’inserimento in Mein ELSTER, e versioni delle leggi fiscali fissate anno per anno, così che ogni regola possa citare il testo giusto. Fa il bind su localhost, conserva i dati in un database SQLite cifrato, e un commit hook blocca i dati personali prima che entrino nella cronologia pubblica.</p>\n<p>L’app è anche la vetrina. Gli agenti fanno il lavoro <b>dall’issue al merge</b>: un worker scrive la modifica e i relativi test, un agente di revisione in una sessione nuova la controlla, un agente di correzione risponde ai rilievi e uno script fa il merge in <code>dev</code> una volta approvato esattamente quel commit. Io agisco da product owner: scrivo le issue, provo <code>dev</code> e sono l’unico a fare il merge in <code>main</code>. Il ciclo si ferma per un intervento umano dopo dieci round, in caso di segnalazione della scansione o quando una modifica tocca le sue stesse protezioni.</p>\n<p>Prossimo passo previsto: un agente RAG, come aiutante in una chat e come parte di una funzione per le spese.</p>\n<p>Tecnologie utilizzate:<br>- Java 25 / Spring Boot<br>- Thymeleaf / htmx<br>- SQLite cifrato / Flyway<br>- Playwright<br>- agenti e skill Claude / GitHub Actions</p>"
+    },
+    "role_name": {
+      "en": "Product owner / workflow author",
+      "de": "Product Owner / Autor des Workflows",
+      "it": "Product owner / autore del workflow"
+    },
+    "lang": {
+      "en": "Java / Spring Boot / htmx / SQLite / Claude agents / agentic workflow",
+      "de": "Java / Spring Boot / htmx / SQLite / Claude-Agenten / agentischer Workflow",
+      "it": "Java / Spring Boot / htmx / SQLite / agenti Claude / workflow agentico"
+    },
+    "company": "<a href=\"https://github.com/colla69/makeMyTaxes\">GitHub</a>",
+    "image": "/img/project-invoice-form.jpg",
+    "company_logo": "/img/logo-personal.svg",
+    "company_name": "github.com/colla69",
+    "company_link": "https://github.com/colla69/makeMyTaxes"
+  },
+  {
+    "id": 27,
+    "Name": {
+      "en": "freunde-sag.org — website modernisation",
+      "de": "freunde-sag.org — Modernisierung der Website",
+      "it": "freunde-sag.org — modernizzazione del sito web"
+    },
+    "client": {
+      "en": "Freunde des St.-Anna-Gymnasiums e.V. · volunteer work",
+      "de": "Freunde des St.-Anna-Gymnasiums e.V. · ehrenamtliche Arbeit",
+      "it": "Freunde des St.-Anna-Gymnasiums e.V. · lavoro volontario"
+    },
+    "start_date": "2026-10-19",
+    "end_date": null,
+    "description": {
+      "en": "<p>A free-time project for friends: the website of the association supporting the St.-Anna-Gymnasium in Munich. The original was a fixed-width Adobe Muse export that did not respond to phone screens, and its footer links overlapped the text.</p>\n<p>I had it rewritten in Vue 3, keeping the design and every word of the content. It now works from 390px up, has real headings and a phone menu, keeps the old URLs so existing links still work, and is prerendered to static HTML. The first load on a phone went from about 1.4 MB to about 161 KB.</p>\n<p>Used Technologies:<br>- Vue 3 / Vite<br>- Prerendered static HTML<br>- Playwright</p>",
+      "de": "<p>Ein Freizeitprojekt für Freunde: die Website des Vereins, der das St.-Anna-Gymnasium in München unterstützt. Das Original war ein Adobe-Muse-Export mit fester Breite, der sich nicht an Handybildschirme anpasste, und seine Footer-Links überlagerten den Text.</p>\n<p>Ich habe sie in Vue 3 neu schreiben lassen und dabei das Design und jedes Wort des Inhalts beibehalten. Sie funktioniert jetzt ab 390px, hat echte Überschriften und ein Handy-Menü, behält die alten URLs, sodass bestehende Links weiter funktionieren, und wird zu statischem HTML vorgerendert. Der erste Ladevorgang auf dem Handy ist von etwa 1,4 MB auf etwa 161 KB gesunken.</p>\n<p>Eingesetzte Technologien:<br>- Vue 3 / Vite<br>- Vorgerendertes statisches HTML<br>- Playwright</p>",
+      "it": "<p>Un progetto nel tempo libero per degli amici: il sito dell’associazione che sostiene la scuola St.-Anna-Gymnasium di Monaco di Baviera. L’originale era un export di Adobe Muse a larghezza fissa che non si adattava agli schermi dei telefoni, e i link del footer si sovrapponevano al testo.</p>\n<p>L’ho fatto riscrivere in Vue 3, mantenendo il design e ogni parola dei contenuti. Ora funziona da 390px in su, ha veri titoli e un menu per il telefono, mantiene i vecchi URL, così i link esistenti continuano a funzionare, e viene prerenderizzato in HTML statico. Il primo caricamento su telefono è passato da circa 1,4 MB a circa 161 KB.</p>\n<p>Tecnologie utilizzate:<br>- Vue 3 / Vite<br>- HTML statico prerenderizzato<br>- Playwright</p>"
+    },
+    "role_name": {
+      "en": "Volunteer developer",
+      "de": "Ehrenamtlicher Entwickler",
+      "it": "Sviluppatore volontario"
+    },
+    "lang": {
+      "en": "Vue 3 / Vite / responsive web",
+      "de": "Vue 3 / Vite / responsives Web",
+      "it": "Vue 3 / Vite / web responsive"
+    },
+    "company": "<a href=\"https://freunde-sag.org/\">freunde-sag.org</a>",
+    "image": "/img/news-students-studying.jpg",
+    "company_logo": "/img/logo-personal.svg",
+    "company_name": "freunde-sag.org",
+    "company_link": "https://freunde-sag.org/"
   }
 ]
