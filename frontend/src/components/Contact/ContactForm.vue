@@ -56,18 +56,18 @@ const COPY = {
     intro: 'Email is the quickest way to reach me, and I answer every message that is not a ' +
       'mailshot. If you are hiring, the CV below has the detail this site summarises.',
     cvHeading: 'Curriculum vitae',
-    cvIntro: 'The same document in three languages. It carries the personal details kept off ' +
-      'this public page — address, phone number and date of birth.'
+    cvIntro: 'The same document in three languages. It has the personal details I keep off this ' +
+      'public page: address, phone number and date of birth.'
   },
   de: {
     eyebrow: 'Offen für Rollen als Tech Lead und Teamleiter',
     heading: 'Kontakt aufnehmen',
     intro: 'Per E-Mail erreichen Sie mich am schnellsten, und ich beantworte jede Nachricht, die ' +
-      'kein Massenversand ist. Wenn Sie eine Stelle besetzen, finden Sie im Lebenslauf unten die ' +
+      'keine Massenmail ist. Wenn Sie eine Stelle besetzen, finden Sie im Lebenslauf unten die ' +
       'Details, die diese Website nur zusammenfasst.',
     cvHeading: 'Lebenslauf',
-    cvIntro: 'Dasselbe Dokument in drei Sprachen. Es enthält die persönlichen Angaben, die auf dieser ' +
-      'öffentlichen Seite bewusst fehlen — Adresse, Telefonnummer und Geburtsdatum.'
+    cvIntro: 'Dasselbe Dokument in drei Sprachen. Es enthält die persönlichen Angaben, die ich ' +
+      'auf dieser öffentlichen Seite bewusst weglasse: Adresse, Telefonnummer und Geburtsdatum.'
   },
   it: {
     eyebrow: 'Disponibile per ruoli da Tech Lead e Team Leader',
@@ -76,8 +76,8 @@ const COPY = {
       'sia un invio di massa. Se sta assumendo, il CV qui sotto contiene i dettagli che questo ' +
       'sito riassume.',
     cvHeading: 'Curriculum vitae',
-    cvIntro: 'Lo stesso documento in tre lingue. Contiene i dati personali che restano fuori da ' +
-      'questa pagina pubblica — indirizzo, numero di telefono e data di nascita.'
+    cvIntro: 'Lo stesso documento in tre lingue. Contiene i dati personali che tengo fuori da ' +
+      'questa pagina pubblica: indirizzo, numero di telefono e data di nascita.'
   }
 }
 

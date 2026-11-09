@@ -44,20 +44,20 @@ export default {
           detail: {
             en: 'Currently replacing Excel-based processes for objection and damages ' +
               'cases at a public-sector client in healthcare, with AI-assisted engineering as ' +
-              'a standing part of delivery. Before that the digital euro showcase for Pioneer ' +
+              'a regular part of the work. Before that the digital euro showcase for Pioneer ' +
               'Investments, BSI CRM platforms for Techem and the GitLab runner migration into ' +
               'AWS. Alongside all of it, whenever it needs hands, the IFRS 9 regulatory platform ' +
               'at Porsche Bank that my department looks after.',
             de: 'Derzeit Ablösung Excel-basierter Prozesse für Widerspruchs- und Schadensfälle ' +
               'bei einem öffentlichen Auftraggeber im Gesundheitswesen, mit KI-gestützter ' +
-              'Entwicklung als festem Bestandteil der Lieferung. Davor die Showcase-Anwendung zum ' +
+              'Entwicklung als festem Bestandteil der Arbeit. Davor die Showcase-Anwendung zum ' +
               'digitalen Euro für Pioneer Investments, BSI-CRM-Plattformen für Techem und der ' +
               'Umzug der GitLab-Runner in die AWS-Cloud. Parallel zu allem die von meiner ' +
               'Abteilung betreute IFRS-9-Regulatorikplattform bei der Porsche Bank, wann immer ' +
               'dort Unterstützung gebraucht wird.',
             it: 'Attualmente sostituisco processi basati su Excel per ricorsi e danni presso un ' +
               'committente pubblico nella sanità, con lo sviluppo assistito dall’IA come parte ' +
-              'stabile della consegna. In precedenza l’applicazione showcase per l’euro digitale ' +
+              'stabile del lavoro. In precedenza l’applicazione showcase per l’euro digitale ' +
               'per Pioneer Investments, le piattaforme CRM BSI per Techem e la migrazione dei ' +
               'GitLab runner su AWS. In parallelo a tutto questo, ogni volta che serve una mano, ' +
               'la piattaforma regolamentare IFRS 9 per Porsche Bank, seguita dal mio reparto.'
