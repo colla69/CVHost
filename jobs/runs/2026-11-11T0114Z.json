@@ -1,0 +1,2017 @@
+{
+  "schema": 3,
+  "run_id": "2026-11-11T0114Z",
+  "started_at": "2026-11-11T01:14:29Z",
+  "finished_at": "2026-11-11T01:28:47Z",
+  "trigger": "routine",
+  "agent_sha": "725aa76",
+  "profile_sha": "e19073a",
+  "summary": "Two new roles reach the shortlist: mund consulting's freelance Java/Spring Boot back end for a public mobility platform (95% remote, German C2 required, apply by 16.11.) and SThree's Angular 20+ eCare front end, a permanent role through agency employment (ANÜ). No open role asking for Italian: Nordhealth's DACH implementation roles with Italian as a plus are gone (410). Review: 2 demoted to kept (mund consulting: 5% onsite a year scores remote 1, total 6; SThree: asks several years of senior Angular, Angular Signals and GraphQL the CV lacks), so the shortlist is empty; sifamo's pay projection replaced with its own EUR 70/h, two gaps completed, MEDvidi's country list corrected.",
+  "open_questions": [],
+  "sources": [
+    {
+      "name": "arbeitnow",
+      "method": "api",
+      "queries": [
+        "page=1"
+      ],
+      "results": 300,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "No new lane-titled row open to remote work from Germany; repeats and onsite/non-engineering rows only counted. Italian description search: only off-lane or sales roles."
+    },
+    {
+      "name": "germantechjobs",
+      "method": "feed",
+      "queries": [
+        "rss"
+      ],
+      "results": 631,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "New lane-titled rows since the last sweep were all onsite or hybrid without remote-from-Germany terms; none recorded. Repeats matched by date, as feed URLs carry utm parameters. No Italian mentions."
+    },
+    {
+      "name": "himalayas",
+      "method": "api",
+      "queries": [
+        "q=angular&country=Germany",
+        "q=typescript&country=Germany",
+        "q=ai engineer&country=Germany"
+      ],
+      "results": 59,
+      "evaluated": 8,
+      "status": "ok",
+      "note": "Most rows repeats (m2TALENTS TypeScript, FastRocket and others skipped). New: ResMed/MEDIFOX DAN Senior Angular (care software; no employer page reachable, ResMed uses Workday), ViaBill (BNPL, not on its own Lever board), YozmaTech, m2TALENTS Angular/PHP, MEDvidi, all kept unverified; Dev.Pro x2 and Vestlane too-junior. Himalayas job pages (and JobLeads) answer 403 to curl, so the kept 6+ copies carry no link check; they are listed in the search API tonight. Italian description search: none."
+    },
+    {
+      "name": "weworkremotely",
+      "method": "feed",
+      "queries": [
+        "remote-back-end-programming-jobs.rss",
+        "remote-full-stack-programming-jobs.rss"
+      ],
+      "results": 116,
+      "evaluated": 0,
+      "status": "ok",
+      "note": "Repeats or outside the lanes; none recorded. No Italian mentions."
+    },
+    {
+      "name": "hn-whoishiring",
+      "method": "api",
+      "queries": [
+        "tags=comment,story_50338728"
+      ],
+      "results": 222,
+      "evaluated": 1,
+      "status": "ok",
+      "note": "One new lane match since the last sweep (Epsilon, hybrid Chicago, dropped). No Italian mentions."
+    },
+    {
+      "name": "google-jobs",
+      "method": "api",
+      "queries": [
+        "Teamleiter Softwareentwicklung remote Deutschland",
+        "Senior Java Entwickler remote Deutschland",
+        "AI Engineer LLM remote Deutschland",
+        "Full Stack Engineer TypeScript remote Deutschland",
+        "Freelance Angular Entwickler remote Deutschland",
+        "Italienischkenntnisse Entwickler remote Deutschland",
+        "Technischer Projektleiter Italienisch remote Deutschland"
+      ],
+      "results": 22,
+      "evaluated": 9,
+      "status": "ok",
+      "note": "3 of 7 searches returned jobs (2, 10, 10). \"Full Stack Engineer TypeScript\" and \"Technischer Projektleiter Italienisch\" got \"Google hasn't returned any results\"; \"Freelance Angular Entwickler\" and \"Italienischkenntnisse Entwickler\" got HTTP 503, so both Italian searches gave nothing. Repeats skipped: zollsoft x2, workidentity x2, Kake x2, Doodle, Process Street, dexter health, arcode, Velenosi, Westhouse Vaadin. PEA-Global's RAG project is archived on freelancermap."
+    },
+    {
+      "name": "websearch",
+      "method": "websearch",
+      "queries": [
+        "\"Tech Lead\" OR \"Teamlead\" Software \"100% remote\" Deutschland TypeScript OR Java jobs.personio.de OR join.com OR recruitee November 2026",
+        "\"AI Engineer\" OR \"LLM Engineer\" agents TypeScript OR Java \"remote\" Germany OR Europe jobs.ashbyhq.com OR job-boards.greenhouse.io 2026",
+        "Softwareentwickler OR \"Java Entwickler\" \"Italienisch\" remote Deutschland Stellenangebot 2026",
+        "consulente tecnico OR \"implementation specialist\" software tedesco italiano lavoro da remoto Germania 2026",
+        "\"AI-native\" OR \"agentic engineering\" software engineer \"Claude Code\" remote Germany OR \"remote (EU)\" job November 2026",
+        "freelance.de OR malt.de Projekt Senior Angular OR Java \"100% remote\" freiberuflich November 2026",
+        "\"Lead Engineer\" OR \"Engineering Lead\" healthtech OR energy OR \"public sector\" \"remote in Germany\" OR \"Remote (Germany)\" careers 2026",
+        "ResMed \"Senior Angular Software Entwickler\" remote Deutschland (look-up)",
+        "resmed myworkdayjobs \"Senior Angular Software Entwickler\" (look-up)",
+        "\"Senior Angular Software Entwickler\" MEDIFOX DAN \"100 % remote\" Dienstplanung Pflegedokumentation (look-up)",
+        "resmed.wd3.myworkdayjobs.com Resmed_External_Careers \"Senior-Angular-Software-Entwickler\" (look-up)",
+        "Nordhealth Implementation Manager DACH careers.nordhealth.com (look-up)"
+      ],
+      "results": 84,
+      "evaluated": 3,
+      "status": "ok",
+      "note": "7 discovery searches and 5 look-ups, about 7-10 links each, mostly repeats or aggregator copies. Nordhealth's DACH implementation roles (Italian a plus) answer 410 Gone. 1KOMMA5's new Edge & Cloud role (Personio XML) is Go/Lua. n8n's Ashby board: lane roles all repeats; new ones stale (Staff Core Platform Engineer, published 2026-08-11), US-only or security. Unopened leads: SPRIND Lead Engineer (fixed-term to 2026-12-31), SonarSource (Bochum), Superchat (Berlin)."
+    },
+    {
+      "name": "freelancermap",
+      "method": "fetch",
+      "queries": [
+        "projekte?query=java spring remote",
+        "projekte?query=angular remote",
+        "projekte?query=ki agent remote",
+        "projekte?query=italienisch"
+      ],
+      "results": 74,
+      "evaluated": 15,
+      "status": "ok",
+      "note": "74 project links, 45 not seen before; 15 lane matches recorded. mund consulting's public-mobility Java project and SThree's Angular 20+ ANÜ role reach the shortlist; meiyu's Vaadin ÖPNV role (same client as Westhouse/AFRA-149) is kept at 7, not shortlisted. \"italienisch\" returned no engineering project."
+    },
+    {
+      "name": "recheck",
+      "method": "api",
+      "queries": [
+        "postings.jsonl: shortlisted/kept 6+ last seen 2026-11-04 or earlier"
+      ],
+      "results": 30,
+      "evaluated": 1,
+      "status": "ok",
+      "note": "30 stale candidates. QAVION is still in Himalayas' API and re-recorded (kept, not opened at an employer page). The other Himalayas ads (gravity9, codeblick, The Agile Monkeys, Webstake, MoneyGram, dachs-it, Clera and others) are no longer in tonight's Himalayas results and Lemon.io/Track It Forward are gone from the WWR feeds; the rest are learn4good, Jooble, Indeed, LinkedIn or zuhausejobs copies that cannot be checked by curl. None of those 29 re-recorded."
+    }
+  ],
+  "postings": [
+    {
+      "id": "mund-consulting-ag-unnamed-client--backend-entwickler-java-spring-boot-postgresql-95-remote-id03514",
+      "url": "https://www.freelancermap.de/projekt/backend-entwickler-java-spring-boot-postgresql-m-w-d-95-prozent-remote-id03514",
+      "source": "freelancermap",
+      "company": "mund consulting AG (unnamed client)",
+      "title": "Backend-Entwickler (Java, Spring Boot, PostgreSQL) (m/w/d) 95% remote ID03514",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": 3,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "postgresql",
+        "kubernetes"
+      ],
+      "domain": [
+        "mobility",
+        "public-sector"
+      ],
+      "posted_at": "2026-11-10",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 2,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Back-end development for a public mobility platform: Java with Spring Boot, PostgreSQL, Gradle, SonarQube, Flyway or Liquibase, on Kubernetes or OpenShift; 01.12.2026 to 31.12.2027.",
+      "gap": "\"95% remote (5% OnSite pro Jahr Ingolstadt)\", so remote scores 1 as for other ads with onsite days (review). \"Nachgewiesene sehr gute Deutschkenntnisse auf Niveau C2 ... oder der Status als deutscher Muttersprachler\". Muss items the CV does not show: \"Sicherer Umgang mit dem Build- und Dependency-Management-Tool Gradle\", Checkstyle, \"OAuth 2.0 und OpenID Connect sowie praktische Erfahrung mit Spring Security\", Mockito and WireMock. Client unnamed; Bewerbungsfrist 16.11.2026.",
+      "pay_estimate": {
+        "point": 640,
+        "min": 520,
+        "max": 760,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate in the ad. freelancermap Freelancer-Kompass 2026 (as cited in sweeps 2026-11-05T0110Z and 2026-11-09T0108Z): IT freelancers in DACH median EUR 95/h; software developers median EUR 90/h, half between 80 and 100/h. At 8 h a day about EUR 640-800; agency projects sit lower, so EUR 520-760 with the point in the middle."
+      },
+      "link_check": {
+        "checked_at": "2026-11-11T01:29:41Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "Review: 200 https://www.freelancermap.de/projekt/backend-entwickler-java-spring-boot-postgresql-m-w-d-95-prozent-remote-id03514 (no redirect); page JSON isArchived false, active true, contractType contracting, remoteInPercent 100, datePosted 2026-11-10T12:26:06+01:00, validThrough 2026-11-16"
+      }
+    },
+    {
+      "id": "sthree-germany-unnamed-client--senior-angular-entwickler-angular-20-remote",
+      "url": "https://www.freelancermap.de/projekt/senior-angular-entwickler-m-w-d-angular-20-remote",
+      "source": "freelancermap",
+      "company": "SThree Germany (unnamed client)",
+      "title": "Senior Angular Entwickler (m/w/d) | Angular 20+, remote",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "angular",
+        "typescript",
+        "graphql"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": "2026-10-30",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 7
+      },
+      "why": "Front end of an eCare application for a client in Schleswig-Holstein: Angular 20+ with Signals and Signal Store, GraphQL; 40 h a week until mid-2027, up to 100% remote.",
+      "gap": "Demoted in review: \"Mehrjährige Erfahrung als Angular Entwickler im Senior-Level\" while the CV shows Angular on two projects totalling about a year (Porsche 06/2021-03/2022, Techem 06-07/2025); \"Sehr gute Kenntnisse in Angular 20+\", \"Praxiserfahrung mit Angular Signals\", \"Erfahrung mit Signal Store\" and \"Gute Kenntnisse in GraphQL\" are not in the CV. \"Vertragsart: Arbeitnehmerüberlassung\" through SThree, until mid-2027; \"Verhandlungssicheres Deutsch\"; client unnamed.",
+      "pay_estimate": {
+        "point": 72000,
+        "min": 62000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); agency employment, so not above that band."
+      },
+      "link_check": {
+        "checked_at": "2026-11-11T01:29:41Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "Review: 200 https://www.freelancermap.de/projekt/senior-angular-entwickler-m-w-d-angular-20-remote (no redirect); page JSON isArchived false, active true, contractType employee_leasing, remoteInPercent 100, datePosted 2026-10-30T14:48:46+01:00, validThrough 2027-01-30"
+      }
+    },
+    {
+      "id": "one-day-ahead-gmbh-unnamed-client--java-developer-mit-flyway-sonarqube-erfahrung-100-remote-start-01-12-2026",
+      "url": "https://www.freelancermap.de/projekt/java-developer-mit-flyway-sonarqube-erfahrung-m-w-d-100-prozent-remote-start-01-12-2026",
+      "source": "freelancermap",
+      "company": "One Day Ahead GmbH (unnamed client)",
+      "title": "Java Developer mit Flyway/SonarQube-Erfahrung (m/w/d) - 100% Remote - Start: 01.12.2026!",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "postgresql"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2026-11-10",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Java development for an end client in Frankfurt with Flyway database migrations and SonarQube quality gates; 100% remote, 12 months from 01.12.2026.",
+      "gap": "Client and its industry unnamed; German-speaking project.",
+      "pay_estimate": {
+        "point": 640,
+        "min": 520,
+        "max": 760,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate in the ad. freelancermap Freelancer-Kompass 2026 (as cited in sweeps 2026-11-05T0110Z and 2026-11-09T0108Z): IT freelancers in DACH median EUR 95/h; software developers median EUR 90/h, half between 80 and 100/h. At 8 h a day about EUR 640-800; agency projects sit lower, so EUR 520-760 with the point in the middle."
+      },
+      "link_check": {
+        "checked_at": "2026-11-11T01:29:41Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "Review: 200 https://www.freelancermap.de/projekt/java-developer-mit-flyway-sonarqube-erfahrung-m-w-d-100-prozent-remote-start-01-12-2026 (no redirect); page JSON isArchived false, active true, contractType contracting, remoteInPercent 100, datePosted 2026-11-10T12:01:55+01:00, validThrough 2027-05-10"
+      }
+    },
+    {
+      "id": "sifamo--senior-fullstack-entwickler-angular-java-cloud-devops-ki-genai-rag-llm-integration",
+      "url": "https://www.freelancermap.de/projekt/senior-fullstack-entwickler-angular-java-cloud-devops-ki-genai-rag-llm-integration",
+      "source": "freelancermap",
+      "company": "sifamo GmbH",
+      "title": "Senior Fullstack Entwickler – Angular, Java, Cloud, DevOps, KI / GenAI, RAG, LLM Integration",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "angular",
+        "java",
+        "ci-cd",
+        "llm",
+        "rag"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-11-10",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Talent-pool call from an IT services agency for senior full-stack freelancers (Angular, Java, cloud, DevOps, GenAI/RAG integration) on future client projects over 36 months.",
+      "gap": "A pool, not a concrete project; \"remote aus Deutschland\" with some onsite dates not quantified; German C1.",
+      "pay_estimate": {
+        "point": 560,
+        "min": 520,
+        "max": 640,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "medium",
+        "basis": "No rate in this ad. sifamo's own sister pool ad on freelancermap (\"Senior Entwickler und IT-Berater Konzernprojekte Java Cloud DevOps KI\", live, read 2026-11-11) states \"Stundensatz: 70 € remote + Reisekostenpauschale\", EUR 560 a day at 8 h; its Business Analyst pool states up to 70-75 €/h and its Solution Architect ad 80-90 €/h. Market for contrast: freelancermap Freelancer-Kompass 2026, software & web development median EUR 90/h (search, 2026-11-11). Review replaced the market-only 520-760 projection with the company's own figure."
+      },
+      "link_check": {
+        "checked_at": "2026-11-11T01:29:41Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "Review: 200 https://www.freelancermap.de/projekt/senior-fullstack-entwickler-angular-java-cloud-devops-ki-genai-rag-llm-integration (no redirect); page JSON isArchived false, active true, contractType contracting, remoteInPercent 100, datePosted 2026-11-10T17:48:11+01:00, validThrough 2027-05-10"
+      }
+    },
+    {
+      "id": "meiyu-unnamed-client--mei000080-senior-developer-fur-webbasierte-anwendungen-und-modernisierung-im-opnv",
+      "url": "https://www.freelancermap.de/projekt/mei000080-senior-developer-m-w-d-fuer-webbasierte-anwendungen-und-modernisierung-im-oepnv",
+      "source": "freelancermap",
+      "company": "meiyu® (unnamed client)",
+      "title": "[MEI000080] Senior Developer (m/w/d) für webbasierte Anwendungen und Modernisierung im ÖPNV",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring",
+        "vue",
+        "oracle"
+      ],
+      "domain": [
+        "public-sector",
+        "mobility"
+      ],
+      "posted_at": "2026-11-10",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 2,
+        "company": 0,
+        "total": 7
+      },
+      "why": "Web applications and modernisation for a public-transport operator: Vaadin, Java/Spring and Vue, Oracle; 394 person-days, 100% remote. Same ÖPNV client as the Westhouse and Randstad AFRA-149 ads.",
+      "gap": "Recorded as permanent: Arbeitnehmerüberlassung through meiyu. M1-M3: Vaadin, Java/Spring Boot and JavaScript/TypeScript/Vue.js each \"Senior (> 5 Jahre Erfahrung)\"; M4: \"Erfahrung aus Digitalisierungsprojekten im Bereich ÖPNV\" with one reference, which the CV does not show. Kept, not shortlisted, as with the Westhouse ad (sweep 2026-11-10T0110Z).",
+      "pay_estimate": {
+        "point": 72000,
+        "min": 62000,
+        "max": 88000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); agency employment, so not above that band."
+      },
+      "link_check": {
+        "checked_at": "2026-11-11T01:29:41Z",
+        "method": "http",
+        "result": "live",
+        "evidence": "Review: 200 https://www.freelancermap.de/projekt/mei000080-senior-developer-m-w-d-fuer-webbasierte-anwendungen-und-modernisierung-im-oepnv (no redirect); page JSON isArchived false, active true, contractType employee_leasing, remoteInPercent 100, datePosted 2026-11-10T09:21:20+01:00, validThrough 2027-05-10"
+      }
+    },
+    {
+      "id": "meiyu-unnamed-client--mei000082-senior-developer-powerbuilder-java-spring-boot-und-vue-js",
+      "url": "https://www.freelancermap.de/projekt/mei000082-senior-developer-m-w-d-powerbuilder-java-spring-boot-und-vue-js",
+      "source": "freelancermap",
+      "company": "meiyu® (unnamed client)",
+      "title": "[MEI000082] Senior Developer (m/w/d) PowerBuilder, Java Spring Boot und Vue.js",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "vue"
+      ],
+      "domain": [
+        "public-sector"
+      ],
+      "posted_at": "2026-11-10",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stack-mismatch",
+      "score": null,
+      "why": "Maintenance and migration of a PowerBuilder application towards Java Spring Boot and Vue.js.",
+      "gap": "PowerBuilder experience required.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "meiyu-unnamed-client--mei000081-senior-developer-powerbuilder-java-und-web-frontend",
+      "url": "https://www.freelancermap.de/projekt/mei000081-senior-developer-powerbuilder-java-und-web-frontend-m-w-d",
+      "source": "freelancermap",
+      "company": "meiyu® (unnamed client)",
+      "title": "[MEI000081] Senior Developer PowerBuilder, Java und Web-Frontend (m/w/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "public-sector"
+      ],
+      "posted_at": "2026-11-10",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "stack-mismatch",
+      "score": null,
+      "why": "PowerBuilder application work with Java and a web front end.",
+      "gap": "PowerBuilder experience required.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "medumio--ki-coach-fur-funf-fachteams-claude-code-skills-agenten-remote-start-kw-41-42",
+      "url": "https://www.freelancermap.de/projekt/ki-coach-fuer-fuenf-fachteams-claude-code-skills-agenten-remote-start-kw-41-42",
+      "source": "freelancermap",
+      "company": "Medumio GmbH",
+      "title": "KI-Coach für fünf Fachteams: Claude Code, Skills, Agenten (remote, Start KW 41/42)",
+      "lane": "ai-eng",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "llm",
+        "agents"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": "2026-10-01",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 1,
+        "total": 5
+      },
+      "why": "Coaching five business teams in using Claude Code, skills and agents; 2-3 days a week for 8-12 weeks.",
+      "gap": "80% remote with occasional days in Berlin; start was KW 41/42, already past; part-time engagement.",
+      "pay_estimate": {
+        "point": 700,
+        "min": 560,
+        "max": 800,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate in the ad. freelancermap Freelancer-Kompass 2026 (as cited in sweeps 2026-11-05T0110Z and 2026-11-09T0108Z): IT freelancers in DACH median EUR 95/h; software developers median EUR 90/h, half between 80 and 100/h. At 8 h a day about EUR 640-800; agency projects sit lower, coaching sits at the upper half, so EUR 560-800 with the point near EUR 700."
+      },
+      "link_check": null
+    },
+    {
+      "id": "connectly--ai-engineer-voice-ai-agent-developer-asap-6-monate-100-remote-voll-teilzeit",
+      "url": "https://www.freelancermap.de/projekt/freelance-ai-engineer-voice-ai-agent-developer-m-w-x-asap-6-monate-100-prozent-remote-ft",
+      "source": "freelancermap",
+      "company": "Connectly GmbH",
+      "title": "AI Engineer / Voice AI Agent Developer (m/w/x) // ASAP // 6 Monate + // 100% remote // Voll&Teilzeit",
+      "lane": "ai-eng",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "python",
+        "llm",
+        "agents"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": "2026-10-12",
+      "verified": true,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 0,
+        "seniority": 1,
+        "remote": 2,
+        "domain": 2,
+        "company": 0,
+        "total": 5
+      },
+      "why": "Voice AI phone assistant for medical practices: Python, FastAPI, SIP telephony and LiveKit; 6 months+, 100% remote.",
+      "gap": "Python/FastAPI and SIP/LiveKit voice-agent experience is the core requirement.",
+      "pay_estimate": {
+        "point": 600,
+        "min": 480,
+        "max": 720,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate in the ad. freelancermap Freelancer-Kompass 2026 (as cited in sweeps 2026-11-05T0110Z and 2026-11-09T0108Z): IT freelancers in DACH median EUR 95/h; software developers median EUR 90/h, half between 80 and 100/h. At 8 h a day about EUR 640-800; agency projects sit lower, a small company and partly part-time, so EUR 480-720 with the point at EUR 600."
+      },
+      "link_check": null
+    },
+    {
+      "id": "constaff--senior-ai-agent-developer-remote-jba15259",
+      "url": "https://www.freelancermap.de/projekt/senior-ai-agent-developer-m-w-d-remote-jba15259",
+      "source": "freelancermap",
+      "company": "Constaff GmbH",
+      "title": "Senior AI Agent Developer (m/w/d) | Remote | JBA15259",
+      "lane": "ai-eng",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "sap",
+        "agents",
+        "llm"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stack-mismatch",
+      "score": null,
+      "why": "AI agents built on SAP CAP, BTP and Fiori.",
+      "gap": "SAP CAP/BTP/Fiori is the core of the role.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "caes--remote-frankfurt-ai-engineer-w-m-d-pos80517",
+      "url": "https://www.freelancermap.de/projekt/remote-frankfurt-ai-engineer-w-m-d-pos80517-ki-python-agentic-software-engineering",
+      "source": "freelancermap",
+      "company": "CAES GmbH",
+      "title": "remote Frankfurt: AI Engineer w/m/d POS80517",
+      "lane": "ai-eng",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "python",
+        "agents",
+        "llm"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "Agentic software engineering in Python and LangGraph for a Frankfurt client.",
+      "gap": "80% remote, 20% onsite in Frankfurt.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "randstad-digital-germany-unnamed-client--agentic-product-engineer-in-anu-afra-155",
+      "url": "https://www.freelancermap.de/projekt/agentic-product-engineer-m-w-d-in-anue-afra-155",
+      "source": "freelancermap",
+      "company": "Randstad Digital Germany (unnamed client)",
+      "title": "Agentic Product Engineer (m/w/d) in ANÜ – AFRA #155",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "python",
+        "aws",
+        "agents"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "AI-native product engineering through agency employment.",
+      "gap": "80% remote; Arbeitnehmerüberlassung.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "randstad-digital-germany-unnamed-client--anu-agentic-product-engineer-ki-native-softwareentwicklung-python-aws-hybrid",
+      "url": "https://www.freelancermap.de/projekt/anue-agentic-product-engineer-m-w-d-ki-native-softwareentwicklung-python-aws-hybrid",
+      "source": "freelancermap",
+      "company": "Randstad Digital Germany (unnamed client)",
+      "title": "ANÜ | Agentic Product Engineer (m/w/d) | KI-native Softwareentwicklung | Python, AWS | Hybrid",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "python",
+        "aws",
+        "agents"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "AI-native product engineering through agency employment, hybrid per the title.",
+      "gap": "Hybrid; Arbeitnehmerüberlassung.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "akkodis-germany-tech-freelance--senior-java-entwickler-mit-kenntnissen-in-kafka-odata-sowie-openshift-munchen-remote",
+      "url": "https://www.freelancermap.de/projekt/senior-java-entwickler-m-w-d-mit-kenntnissen-in-kafka-odata-sowie-openshift-muenchen-und-remote",
+      "source": "freelancermap",
+      "company": "Akkodis Germany Tech Freelance GmbH",
+      "title": "Senior Java Entwickler (m/w/d) mit Kenntnissen in KAFKA, Odata sowie OpenShift - München & remote",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "kafka",
+        "kubernetes"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "Java back end with Kafka, OData and OpenShift for a Munich client.",
+      "gap": "Up to 20% onsite in Munich.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "amoria-bond--app-entwickler-fullstack-app-developer",
+      "url": "https://www.freelancermap.de/projekt/fullstack-app-developer-m-w-d-fuer-ein-projekt-in-der-app-und-web-entwicklung",
+      "source": "freelancermap",
+      "company": "Amoria Bond GmbH",
+      "title": "App Entwickler (Fullstack / App Developer) (m/w/d)",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "react-native"
+      ],
+      "domain": [
+        "banking"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "banking",
+      "score": null,
+      "why": "Mobile and web apps for a bank's brokerage.",
+      "gap": "Banking client.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "pea-global--generative-ai-llm-engineer-rag-python-remote",
+      "url": "https://www.freelancermap.de/projekt/generative-ai-llm-engineer-rag-python-remote-va-000162",
+      "source": "google-jobs",
+      "company": "PEA-Global",
+      "title": "Generative AI / LLM Engineer (RAG, Python) | Remote",
+      "lane": "ai-eng",
+      "contract": "freelance",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 600,
+        "max": 600,
+        "currency": "EUR",
+        "period": "day"
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "python",
+        "llm",
+        "rag"
+      ],
+      "domain": [
+        "public-sector"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "GenAI/RAG engineering in Python for public administration, January 2027 to end of 2029, up to EUR 600 a day.",
+      "gap": "Ü2 security clearance with German citizenship required.",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-11-11T01:24:47Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "200 https://www.freelancermap.de/projekt/generative-ai-llm-engineer-rag-python-remote-va-000162, but the page JSON says isArchived true"
+      }
+    },
+    {
+      "id": "it-sonix-custom-development--ai-solutions-engineer-llm-rag-and-agents",
+      "url": "https://www.freelancermap.de/projekt/ai-solutions-engineer-m-w-d-llm-rag-und-agenten",
+      "source": "google-jobs",
+      "company": "IT Sonix Custom Development GmbH",
+      "title": "AI Solutions Engineer – LLM, RAG and Agents",
+      "lane": "ai-eng",
+      "contract": "freelance",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "llm",
+        "rag",
+        "agents"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 4
+      },
+      "why": "Freelance pool for LLM, RAG and agent solutions with n8n workflow automation, from a Leipzig software house (per Google Jobs snippet).",
+      "gap": "Not opened; remote terms and project unclear.",
+      "pay_estimate": {
+        "point": 600,
+        "min": 480,
+        "max": 720,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate in the ad. freelancermap Freelancer-Kompass 2026 (as cited in sweeps 2026-11-05T0110Z and 2026-11-09T0108Z): IT freelancers in DACH median EUR 95/h; software developers median EUR 90/h, half between 80 and 100/h. At 8 h a day about EUR 640-800; agency projects sit lower, a pool call with no project, so EUR 480-720."
+      },
+      "link_check": null
+    },
+    {
+      "id": "brownian-motion-consulting--senior-junior-java-entwickler-spring-boot-vaadin-ci-cd-remote-vor-ort",
+      "url": "https://app.9am.works/job/d886128d-3ebf-452a-8ab2-ecb173c6034e",
+      "source": "google-jobs",
+      "company": "Brownian Motion Consulting GmbH",
+      "title": "Senior & Junior Java Entwickler (m/w/d) – Spring Boot, Vaadin & CI/CD (Remote / Vor-Ort)",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "ci-cd"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "Java/Spring Boot and Vaadin development at a consultancy.",
+      "gap": "40% remote, 60% onsite per the 9am.works copy.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "protip-unnamed-client--java-backend-entwickler-remote",
+      "url": "https://www.9am.works/de/jobs/java-backend-entwickler-remote-job_nexus-webconia_50258",
+      "source": "google-jobs",
+      "company": "protip (unnamed client)",
+      "title": "Java Backend-Entwickler (Remote)",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "mid",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "kafka"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 5
+      },
+      "why": "Java back end with Kafka and Cassandra, 599 hours from November to March (per the 9am.works copy).",
+      "gap": "Not opened at the original; Cassandra and ISTQB named; client unnamed.",
+      "pay_estimate": {
+        "point": 600,
+        "min": 480,
+        "max": 720,
+        "currency": "EUR",
+        "period": "day",
+        "confidence": "low",
+        "basis": "No rate in the ad. freelancermap Freelancer-Kompass 2026 (as cited in sweeps 2026-11-05T0110Z and 2026-11-09T0108Z): IT freelancers in DACH median EUR 95/h; software developers median EUR 90/h, half between 80 and 100/h. At 8 h a day about EUR 640-800; agency projects sit lower, a mid-level agency project, so EUR 480-720."
+      },
+      "link_check": null
+    },
+    {
+      "id": "doghouse-recruitment-unnamed-client--senior-java-software-engineer",
+      "url": "https://www.jobleads.com/de/job/senior-java-software-engineer--germany--e16d3fa72a63b286965f5e99e9773a10e",
+      "source": "google-jobs",
+      "company": "Doghouse Recruitment (unnamed client)",
+      "title": "Senior Java Software Engineer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE",
+          "NL"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "java"
+      ],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Senior Java engineer for a data-integration platform vendor, remote within Germany or the Netherlands (per the JobLeads copy).",
+      "gap": "Not opened; recruiter ad for an unnamed client; only aggregator copies found.",
+      "pay_estimate": {
+        "point": 75000,
+        "min": 62000,
+        "max": 90000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); a product company client, so the middle of that band."
+      },
+      "link_check": null
+    },
+    {
+      "id": "michael-page-unnamed-client--ai-engineer-llm-100-remote",
+      "url": "https://www.michaelpage.de/job-detail/ai-engineer-mwd-llm-100-remote/ref/jn-112026-7138714",
+      "source": "google-jobs",
+      "company": "Michael Page (unnamed client)",
+      "title": "AI Engineer (m/w/d) LLM - 100 % Remote",
+      "lane": "ai-eng",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "python",
+        "llm",
+        "mlops"
+      ],
+      "domain": [
+        "saas"
+      ],
+      "posted_at": "2026-11-02",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 5
+      },
+      "why": "LLM engineering for a vendor of planning and documentation software, including model training and MLOps pipelines; Festanstellung, 100% remote (per the Google Jobs snippet).",
+      "gap": "Not opened; model training and MLOps pipelines named; recruiter ad for an unnamed client.",
+      "pay_estimate": {
+        "point": 78000,
+        "min": 65000,
+        "max": 92000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z) as the nearest benchmark on file; LLM roles at product companies sit at or a little above it."
+      },
+      "link_check": null
+    },
+    {
+      "id": "ilias-vassiliou-unnamed-client--ai-software-engineer-llms-rag-agentic-ai-php-java-remote-deutschland",
+      "url": "https://de.jooble.org/jdp/-687506537585016359/AI-Software-Engineer-%E2%80%A2-LLMs%2C-RAG%2C-Agentic-AI%2C-PHP%2FJava-%E2%80%A2-Remote-Deutschland-Berlin",
+      "source": "google-jobs",
+      "company": "Ilias Vassiliou (unnamed client)",
+      "title": "AI Software Engineer • LLMs, RAG, Agentic AI, PHP/Java • Remote Deutschland",
+      "lane": "ai-eng",
+      "contract": "unknown",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [],
+      "stack": [
+        "php",
+        "java",
+        "llm",
+        "rag",
+        "agents"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 4
+      },
+      "why": "Recruiter ad for a digital agency: AI software engineering with LLMs, RAG and agents on PHP/Java (Jooble copy only).",
+      "gap": "Not opened; contract unknown; recruiter for an unnamed client.",
+      "pay_estimate": {
+        "point": 70000,
+        "min": 60000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); agency employment, so not above that band."
+      },
+      "link_check": null
+    },
+    {
+      "id": "everai--mid-senior-ai-llm-engineer-full-remote",
+      "url": "https://www.learn4good.com/jobs/online/informationstechnik_and_it/5610500395/g/",
+      "source": "google-jobs",
+      "company": "EverAI",
+      "title": "Mid/Senior AI LLM Engineer; Full Remote",
+      "lane": "ai-eng",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "llm",
+        "python"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 1,
+        "company": 0,
+        "total": 4
+      },
+      "why": "LLM engineering for an AI companionship app (learn4good copy only).",
+      "gap": "Not opened; country terms and contract unknown; aggregator copy.",
+      "pay_estimate": {
+        "point": 70000,
+        "min": 60000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); no better benchmark on file."
+      },
+      "link_check": null
+    },
+    {
+      "id": "jobgether-unnamed-client--research-staff-llms",
+      "url": "https://www.jobleads.com/de/job/research-staff-llms--germany--ec97d2db55829a31aadfb5804a390c778",
+      "source": "google-jobs",
+      "company": "Jobgether (unnamed client)",
+      "title": "Research Staff, LLMs",
+      "lane": "ai-eng",
+      "contract": "unknown",
+      "seniority": "unknown",
+      "remote": {
+        "type": "unknown",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "llm",
+        "ml"
+      ],
+      "domain": [
+        "ai"
+      ],
+      "posted_at": null,
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "ml-research",
+      "score": null,
+      "why": "LLM research staff role (aggregator copy).",
+      "gap": "Research role.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "resmed-medifox-dan--senior-angular-software-entwickler",
+      "url": "https://himalayas.app/companies/resmed/jobs/senior-angular-software-entwickler-m-w-d",
+      "source": "himalayas",
+      "company": "ResMed (MEDIFOX DAN)",
+      "title": "Senior Angular Software Entwickler (m/w/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "angular",
+        "typescript",
+        "graphql"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": "2026-10-19",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 0,
+        "domain": 2,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Care-sector software (rostering, route planning, billing, care documentation) from MEDIFOX DAN, part of ResMed: Angular, RxJS, NgRx, GraphQL.",
+      "gap": "Not opened at the employer: its ads sit on ResMed's Workday, which cannot be read by GET. Himalayas says 100% remote anywhere in Germany, devjobs.de shows Hildesheim hybrid; remote scored 0 until confirmed.",
+      "pay_estimate": {
+        "point": 76000,
+        "min": 68000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure in the ad. Instaffo lists EUR 68-85k for a MEDIFOX DAN Senior Angular Developer (search snippet, read 2026-11-11)."
+      },
+      "link_check": null
+    },
+    {
+      "id": "viabill--senior-frontend-developer-angular-remote-eu",
+      "url": "https://himalayas.app/companies/viabill/jobs/senior-frontend-developer-angular-remote-eu",
+      "source": "himalayas",
+      "company": "ViaBill",
+      "title": "Senior Frontend Developer (Angular) - Remote (EU)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EU"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "typescript"
+      ],
+      "domain": [
+        "payments"
+      ],
+      "posted_at": "2026-11-01",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 0,
+        "company": 0,
+        "total": 5
+      },
+      "why": "Front end for a buy-now-pay-later provider: Angular, remote within the EU (Himalayas row).",
+      "gap": "Not on ViaBill's own Lever board (3 Copenhagen roles only) nor Workable; aggregator copy only.",
+      "pay_estimate": {
+        "point": 70000,
+        "min": 60000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); a Danish employer hiring EU-wide, so around the middle."
+      },
+      "link_check": null
+    },
+    {
+      "id": "yozmatech-unnamed-client--senior-angular-developer",
+      "url": "https://himalayas.app/companies/yozmatech/jobs/senior-angular-developer",
+      "source": "himalayas",
+      "company": "YozmaTech (unnamed client)",
+      "title": "Senior Angular Developer",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EUROPE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "typescript"
+      ],
+      "domain": [
+        "fintech"
+      ],
+      "posted_at": "2026-11-10",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 1,
+        "domain": 0,
+        "company": 0,
+        "total": 5
+      },
+      "why": "Outsourcing provider placing a senior Angular developer with a fintech client; remote within Europe (Himalayas row).",
+      "gap": "Not opened; staffing outsourcer for an unnamed client; contract terms unknown.",
+      "pay_estimate": {
+        "point": 66000,
+        "min": 55000,
+        "max": 78000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); an outsourcer hiring Europe-wide, so below the middle."
+      },
+      "link_check": null
+    },
+    {
+      "id": "m2talents-unnamed-client--senior-full-stack-developer-angular-php-laravel",
+      "url": "https://himalayas.app/companies/m2talents/jobs/senior-full-stack-developer-angular-php-laravel",
+      "source": "himalayas",
+      "company": "m2TALENTS (unnamed client)",
+      "title": "Senior Full Stack Developer (Angular + PHP/Laravel)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": true,
+        "min": 80000,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "angular",
+        "php"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2026-11-01",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 1,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 1,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Recruiter ad for a full-stack role on Angular and PHP/Laravel, remote in Germany, EUR 80k per the Himalayas row.",
+      "gap": "Not opened; PHP/Laravel back end; recruiter for an unnamed client.",
+      "pay_estimate": {
+        "point": 80000,
+        "min": 75000,
+        "max": 85000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "medium",
+        "basis": "Himalayas row states EUR 80,000 a year (not confirmed at the employer)."
+      },
+      "link_check": null
+    },
+    {
+      "id": "medvidi--senior-frontend-developer",
+      "url": "https://himalayas.app/companies/medvidi/jobs/senior-frontend-developer",
+      "source": "himalayas",
+      "company": "MEDvidi",
+      "title": "Senior Frontend Developer",
+      "lane": "fullstack",
+      "contract": "unknown",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE",
+          "EMEA"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "typescript"
+      ],
+      "domain": [
+        "health"
+      ],
+      "posted_at": "2026-11-01",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 1,
+        "remote": 1,
+        "domain": 2,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Front end for a US online mental-health care platform; Angular; Himalayas lists Germany among many eligible countries.",
+      "gap": "Not opened; contract type not stated; US company, likely contractor terms.",
+      "pay_estimate": {
+        "point": 65000,
+        "min": 55000,
+        "max": 80000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "low",
+        "basis": "No figure. Payscale Senior Java Developer Germany avg EUR 75.0k (p10 51k, p90 90k; as cited in sweep 2026-10-28T0811Z); remote-anywhere employers often pay below German market."
+      },
+      "link_check": null
+    },
+    {
+      "id": "dev-pro--intermediate-software-engineer-angular-node-js-op02298",
+      "url": "https://himalayas.app/companies/dev-pro/jobs/intermediate-software-engineer-angular-node-js-op02298",
+      "source": "himalayas",
+      "company": "Dev.Pro",
+      "title": "Intermediate Software Engineer (Angular, Node.js) - OP02298",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "mid",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EUROPE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "node"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-11-01",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "too-junior",
+      "score": null,
+      "why": "Mid-level Angular/Node contractor role at an outsourcer.",
+      "gap": "Intermediate level.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "dev-pro--junior-software-engineer-angular-node-js-op02304",
+      "url": "https://himalayas.app/companies/dev-pro/jobs/junior-software-engineer-angular-node-js-op02304",
+      "source": "himalayas",
+      "company": "Dev.Pro",
+      "title": "Junior Software Engineer (Angular, Node.js) - OP02304",
+      "lane": "fullstack",
+      "contract": "freelance",
+      "seniority": "junior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "EUROPE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "node"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-11-08",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "too-junior",
+      "score": null,
+      "why": "Junior Angular/Node contractor role at an outsourcer.",
+      "gap": "Junior level.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "vestlane--software-engineer-product-full-stack-angular-kotlin-mongodb",
+      "url": "https://himalayas.app/companies/vestlane/jobs/software-engineer-product-full-stack-angular-kotlin-mongodb",
+      "source": "himalayas",
+      "company": "Vestlane",
+      "title": "Software Engineer, Product (Full-Stack: Angular, Kotlin, MongoDB)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "mid",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [
+        "angular",
+        "kotlin",
+        "mongodb"
+      ],
+      "domain": [
+        "other"
+      ],
+      "posted_at": "2026-10-10",
+      "verified": false,
+      "verdict": "dropped",
+      "drop_reason": "too-junior",
+      "score": null,
+      "why": "Mid-level full-stack product role on Angular, Kotlin and MongoDB.",
+      "gap": "Mid-level.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "epsilon--lead-software-engineer",
+      "url": "https://news.ycombinator.com/item?id=50441512",
+      "source": "hn-whoishiring",
+      "company": "Epsilon",
+      "title": "Lead Software Engineer",
+      "lane": "tech-lead",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "hybrid",
+        "countries": [
+          "US"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "other"
+      ],
+      "posted_at": null,
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "onsite",
+      "score": null,
+      "why": "Lead engineer role in Chicago.",
+      "gap": "Hybrid, Chicago.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "1komma5--software-engineer-edge-cloud",
+      "url": "https://1komma5grad.jobs.personio.de/job/2869700",
+      "source": "websearch",
+      "company": "1KOMMA5°",
+      "title": "Software Engineer - Edge & Cloud (m/w/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [
+        "go"
+      ],
+      "domain": [
+        "energy",
+        "climate"
+      ],
+      "posted_at": "2026-10-30",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "stack-mismatch",
+      "score": null,
+      "why": "Edge controllers and cloud back end for a residential solar and virtual power plant company: gateway code in Go and Lua.",
+      "gap": "Go and Lua edge programming is the core of the role.",
+      "pay_estimate": null,
+      "link_check": null
+    },
+    {
+      "id": "nordhealth--dach-implementation-manager",
+      "url": "https://careers.nordhealth.com/jobs/7148141-dach-implementation-manager",
+      "source": "websearch",
+      "company": "Nordhealth",
+      "title": "DACH Implementation Manager",
+      "lane": "implementation",
+      "contract": "permanent",
+      "seniority": "lead",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "FI"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "en",
+        "fr",
+        "it"
+      ],
+      "stack": [],
+      "domain": [
+        "health"
+      ],
+      "posted_at": "2026-01-30",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Leading the DACH implementation team for veterinary and therapy practice software; German and English, French or Italian a plus.",
+      "gap": "",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-11-11T01:21:00Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "410 https://careers.nordhealth.com/jobs/7148141-dach-implementation-manager"
+      }
+    },
+    {
+      "id": "nordhealth--saas-implementation-specialist-dach",
+      "url": "https://careers.nordhealth.com/jobs/7449182-saas-implementation-specialist-dach",
+      "source": "websearch",
+      "company": "Nordhealth",
+      "title": "SaaS Implementation Specialist - DACH",
+      "lane": "implementation",
+      "contract": "permanent",
+      "seniority": "unknown",
+      "remote": {
+        "type": "remote-first",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": null
+      },
+      "salary": {
+        "stated": false
+      },
+      "languages": [
+        "de",
+        "en"
+      ],
+      "stack": [],
+      "domain": [
+        "health"
+      ],
+      "posted_at": "2026-03-24",
+      "verified": true,
+      "verdict": "dropped",
+      "drop_reason": "closed",
+      "score": null,
+      "why": "Onboarding veterinary practices in DACH onto practice-management software.",
+      "gap": "",
+      "pay_estimate": null,
+      "link_check": {
+        "checked_at": "2026-11-11T01:21:00Z",
+        "method": "http",
+        "result": "dead",
+        "evidence": "410 https://careers.nordhealth.com/jobs/7449182-saas-implementation-specialist-dach"
+      }
+    },
+    {
+      "id": "qavion-group--senior-fullstack-engineer",
+      "url": "https://himalayas.app/companies/qavion-group-gmbh/jobs/senior-fullstack-engineer-m-w-d",
+      "source": "recheck",
+      "company": "QAVION GROUP GmbH",
+      "title": "Senior Fullstack Engineer (m/w/d)",
+      "lane": "fullstack",
+      "contract": "permanent",
+      "seniority": "senior",
+      "remote": {
+        "type": "remote",
+        "countries": [
+          "DE"
+        ],
+        "timezone": null,
+        "onsite_days_per_quarter": null,
+        "eor": false
+      },
+      "salary": {
+        "stated": true,
+        "min": 80000,
+        "max": 150000,
+        "currency": "EUR",
+        "period": "year"
+      },
+      "languages": [
+        "de"
+      ],
+      "stack": [
+        "java",
+        "spring-boot",
+        "quarkus",
+        "typescript",
+        "node",
+        "angular",
+        "react",
+        "vue",
+        "postgresql",
+        "oracle",
+        "mongodb",
+        "dynamodb"
+      ],
+      "domain": [
+        "consulting"
+      ],
+      "posted_at": "2026-10-23",
+      "verified": false,
+      "verdict": "kept",
+      "drop_reason": null,
+      "score": {
+        "stack": 2,
+        "seniority": 2,
+        "remote": 2,
+        "domain": 0,
+        "company": 0,
+        "total": 6
+      },
+      "why": "Consulting, recruiting and ventures boutique hiring a full-stack engineer for client projects: Java with Spring Boot or Quarkus, Angular, React or Vue, test automation; fixed salary from EUR 80k plus profit share up to EUR 70k.",
+      "gap": "Reopened: last recorded 2026-10-30; still listed in Himalayas' API tonight. Kept, not shortlisted: only the Himalayas ad exists. \"Mindestens 7 Jahre Berufserfahrung als Fullstack Engineer\"; \"Abgeschlossenes Studium der Informatik oder vergleichbare Qualifikation\"; a consultancy/recruiting boutique, the employer type the owner is leaving.",
+      "pay_estimate": {
+        "point": 100000,
+        "min": 80000,
+        "max": 150000,
+        "currency": "EUR",
+        "period": "year",
+        "confidence": "medium",
+        "basis": "Stated in the ad: fixed salary from EUR 80,000 plus profit share up to EUR 70,000 (Himalayas range 80-150k); the profit share is variable and unproven, so the point sits well below the midpoint of the band."
+      },
+      "link_check": null
+    }
+  ]
+}
