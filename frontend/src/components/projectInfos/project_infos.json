@@ -15,7 +15,7 @@
       "it": "Apprendista (Ausbildung)"
     },
     "lang": "Delphi 5",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-chess.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -31,9 +31,9 @@
     "start_date": "2012-05-01",
     "end_date": "2012-09-01",
     "description": {
-      "en": "<p>I helped research and test different software and then set up a new <a href=\"https://askozia.com/\">Askozia PBX server.<br /></a> The work included planning and implementing a voicemail service.</p>",
-      "de": "<p>Ich habe bei der Recherche und beim Test verschiedener Software geholfen und anschließend einen neuen <a href=\"https://askozia.com/\">Askozia-PBX-Server eingerichtet.<br /></a> Zur Arbeit gehörten Planung und Umsetzung eines Voicemail-Dienstes.</p>",
-      "it": "<p>Ho contribuito alla ricerca e al test di diversi software e poi ho configurato un nuovo <a href=\"https://askozia.com/\">server PBX Askozia.<br /></a> Il lavoro comprendeva la pianificazione e l’implementazione di un servizio di segreteria telefonica.</p>"
+      "en": "<p>I helped research and test different software and then set up a new <a href=\"https://askozia.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Askozia PBX server.<br /></a> The work included planning and implementing a voicemail service.</p>",
+      "de": "<p>Ich habe bei der Recherche und beim Test verschiedener Software geholfen und anschließend einen neuen <a href=\"https://askozia.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Askozia-PBX-Server eingerichtet.<br /></a> Zur Arbeit gehörten Planung und Umsetzung eines Voicemail-Dienstes.</p>",
+      "it": "<p>Ho contribuito alla ricerca e al test di diversi software e poi ho configurato un nuovo <a href=\"https://askozia.com/\" target=\"_blank\" rel=\"noopener noreferrer\">server PBX Askozia.<br /></a> Il lavoro comprendeva la pianificazione e l’implementazione di un servizio di segreteria telefonica.</p>"
     },
     "role_name": {
       "en": "Apprentice (Ausbildung)",
@@ -45,7 +45,7 @@
       "de": "proprietäre Software",
       "it": "software proprietario"
     },
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-voip-phone.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -71,7 +71,7 @@
       "it": "Apprendista (Ausbildung)"
     },
     "lang": "Delphi 5",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-cipher-machine.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -97,7 +97,7 @@
       "it": "Apprendista (Ausbildung)"
     },
     "lang": "Delphi 5",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-card-catalog.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -123,7 +123,7 @@
       "it": "Junior Application Developer"
     },
     "lang": "Delphi XE",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-combination-lock.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -139,9 +139,9 @@
     "start_date": "2013-06-30",
     "end_date": "2016-06-29",
     "description": {
-      "en": "<p>I implemented the new version of mediafusion using Delphi XE! <br />An information management solution for licensing specialists.&nbsp;I was part of a team of two and developed the framework and various features.<br />For more information, see the <a href=\"https://www.3points.de/\">3Points GmbH homepage</a></p>",
-      "de": "<p>Ich habe die neue Version von mediafusion in Delphi XE umgesetzt! <br />Eine Informationsmanagement-Lösung für Lizenzspezialisten.&nbsp;Ich war Teil eines Zweierteams und habe das Framework sowie verschiedene Features entwickelt.<br />Weitere Informationen finden Sie auf der <a href=\"https://www.3points.de/\">Website der 3Points GmbH</a></p>",
-      "it": "<p>Ho realizzato la nuova versione di mediafusion in Delphi XE! <br />Una soluzione di gestione delle informazioni per gli specialisti delle licenze.&nbsp;Facevo parte di un team di due persone e ho sviluppato il framework e diverse funzionalità.<br />Per maggiori informazioni visiti la <a href=\"https://www.3points.de/\">homepage di 3Points GmbH</a></p>"
+      "en": "<p>I implemented the new version of mediafusion using Delphi XE! <br />An information management solution for licensing specialists.&nbsp;I was part of a team of two and developed the framework and various features.<br />For more information, see the <a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\">3Points GmbH homepage</a></p>",
+      "de": "<p>Ich habe die neue Version von mediafusion in Delphi XE umgesetzt! <br />Eine Informationsmanagement-Lösung für Lizenzspezialisten.&nbsp;Ich war Teil eines Zweierteams und habe das Framework sowie verschiedene Features entwickelt.<br />Weitere Informationen finden Sie auf der <a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\">Website der 3Points GmbH</a></p>",
+      "it": "<p>Ho realizzato la nuova versione di mediafusion in Delphi XE! <br />Una soluzione di gestione delle informazioni per gli specialisti delle licenze.&nbsp;Facevo parte di un team di due persone e ho sviluppato il framework e diverse funzionalità.<br />Per maggiori informazioni visiti la <a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\">homepage di 3Points GmbH</a></p>"
     },
     "role_name": {
       "en": "Junior to Senior Application Developer",
@@ -149,7 +149,7 @@
       "it": "Da Junior a Senior Application Developer"
     },
     "lang": "Delphi XE / FastReport",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-circuit-board.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -165,9 +165,9 @@
     "start_date": "2016-02-28",
     "end_date": "2016-09-28",
     "description": {
-      "en": "<p><a href=\"https://www.3points.de\">mediafusion</a> needed a new module to manage and calculate revenues.<br />I implemented the new module from scratch, from the database design to the GUI. It covered the whole revenue process for Red Arrow Systems International's licensing and later gained complex controlling views that helped the managers keep track of cash flow.<br />I also provided updates and bug fixes for several years.</p>",
-      "de": "<p><a href=\"https://www.3points.de\">mediafusion</a> brauchte ein neues Modul zur Verwaltung und Berechnung von Erlösen.<br />Ich habe das Modul von Grund auf umgesetzt, vom Datenbankdesign bis zur GUI. Es deckte den gesamten Erlösprozess für die Lizenzierung bei Red Arrow Systems International ab und bekam später komplexe Controlling-Ansichten, mit denen die Manager den Cashflow im Blick behalten konnten.<br />Außerdem habe ich über mehrere Jahre Updates und Bugfixes geliefert.</p>",
-      "it": "<p>In <a href=\"https://www.3points.de\">mediafusion</a> serviva un nuovo modulo per gestire e calcolare i ricavi.<br />Ho realizzato il modulo da zero, dalla progettazione del database alla GUI. Copriva l’intero processo dei ricavi per le licenze di Red Arrow Systems International ed è stato poi esteso con complesse viste di controlling, per aiutare i manager a seguire il cashflow.<br />Ho anche fornito aggiornamenti e bugfix per diversi anni.</p>"
+      "en": "<p><a href=\"https://www.3points.de\" target=\"_blank\" rel=\"noopener noreferrer\">mediafusion</a> needed a new module to manage and calculate revenues.<br />I implemented the new module from scratch, from the database design to the GUI. It covered the whole revenue process for Red Arrow Systems International's licensing and later gained complex controlling views that helped the managers keep track of cash flow.<br />I also provided updates and bug fixes for several years.</p>",
+      "de": "<p><a href=\"https://www.3points.de\" target=\"_blank\" rel=\"noopener noreferrer\">mediafusion</a> brauchte ein neues Modul zur Verwaltung und Berechnung von Erlösen.<br />Ich habe das Modul von Grund auf umgesetzt, vom Datenbankdesign bis zur GUI. Es deckte den gesamten Erlösprozess für die Lizenzierung bei Red Arrow Systems International ab und bekam später komplexe Controlling-Ansichten, mit denen die Manager den Cashflow im Blick behalten konnten.<br />Außerdem habe ich über mehrere Jahre Updates und Bugfixes geliefert.</p>",
+      "it": "<p>In <a href=\"https://www.3points.de\" target=\"_blank\" rel=\"noopener noreferrer\">mediafusion</a> serviva un nuovo modulo per gestire e calcolare i ricavi.<br />Ho realizzato il modulo da zero, dalla progettazione del database alla GUI. Copriva l’intero processo dei ricavi per le licenze di Red Arrow Systems International ed è stato poi esteso con complesse viste di controlling, per aiutare i manager a seguire il cashflow.<br />Ho anche fornito aggiornamenti e bugfix per diversi anni.</p>"
     },
     "role_name": {
       "en": "Senior Application Developer",
@@ -175,7 +175,7 @@
       "it": "Senior Application Developer"
     },
     "lang": "Delphi XE 7 / FastReport",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-financial-charts.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -197,7 +197,7 @@
       "it": "Senior Application Developer"
     },
     "lang": "Java EE 7 / EclipseLink / Vaadin / Payara",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-office-desk.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -228,7 +228,7 @@
       "it": "Senior Application Developer"
     },
     "lang": "Atlassian Bamboo / Linux Shell / PowerShell ",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-conveyor.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -254,7 +254,7 @@
       "it": "Senior Application Developer"
     },
     "lang": "Delphi XE 7",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/project-invoice-form.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -281,7 +281,7 @@
       "it": "DevOps Werkstudent (studente lavoratore)"
     },
     "lang": "Java EE / JSF 2.0 / Oracle DB / Payara",
-    "company": "<a href=\"https://www.msg-gillardon.de/\"> Msg Gillardon AG </a>",
+    "company": "<a href=\"https://www.msg-gillardon.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> Msg Gillardon AG </a>",
     "image": "/img/project-car-showroom.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "Msg Gillardon AG",
@@ -308,7 +308,7 @@
       "it": "Developer"
     },
     "lang": "Java EE / Hibernate / Payara / Vue.js",
-    "company": "<a href=\"https://www.3points.de/\"> 3 Points Software GmbH </a>",
+    "company": "<a href=\"https://www.3points.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> 3 Points Software GmbH </a>",
     "image": "/img/news-blogging-desk.jpg",
     "company_logo": "/img/logo-3points.svg",
     "company_name": "3 Points Software GmbH",
@@ -405,7 +405,7 @@
       "it": "Software Engineer"
     },
     "lang": "Java / Spring / Hibernate / Azure AD / AWS Cognito",
-    "company": "<a href=\"https://www.device-insight.com/\"> Device Insight </a>",
+    "company": "<a href=\"https://www.device-insight.com/\" target=\"_blank\" rel=\"noopener noreferrer\"> Device Insight </a>",
     "image": "/img/news-machine-panel.jpg",
     "company_logo": "/img/logo-device-insight.svg",
     "company_name": "Device Insight GmbH",
@@ -432,7 +432,7 @@
       "it": "Software Engineer"
     },
     "lang": "Java / Spring / Hibernate / JUnit / Cucumber",
-    "company": "<a href=\"https://www.device-insight.com/\"> Device Insight </a>",
+    "company": "<a href=\"https://www.device-insight.com/\" target=\"_blank\" rel=\"noopener noreferrer\"> Device Insight </a>",
     "image": "/img/project-power-lines.jpg",
     "company_logo": "/img/logo-device-insight.svg",
     "company_name": "Device Insight GmbH",
@@ -460,7 +460,7 @@
       "it": "Senior Developer"
     },
     "lang": "TypeScript / Angular / RxJS / AWS / CDK",
-    "company": "<a href=\"https://www.msg-gillardon.de/\"> Msg GillardonBSM AG </a>",
+    "company": "<a href=\"https://www.msg-gillardon.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> Msg GillardonBSM AG </a>",
     "image": "/img/project-conveyor.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "Msg GillardonBSM AG",
@@ -487,7 +487,7 @@
       "it": "Developer"
     },
     "lang": "Java EE / JSF 2.0 / Hibernate / Payara / Jenkins",
-    "company": "<a href=\"https://www.msg-gillardon.de/\"> Msg GillardonBSM AG </a>",
+    "company": "<a href=\"https://www.msg-gillardon.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> Msg GillardonBSM AG </a>",
     "image": "/img/project-office-desk.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "Msg GillardonBSM AG",
@@ -515,7 +515,7 @@
       "it": "IT Consultant / Senior Developer"
     },
     "lang": "TypeScript / Java / NestJS / AWS / Concourse CI",
-    "company": "<a href=\"https://www.msg-gillardon.de/\"> Msg GillardonBSM AG </a>",
+    "company": "<a href=\"https://www.msg-gillardon.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> Msg GillardonBSM AG </a>",
     "image": "/img/project-conveyor.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "Msg GillardonBSM AG",
@@ -543,7 +543,7 @@
       "it": "Senior Developer"
     },
     "lang": "Java EE / Hibernate / WildFly / GitLab CI / AWS",
-    "company": "<a href=\"https://www.msg-for-banking.de/\"> msg for banking AG </a>",
+    "company": "<a href=\"https://www.msg-for-banking.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> msg for banking AG </a>",
     "image": "/img/news-source-code.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "msg for banking AG",
@@ -575,7 +575,7 @@
       "it": "Senior Developer"
     },
     "lang": "Terraform / EKS / VPC / Route 53 / AWS",
-    "company": "<a href=\"https://www.msg-for-banking.de/\"> msg for banking AG </a>",
+    "company": "<a href=\"https://www.msg-for-banking.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> msg for banking AG </a>",
     "image": "/img/news-server-room.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "msg for banking AG",
@@ -603,7 +603,7 @@
       "it": "Senior IT Consultant / Senior Developer"
     },
     "lang": "TypeScript / React / Express / Prisma / PostgreSQL",
-    "company": "<a href=\"https://www.msg-for-banking.de/\"> msg for banking AG </a>",
+    "company": "<a href=\"https://www.msg-for-banking.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> msg for banking AG </a>",
     "image": "/img/project-financial-charts.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "msg for banking AG",
@@ -634,7 +634,7 @@
       "it": "Senior IT Consultant / Senior Developer"
     },
     "lang": "Java / Spring / Oracle / Angular / BSI CRM",
-    "company": "<a href=\"https://www.msg-for-banking.de/\"> msg for banking AG </a>",
+    "company": "<a href=\"https://www.msg-for-banking.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> msg for banking AG </a>",
     "image": "/img/news-collaboration.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "msg for banking AG",
@@ -670,7 +670,7 @@
       "de": "Java / Spring Boot / Vue 3 / Pinia / Kubernetes / KI-gestützte Entwicklung",
       "it": "Java / Spring Boot / Vue 3 / Pinia / Kubernetes / sviluppo assistito dall’IA"
     },
-    "company": "<a href=\"https://www.msg-for-banking.de/\"> msg for banking AG </a>",
+    "company": "<a href=\"https://www.msg-for-banking.de/\" target=\"_blank\" rel=\"noopener noreferrer\"> msg for banking AG </a>",
     "image": "/img/project-ledger-book.jpg",
     "company_logo": "/img/logo-msg.svg",
     "company_name": "msg for banking AG",
@@ -706,7 +706,7 @@
       "de": "Node.js / Docker / Claude-Agenten / agentische Architektur",
       "it": "Node.js / Docker / agenti Claude / architettura agentica"
     },
-    "company": "<a href=\"https://github.com/colla69/PlayCryptoWithAI\">GitHub</a>",
+    "company": "<a href=\"https://github.com/colla69/PlayCryptoWithAI\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>",
     "image": "/img/project-jacquard-loom.jpg",
     "company_logo": "/img/logo-personal.svg",
     "company_name": "github.com/colla69",
@@ -742,7 +742,7 @@
       "de": "Java / Spring Boot / htmx / SQLite / Claude-Agenten / agentischer Workflow",
       "it": "Java / Spring Boot / htmx / SQLite / agenti Claude / workflow agentico"
     },
-    "company": "<a href=\"https://github.com/colla69/makeMyTaxes\">GitHub</a>",
+    "company": "<a href=\"https://github.com/colla69/makeMyTaxes\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>",
     "image": "/img/project-invoice-form.jpg",
     "company_logo": "/img/logo-personal.svg",
     "company_name": "github.com/colla69",
@@ -777,7 +777,7 @@
       "de": "Vue 3 / Vite / responsives Web",
       "it": "Vue 3 / Vite / web responsive"
     },
-    "company": "<a href=\"https://freunde-sag.org/\">freunde-sag.org</a>",
+    "company": "<a href=\"https://freunde-sag.org/\" target=\"_blank\" rel=\"noopener noreferrer\">freunde-sag.org</a>",
     "image": "/img/news-students-studying.jpg",
     "company_logo": "/img/logo-personal.svg",
     "company_name": "freunde-sag.org",
@@ -812,7 +812,7 @@
       "de": "Swift 6 / macOS / Core Graphics / AVAudioEngine",
       "it": "Swift 6 / macOS / Core Graphics / AVAudioEngine"
     },
-    "company": "<a href=\"https://github.com/colla69/BabyToy\">GitHub</a>",
+    "company": "<a href=\"https://github.com/colla69/BabyToy\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>",
     "image": "/img/project-chess.jpg",
     "company_logo": "/img/logo-personal.svg",
     "company_name": "github.com/colla69",
