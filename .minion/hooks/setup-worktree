@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# The tests need frontend/node_modules and a Chromium for Playwright, and git ignores both.
+set -euo pipefail
+
+npm --prefix frontend ci
+npx --prefix frontend playwright install --with-deps chromium
