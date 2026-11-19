@@ -3,6 +3,8 @@ import path from 'path'
 import vm from 'vm'
 import { test, expect } from '@playwright/test'
 import * as nav from '../../src/nav'
+import { ROLES } from '../../src/components/CV/roles'
+import { STEPS } from '../../src/components/CV/education'
 import { LANGUAGES } from './helpers'
 
 // Data tests: they read the content where it is written and load no page, so a
@@ -12,9 +14,11 @@ const SRC = path.join(__dirname, '../../src')
 
 const readJson = file => JSON.parse(readFileSync(path.join(SRC, file), 'utf8'))
 
-// Imports that data() calls, given for real: ExperienceAndEducation takes its
-// link labels from pageLabel().
-const REAL_IMPORTS = { '@/nav': nav }
+// Imports that data() uses, given for real: ExperienceAndEducation takes its
+// link labels from pageLabel(), and WorkExperience and Education return ROLES
+// and STEPS. Left out, those lists would be undefined and the walk would skip
+// the whole work history without a sign (PR #91 review, 2026-11-19).
+const REAL_IMPORTS = { '@/nav': nav, './roles': { ROLES }, './education': { STEPS } }
 
 // A component's COPY and data() list, read from its .vue file. Any other import
 // becomes undefined: data() only needs those for values that are not text, such
