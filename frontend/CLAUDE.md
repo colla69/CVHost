@@ -55,7 +55,10 @@ Adding a news post or a project is a data edit, and needs all three languages.
   `magick -density 72 "data/X.pdf[0]" -background white -alpha remove -resize 520x -quality 76 img/certs/X.jpg`.
   Check both files exist: a typo renders a broken tile. `group` is an English filter key; translate only
   its heading.
-- **Bio, languages, work history, education** → the `COPY` blocks and lists in `src/components/CV/*.vue`.
+- **Work history, education** → `ROLES` in `src/components/CV/roles.js` and `STEPS` in
+  `src/components/CV/education.js`. They sit outside the components so `tests/e2e/content.spec.js` reads
+  the same lists the page renders.
+- **Bio, languages** → the `COPY` blocks and lists in `src/components/CV/*.vue`.
 
 ## Verifying
 

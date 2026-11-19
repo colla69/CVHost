@@ -7,6 +7,12 @@ export const BASE_URL = `http://localhost:${PORT}`
 export const PATHS = PAGES.map(page => page.to)
 export const LANGUAGES = ['en', 'de', 'it']
 
+// What the site's $tr shows for a value in a language: a plain string as it is,
+// a { en, de, it } map in that language, falling back to English.
+export function inLanguage (value, code) {
+  return typeof value === 'string' ? value : value[code] || value.en
+}
+
 // Stored through storageState rather than an init script: an init script runs
 // again on every reload and would overwrite the choice a test is checking.
 export function savedLanguage (code) {
