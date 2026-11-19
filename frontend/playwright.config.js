@@ -1,9 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
+import { PORT } from './tests/e2e/port'
 
 // The dev server on purpose: it has the SPA fallback, and the [i18n] fallback
 // warnings exist only in development builds.
-const PORT = 8137
-
 export default defineConfig({
   testDir: 'tests/e2e',
   fullyParallel: true,

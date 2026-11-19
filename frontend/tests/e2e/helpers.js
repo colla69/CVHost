@@ -1,8 +1,9 @@
 /* eslint-env browser */
 import { expect } from '@playwright/test'
 import { PAGES } from '../../src/nav'
+import { PORT } from './port'
 
-export const BASE_URL = 'http://localhost:8137'
+export const BASE_URL = `http://localhost:${PORT}`
 export const PATHS = PAGES.map(page => page.to)
 export const LANGUAGES = ['en', 'de', 'it']
 
