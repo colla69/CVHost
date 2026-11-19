@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This repository is public, and a token from a deleted CDK stack already sits in its history.
+# Stop any pull request that adds another secret or an env file before the loop can merge it.
+set -euo pipefail
+
+base=$(git merge-base HEAD origin/dev)
+
+env_files=$(git diff --name-only --diff-filter=A "$base" HEAD | grep -E '(^|/)\.env(\..*)?$' || true)
+if [[ -n $env_files ]]; then
+  echo "The pull request adds env files: $env_files" >&2
+  exit 1
+fi
+
+pattern='AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9]{36}|sk-[A-Za-z0-9_-]{20,}|aws_secret_access_key'
+hits=$(git diff "$base" HEAD | grep -E '^\+' | grep -nEi -- "$pattern" || true)
+if [[ -n $hits ]]; then
+  echo "The pull request adds lines that look like secrets:" >&2
+  echo "$hits" | cut -c1-120 >&2
+  exit 1
+fi
