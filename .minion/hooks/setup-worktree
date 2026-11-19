@@ -3,4 +3,4 @@
 set -euo pipefail
 
 npm --prefix frontend ci
-npx --prefix frontend playwright install --with-deps chromium
+npx --prefix frontend playwright install chromium
